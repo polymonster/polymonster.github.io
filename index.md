@@ -27,6 +27,33 @@ So thats about it, simple minamilistic api's, data oriented and multithreaded co
 
 Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which has all the shared functionality of common apis but could also be stand alone eith their own very bespoke code or contain ad-hoc stuff that could be thrown away later.  
 
+To make life easy premake is used to generate projects and pmtech/tools contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
+
+```lua
+dofile "pmtech/tools/premake/options.lua"
+dofile "pmtech/tools/premake/globals.lua"
+dofile "pmtech/tools/premake/app_template.lua"
+
+-- Solution
+solution "new_workspace"
+	location ("build/" .. platform_dir ) 
+	configurations { "Debug", "Release" }
+	startproject "new_project"
+	buildoptions { build_cmd }
+	linkoptions { link_cmd }
+	
+-- Engine Project	
+dofile "../pen/project.lua"
+
+-- Toolkit Project	
+dofile "../put/project.lua"
+
+-- Example projects	
+-- ( project name, current script dir, )
+create_app_example( "new_project", script_path() )
+```
+
+
 
 
 
