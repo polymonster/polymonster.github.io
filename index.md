@@ -25,7 +25,7 @@ So thats about it, simple minamilistic api's, data oriented and multithreaded co
 
 ## Getting Started
 
-Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which has all the shared functionality of common apis but could also be stand alone eith their own very bespoke code or contain ad-hoc stuff that could be thrown away later.  
+Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of common apis but are also stand alone with their own bespoke code or ad-hoc stuff that could be thrown away later.  
 
 To make life easy premake is used to generate projects and pmtech/tools contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
 
@@ -49,6 +49,40 @@ dofile "pmtech/pen/project.lua"
 dofile "pmtech/put/project.lua"
 
 create_app_example( "new_project", script_path() )
+```
+
+To get hooked into pmtech all you need to do is define an entry point and a struct with startup params, heres a quick example main.cpp:
+
+```c++
+pen::window_creation_params pen_window{
+    1280,          // width
+    720,           // height
+    4,             // MSAA samples
+    "scene_editor" // window title / process name
+};
+
+PEN_TRV pen::user_entry(void* params)
+{
+    // Unpack the params passed to the thread and signal to the engine it ok to proceed
+    pen::job_thread_params* job_params    = (pen::job_thread_params*)params;
+    pen::job*               p_thread_info = job_params->job_info;
+    pen::thread_semaphore_signal(p_thread_info->p_sem_continue, 1);
+    
+    for(;;)
+    {
+        // Main Loop
+        
+        // Msg from the engine we want to terminate
+        if (pen::thread_semaphore_try_wait(p_thread_info->p_sem_exit))
+            break;
+    }
+    
+    // Shutdown
+    
+    // Signal to the engine the thread has finished
+    pen::thread_semaphore_signal(p_thread_info->p_sem_terminated, 1);
+    return PEN_THREAD_OK;
+}
 ```
 
 
