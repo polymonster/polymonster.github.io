@@ -27,7 +27,7 @@ So thats about it, simple minamilistic api's, data oriented and multithreaded co
 
 Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of common apis but are also stand alone with their own bespoke code or ad-hoc stuff that could be thrown away later.  
 
-To make life easy premake is used to generate projects and pmtech/tools contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
+To make life easy [premake5](https://premake.github.io/) is used to generate projects and [pmtech/tools](https://github.com/polymonster/pmtech/tree/master/tools/premake) contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
 
 ```lua
 dofile "pmtech/tools/premake/options.lua"
@@ -84,7 +84,7 @@ PEN_TRV pen::user_entry(void* params)
     return PEN_THREAD_OK;
 }
 ```
-
+With that small amount of code you get a small executable which uses minimal amount of system resources, dedicated render and audio threads and whole host of powerful features for games and 3D graphics dev.
 
 
 
