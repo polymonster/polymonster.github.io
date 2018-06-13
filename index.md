@@ -42,14 +42,12 @@ solution "new_workspace"
 	buildoptions { build_cmd }
 	linkoptions { link_cmd }
 	
--- Engine Project	
-dofile "../pen/project.lua"
+-- Engine (pen) Project	
+dofile "pmtech/pen/project.lua"
 
--- Toolkit Project	
-dofile "../put/project.lua"
+-- Toolkit (put) Project	
+dofile "pmtech/put/project.lua"
 
--- Example projects	
--- ( project name, current script dir, )
 create_app_example( "new_project", script_path() )
 ```
 
