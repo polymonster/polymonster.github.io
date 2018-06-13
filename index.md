@@ -89,7 +89,7 @@ With that small amount of code you get a small executable which uses minimal amo
 The last thing to do is actually generate the projects which can be done via premake directly or through the pmtech build pipeline which will handle multiple platforms and targets:
 
 ```bash
-python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -target clang
+python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -toolset clang
 # see -help for more info..
 ```
 
