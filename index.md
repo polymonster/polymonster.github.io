@@ -86,6 +86,13 @@ PEN_TRV pen::user_entry(void* params)
 ```
 With that small amount of code you get a small executable which uses minimal amount of system resources, dedicated render and audio threads and whole host of powerful features for games and 3D graphics dev.
 
+The last thing to do is actually generate the projects which can be done via premake directly or through the pmtech build pipeline which will handle multiple platforms and targets:
+
+```bash
+python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -target clang
+# see -help for more info..
+```
+
 
 
 
