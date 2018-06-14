@@ -100,8 +100,9 @@ pmtech has a build pipeline for generating code projects and data into applicati
 - Generate shader reflection info in .json format to know vertex layouts, constant locations, texture locations.
 - Compress texture files to dds using nvidia texture tools.
 - Copy configs, fonts and other data.
+- Generate file dependencies and timestsamps for hot reloading.
 
-I chose to use python for most of the build pipeline, because I wanted a higher level scripting language for easy access to modify the build pipeline easily, access to lots of codse and libraries suchs as json, string operations and file system operations which are useful when conditioning data. python also offers great cross platform support for all my target platforms so only one set of scripts is required with minor portability code. 
+I chose to use python for most of the build pipeline, because I wanted a higher level scripting language for easy access to modify files paths and directories, access to lots of utility code and libraries such as json, string operations and file system operations makes life easy for the time of work involved in conditioning data. python also offers great cross platform support for all my target platforms so only one set of scripts is required with minor portability code (no more need for .sh and .bat files with duplicated code). 
 
 The build script can be invoked as follows:
 
