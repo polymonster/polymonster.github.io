@@ -91,8 +91,46 @@ python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -toolset cl
 # see -help for more info..
 ```
 
+## Build Pipeline
 
+pmtech has a build pipeline for generating data into application ready binary formats:
+-- Convert .obj and .dae (collada) files to binary format.
+-- Compile hlsl shaders, convert hlsl to glsl.
+-- Generate shader reflection info in .json format to know vertex layouts, constant locations, texture locations.
+-- Compress texture files to dds using nvidia texture tools.
+-- Copy configs, fonts and other data.
 
+I chose to use python for most of the build pipeline, because I wanted a higher level scripting language for easy access to modify the build pipeline easily, access to lots of codse and libraries suchs as json, string operations and file system operations which are useful when conditioning data. python also offers great cross platform support for all my target platforms so only one set of scripts is required with minor portability code. 
+
+The build script can be invoked as follows:
+
+```bash
+python3 pmtech/tools/build.py -help
+```
+
+```text
+--------------------------------------------------------------------------------
+pmtech build -------------------------------------------------------------------
+--------------------------------------------------------------------------------
+run with no arguments for prompted input
+commandline arguments
+	-all <build all>
+	-actions <action, ...>
+		code - generate projects and workspaces
+		shaders - generate shaders and compile binaries
+		models - make binary mesh and animation files
+		textures - compress textures and generate mips
+		audio - compress and convert audio to platorm format
+		fonts - copy fonts to data directory
+		configs - copy json configs to data directory
+	-platform <osx, win32, ios, linux>
+	-ide <xcode4, vs2015, v2017, gmake>
+	-clean <clean build, bin and temp dirs>
+	-renderer <dx11, opengl>
+	-toolset <gcc, clang, msc>
+--------------------------------------------------------------------------------
+All Jobs Done (5ms)
+```
 
 
 
