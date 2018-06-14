@@ -94,11 +94,11 @@ python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -toolset cl
 ## Build Pipeline
 
 pmtech has a build pipeline for generating data into application ready binary formats:
--- Convert .obj and .dae (collada) files to binary format.
--- Compile hlsl shaders, convert hlsl to glsl.
--- Generate shader reflection info in .json format to know vertex layouts, constant locations, texture locations.
--- Compress texture files to dds using nvidia texture tools.
--- Copy configs, fonts and other data.
+- Convert .obj and .dae (collada) files to binary format.
+- Compile hlsl shaders, convert hlsl to glsl.
+- Generate shader reflection info in .json format to know vertex layouts, constant locations, texture locations.
+- Compress texture files to dds using nvidia texture tools.
+- Copy configs, fonts and other data.
 
 I chose to use python for most of the build pipeline, because I wanted a higher level scripting language for easy access to modify the build pipeline easily, access to lots of codse and libraries suchs as json, string operations and file system operations which are useful when conditioning data. python also offers great cross platform support for all my target platforms so only one set of scripts is required with minor portability code. 
 
