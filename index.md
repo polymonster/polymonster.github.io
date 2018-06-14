@@ -93,7 +93,8 @@ python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -toolset cl
 
 ## Build Pipeline
 
-pmtech has a build pipeline for generating data into application ready binary formats:
+pmtech has a build pipeline for generating code projects and data into application ready binary formats:
+- Generate code projects (vs2015, vs2017, xcode, gmake).
 - Convert .obj and .dae (collada) files to binary format.
 - Compile hlsl shaders, convert hlsl to glsl.
 - Generate shader reflection info in .json format to know vertex layouts, constant locations, texture locations.
@@ -130,6 +131,31 @@ commandline arguments
 	-toolset <gcc, clang, msc>
 --------------------------------------------------------------------------------
 All Jobs Done (5ms)
+```
+When data is built a .json file is generated containing dependencies, later the engine uses this info to check if files need to be hot-reloaded. At build time the dependecies are used to determine if files need to be re-built, and also check if build data needs to be deleted if the source files no longer exists.
+
+```json
+{
+    "dir": "bin/osx/data/fonts",
+    "files": [
+        {
+            "data/fonts/fontawesome-webfont.ttf": [
+                {
+                    "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/fonts/fontawesome-webfont.ttf",
+                    "timestamp": 1514655469.0
+                }
+            ]
+        },
+        {
+            "data/fonts/cousine-regular.ttf": [
+                {
+                    "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/fonts/cousine-regular.ttf",
+                    "timestamp": 1514655469.0
+                }
+            ]
+        }
+    ]
+}
 ```
 
 
