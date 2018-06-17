@@ -1,0 +1,168 @@
+---
+layout: default
+--- 
+
+# pmtech
+
+## Introduction
+
+pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://www.google.com) repository to see the source code.
+
+A common question other coders ask me when I talk about developing my own engine from the ground up is why don't I just use unity or unreal engine. This introduction is to answer that question and to discuss my motivations behind the project.
+
+I have worked now for around 10 years professionally as a programmer on low level code for proprietary engines, graphics, tools and build and content pipelines. So I am somewhat doing in my sparetime for fun what I also do for my day job, but I have found working on my own tech to be more liberating and enjoyable as I can take a more idealistic approach to the code I am developing.
+ 
+Initially the project started to give myself a framework in which I could easily start new projects to prototype and test new ideas, after that it took the path of trying to address some of the frustrating issues I had encountered in my professional work and later it has taken on board some of the more succesful features of engines I have worked on for my job.
+
+I wanted to make the codebase as simple as possible. Having seen code bases that had grown and become extremely complex over time, I was always tasked with last minute optimisations which often led to the analysis that the engine needed to be restructured or redesigned (but we had to make do with some hacky optimisations as opposed to re-writing the engine). This was because a lot of the performance cost was in the way objects communicated with one another, deep call stacks and complex hierarchies cause cache misses and carry a cost to simply call functions and when drilling down into a function body there was often hardly any time spent doing arithmetic or data transformation.
+
+For this reason I decided to take a more c-style data oriented approach and try to avoid using object oriented paradigms as much as possible, I am still getting decent code re-use using static polymorphism through templates, operator overloading and function overloading and probably one of the most notable features of the code base is a
+data oriented component entity system.
+
+I wont go into to much more detail about object oriented vs data oriented approaches as there is already a lot written about it already but the data oriented approach naturally lends itself to performance because it is less bloated and more cache friendly and aims toward transforming large amounts of homogenous data instead focusing on individual objects. data oriented code also lends itself to be easily optimised with SIMD which I intend to use where possible to increase throughput even further. As an additional performance consideration multithreading is built into the core systems from the outset. The renderer, audio and physics get processed on dedicated threads and the user thread which contains the main scene and logic is also on a dedicated thread.
+
+I wanted the project to be quick and easy to port so have wrapped up all platform specific code into a very small set of modules: renderer, os (window, input), threads, timer, memory and file system. All platforms share the header for each module which contains a simple procedural api and the platform specific details are hidden in a cpp. The idea behind this is that the lower level os stuff is handled early, files are included or excluded on a platform basis, use of ifdefs is kept to a minimum (because they can be messy and ugly) and all of the more complex code that builds on top of these api's is completely platform agnostic. The amount of code required to port a platform is minimal and I am making use of posix of stdlib where applicable so there are even less platform specific files than there are platforms.
+
+So thats the motivation behind it, simple minamilistic api's with a strong focus on data oriented code and performance.
+
+## Getting Started
+
+Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of common apis but are also stand alone with their own bespoke code or ad-hoc stuff that could be thrown away later.  
+
+To make life easy [premake5](https://premake.github.io/) is used to generate projects and [pmtech/tools](https://github.com/polymonster/pmtech/tree/master/tools/premake) contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
+
+```lua
+dofile "pmtech/tools/premake/options.lua"
+dofile "pmtech/tools/premake/globals.lua"
+dofile "pmtech/tools/premake/app_template.lua"
+
+-- Solution
+solution "new_workspace"
+	location ("build/" .. platform_dir ) 
+	configurations { "Debug", "Release" }
+	startproject "new_project"
+	buildoptions { build_cmd }
+	linkoptions { link_cmd }
+	
+-- Engine (pen) Project	
+dofile "pmtech/pen/project.lua"
+
+-- Toolkit (put) Project	
+dofile "pmtech/put/project.lua"
+
+create_app_example( "new_project", script_path() )
+```
+
+To get hooked into pmtech all you need to do is define an entry point and a struct with startup params, heres a quick example main.cpp:
+
+```c++
+pen::window_creation_params pen_window{
+    1280,          // width
+    720,           // height
+    4,             // MSAA samples
+    "scene_editor" // window title / process name
+};
+
+PEN_TRV pen::user_entry(void* params)
+{
+    // Unpack the params passed to the thread and signal to the engine it ok to proceed
+    pen::job_thread_params* job_params    = (pen::job_thread_params*)params;
+    pen::job*               p_thread_info = job_params->job_info;
+    pen::thread_semaphore_signal(p_thread_info->p_sem_continue, 1);
+    
+    for(;;)
+    {
+        // Main Loop
+        
+        // Msg from the engine we want to terminate
+        if (pen::thread_semaphore_try_wait(p_thread_info->p_sem_exit))
+            break;
+    }
+    
+    // Shutdown
+    
+    // Signal to the engine the thread has finished
+    pen::thread_semaphore_signal(p_thread_info->p_sem_terminated, 1);
+    return PEN_THREAD_OK;
+}
+```
+With that small amount of code you get a small executable which uses minimal amount of system resources, dedicated render and audio threads and whole host of powerful features for games and 3D graphics dev.
+
+The last thing to do is actually generate the projects which can be done via premake directly or through the pmtech build pipeline which will handle multiple platforms and targets:
+
+```bash
+python3 pmtech/tools/build.py -actions code -platform osx -ide gmake -toolset clang
+# see -help for more info..
+```
+
+## Build Pipeline
+
+pmtech has a build pipeline for generating code projects and data into application ready binary formats:
+- Generate code projects (vs2015, vs2017, xcode, gmake).
+- Convert .obj and .dae (collada) files to binary format.
+- Compile hlsl shaders, convert hlsl to glsl.
+- Generate shader reflection info in .json format to know vertex layouts, constant locations, texture locations.
+- Compress texture files to dds using nvidia texture tools.
+- Copy configs, fonts and other data.
+- Generate file dependencies and timestsamps for hot reloading.
+
+I chose to use python for most of the build pipeline, because I wanted a higher level scripting language for easy access to modify files paths and directories, access to lots of utility code and libraries such as json, string operations and file system operations makes life easy for the type of work involved. python also offers great cross platform support for all my target platforms so only one set of scripts is required with minor portability code (no more need for .sh and .bat files with duplicated code). 
+
+The build script can be invoked as follows:
+
+```bash
+python3 pmtech/tools/build.py -help
+```
+
+```text
+--------------------------------------------------------------------------------
+pmtech build -------------------------------------------------------------------
+--------------------------------------------------------------------------------
+run with no arguments for prompted input
+commandline arguments
+	-all <build all>
+	-actions <action, ...>
+		code - generate projects and workspaces
+		shaders - generate shaders and compile binaries
+		models - make binary mesh and animation files
+		textures - compress textures and generate mips
+		audio - compress and convert audio to platorm format
+		fonts - copy fonts to data directory
+		configs - copy json configs to data directory
+	-platform <osx, win32, ios, linux>
+	-ide <xcode4, vs2015, v2017, gmake>
+	-clean <clean build, bin and temp dirs>
+	-renderer <dx11, opengl>
+	-toolset <gcc, clang, msc>
+--------------------------------------------------------------------------------
+All Jobs Done (5ms)
+```
+When data is built a .json file is generated containing dependencies, later the engine uses this info to check if files need to be hot-reloaded. At build time the dependecies are used to determine if files need to be re-built, and also check if build data needs to be deleted if the source files no longer exists.
+
+```json
+{
+    "dir": "bin/osx/data/fonts",
+    "files": [
+        {
+            "data/fonts/fontawesome-webfont.ttf": [
+                {
+                    "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/fonts/fontawesome-webfont.ttf",
+                    "timestamp": 1514655469.0
+                }
+            ]
+        },
+        {
+            "data/fonts/cousine-regular.ttf": [
+                {
+                    "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/fonts/cousine-regular.ttf",
+                    "timestamp": 1514655469.0
+                }
+            ]
+        }
+    ]
+}
+```
+
+
+
+
