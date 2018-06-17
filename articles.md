@@ -167,13 +167,50 @@ When data is built a .json file is generated containing dependencies, later the 
 
 To take advantage of modern processors it is essential that any performance intensive applications make use of more than one cpu core. I wanted to build in some implicit multithreaded systems into pmtech from the outset so that programs will use multiple threads of cpu cores without any explicit multithreaded code required.  
 
-pmtech uses a producer consumer thread model, the user thread can be seen as the brains of the application co-ordinating tasks which then get processed asynchronously meaning that the api or driver overhead of the lower level systems is decoupled from the update rate of the user thread.  
+pmtech uses a producer consumer thread model, the user thread can be seen as the brains of the application co-ordinating tasks which then get processed asynchronously meaning that the api or driver overhead of the lower level systems is decoupled from user thread and we get to distribute work to other cpu cores.
 
 In order to implement these multithreaded systems I am using a simple wrapper api which contains two versions of each function, one which captures the arguments and stores them in a command buffer and a second which takes the function arguments and passes them to the system api (ie. Direct3D or OpenGl, Fmod or Bullet).  
 
 I first used this strategy to decouple the performance cost of an OpenGL driver without having to change the interface. By including gl.h inside a namespace and defining wrapper functions for all OpenGL functions it is possible to store all arguments in a command buffer which then gets dispatched on another thread.
 
 I will cover some examples of how this works for the rendering api but the audio and physics api's follow the same pattern and this strategy can be used to easily multithread an entire procedural api.
+
+The renderer api closely shadows Direct3D11 primarily because this was the first rendering platform I implemented and it was new when I originally stated the project. A small example below shows some texture functions with duplicated in the direct:: namespace and the texture_creation_params struct, other gpu state follows this same pattern ie. depth stencil state, blend state, clear state and so on.
+
+```c++
+struct texture_creation_params
+{
+    u32   width;
+    u32   height;
+    s32   num_mips;
+    u32   num_arrays;
+    u32   format;
+    u32   sample_count;
+    u32   sample_quality;
+    u32   usage;
+    u32   bind_flags;
+    u32   cpu_access_flags;
+    u32   flags;
+    void* data;
+    u32   data_size;
+    u32   block_size;
+    u32   pixels_per_block; // pixels per block in each axis, bc is 4x4 blocks so pixels_per_block = 4 not 16
+    u32   collection_type;
+};
+
+// textures
+u32  renderer_create_texture(const texture_creation_params& tcp);
+u32  renderer_create_sampler(const sampler_creation_params& scp);
+void renderer_set_texture(u32 texture_index, u32 sampler_index, u32 resource_slot, u32 shader_type, u32 flags = 0);
+
+namespace direct
+{
+    // textures
+    void renderer_create_texture(const texture_creation_params& tcp, u32 resource_slot);
+    void renderer_create_sampler(const sampler_creation_params& scp, u32 resource_slot);
+    void renderer_set_texture(u32 texture_index, u32 sampler_index, u32 resource_slot, u32 shader_type, u32 flags = 0);   
+}
+```
 
 
 
