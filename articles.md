@@ -212,5 +212,87 @@ namespace direct
 }
 ```
 
+The functions outside of the direct namespace simply store all parameters into a struct which gets pushed into a ring buffer, all memory buffers are copied at this point so that pointers on the stack are ok to pass to these functions. For any resources such as texture or blend states a u32 is returned which is used as a handle to the resource, so set_texture takes the u32 handle returned by create_texture.. at the time I wrote the code I thought this was a good solution and it has worked out ok but if I was to re-implement this system I would probably create stronger types for the handles just to catch any programming errors, for example texture_handle, buffer_handle, render_target_handle and so on.
 
+```C++
+u32 renderer_create_texture(const texture_creation_params& tcp)
+{
+    switch ((pen::texture_collection_type)tcp.collection_type)
+    {
+        case TEXTURE_COLLECTION_NONE:
+        case TEXTURE_COLLECTION_CUBE:
+        case TEXTURE_COLLECTION_VOLUME:
+            break;
+        default:
+            PEN_ASSERT_MSG(0, "inavlid collection type");
+            break;
+    }
+    cmd_buffer[put_pos].command_index = CMD_CREATE_TEXTURE;
+    memory_cpy(&cmd_buffer[put_pos].create_texture, (void*)&tcp, sizeof(texture_creation_params));
+    cmd_buffer[put_pos].create_texture.data = memory_alloc(tcp.data_size);
+    if (tcp.data)
+    {
+        memory_cpy(cmd_buffer[put_pos].create_texture.data, tcp.data, tcp.data_size);
+    }
+    else
+    {
+        cmd_buffer[put_pos].create_texture.data = nullptr;
+    }
+    u32 resource_slot                 = slot_resources_get_next(&k_renderer_slot_resources);
+    cmd_buffer[put_pos].resource_slot = resource_slot;
+    INC_WRAP(put_pos);
+    return resource_slot;
+}
+```
+
+As mentioned in the introduction to pmtech, I wanted to maintain a more data oriented approach and try to steer clear from object oriented paradigms. The internal command buffer system would be something that might lead people to go down an OO route for instance you would have command base and then inherit from that to have create_texture_command. To implement this without using OO I am using a union of structs to store the commands:
+
+```C++
+    typedef struct deferred_cmd
+    {
+        u32 command_index;
+        u32 resource_slot;
+
+        union {
+            u32                              command_data_index;
+            shader_load_params               shader_load;
+            set_shader_cmd                   set_shader;
+            input_layout_creation_params     create_input_layout;
+            buffer_creation_params           create_buffer;
+    ...
+```
+
+Each command has a command_index which is used to identify the command in a switch statement, the switch statement then passes the command buffer arguments to the equivalent functions which are defined within the direct:: namespace after the direct function is called any memory that was allocated during the command generation step is freed.
+
+```C++
+void exec_cmd(const deferred_cmd& cmd)
+{
+    switch (cmd.command_index)
+    {
+        case CMD_CLEAR:
+            direct::renderer_clear(cmd.command_data_index);
+            break;
+        case CMD_PRESENT:
+            direct::renderer_present();
+            break;
+        case CMD_LOAD_SHADER:
+            direct::renderer_load_shader(cmd.shader_load, cmd.resource_slot);
+            memory_free(cmd.shader_load.byte_code);
+            memory_free(cmd.shader_load.so_decl_entries);
+            break;
+        case CMD_SET_SHADER:
+            direct::renderer_set_shader(cmd.set_shader.shader_index, cmd.set_shader.
+            break;
+        case CMD_LINK_SHADER:
+            direct::renderer_link_shader_program(cmd.link_params, cmd.resource_slot)
+            for (u32 i = 0; i < cmd.link_params.num_constants; ++i)
+                memory_free(cmd.link_params.constants[i].name);
+            memory_free(cmd.link_params.constants);
+            if (cmd.link_params.stream_out_names)
+                for (u32 i = 0; i < cmd.link_params.num_stream_out_names; ++i)
+                    memory_free(cmd.link_params.stream_out_names[i]);
+            memory_free(cmd.link_params.stream_out_names);
+            break;
+    ...
+```
 
