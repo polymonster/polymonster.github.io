@@ -248,17 +248,17 @@ u32 renderer_create_texture(const texture_creation_params& tcp)
 As mentioned in the introduction to pmtech, I wanted to maintain a more data oriented approach and try to steer clear from object oriented paradigms. The internal command buffer system would be something that might lead people to go down an OO route for instance you would have command base and then inherit from that to have create_texture_command. To implement this without using OO I am using a union of structs to store the commands:
 
 ```c++
-    struct deferred_cmd
-    {
-        u32 command_index;
-        u32 resource_slot;
+struct deferred_cmd
+{
+    u32 command_index;
+    u32 resource_slot;
 
-        union {
-            u32                              command_data_index;
-            shader_load_params               shader_load;
-            set_shader_cmd                   set_shader;
-            input_layout_creation_params     create_input_layout;
-            buffer_creation_params           create_buffer;
+    union {
+        u32                              command_data_index;
+        shader_load_params               shader_load;
+        set_shader_cmd                   set_shader;
+        input_layout_creation_params     create_input_layout;
+        buffer_creation_params           create_buffer;
     ...
 ```
 
