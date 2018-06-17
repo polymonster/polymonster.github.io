@@ -163,6 +163,17 @@ When data is built a .json file is generated containing dependencies, later the 
 }
 ```
 
+## Multithreaded Architecture
+
+To take advantage of modern processors it is essential that any performance intensive applications make use of more than one cpu core. I wanted to build in some implicit multithreaded systems into pmtech from the outset so that programs will use multiple threads of cpu cores without any explicit multithreaded code required.  
+
+pmtech uses a producer consumer thread model, the user thread can be seen as the brains of the application co-ordinating tasks which then get processed asynchronously meaning that the api or driver overhead of the lower level systems is decoupled from the update rate of the user thread.  
+
+In order to implement these multithreaded systems I am using a simple wrapper api which contains two versions of each function, one which captures the arguments and stores them in a command buffer and a second which takes the function arguments and passes them to the system api (ie. Direct3D or OpenGl, Fmod or Bullet).  
+
+I first used this strategy to decouple the performance cost of an OpenGL driver without having to change the interface. By including gl.h inside a namespace and defining wrapper functions for all OpenGL functions it is possible to store all arguments in a command buffer which then gets dispatched on another thread.
+
+I will cover some examples of how this works for the rendering api but the audio and physics api's follow the same pattern and this strategy can be used to easily multithread an entire procedural api.
 
 
 
