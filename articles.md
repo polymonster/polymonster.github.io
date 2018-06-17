@@ -214,7 +214,7 @@ namespace direct
 
 The functions outside of the direct namespace simply store all parameters into a struct which gets pushed into a ring buffer, all memory buffers are copied at this point so that pointers on the stack are ok to pass to these functions. For any resources such as texture or blend states a u32 is returned which is used as a handle to the resource, so set_texture takes the u32 handle returned by create_texture.. at the time I wrote the code I thought this was a good solution and it has worked out ok but if I was to re-implement this system I would probably create stronger types for the handles just to catch any programming errors, for example texture_handle, buffer_handle, render_target_handle and so on.
 
-```C++
+```c++
 u32 renderer_create_texture(const texture_creation_params& tcp)
 {
     switch ((pen::texture_collection_type)tcp.collection_type)
@@ -247,8 +247,8 @@ u32 renderer_create_texture(const texture_creation_params& tcp)
 
 As mentioned in the introduction to pmtech, I wanted to maintain a more data oriented approach and try to steer clear from object oriented paradigms. The internal command buffer system would be something that might lead people to go down an OO route for instance you would have command base and then inherit from that to have create_texture_command. To implement this without using OO I am using a union of structs to store the commands:
 
-```C++
-    typedef struct deferred_cmd
+```c++
+    struct deferred_cmd
     {
         u32 command_index;
         u32 resource_slot;
@@ -264,7 +264,7 @@ As mentioned in the introduction to pmtech, I wanted to maintain a more data ori
 
 Each command has a command_index which is used to identify the command in a switch statement, the switch statement then passes the command buffer arguments to the equivalent functions which are defined within the direct:: namespace after the direct function is called any memory that was allocated during the command generation step is freed.
 
-```C++
+```c++
 void exec_cmd(const deferred_cmd& cmd)
 {
     switch (cmd.command_index)
@@ -298,7 +298,7 @@ void exec_cmd(const deferred_cmd& cmd)
 
 The user thread can call the non-direct functions to build up the command buffer. In the meantime the render thread will wait sleeping on a semaphore until another thread calls renderer_consume_command_buffer.
 
-```C++
+```c++
 // clear screen
 pen::viewport vp = {0.0f, 0.0f, (f32)pen_window.width, (f32)pen_window.he
 pen::renderer_set_viewport(vp);
@@ -323,7 +323,7 @@ pen::renderer_consume_cmd_buffer();
 
 The ring buffer which contains the command buffer contains a put_pos and a get_pos, after each time a command is added or executed this value is incremented. To save cpu cycles on wrapping the command buffer contains a power of 2 mnumber of commands and a simple bitwise and is used to mask the value back to 0 when it wraps:
 
-```C++
+```c++
 #define MAX_COMMANDS (1 << 18)
 #define INC_WRAP(V)                  
     V = (V + 1) & (MAX_COMMANDS - 1);
@@ -331,7 +331,7 @@ The ring buffer which contains the command buffer contains a put_pos and a get_p
 
 The render thread waits on a semaphore until a user thread tells it to consume the command buffer, it takes the current put_pos of the command buffer before singalling the user thread can continue, this is so that partial commands are not executed if they have been generated which the renderer is executing commands. The render thread will continually execute commands until it reaches the end_pos and then it will wait until renderer_consume_command_buffer is called again.
 
-```C++
+```c++
 if (thread_semaphore_try_wait(p_consume_semaphore))
 {
     // put_pos might change on the producer thread.
@@ -354,7 +354,7 @@ return false;
 
 Up until now all the examples show data going one-way, the user thread makes commands and the render thread executes them. The render api provides a function to read back data, it takes a struct with some parameters and a call back function which will get the data when it's ready:
 
-```C++
+```c++
 pen::resource_read_back_params rrbp;
 rrbp.block_size         = 4;
 rrbp.row_pitch          = volume_dim * rrbp.block_size
@@ -373,7 +373,7 @@ void image_read_back(void* p_data, u32 row_pitch, u32 depth_pitch, u32 block_siz
 
 The physics and audio api also require data to be read back from the user thread, internally this is handled with double buffers for data which the user thread requires, the buffers are swapped each time the command buffer is consumed at a safe time after all data writing has completed, the synchronisation of the buffers is done via an atomic so it is lockless. The physics and audio api's contain the following accessors which are thread safe:
 
-```C++
+```c++
 // Audio Accessors
 pen_error audio_channel_get_state(const u32 channel_index, audio_channel_state* state);
 pen_error audio_channel_get_sound_file_info(const u32 sound_index, audio_sound_file_info* info);
