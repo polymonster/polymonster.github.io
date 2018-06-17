@@ -1,3 +1,7 @@
+---
+layout: default
+--- 
+
 # pmtech
 
 ## Introduction
@@ -159,6 +163,232 @@ When data is built a .json file is generated containing dependencies, later the 
 }
 ```
 
+## Multithreaded Architecture
 
+To take advantage of modern processors it is essential that any performance intensive applications make use of more than one cpu core. I wanted to build in some implicit multithreaded systems into pmtech from the outset so that programs will use multiple threads of cpu cores without any explicit multithreaded code required.  
 
+pmtech uses a producer consumer thread model, the user thread can be seen as the brains of the application co-ordinating tasks which then get processed asynchronously meaning that the api or driver overhead of the lower level systems is decoupled from user thread and we get to distribute work to other cpu cores.
+
+In order to implement these multithreaded systems I am using a simple wrapper api which contains two versions of each function, one which captures the arguments and stores them in a command buffer and a second which takes the function arguments and passes them to the system api (ie. Direct3D or OpenGl, Fmod or Bullet).  
+
+I first used this strategy to decouple the performance cost of an OpenGL driver without having to change the interface. By including gl.h inside a namespace and defining wrapper functions for all OpenGL functions it is possible to store all arguments in a command buffer which then gets dispatched on another thread.
+
+I will cover some examples of how this works for the rendering api but the audio and physics api's follow the same pattern and this strategy can be used to easily multithread an entire procedural api.
+
+The renderer api closely shadows Direct3D11 primarily because this was the first rendering platform I implemented and it was new when I originally stated the project. A small example below shows some texture functions with duplicated in the direct:: namespace and the texture_creation_params struct, other gpu state follows this same pattern ie. depth stencil state, blend state, clear state and so on.
+
+```c++
+struct texture_creation_params
+{
+    u32   width;
+    u32   height;
+    s32   num_mips;
+    u32   num_arrays;
+    u32   format;
+    u32   sample_count;
+    u32   sample_quality;
+    u32   usage;
+    u32   bind_flags;
+    u32   cpu_access_flags;
+    u32   flags;
+    void* data;
+    u32   data_size;
+    u32   block_size;
+    u32   pixels_per_block; // pixels per block in each axis, bc is 4x4 blocks so pixels_per_block = 4 not 16
+    u32   collection_type;
+};
+
+// textures
+u32  renderer_create_texture(const texture_creation_params& tcp);
+u32  renderer_create_sampler(const sampler_creation_params& scp);
+void renderer_set_texture(u32 texture_index, u32 sampler_index, u32 resource_slot, u32 shader_type, u32 flags = 0);
+
+namespace direct
+{
+    // textures
+    void renderer_create_texture(const texture_creation_params& tcp, u32 resource_slot);
+    void renderer_create_sampler(const sampler_creation_params& scp, u32 resource_slot);
+    void renderer_set_texture(u32 texture_index, u32 sampler_index, u32 resource_slot, u32 shader_type, u32 flags = 0);   
+}
+```
+
+The functions outside of the direct namespace simply store all parameters into a struct which gets pushed into a ring buffer, all memory buffers are copied at this point so that pointers on the stack are ok to pass to these functions. For any resources such as texture or blend states a u32 is returned which is used as a handle to the resource, so set_texture takes the u32 handle returned by create_texture.. at the time I wrote the code I thought this was a good solution and it has worked out ok but if I was to re-implement this system I would probably create stronger types for the handles just to catch any programming errors, for example texture_handle, buffer_handle, render_target_handle and so on.
+
+```c++
+u32 renderer_create_texture(const texture_creation_params& tcp)
+{
+    switch ((pen::texture_collection_type)tcp.collection_type)
+    {
+        case TEXTURE_COLLECTION_NONE:
+        case TEXTURE_COLLECTION_CUBE:
+        case TEXTURE_COLLECTION_VOLUME:
+            break;
+        default:
+            PEN_ASSERT_MSG(0, "inavlid collection type");
+            break;
+    }
+    cmd_buffer[put_pos].command_index = CMD_CREATE_TEXTURE;
+    memory_cpy(&cmd_buffer[put_pos].create_texture, (void*)&tcp, sizeof(texture_creation_params));
+    cmd_buffer[put_pos].create_texture.data = memory_alloc(tcp.data_size);
+    if (tcp.data)
+    {
+        memory_cpy(cmd_buffer[put_pos].create_texture.data, tcp.data, tcp.data_size);
+    }
+    else
+    {
+        cmd_buffer[put_pos].create_texture.data = nullptr;
+    }
+    u32 resource_slot                 = slot_resources_get_next(&k_renderer_slot_resources);
+    cmd_buffer[put_pos].resource_slot = resource_slot;
+    INC_WRAP(put_pos);
+    return resource_slot;
+}
+```
+
+As mentioned in the introduction to pmtech, I wanted to maintain a more data oriented approach and try to steer clear from object oriented paradigms. The internal command buffer system would be something that might lead people to go down an OO route for instance you would have command base and then inherit from that to have create_texture_command. To implement this without using OO I am using a union of structs to store the commands:
+
+```c++
+struct deferred_cmd
+{
+    u32 command_index;
+    u32 resource_slot;
+
+    union {
+        u32                              command_data_index;
+        shader_load_params               shader_load;
+        set_shader_cmd                   set_shader;
+        input_layout_creation_params     create_input_layout;
+        buffer_creation_params           create_buffer;
+    ...
+```
+
+Each command has a command_index which is used to identify the command in a switch statement, the switch statement then passes the command buffer arguments to the equivalent functions which are defined within the direct:: namespace after the direct function is called any memory that was allocated during the command generation step is freed.
+
+```c++
+void exec_cmd(const deferred_cmd& cmd)
+{
+    switch (cmd.command_index)
+    {
+        case CMD_CLEAR:
+            direct::renderer_clear(cmd.command_data_index);
+            break;
+        case CMD_PRESENT:
+            direct::renderer_present();
+            break;
+        case CMD_LOAD_SHADER:
+            direct::renderer_load_shader(cmd.shader_load, cmd.resource_slot);
+            memory_free(cmd.shader_load.byte_code);
+            memory_free(cmd.shader_load.so_decl_entries);
+            break;
+        case CMD_SET_SHADER:
+            direct::renderer_set_shader(cmd.set_shader.shader_index, cmd.set_shader.
+            break;
+        case CMD_LINK_SHADER:
+            direct::renderer_link_shader_program(cmd.link_params, cmd.resource_slot)
+            for (u32 i = 0; i < cmd.link_params.num_constants; ++i)
+                memory_free(cmd.link_params.constants[i].name);
+            memory_free(cmd.link_params.constants);
+            if (cmd.link_params.stream_out_names)
+                for (u32 i = 0; i < cmd.link_params.num_stream_out_names; ++i)
+                    memory_free(cmd.link_params.stream_out_names[i]);
+            memory_free(cmd.link_params.stream_out_names);
+            break;
+    ...
+```
+
+The user thread can call the non-direct functions to build up the command buffer. In the meantime the render thread will wait sleeping on a semaphore until another thread calls renderer_consume_command_buffer.
+
+```c++
+// clear screen
+pen::viewport vp = {0.0f, 0.0f, (f32)pen_window.width, (f32)pen_window.he
+pen::renderer_set_viewport(vp);
+pen::renderer_set_rasterizer_state(raster_state);
+pen::renderer_set_scissor_rect(rect{vp.x, vp.y, vp.width, vp.height});
+pen::renderer_set_targets(PEN_BACK_BUFFER_COLOUR, PEN_BACK_BUFFER_DEPTH);
+pen::renderer_clear(clear_state);
+// bind vertex layout
+pen::renderer_set_input_layout(input_layout);
+// bind vertex buffer
+u32 stride = sizeof(vertex);
+pen::renderer_set_vertex_buffer(vertex_buffer, 0, stride, 0);
+// bind shaders
+pen::renderer_set_shader(vertex_shader, PEN_SHADER_TYPE_VS);
+pen::renderer_set_shader(pixel_shader, PEN_SHADER_TYPE_PS);
+// draw
+pen::renderer_draw(3, 0, PEN_PT_TRIANGLELIST);
+// present
+pen::renderer_present();
+pen::renderer_consume_cmd_buffer();
+```
+
+The ring buffer which contains the command buffer contains a put_pos and a get_pos, after each time a command is added or executed this value is incremented. To save cpu cycles on wrapping the command buffer contains a power of 2 mnumber of commands and a simple bitwise and is used to mask the value back to 0 when it wraps:
+
+```c++
+#define MAX_COMMANDS (1 << 18)
+#define INC_WRAP(V)                  
+    V = (V + 1) & (MAX_COMMANDS - 1);
+```
+
+The render thread waits on a semaphore until a user thread tells it to consume the command buffer, it takes the current put_pos of the command buffer before singalling the user thread can continue, this is so that partial commands are not executed if they have been generated which the renderer is executing commands. The render thread will continually execute commands until it reaches the end_pos and then it will wait until renderer_consume_command_buffer is called again.
+
+```c++
+if (thread_semaphore_try_wait(p_consume_semaphore))
+{
+    // put_pos might change on the producer thread.
+    u32 end_pos = put_pos;
+    // need more commands
+    PEN_ASSERT(commands_this_frame < MAX_COMMANDS);
+    thread_semaphore_signal(p_continue_semaphore, 1);
+    // some api's need to set the current context on the caller thread.
+    direct::renderer_make_context_current();
+    while (get_pos != end_pos)
+    {
+        exec_cmd(cmd_buffer[get_pos]);
+        INC_WRAP(get_pos);
+    }
+    commands_this_frame = 0;
+    return true;
+}
+return false;
+```
+
+Up until now all the examples show data going one-way, the user thread makes commands and the render thread executes them. The render api provides a function to read back data, it takes a struct with some parameters and a call back function which will get the data when it's ready:
+
+```c++
+pen::resource_read_back_params rrbp;
+rrbp.block_size         = 4;
+rrbp.row_pitch          = volume_dim * rrbp.block_size
+rrbp.depth_pitch        = volume_dim * rrbp.row_pitch;
+rrbp.data_size          = rrbp.depth_pitch;
+rrbp.resource_index     = rt->handle;
+rrbp.format             = PEN_TEX_FORMAT_BGRA8_UNORM;
+rrbp.call_back_function = image_read_back;
+pen::renderer_read_back_resource(rrbp);
+
+void image_read_back(void* p_data, u32 row_pitch, u32 depth_pitch, u32 block_size)
+{
+    // user handles data read back themseleves in a thread safe way
+}
+```
+
+The physics and audio api also require data to be read back from the user thread, internally this is handled with double buffers for data which the user thread requires, the buffers are swapped each time the command buffer is consumed at a safe time after all data writing has completed, the synchronisation of the buffers is done via an atomic so it is lockless. The physics and audio api's contain the following accessors which are thread safe:
+
+```c++
+// Audio Accessors
+pen_error audio_channel_get_state(const u32 channel_index, audio_channel_state* state);
+pen_error audio_channel_get_sound_file_info(const u32 sound_index, audio_sound_file_info* info);
+pen_error audio_group_get_state(const u32 group_index, audio_group_state* state);
+pen_error audio_dsp_get_spectrum(const u32 spectrum_dsp, audio_fft_spectrum* spectrum);
+pen_error audio_dsp_get_three_band_eq(const u32 eq_dsp, audio_eq_state* eq_state);
+pen_error audio_dsp_get_gain(const u32 dsp_index, f32* gain);
+
+// Physics Accessors
+mat4 get_rb_matrix(const u32& entity_index);
+mat4 get_multirb_matrix(const u32& multi_index, const s32& link_index);
+f32  get_multi_joint_pos(const u32& multi_index, const s32& link_index);
+u32  get_hit_flags(u32 entity_index);
+
+```
+
+Currently each system has a dedicated thread, for now I was happy with this approach although in future having more control over the scheduling might be required, having a pool of threads with a work sharing or work stealing approach and breaking tasks into smaller more granular jobs can lead to more optimal cpu utilisation as cores or hardware threads idle time can be kept to a minimum. But for now all applications using pmtech get multithreaded system without the user having to give much thought to it.
 
