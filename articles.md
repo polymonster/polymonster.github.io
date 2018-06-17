@@ -296,3 +296,99 @@ void exec_cmd(const deferred_cmd& cmd)
     ...
 ```
 
+The user thread can call the non-direct functions to build up the command buffer. In the meantime the render thread will wait sleeping on a semaphore until another thread calls renderer_consume_command_buffer.
+
+```C++
+// clear screen
+pen::viewport vp = {0.0f, 0.0f, (f32)pen_window.width, (f32)pen_window.he
+pen::renderer_set_viewport(vp);
+pen::renderer_set_rasterizer_state(raster_state);
+pen::renderer_set_scissor_rect(rect{vp.x, vp.y, vp.width, vp.height});
+pen::renderer_set_targets(PEN_BACK_BUFFER_COLOUR, PEN_BACK_BUFFER_DEPTH);
+pen::renderer_clear(clear_state);
+// bind vertex layout
+pen::renderer_set_input_layout(input_layout);
+// bind vertex buffer
+u32 stride = sizeof(vertex);
+pen::renderer_set_vertex_buffer(vertex_buffer, 0, stride, 0);
+// bind shaders
+pen::renderer_set_shader(vertex_shader, PEN_SHADER_TYPE_VS);
+pen::renderer_set_shader(pixel_shader, PEN_SHADER_TYPE_PS);
+// draw
+pen::renderer_draw(3, 0, PEN_PT_TRIANGLELIST);
+// present
+pen::renderer_present();
+pen::renderer_consume_cmd_buffer();
+```
+
+The ring buffer which contains the command buffer contains a put_pos and a get_pos, after each time a command is added or executed this value is incremented. To save cpu cycles on wrapping the command buffer contains a power of 2 mnumber of commands and a simple bitwise and is used to mask the value back to 0 when it wraps:
+
+```C++
+#define MAX_COMMANDS (1 << 18)
+#define INC_WRAP(V)                  
+    V = (V + 1) & (MAX_COMMANDS - 1);
+```
+
+The render thread waits on a semaphore until a user thread tells it to consume the command buffer, it takes the current put_pos of the command buffer before singalling the user thread can continue, this is so that partial commands are not executed if they have been generated which the renderer is executing commands. The render thread will continually execute commands until it reaches the end_pos and then it will wait until renderer_consume_command_buffer is called again.
+
+```C++
+if (thread_semaphore_try_wait(p_consume_semaphore))
+{
+    // put_pos might change on the producer thread.
+    u32 end_pos = put_pos;
+    // need more commands
+    PEN_ASSERT(commands_this_frame < MAX_COMMANDS);
+    thread_semaphore_signal(p_continue_semaphore, 1);
+    // some api's need to set the current context on the caller thread.
+    direct::renderer_make_context_current();
+    while (get_pos != end_pos)
+    {
+        exec_cmd(cmd_buffer[get_pos]);
+        INC_WRAP(get_pos);
+    }
+    commands_this_frame = 0;
+    return true;
+}
+return false;
+```
+
+Up until now all the examples show data going one-way, the user thread makes commands and the render thread executes them. The render api provides a function to read back data, it takes a struct with some parameters and a call back function which will get the data when it's ready:
+
+```C++
+pen::resource_read_back_params rrbp;
+rrbp.block_size         = 4;
+rrbp.row_pitch          = volume_dim * rrbp.block_size
+rrbp.depth_pitch        = volume_dim * rrbp.row_pitch;
+rrbp.data_size          = rrbp.depth_pitch;
+rrbp.resource_index     = rt->handle;
+rrbp.format             = PEN_TEX_FORMAT_BGRA8_UNORM;
+rrbp.call_back_function = image_read_back;
+pen::renderer_read_back_resource(rrbp);
+
+void image_read_back(void* p_data, u32 row_pitch, u32 depth_pitch, u32 block_size)
+{
+    // user handles data read back themseleves in a thread safe way
+}
+```
+
+The physics and audio api also require data to be read back from the user thread, internally this is handled with double buffers for data which the user thread requires, the buffers are swapped each time the command buffer is consumed at a safe time after all data writing has completed, the synchronisation of the buffers is done via an atomic so it is lockless. The physics and audio api's contain the following accessors which are thread safe:
+
+```C++
+// Audio Accessors
+pen_error audio_channel_get_state(const u32 channel_index, audio_channel_state* state);
+pen_error audio_channel_get_sound_file_info(const u32 sound_index, audio_sound_file_info* info);
+pen_error audio_group_get_state(const u32 group_index, audio_group_state* state);
+pen_error audio_dsp_get_spectrum(const u32 spectrum_dsp, audio_fft_spectrum* spectrum);
+pen_error audio_dsp_get_three_band_eq(const u32 eq_dsp, audio_eq_state* eq_state);
+pen_error audio_dsp_get_gain(const u32 dsp_index, f32* gain);
+
+// Physics Accessors
+mat4 get_rb_matrix(const u32& entity_index);
+mat4 get_multirb_matrix(const u32& multi_index, const s32& link_index);
+f32  get_multi_joint_pos(const u32& multi_index, const s32& link_index);
+u32  get_hit_flags(u32 entity_index);
+
+```
+
+Currently each system has a dedicated thread, for now I was happy with this approach although in future having more control over the scheduling might be required, having a pool of threads with a work sharing or work stealing approach and breaking tasks into smaller more granular jobs can lead to more optimal cpu utilisation as cores or hardware threads idle time can be kept to a minimum. But for now all applications using pmtech get multithreaded system without the user having to give much thought to it.
+
