@@ -127,18 +127,17 @@ table {
 th {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
-  color: #444;
+  border-bottom:0px solid #e5e5e5;
 }
 
 td {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
-  border-right: 1px solid #ffcc00;
+  border-bottom:0px solid #e5e5e5;
+  border-right: 0px solid #ffcc00;
 
   &:first-child {
-    border-left: 1px solid #ffcc00;
+    border-left: 0px solid #ffcc00;
   }
 }
 
