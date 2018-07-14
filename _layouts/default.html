@@ -17,7 +17,16 @@
   <body>
 
       <header>
-	<img src="../assets/images/pm.png" width="108" height="115"></img>
+	<table style="width:100%">
+		<tr>
+		<td><img src="../assets/images/pm.png" width="108" height="115"></img></td>
+	      	<td>
+			<h1>{{ site.title | default: site.github.repository_name }}</h1>
+			<p>{{ site.description | default: site.github.project_tagline }}</p>
+	        </td>	
+  		</tr>
+	</table<
+	
         <!-- <h1>{{ site.title | default: site.github.repository_name }}</h1> -->
         <!-- <p>{{ site.description | default: site.github.project_tagline }}</p> -->
       </header>
