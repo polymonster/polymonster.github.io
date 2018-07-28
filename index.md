@@ -12,22 +12,21 @@ A common question other coders ask me when I talk about developing my own engine
 
 I have worked now for around 10 years professionally as a programmer on low level code for proprietary engines, graphics, tools and build and content pipelines. So I am somewhat doing in my sparetime for fun what I also do for my day job, but I have found working on my own tech to be more liberating and enjoyable as I can take a more idealistic approach to the code I am developing.
  
-Initially the project started to give myself a framework in which I could easily start new projects to prototype and test new ideas, after that it took the path of trying to address some of the frustrating issues I had encountered in my professional work and later it has taken on board some of the more succesful features of engines I have worked on for my job.
+Initially the project started to give myself a framework in which I could easily start new projects to prototype and test new ideas, after that it took the path of trying to address some of the frustrating issues I had encountered in my professional work.
 
 I wanted to make the codebase as simple as possible. Having seen code bases that had grown and become extremely complex over time, I was always tasked with last minute optimisations which often led to the analysis that the engine needed to be restructured or redesigned (but we had to make do with some hacky optimisations as opposed to re-writing the engine). This was because a lot of the performance cost was in the way objects communicated with one another, deep call stacks and complex hierarchies cause cache misses and carry a cost to simply call functions and when drilling down into a function body there was often hardly any time spent doing arithmetic or data transformation.
 
-For this reason I decided to take a more c-style data oriented approach and try to avoid using object oriented paradigms as much as possible, I am still getting decent code re-use using static polymorphism through templates, operator overloading and function overloading and probably one of the most notable features of the code base is a
-data oriented component entity system.
+For this reason I decided to take a more c-style data oriented approach and try to avoid using object oriented paradigms as much as possible, one of the most notable features of the code base is a data oriented component entity system which has powerful code re-use through component aggregation but is more cache friendly than an object oriented approach.
 
 I wont go into to much more detail about object oriented vs data oriented approaches as there is already a lot written about it already but the data oriented approach naturally lends itself to performance because it is less bloated and more cache friendly and aims toward transforming large amounts of homogenous data instead focusing on individual objects. data oriented code also lends itself to be easily optimised with SIMD which I intend to use where possible to increase throughput even further. As an additional performance consideration multithreading is built into the core systems from the outset. The renderer, audio and physics get processed on dedicated threads and the user thread which contains the main scene and logic is also on a dedicated thread.
 
-I wanted the project to be quick and easy to port so have wrapped up all platform specific code into a very small set of modules: renderer, os (window, input), threads, timer, memory and file system. All platforms share the header for each module which contains a simple procedural api and the platform specific details are hidden in a cpp. The idea behind this is that the lower level os stuff is handled early, files are included or excluded on a platform basis, use of ifdefs is kept to a minimum (because they can be messy and ugly) and all of the more complex code that builds on top of these api's is completely platform agnostic. The amount of code required to port a platform is minimal and I am making use of posix of stdlib where applicable so there are even less platform specific files than there are platforms.
+I wanted the project to be quick and easy to port, the project is split into 2 libraries called pen (engine) and put (toolkit). pen contains platform specific code and put contains only platform agnostic code, the idea behind this is that only pen needs to be ported and then all of the higher level stuff comes along for the ride. pen wraps up all platform specific code into a very small set of modules: renderer, os (window, input), threads, timer, memory and file system. All platforms share the header for each module which contains a simple procedural api and the platform specific details are hidden in a cpp. Files are included or excluded on a platform basis, use of ifdefs is kept to a minimum (because they can be messy and ugly). The amount of code required to port a platform is minimal and I am making use of posix of stdlib where applicable so there are even less platform specific files than there are platforms.
 
 So thats the motivation behind it, simple minamilistic api's with a strong focus on data oriented code and performance.
 
 ## Getting Started
 
-Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of common apis but are also stand alone with their own bespoke code or ad-hoc stuff that could be thrown away later.  
+Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of the engine and toolkit, have the ability to maintain or modify the engine and toolkit but also give myself an environment where I can experiment new ideas without polluting the shared code base.
 
 To make life easy [premake5](https://premake.github.io/) is used to generate projects and [pmtech/tools](https://github.com/polymonster/pmtech/tree/master/tools/premake) contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
 
@@ -391,4 +390,42 @@ u32  get_hit_flags(u32 entity_index);
 ```
 
 Currently each system has a dedicated thread, for now I was happy with this approach although in future having more control over the scheduling might be required, having a pool of threads with a work sharing or work stealing approach and breaking tasks into smaller more granular jobs can lead to more optimal cpu utilisation as cores or hardware threads idle time can be kept to a minimum. But for now all applications using pmtech get multithreaded system without the user having to give much thought to it.
+
+## Component Entity System
+
+The component entity system in pmtech is found in put::ces, it is the beating heart of any 3D application. A scene is filled with entities which are made up of multiple components. Data for each entity is stored in structure of arrays with contiguous memory for all components so that cache misses are kept to a minimum when iterating through a scene. The component entity system updates positions of objects, heirarchicaly transforms nodes by their parent, udates bounding volumes, constant buffers and render the scene. Below is a list of all the core components, a game or application can then extend this system creating it's own components and update behaviours:
+
+```c++
+            // Components
+            cmp_array<u64>                 entities;
+            cmp_array<u64>                 state_flags;
+            cmp_array<hash_id>             id_name;
+            cmp_array<hash_id>             id_geometry;
+            cmp_array<hash_id>             id_material;
+            cmp_array<Str>                 names;
+            cmp_array<Str>                 geometry_names;
+            cmp_array<Str>                 material_names;
+            cmp_array<u32>                 parents;
+            cmp_array<cmp_transform>       transforms;
+            cmp_array<mat4>                local_matrices;
+            cmp_array<mat4>                world_matrices;
+            cmp_array<mat4>                offset_matrices;
+            cmp_array<mat4>                physics_matrices;
+            cmp_array<cmp_bounding_volume> bounding_volumes;
+            cmp_array<cmp_light>           lights;
+            cmp_array<u32>                 physics_handles;
+            cmp_array<cmp_master_instance> master_instances;
+            cmp_array<cmp_geometry>        geometries;
+            cmp_array<cmp_pre_skin>        pre_skin;
+            cmp_array<cmp_physics>         physics_data;
+            cmp_array<cmp_anim_controller> anim_controller;
+            cmp_array<u32>                 cbuffer;
+            cmp_array<cmp_draw_call>       draw_call_data;
+            cmp_array<free_node_list>      free_list;
+            cmp_array<cmp_material>        materials;
+            cmp_array<cmp_material_data>   material_data;
+            cmp_array<material_resource>   material_resources;
+            cmp_array<cmp_shadow>          shadows;
+```
+
 
