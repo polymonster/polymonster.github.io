@@ -6,7 +6,7 @@ layout: default
 
 ## Introduction
 
-pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://www.google.com) repository to see the source code.
+pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://github.com/polymonster/pmtech) repository to see the source code.
 
 A common question other coders ask me when I talk about developing my own engine from the ground up is why don't I just use unity or unreal engine. This introduction is to answer that question and to discuss my motivations behind the project.
 
@@ -393,7 +393,7 @@ Currently each system has a dedicated thread, for now I was happy with this appr
 
 ## Component Entity System
 
-The component entity system in pmtech is found in put::ces, it is the beating heart of any 3D application. A scene is filled with entities which are made up of multiple components. Data for each entity is stored in structure of arrays with contiguous memory for all components so that cache misses are kept to a minimum when iterating through a scene. The component entity system updates positions of objects, heirarchicaly transforms nodes by their parent, udates bounding volumes, constant buffers and render the scene. The instancing sample shows how a large number of entities can be updated quickly by rotating their transform performed by quaternion multiplication, on an intel core i7 8th gen this takes only 0.5ms for 32k entities.
+The component entity system in pmtech is found [here](https://github.com/polymonster/pmtech/tree/master/put/include/ces), it is the beating heart of any 3D application. A scene is filled with entities which are made up of multiple components. Data for each entity is stored in structure of arrays with contiguous memory for all components so that cache misses are kept to a minimum when iterating through a scene. The component entity system updates positions of objects, heirarchicaly transforms nodes by their parent, udates bounding volumes, constant buffers and render the scene. The instancing sample shows how a large number of entities can be updated quickly by rotating their transform performed by quaternion multiplication, on an intel core i7 8th gen this takes only 0.5ms for 32k entities.
 
 The components active in each entity are stored in the bit mask entities:
 
