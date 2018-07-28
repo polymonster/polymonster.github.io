@@ -393,39 +393,98 @@ Currently each system has a dedicated thread, for now I was happy with this appr
 
 ## Component Entity System
 
-The component entity system in pmtech is found in put::ces, it is the beating heart of any 3D application. A scene is filled with entities which are made up of multiple components. Data for each entity is stored in structure of arrays with contiguous memory for all components so that cache misses are kept to a minimum when iterating through a scene. The component entity system updates positions of objects, heirarchicaly transforms nodes by their parent, udates bounding volumes, constant buffers and render the scene. Below is a list of all the core components, a game or application can then extend this system creating it's own components and update behaviours:
+The component entity system in pmtech is found in put::ces, it is the beating heart of any 3D application. A scene is filled with entities which are made up of multiple components. Data for each entity is stored in structure of arrays with contiguous memory for all components so that cache misses are kept to a minimum when iterating through a scene. The component entity system updates positions of objects, heirarchicaly transforms nodes by their parent, udates bounding volumes, constant buffers and render the scene. The instancing sample shows how a large number of entities can be updated quickly by rotating their transform performed by quaternion multiplication, on an intel core i7 8th gen this takes only 0.5ms for 32k entities.
+
+The components active in each entity are stored in the bit mask entities:
 
 ```c++
-            // Components
-            cmp_array<u64>                 entities;
-            cmp_array<u64>                 state_flags;
-            cmp_array<hash_id>             id_name;
-            cmp_array<hash_id>             id_geometry;
-            cmp_array<hash_id>             id_material;
-            cmp_array<Str>                 names;
-            cmp_array<Str>                 geometry_names;
-            cmp_array<Str>                 material_names;
-            cmp_array<u32>                 parents;
-            cmp_array<cmp_transform>       transforms;
-            cmp_array<mat4>                local_matrices;
-            cmp_array<mat4>                world_matrices;
-            cmp_array<mat4>                offset_matrices;
-            cmp_array<mat4>                physics_matrices;
-            cmp_array<cmp_bounding_volume> bounding_volumes;
-            cmp_array<cmp_light>           lights;
-            cmp_array<u32>                 physics_handles;
-            cmp_array<cmp_master_instance> master_instances;
-            cmp_array<cmp_geometry>        geometries;
-            cmp_array<cmp_pre_skin>        pre_skin;
-            cmp_array<cmp_physics>         physics_data;
-            cmp_array<cmp_anim_controller> anim_controller;
-            cmp_array<u32>                 cbuffer;
-            cmp_array<cmp_draw_call>       draw_call_data;
-            cmp_array<free_node_list>      free_list;
-            cmp_array<cmp_material>        materials;
-            cmp_array<cmp_material_data>   material_data;
-            cmp_array<material_resource>   material_resources;
-            cmp_array<cmp_shadow>          shadows;
+if (p_sn->entities[dst] & CMP_GEOMETRY)
+	instantiate_model_cbuffer(scene, dst);
 ```
+
+Below is a list of all the core components, a game or application can then extend this system creating it's own components and update behaviours:
+
+```c++
+// Components
+cmp_array<u64>                 entities;
+cmp_array<u64>                 state_flags;
+cmp_array<hash_id>             id_name;
+cmp_array<hash_id>             id_geometry;
+cmp_array<hash_id>             id_material;
+cmp_array<Str>                 names;
+cmp_array<Str>                 geometry_names;
+cmp_array<Str>                 material_names;
+cmp_array<u32>                 parents;
+cmp_array<cmp_transform>       transforms;
+cmp_array<mat4>                local_matrices;
+cmp_array<mat4>                world_matrices;
+cmp_array<mat4>                offset_matrices;
+cmp_array<mat4>                physics_matrices;
+cmp_array<cmp_bounding_volume> bounding_volumes;
+cmp_array<cmp_light>           lights;
+cmp_array<u32>                 physics_handles;
+cmp_array<cmp_master_instance> master_instances;
+cmp_array<cmp_geometry>        geometries;
+cmp_array<cmp_pre_skin>        pre_skin;
+cmp_array<cmp_physics>         physics_data;
+cmp_array<cmp_anim_controller> anim_controller;
+cmp_array<u32>                 cbuffer;
+cmp_array<cmp_draw_call>       draw_call_data;
+cmp_array<free_node_list>      free_list;
+cmp_array<cmp_material>        materials;
+cmp_array<cmp_material_data>   material_data;
+cmp_array<material_resource>   material_resources;
+cmp_array<cmp_shadow>          shadows;
+```
+
+In addition to accessing the components in a literal manner ie. (scene->world_matrices[n]) the components can also be accessed in a generic manner to perform bulk operations such as copy, move, save, load or scene resize. Certain components such as geomerty, cbuffer, material and physics also require additional resources to be created (ie. vertex buffer, cbuffer, bullet physics instance). When performing any copy, save or load operations simple components are copied via a mem copy and then after that specialisation code is called to create geometery resources and so on. 
+
+This generic behaviour is implemented through templates and polymorphism. Each cmp_array allocates an array of data and it also stores the size of the component, the scene provides a function to get a component by index:
+
+```c++
+template <typename T>
+struct cmp_array
+{
+    u32 size = sizeof(T);
+    T*  data = nullptr;
+
+    pen_inline T& operator[](size_t index)
+    {
+	return data[index];
+    }
+
+    pen_inline const T& operator[](size_t index) const
+    {
+	return data[index];
+    }
+};
+
+struct generic_cmp_array
+{
+    u32   size;
+    void* data;
+
+    pen_inline void* operator[](size_t index)
+    {
+	u8* d  = (u8*)data;
+	u8* di = &d[index * size];
+	return (void*)(di);
+    }
+};
+
+// Access to component data in a generic way
+pen_inline generic_cmp_array& get_component_array(u32 index)
+{
+	generic_cmp_array* begin = (generic_cmp_array*)this;
+	return begin[index];
+}
+```
+
+New nodes are added to a scene by using a free list to find exmpty slots in the component arrays, for speed new nodes can be append to the end of the arrays to guaruntee a contiguous node list. The component arrays can be resized if there is not enough space for new nodes, this is handled as a batch operation using the generic component array.
+
+Hierachical transforms work by simply storing the index of the parent entity in parents component, all parents and children must be stored contiguously in the arrays with the parent first. When update is performed the parents will be transformed first and any children's world matrix is determined by it's local matrix multiplied by it's parents. In order to ensure that heirarchies are contiguous and in the correct order there are functions provided for parenting selection which will sort nodes accordingly. Moving / changing heirachies and parenting entites will cost more time but the common case of updating world matrix works simply by just multiplying matrixes on a linear array. 
+
+The scene is rendered using the pmfx higher level rendering library which is data driven, pmfx is responsible for setting all the rendering state up for a view. A scene view can be described as a camera rendering a scene into a render target. The component entity system will frustum cull objects by AABB, bind entity constant buffers and make draw calls, handling skinning, instancing and stand alone draw calls.
+
 
 
