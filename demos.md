@@ -25,20 +25,26 @@
 ### Shadows
 [![Basic Texture](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadows/shadows.cpp)
 
+### Audio Player
+[![Audio Player](assets/demos/audio-player.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/audio_player/audio_player.cpp)
+
 ### Texture Formats
-[![Basic Texture](assets/demos/texture-formats.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/texture_formats/texture_formats.cpp)
+[![Texture Formats](assets/demos/texture-formats.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/texture_formats/texture_formats.cpp)
 
 ### Imgui
-[![Basic Texture](assets/demos/imgui.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/imgui/imgui_example.cpp)
+[![Imgui](assets/demos/imgui.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/imgui/imgui_example.cpp)
+
+### Shader Toy
+[![Shader Toy](assets/demos/shader-toy.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/shader_toy/shader_toy.cpp)
 
 ### Multiple Render Targets
-[![Basic Texture](assets/demos/multiple-render-targets.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/multiple_render_targets/multiple_render_targets.cpp)
+[![Multiple Render Targets](assets/demos/multiple-render-targets.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/multiple_render_targets/multiple_render_targets.cpp)
 
 ### Debug Text
-[![Basic Texture](assets/demos/debug-text.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/debug_text/debug_text.cpp)
+[![Debug Text](assets/demos/debug-text.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/debug_text/debug_text.cpp)
 
 ### Render Target
-[![Basic Texture](assets/demos/render-target.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/render_target/render_target.cpp)
+[![Render Target](assets/demos/render-target.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/render_target/render_target.cpp)
 
 ### Basic Texture
 [![Basic Texture](assets/demos/basic-texture.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/basic_texture/basic_texture.cpp)
