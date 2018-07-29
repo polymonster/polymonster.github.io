@@ -545,7 +545,7 @@ Files can be included to share functionality, modular functions can be found in 
 },
 ```
 
-![technique constants]("assets/articles/technique-constants.png")
+![technique constants](assets/articles/technique-constants.png)
 
 Uber shaders can be created by using a modified if statement, defines are placed into the "defines" key in the pmfx json block. All if: statements are converted to #if defined() before compilation, the reason for prefering if style statements as opposed to # is personal preference of finding the indentation and nesting of complex #if #endif statements to be harder to follow:
 
