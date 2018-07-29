@@ -517,14 +517,14 @@ cbuffer per_pass_view : register(b0)
 ```
 
 Certain registers are constant and always in use:  
-cbuffer 0 = per_pass_view (view materix / camera info for the currently rendering view). 
-cbuffer 1 = per_draw_call (object world matrix, inverse world matrix and 8 floats of custom data). 
-cbuffer 3 = per_pass_lights (list of lights and a count). 
-cbuffer 4 = per_pass_shadow (list of shadow map matrices). 
-cbuffer 5 = per_pass_shadow_distance_fields (list of signed distance field volume matrices). 
-cbuffer 7 = material_data (specified in technique constants). 
-texture 14 = signed distance field texture. 
-texture 15 = shadow map texture. 
+cbuffer 0 = per_pass_view (view materix / camera info for the currently rendering view).   
+cbuffer 1 = per_draw_call (object world matrix, inverse world matrix and 8 floats of custom data).  
+cbuffer 3 = per_pass_lights (list of lights and a count).  
+cbuffer 4 = per_pass_shadow (list of shadow map matrices).  
+cbuffer 5 = per_pass_shadow_distance_fields (list of signed distance field volume matrices).  
+cbuffer 7 = material_data (specified in technique constants).  
+texture 14 = signed distance field texture.  
+texture 15 = shadow map texture.  
 
 Files can be included to share functionality, modular functions can be found in lighting.slib, skinning.slib, maths.slib and more. These add different lighting equations, attenuation functions, skinning utility functions and more. Multiple shaders can exisit within the same file, a json object is used to specify which vsmain and psmain to use and to generate a shader technique much like hlsl/fx techniques. Techniques can also specify tweakable constants which will go into cbuffer 7 and they are automatically enumerated in pmtech editor:
 
