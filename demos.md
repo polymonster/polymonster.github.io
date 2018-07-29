@@ -4,8 +4,6 @@
 
 [![sdf shadow](assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
 
-# pmtech basic examples
-
 ### Vertex Stream Out
 [![sdf shadow](assets/demos/vertex-stream-out.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
