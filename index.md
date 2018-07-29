@@ -505,7 +505,7 @@ The second parameter passed to texture_xx functions is the register to bind it t
 All shaders must use constant buffers / uniform buffers as opposed to single uniforms. Registers are be specified for constant buffers in the usual hlsl way:
 
 ```c++
-``cbuffer per_pass_view : register(b0)
+cbuffer per_pass_view : register(b0)
 {
 	float4x4 vp_matrix;
 	float4x4 view_matrix;
