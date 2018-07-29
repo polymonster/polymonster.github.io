@@ -2,7 +2,7 @@
 
 ## Signed Distance Field Shadows
 
-[sdf shadow](https://polymonster.github.io/assets/gifs/sdf-shadow.gif)
+![sdf shadow](https://polymonster.github.io/assets/gifs/sdf-shadow.gif)
 
 
 
