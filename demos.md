@@ -6,14 +6,21 @@
 
 # pmtech basic examples
 
-### Basic Triangle
-[![Basic Triangle](assets/demos/basic-triangle.png)](https://www.youtube.com/watch?v=369cPinAhdo)
+### Instancing
+[![sdf shadow](assets/demos/instancing.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
+
+### Constraints
+[![sdf shadow](assets/demos/constraints.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
+
+### Rigid Body Primitives
+[![sdf shadow](assets/demos/rigid-body-primitives.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Basic Texture
 [![Basic Texture](assets/demos/basic-triangle.png)](https://www.youtube.com/watch?v=369cPinAhdo)
 
-### Instancing
-[![sdf shadow](assets/demos/instancing.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
+### Basic Triangle
+[![Basic Triangle](assets/demos/basic-triangle.png)](https://www.youtube.com/watch?v=369cPinAhdo)
+
 
 
 
