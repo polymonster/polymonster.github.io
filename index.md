@@ -484,5 +484,78 @@ Hierachical transforms work by simply storing the index of the parent entity in 
 
 The scene is rendered using the pmfx higher level rendering library which is data driven, pmfx is responsible for setting all the rendering state up for a view. A scene view can be described as a camera rendering a scene into a render target. The component entity system will frustum cull objects by AABB, bind entity constant buffers and make draw calls, handling skinning, instancing and stand alone draw calls.
 
+## pmfx: Shaders
+
+pmfx::shaders in pmtech build upon hlsl and add powerful additional features to make developing shaders seamlessly integrate into the work flow. All shaders can be written in hlsl shader model 4/5 and for glsl the shader code is generated as part of the shader build process. Texture and declarations differ slightly to hlsl:
+
+```c++
+declare_texture_samplers
+{
+	texture_2d( diffuse_texture, 0 );
+	texture_2d( normal_texture, 1 );
+	texture_2d( specular_texture, 2 );	
+
+	texture_3d( sdf_volume, 14 );
+	texture_2d( shadowmap_texture, 15 );
+};
+```
+
+The second parameter passed to texture_xx functions is the register to bind it to (ie. register(t0) in hlsl). A .info file is exported with every shader, this contains information such as texture names and the associated register it is bound to in hlsl. Upon loading shaders the pmtech opengl implementation will bind textures and buffers to the corresponding register location to emulate the behaviour of d3d and hlsl.
+
+All shaders must use constant buffers / uniform buffers as opposed to single uniforms. Registers are be specified for constant buffers in the usual hlsl way:
+
+```c++
+``cbuffer per_pass_view : register(b0)
+{
+	float4x4 vp_matrix;
+	float4x4 view_matrix;
+	float4x4 view_matrix_inverse;
+	
+	float4 camera_view_pos;
+	float4 camera_view_dir;
+};
+```
+
+Certain registers are constant and always in use:
+cbuffer 0 = per_pass_view (view materix / camera info for the currently rendering view)
+cbuffer 1 = per_draw_call (object world matrix, inverse world matrix and 8 floats of custom data)
+cbuffer 3 = per_pass_lights (list of lights and a count)
+cbuffer 4 = per_pass_shadow (list of shadow map matrices)
+cbuffer 5 = per_pass_shadow_distance_fields (list of signed distance field volume matrices)
+cbuffer 7 = material_data (specified in technique constants)
+
+texture 14 = signed distance field texture
+texture 15 = shadow map texture
+
+Files can be included to share functionality, modular functions can be found in lighting.slib, skinning.slib, maths.slib and more. These add different lighting equations, attenuation functions, skinning utility functions and more.
+
+Multiple shaders can exisit within the same file, a json object is used to specify which vsmain and psmain to use and to generate a shader technique much like hlsl/fx techniques. Techniques can also specify tweakable constants which will go into cbuffer 7 and they are automatically enumerated in pmtech editor:
+
+```json
+"forward_lit_sdf_shadow":
+{
+	"vs": "vs_main",
+	"ps": "ps_forward_lit",
+	"defines": ["SDF_SHADOW"],
+
+	"constants":
+	{
+		"albedo": { "type": "float4", "widget": "colour", "default": [1.0, 1.0, 1.0, 1.0] },
+		"roughness": { "type": "float", "widget": "slider", "min": 0, "max": 1, "default": 0.5 },
+		"reflectivity": { "type": "float", "widget": "slider", "min": 0, "max": 1, "default": 0.5 },
+		"surface_offset": { "type": "float", "widget": "slider", "min": 0, "max": 1, "default": 0.3 }
+	}
+},
+```
+
+Uber shaders can be created by using a modified if statement, defines are placed into the "defines" key in the pmfx json block. All if: statements are converted to #if defined() before compilation, the reason for prefering if style statements as opposed to # is personal preference of finding the indentation and nesting of complex #if #endif statements to be harder to follow:
+
+```c
+if:(SDF_SHADOW)
+{
+	float s = sdf_shadow_trace()
+	light_col *= smoothstep( 0.0, 0.1, s);
+}
+```
 
 
