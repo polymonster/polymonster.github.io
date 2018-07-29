@@ -555,4 +555,12 @@ if:(SDF_SHADOW)
 }
 ```
 
+Verex stream out / transform feedback can be utilised on any shader by simply setting "stream_out" to "true". The Vertex Stream Out sample shows how vertex stream out can render a large number of skinned meshes through instancing but only skin the mesh once per frame.
 
+```json
+"pre_skin":
+{
+	"vs": "vs_main_pre_skin",
+	"stream_out": "true"
+},
+```
