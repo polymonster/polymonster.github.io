@@ -4,7 +4,7 @@ layout: default
 
 # pmtech
 
-pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://github.com/polymonster/pmtech) repository to see the source code, check out demos made using pmtech [here](https://polymonster.github.io/demos.html).
+pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://github.com/polymonster/pmtech) repository to see the source code, check out demos made using pmtech [here](https://polymonster.github.io/index.html).
 
 A common question other coders ask me when I talk about developing my own engine from the ground up is why don't I just use unity or unreal engine. This introduction is to answer that question and to discuss my motivations behind the project.
 
