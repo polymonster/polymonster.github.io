@@ -4,30 +4,27 @@ layout: default
 
 # pmtech
 
-## Introduction
-
-pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://www.google.com) repository to see the source code.
+pmtech is a lightweight, cross-platform, multithreaded 3D engine currently supporting Windows, MacOS, Linux and iOS with OpenGL3.1+, OpenGLES3+ and Direct3D11 renderers. Take a look at the [github](https://github.com/polymonster/pmtech) repository to see the source code, check out demos made using pmtech [here](https://polymonster.github.io/demos.html).
 
 A common question other coders ask me when I talk about developing my own engine from the ground up is why don't I just use unity or unreal engine. This introduction is to answer that question and to discuss my motivations behind the project.
 
 I have worked now for around 10 years professionally as a programmer on low level code for proprietary engines, graphics, tools and build and content pipelines. So I am somewhat doing in my sparetime for fun what I also do for my day job, but I have found working on my own tech to be more liberating and enjoyable as I can take a more idealistic approach to the code I am developing.
  
-Initially the project started to give myself a framework in which I could easily start new projects to prototype and test new ideas, after that it took the path of trying to address some of the frustrating issues I had encountered in my professional work and later it has taken on board some of the more succesful features of engines I have worked on for my job.
+Initially the project started to give myself a framework in which I could easily start new projects to prototype and test new ideas, after that it took the path of trying to address some of the frustrating issues I had encountered in my professional work.
 
 I wanted to make the codebase as simple as possible. Having seen code bases that had grown and become extremely complex over time, I was always tasked with last minute optimisations which often led to the analysis that the engine needed to be restructured or redesigned (but we had to make do with some hacky optimisations as opposed to re-writing the engine). This was because a lot of the performance cost was in the way objects communicated with one another, deep call stacks and complex hierarchies cause cache misses and carry a cost to simply call functions and when drilling down into a function body there was often hardly any time spent doing arithmetic or data transformation.
 
-For this reason I decided to take a more c-style data oriented approach and try to avoid using object oriented paradigms as much as possible, I am still getting decent code re-use using static polymorphism through templates, operator overloading and function overloading and probably one of the most notable features of the code base is a
-data oriented component entity system.
+For this reason I decided to take a more c-style data oriented approach and try to avoid using object oriented paradigms as much as possible, one of the most notable features of the code base is a data oriented component entity system which has powerful code re-use through component aggregation but is more cache friendly than an object oriented approach.
 
 I wont go into to much more detail about object oriented vs data oriented approaches as there is already a lot written about it already but the data oriented approach naturally lends itself to performance because it is less bloated and more cache friendly and aims toward transforming large amounts of homogenous data instead focusing on individual objects. data oriented code also lends itself to be easily optimised with SIMD which I intend to use where possible to increase throughput even further. As an additional performance consideration multithreading is built into the core systems from the outset. The renderer, audio and physics get processed on dedicated threads and the user thread which contains the main scene and logic is also on a dedicated thread.
 
-I wanted the project to be quick and easy to port so have wrapped up all platform specific code into a very small set of modules: renderer, os (window, input), threads, timer, memory and file system. All platforms share the header for each module which contains a simple procedural api and the platform specific details are hidden in a cpp. The idea behind this is that the lower level os stuff is handled early, files are included or excluded on a platform basis, use of ifdefs is kept to a minimum (because they can be messy and ugly) and all of the more complex code that builds on top of these api's is completely platform agnostic. The amount of code required to port a platform is minimal and I am making use of posix of stdlib where applicable so there are even less platform specific files than there are platforms.
+I wanted the project to be quick and easy to port, the project is split into 2 libraries called pen (engine) and put (toolkit). pen contains platform specific code and put contains only platform agnostic code, the idea behind this is that only pen needs to be ported and then all of the higher level stuff comes along for the ride. pen wraps up all platform specific code into a very small set of modules: renderer, os (window, input), threads, timer, memory and file system. All platforms share the header for each module which contains a simple procedural api and the platform specific details are hidden in a cpp. Files are included or excluded on a platform basis, use of ifdefs is kept to a minimum (because they can be messy and ugly). The amount of code required to port a platform is minimal and I am making use of posix of stdlib where applicable so there are even less platform specific files than there are platforms.
 
 So thats the motivation behind it, simple minamilistic api's with a strong focus on data oriented code and performance.
 
 ## Getting Started
 
-Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of common apis but are also stand alone with their own bespoke code or ad-hoc stuff that could be thrown away later.  
+Starting a new project in pmtech is quick and easy, one of the key features I wanted in a codebase was the ability to create new projects which have all the shared functionality of the engine and toolkit, have the ability to maintain or modify the engine and toolkit but also give myself an environment where I can experiment new ideas without polluting the shared code base.
 
 To make life easy [premake5](https://premake.github.io/) is used to generate projects and [pmtech/tools](https://github.com/polymonster/pmtech/tree/master/tools/premake) contains some lua scripts which make creating a new set of workspaces for visual studio, xcode or gnu make files a simple process:
 
@@ -392,3 +389,180 @@ u32  get_hit_flags(u32 entity_index);
 
 Currently each system has a dedicated thread, for now I was happy with this approach although in future having more control over the scheduling might be required, having a pool of threads with a work sharing or work stealing approach and breaking tasks into smaller more granular jobs can lead to more optimal cpu utilisation as cores or hardware threads idle time can be kept to a minimum. But for now all applications using pmtech get multithreaded system without the user having to give much thought to it.
 
+## Component Entity System
+
+The component entity system in pmtech is found [here](https://github.com/polymonster/pmtech/tree/master/put/include/ces), it is the beating heart of any 3D application. A scene is filled with entities which are made up of multiple components. Data for each entity is stored in structure of arrays with contiguous memory for all components so that cache misses are kept to a minimum when iterating through a scene. The component entity system updates positions of objects, heirarchicaly transforms nodes by their parent, udates bounding volumes, constant buffers and render the scene. The instancing sample shows how a large number of entities can be updated quickly by rotating their transform performed by quaternion multiplication, on an intel core i7 8th gen this takes only 0.5ms for 32k entities.
+
+The components active in each entity are stored in the bit mask entities:
+
+```c++
+if (p_sn->entities[dst] & CMP_GEOMETRY)
+	instantiate_model_cbuffer(scene, dst);
+```
+
+Below is a list of all the core components, a game or application can then extend this system creating it's own components and update behaviours:
+
+```c++
+// Components
+cmp_array<u64>                 entities;
+cmp_array<u64>                 state_flags;
+cmp_array<hash_id>             id_name;
+cmp_array<hash_id>             id_geometry;
+cmp_array<hash_id>             id_material;
+cmp_array<Str>                 names;
+cmp_array<Str>                 geometry_names;
+cmp_array<Str>                 material_names;
+cmp_array<u32>                 parents;
+cmp_array<cmp_transform>       transforms;
+cmp_array<mat4>                local_matrices;
+cmp_array<mat4>                world_matrices;
+cmp_array<mat4>                offset_matrices;
+cmp_array<mat4>                physics_matrices;
+cmp_array<cmp_bounding_volume> bounding_volumes;
+cmp_array<cmp_light>           lights;
+cmp_array<u32>                 physics_handles;
+cmp_array<cmp_master_instance> master_instances;
+cmp_array<cmp_geometry>        geometries;
+cmp_array<cmp_pre_skin>        pre_skin;
+cmp_array<cmp_physics>         physics_data;
+cmp_array<cmp_anim_controller> anim_controller;
+cmp_array<u32>                 cbuffer;
+cmp_array<cmp_draw_call>       draw_call_data;
+cmp_array<free_node_list>      free_list;
+cmp_array<cmp_material>        materials;
+cmp_array<cmp_material_data>   material_data;
+cmp_array<material_resource>   material_resources;
+cmp_array<cmp_shadow>          shadows;
+```
+
+In addition to accessing the components in a literal manner ie. (scene->world_matrices[n]) the components can also be accessed in a generic manner to perform bulk operations such as copy, move, save, load or scene resize. Certain components such as geomerty, cbuffer, material and physics also require additional resources to be created (ie. vertex buffer, cbuffer, bullet physics instance). When performing any copy, save or load operations simple components are copied via a mem copy and then after that specialisation code is called to create geometery resources and so on. 
+
+This generic behaviour is implemented through templates and polymorphism. Each cmp_array allocates an array of data and it also stores the size of the component, the scene provides a function to get a component by index:
+
+```c++
+template <typename T>
+struct cmp_array
+{
+    u32 size = sizeof(T);
+    T*  data = nullptr;
+
+    pen_inline T& operator[](size_t index)
+    {
+	return data[index];
+    }
+
+    pen_inline const T& operator[](size_t index) const
+    {
+	return data[index];
+    }
+};
+
+struct generic_cmp_array
+{
+    u32   size;
+    void* data;
+
+    pen_inline void* operator[](size_t index)
+    {
+	u8* d  = (u8*)data;
+	u8* di = &d[index * size];
+	return (void*)(di);
+    }
+};
+
+// Access to component data in a generic way
+pen_inline generic_cmp_array& get_component_array(u32 index)
+{
+	generic_cmp_array* begin = (generic_cmp_array*)this;
+	return begin[index];
+}
+```
+
+New nodes are added to a scene by using a free list to find exmpty slots in the component arrays, for speed new nodes can be append to the end of the arrays to guaruntee a contiguous node list. The component arrays can be resized if there is not enough space for new nodes, this is handled as a batch operation using the generic component array.
+
+Hierachical transforms work by simply storing the index of the parent entity in parents component, all parents and children must be stored contiguously in the arrays with the parent first. When update is performed the parents will be transformed first and any children's world matrix is determined by it's local matrix multiplied by it's parents. In order to ensure that heirarchies are contiguous and in the correct order there are functions provided for parenting selection which will sort nodes accordingly. Moving / changing heirachies and parenting entites will cost more time but the common case of updating world matrix works simply by just multiplying matrixes on a linear array. 
+
+The scene is rendered using the pmfx higher level rendering library which is data driven, pmfx is responsible for setting all the rendering state up for a view. A scene view can be described as a camera rendering a scene into a render target. The component entity system will frustum cull objects by AABB, bind entity constant buffers and make draw calls, handling skinning, instancing and stand alone draw calls.
+
+## pmfx: Shaders
+
+pmfx::shaders in pmtech build upon hlsl and add powerful additional features to make developing shaders seamlessly integrate into the work flow. All shaders can be written in hlsl shader model 4/5 and for glsl the shader code is generated as part of the shader build process. Texture and declarations differ slightly to hlsl:
+
+```c++
+declare_texture_samplers
+{
+	texture_2d( diffuse_texture, 0 );
+	texture_2d( normal_texture, 1 );
+	texture_2d( specular_texture, 2 );	
+
+	texture_3d( sdf_volume, 14 );
+	texture_2d( shadowmap_texture, 15 );
+};
+```
+
+The second parameter passed to texture_xx functions is the register to bind it to (ie. register(t0) in hlsl). A .info file is exported with every shader, this contains information such as texture names and the associated register it is bound to in hlsl. Upon loading shaders the pmtech opengl implementation will bind textures and buffers to the corresponding register location to emulate the behaviour of d3d and hlsl.
+
+All shaders must use constant buffers / uniform buffers as opposed to single uniforms. Registers are be specified for constant buffers in the usual hlsl way:
+
+```c++
+cbuffer per_pass_view : register(b0)
+{
+	float4x4 vp_matrix;
+	float4x4 view_matrix;
+	float4x4 view_matrix_inverse;
+	
+	float4 camera_view_pos;
+	float4 camera_view_dir;
+};
+```
+
+Certain registers are constant and always in use:  
+cbuffer 0 = per_pass_view (view materix / camera info for the currently rendering view).   
+cbuffer 1 = per_draw_call (object world matrix, inverse world matrix and 8 floats of custom data).  
+cbuffer 3 = per_pass_lights (list of lights and a count).  
+cbuffer 4 = per_pass_shadow (list of shadow map matrices).  
+cbuffer 5 = per_pass_shadow_distance_fields (list of signed distance field volume matrices).  
+cbuffer 7 = material_data (specified in technique constants).  
+texture 14 = signed distance field texture.  
+texture 15 = shadow map texture.  
+
+Files can be included to share functionality, modular functions can be found in lighting.slib, skinning.slib, maths.slib and more. These add different lighting equations, attenuation functions, skinning utility functions and more. Multiple shaders can exisit within the same file, a json object is used to specify which vsmain and psmain to use and to generate a shader technique much like hlsl/fx techniques. Techniques can also specify tweakable constants which will go into cbuffer 7 and they are automatically enumerated in pmtech editor:
+
+```json
+"forward_lit_sdf_shadow":
+{
+	"vs": "vs_main",
+	"ps": "ps_forward_lit",
+	"defines": ["SDF_SHADOW"],
+
+	"constants":
+	{
+		"albedo": { "type": "float4", "widget": "colour", "default": [1.0, 1.0, 1.0, 1.0] },
+		"roughness": { "type": "float", "widget": "slider", "min": 0, "max": 1, "default": 0.5 },
+		"reflectivity": { "type": "float", "widget": "slider", "min": 0, "max": 1, "default": 0.5 },
+		"surface_offset": { "type": "float", "widget": "slider", "min": 0, "max": 1, "default": 0.3 }
+	}
+},
+```
+
+![technique constants](assets/articles/technique-constants.png)
+
+Uber shaders can be created by using a modified if statement, defines are placed into the "defines" key in the pmfx json block. All if: statements are converted to #if defined() before compilation, the reason for prefering if style statements as opposed to # is personal preference of finding the indentation and nesting of complex #if #endif statements to be harder to follow:
+
+```c
+if:(SDF_SHADOW)
+{
+	float s = sdf_shadow_trace()
+	light_col *= smoothstep( 0.0, 0.1, s);
+}
+```
+
+Verex stream out / transform feedback can be utilised on any shader by simply setting "stream_out" to "true". The Vertex Stream Out sample shows how vertex stream out can render a large number of skinned meshes through instancing but only skin the mesh once per frame.
+
+```json
+"pre_skin":
+{
+	"vs": "vs_main_pre_skin",
+	"stream_out": "true"
+},
+```
