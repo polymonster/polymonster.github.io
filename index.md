@@ -4,28 +4,31 @@ The following demos build ontop of my framework pmtech, read more about the feat
 
 ### Signed Distance Field Shadows
 
-[![sdf shadow](assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
+[![Signed Distance Field Shadows](assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Vertex Stream Out
-[![sdf shadow](assets/demos/vertex-stream-out.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
+[![Vertex Stream Out](assets/demos/vertex-stream-out.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
 ### Skinning
-[![sdf shadow](assets/demos/skinning.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/skinning/skinning.cpp)
+[![Skinning](assets/demos/skinning.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/skinning/skinning.cpp)
 
 ### Instancing
-[![sdf shadow](assets/demos/instancing.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/instancing/instancing.cpp)
+[![Instancing](assets/demos/instancing.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/instancing/instancing.cpp)
 
 ### Constraints
-[![sdf shadow](assets/demos/constraints.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/physics_constraints/physics_constraints.cpp)
+[![Constraints](assets/demos/constraints.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/physics_constraints/physics_constraints.cpp)
 
 ### Rigid Body Primitives
-[![sdf shadow](assets/demos/rigid-body-primitives.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/rigid_body_primitives/rigid_body_primitives.cpp)
+[![Rigid Body Primitives](assets/demos/rigid-body-primitives.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/rigid_body_primitives/rigid_body_primitives.cpp)
 
 ### Cubemap
-[![sdf shadow](assets/demos/cubemap.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/cubemap/cubemap.cpp)
+[![Cubemap](assets/demos/cubemap.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/cubemap/cubemap.cpp)
 
 ### Shadows
-[![Basic Texture](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadows/shadows.cpp)
+[![Shadows](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadows/shadows.cpp)
+
+### Maths Functions
+[![Maths Functions](assets/demos/maths_functions.gif)](https://youtu.be/uR9lfvPL7eE)
 
 ### Audio Player
 [![Audio Player](assets/demos/audio-player.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/audio_player/audio_player.cpp)
