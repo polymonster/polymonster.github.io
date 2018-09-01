@@ -28,7 +28,7 @@ The following demos build ontop of my framework pmtech, read more about the feat
 [![Shadows](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadows/shadows.cpp)
 
 ### Maths Functions
-[![Maths Functions](assets/demos/maths_functions.gif =1280x720)](https://youtu.be/uR9lfvPL7eE)
+[![Maths Functions](assets/demos/maths_functions.gif)](https://youtu.be/uR9lfvPL7eE)
 
 ### Audio Player
 [![Audio Player](assets/demos/audio-player.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/audio_player/audio_player.cpp)
