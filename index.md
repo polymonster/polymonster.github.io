@@ -6,6 +6,10 @@ The following demos build ontop of my framework pmtech, read more about the feat
 
 [![Signed Distance Field Shadows](assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
 
+### Data Driven Post Processing
+
+[![Post Processing](assets/gifs/post-pro.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/post_processing/post_processing.cpp)
+
 ### Vertex Stream Out
 [![Vertex Stream Out](assets/demos/vertex-stream-out.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
