@@ -2,8 +2,8 @@
 
 For details on work undretaken for various projects please visit my linkedin.
 
--- Football Manager 2018 (2017) (PC, MacOS, Linux, iOS, Android).   
--- Football Manager 2017 (2016) (PC, MacOS, Linux, iOS, Android).   
+-Football Manager 2018 (2017) (PC, MacOS, Linux, iOS, Android).   
+-Football Manager 2017 (2016) (PC, MacOS, Linux, iOS, Android).   
 Football Manager 2016 (2015) (PC, MacOS, Linux, iOS, Android).  
 The Swindle (2015) (PS3, PSVita, PS4, Xbox One, WiiU).  
 Nova 111 (2015) (PS3, PSVita, PS4, Xbox One, WiiU).  
