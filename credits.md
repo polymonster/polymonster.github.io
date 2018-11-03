@@ -1,6 +1,6 @@
 # Credits
 
-For more details on work undretaken for various projects please visit my [linkedin](https://www.linkedin.com/in/alexdixon1611/).
+For more details on work undretaken for various projects please visit my [LinkedIn](https://www.linkedin.com/in/alexdixon1611/).
 
 - Football Manager 2018 (2017) (PC, MacOS, Linux, iOS, Android).   
 - Football Manager 2017 (2016) (PC, MacOS, Linux, iOS, Android).   
