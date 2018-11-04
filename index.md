@@ -4,7 +4,7 @@ The following demos build ontop of my framework pmtech, read more about the feat
 
 ### Signed Distance Field Shadows
 
-[![Signed Distance Field Shadows](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
+[![Signed Distance Field Shadows](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif | width=1280)](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Subsurface Scattering
 [![Subsurface Scattering](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
