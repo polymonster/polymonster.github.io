@@ -4,10 +4,10 @@ The following demos build ontop of my framework pmtech, read more about the feat
 
 ### Signed Distance Field Shadows
 
-[![Signed Distance Field Shadows](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif =1280x720)](https://www.youtube.com/watch?v=369cPinAhdo)
+[![Signed Distance Field Shadows](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Subsurface Scattering
-[![Subsurface Scattering](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif =1280x720)](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
+[![Subsurface Scattering](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
 
 ### Data Driven Post Processing
 
@@ -53,7 +53,7 @@ The following demos build ontop of my framework pmtech, read more about the feat
 [![Multiple Render Targets](assets/demos/multiple-render-targets.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/multiple_render_targets/multiple_render_targets.cpp)
 
 ### Input
-[![Input](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/input.gif =1280x720)](https://github.com/polymonster/pmtech/blob/master/examples/code/input/input_example.cpp)
+[![Input](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/input.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/input/input_example.cpp)
 
 ### Debug Text
 [![Debug Text](assets/demos/debug-text.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/debug_text/debug_text.cpp)
