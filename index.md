@@ -4,11 +4,11 @@ The following demos build ontop of my framework pmtech, read more about the feat
 
 ### Signed Distance Field Shadows
 
-<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" width="1280" />(https://www.youtube.com/watch?v=369cPinAhdo)
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" width="1280" />](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Subsurface Scattering
 
-<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif" width="1280" />(https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
 
 ### Data Driven Post Processing
 
