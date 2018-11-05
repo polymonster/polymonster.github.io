@@ -54,7 +54,7 @@ The following demos build ontop of my framework pmtech, read more about the feat
 [![Multiple Render Targets](assets/demos/multiple-render-targets.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/multiple_render_targets/multiple_render_targets.cpp)
 
 ### Input
-[![Input](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/input.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/input/input_example.cpp)
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/input.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/input/input_example.cpp)
 
 ### Debug Text
 [![Debug Text](assets/demos/debug-text.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/debug_text/debug_text.cpp)
