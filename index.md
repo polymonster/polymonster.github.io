@@ -2,6 +2,8 @@
 
 The following demos build ontop of my framework pmtech, read more about the features [here](https://polymonster.github.io/articles.html) and checkout the repository on [github](https://github.com/polymonster/pmtech)
 
+<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" width="1280" />
+
 ### Signed Distance Field Shadows
 
 [![Signed Distance Field Shadows](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif)](https://www.youtube.com/watch?v=369cPinAhdo)
