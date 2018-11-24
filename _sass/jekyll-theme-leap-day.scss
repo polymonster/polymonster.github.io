@@ -301,7 +301,7 @@ small {
 
 nav {
   width: 230px;
-  position: fixed;
+  // position: fixed;
   top: 220px;
   left:50%;
   margin-left:-580px;
@@ -346,6 +346,7 @@ nav {
 
       &:hover { color: #999; }
     }
+    font-size:80%;
 
     // .active {
     //   border-right:solid 4px #39C;
