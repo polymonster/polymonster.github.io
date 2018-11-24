@@ -301,7 +301,8 @@ small {
 
 nav {
   width: 230px;
-  // position: fixed;
+  position: fixed;
+  overflow-y: scroll;
   top: 220px;
   left:50%;
   margin-left:-580px;
