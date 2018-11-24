@@ -303,7 +303,7 @@ nav {
   width: 230px;
   position: fixed;
   overflow-y: scroll;
-  top: 220px;
+  top: 200px;
   left:50%;
   margin-left:-580px;
   text-align: right;
@@ -316,7 +316,7 @@ nav {
 
     li {
       padding: 5px 0px;
-      line-height: 16px;
+      line-height: 12px;
       // padding-right:17px;
       // position:relative;
       // right:-12px;
@@ -347,6 +347,7 @@ nav {
 
       &:hover { color: #999; }
     }
+	  
     font-size:80%;
 
     // .active {
