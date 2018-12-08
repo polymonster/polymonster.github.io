@@ -1,19 +1,7 @@
-# pmtech demos
 
-The following demos build ontop of my framework pmtech, read more about the features [here](https://polymonster.github.io/articles.html) and checkout the repository on [github](https://github.com/polymonster/pmtech)
+The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech).
 
 ### Signed Distance Field Shadows 
-<details><summary>more</summary>
-<p>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
-</p>
-</details>
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" width="1280" />](https://www.youtube.com/watch?v=369cPinAhdo)
 
@@ -78,20 +66,6 @@ print("hello world!")
 
 ### Basic Triangle
 [![Basic Triangle](assets/demos/basic-triangle.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/basic_triangle/basic_triangle.cpp)
-
-# Older Demos
-
-### Radiosity
-[![Radiosity](assets/demos/radiosity.gif)](https://vimeo.com/10592692)
-
-### Deferred Rendering / Post Processing
-[![Deferred Rendering](assets/demos/deferred-rendering.gif)](https://vimeo.com/10589417)
-
-### Cascaded Shadow Maps
-[![Cascaded Shadow Maps](assets/demos/cascaded-shadow-maps.gif)](https://vimeo.com/10048780)
-
-### Antechamber
-[![Antechamber](assets/demos/antechamber.gif)](https://vimeo.com/5145156)
 
 
 
