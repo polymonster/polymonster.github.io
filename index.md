@@ -4,6 +4,18 @@ The following demos build ontop of my framework pmtech, read more about the feat
 
 ### Signed Distance Field Shadows
 
+<details><summary>more</summary>
+<p>
+
+#### yes, even hidden code blocks!
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
+
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" width="1280" />](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Subsurface Scattering
