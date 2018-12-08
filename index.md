@@ -2,9 +2,8 @@
 
 The following demos build ontop of my framework pmtech, read more about the features [here](https://polymonster.github.io/articles.html) and checkout the repository on [github](https://github.com/polymonster/pmtech)
 
-### Signed Distance Field Shadows
+### Signed Distance Field Shadows <details><summary>more</summary>
 
-<details><summary>more</summary>
 <p>
 
 #### yes, even hidden code blocks!
