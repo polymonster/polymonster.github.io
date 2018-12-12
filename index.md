@@ -1,8 +1,3 @@
-<img data-src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" class="lazyload" />
-<img data-src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif" class="lazyload" />
-<img data-src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/pmfx-renderer.gif" class="lazyload" />
-<img data-src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/post-pro.gif" class="lazyload" />
-
 The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech).
 
 ### Signed Distance Field Shadows 
