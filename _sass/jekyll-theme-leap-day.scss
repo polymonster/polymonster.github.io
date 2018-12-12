@@ -302,7 +302,6 @@ small {
 nav {
   width: 230px;
   position: fixed;
-  overflow-y: scroll;
   top: 200px;
   left:50%;
   margin-left:-580px;
@@ -317,9 +316,6 @@ nav {
     li {
       padding: 5px 0px;
       line-height: 12px;
-      // padding-right:17px;
-      // position:relative;
-      // right:-12px;
 
       &.tag-h1 {
         font-size: 1.2em;
@@ -349,11 +345,6 @@ nav {
     }
 	  
     font-size:80%;
-
-    // .active {
-    //   border-right:solid 4px #39C;
-    //   padding-right:13px;
-    // }
   }
 }
 
