@@ -306,9 +306,9 @@ nav {
   left:50%;
   margin-left:-580px;
   text-align: right;
-  max-height: 200px;
+  max-height: 90%;
   overflow: hidden;
-  overflow-y:scroll
+  text-overflow: ellipsis;
 
   ul {
     list-style: none;
