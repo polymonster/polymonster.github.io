@@ -21,7 +21,7 @@
 [![Blocks](assets/images/blocks.png)](https://vimeo.com/5145156)
 
 ### Tanky
-[![Tanky](assets/images/tanky.png)](https://vimeo.com/5145156)
+[![Tanky](assets/images/tankypanky.png)](https://vimeo.com/5145156)
 
 ### Tanks
 [![Tanks](assets/images/tanks.png)](https://vimeo.com/5145156)
