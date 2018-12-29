@@ -16,6 +16,10 @@ The following demos build ontop of my framework [pmtech](https://github.com/poly
 
 [![Post Processing](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/post-pro.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/post_processing/post_processing.cpp)
 
+### Dynamic Cubemap
+
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/dynamic-cubemap.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/dynamic_cubemap/dynamic_cubemap.cpp)
+
 ### Vertex Stream Out
 [![Vertex Stream Out](assets/demos/vertex-stream-out.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
