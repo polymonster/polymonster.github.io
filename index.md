@@ -41,6 +41,9 @@ The following demos build ontop of my framework [pmtech](https://github.com/poly
 ### Shadows
 [![Shadows](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadows/shadows.cpp)
 
+### Volume Texture
+[![Volume Texture](https://github.com/polymonster/pmtech/blob/master/examples/test_reference/volume_texture.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/volume_texture/volume_texture.cpp)
+
 ### Maths Functions
 [![Maths Functions](assets/demos/maths_functions.gif)](https://youtu.be/uR9lfvPL7eE)
 
@@ -50,14 +53,17 @@ The following demos build ontop of my framework [pmtech](https://github.com/poly
 ### Texture Formats
 [![Texture Formats](assets/demos/texture-formats.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/texture_formats/texture_formats.cpp)
 
-### Imgui
-[![Imgui](assets/demos/imgui.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/imgui/imgui_example.cpp)
-
 ### Shader Toy
 [![Shader Toy](assets/demos/shader-toy.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/shader_toy/shader_toy.cpp)
 
 ### Multiple Render Targets
 [![Multiple Render Targets](assets/demos/multiple-render-targets.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/multiple_render_targets/multiple_render_targets.cpp)
+
+### Blend Modes
+[![Blend Modes](https://github.com/polymonster/pmtech/blob/master/examples/test_reference/blend_modes.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/blend_modes/blend_modes.cpp)
+
+### Imgui
+[![Imgui](assets/demos/imgui.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/imgui/imgui_example.cpp)
 
 ### Input
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/input.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/input/input_example.cpp)
