@@ -80,5 +80,3 @@ The following demos build ontop of my framework [pmtech](https://github.com/poly
 ### Basic Triangle
 [![Basic Triangle](assets/demos/basic-triangle.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/basic_triangle/basic_triangle.cpp)
 
-<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/WdB3Wd?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
-
