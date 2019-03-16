@@ -18,7 +18,7 @@ The following demos build ontop of my framework [pmtech](https://github.com/poly
 
 ### Vertex Stream Out / PBR
 
-[![Vertex Stream Out](assets/gifs/vertex-stream-pbr.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
+[![Vertex Stream Out](assets/demos/vertex-stream-pbr.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
 ### Dynamic Cubemap
 
