@@ -1,4 +1,4 @@
-The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech).
+The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech), for small demos and code snippits check out [doodles](https://www.polymonster.co.uk/doodles) and for older work take a look in [archive](https://www.polymonster.co.uk/archive).
 
 ### Signed Distance Field Shadows 
 
