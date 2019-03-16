@@ -20,8 +20,9 @@ The following demos build ontop of my framework [pmtech](https://github.com/poly
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/dynamic-cubemap.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/dynamic_cubemap/dynamic_cubemap.cpp)
 
-### Vertex Stream Out
-[![Vertex Stream Out](assets/demos/vertex-stream-out.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
+### Vertex Stream Out / PBR
+
+[![Vertex Stream Out](assets/demos/vertex-stream-pbr.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
 ### Skinning
 [![Skinning](assets/demos/skinning.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/skinning/skinning.cpp)
