@@ -1,9 +1,7 @@
-The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech), for small demos and code snippits check out [doodles](https://www.polymonster.co.uk/doodles) and for older work take a look in [archive](https://www.polymonster.co.uk/archive).
-
-For more details information about these examples please vist the pmtech wiki page [here](https://github.com/polymonster/pmtech/wiki/Examples).
+The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech), for small demos and code snippits check out [doodles](https://www.polymonster.co.uk/doodles) and for older work take a look in [archive](https://www.polymonster.co.uk/archive). You can find out more information about these examples on the pmtech [wiki page](https://github.com/polymonster/pmtech/wiki/Examples).
 
 ### Subsurface Scattering
-Sepearable sss configured with pmfx and ecs.
+Sepearable sss configured with [pmfx](https://github.com/polymonster/pmtech/wiki/Pmtech) and [ecs]((https://github.com/polymonster/pmtech/wiki/Ecs).
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
 
@@ -25,7 +23,7 @@ Scriptable post processing using json configs, ray marched menger sponges, bloom
 ### Entities
 64k entities into 4 shadow maps at 60hz, data-oriented ecs for cache friendly code execution.
 
-[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/tourus.gif" width="1280" />](https://github.com/polymonster/pmtech/wiki/Examples#entities)
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/tourus.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/entities/entities.cpp)
 
 ### Vertex Stream Out / PBR
 Vertex stream out, transform feedback meshes rendered many times, cook-torrence + oren-nayar BRDF.
