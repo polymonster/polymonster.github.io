@@ -12,21 +12,26 @@ Precalculated 3D signed distance field generated in pmtech editor, ray marched i
 
 ### Data Driven Renderer
 Scriptable renderer using json config files, 100 lights, switch between deferred, fwd and zprepass.
+
 [![Renderer](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/pmfx-renderer.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/pmfx_renderer/pmfx_renderer_demo.cpp)
 
 ### Data Driven Post Processing
+Scriptable post processing using json configs, ray marched menger sponges, bloom, dof, crt, colour correction.
 
 [![Post Processing](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/post-pro.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/post_processing/post_processing.cpp)
 
-### Data oriented entity component system
+### Entities
+64k entities into 4 shadow maps at 60hz, data-oriented ecs for cache friendly code execution.
 
 <img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/tourus.gif" width="1280" />
 
 ### Vertex Stream Out / PBR
+Vertex stream out, transform feedback meshes rendered many times, cook-torrence + oren-nayar BRDF.
 
 [![Vertex Stream Out](assets/demos/vertex-stream-pbr.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)
 
 ### Dynamic Cubemap
+Multiple scene views into cubemap faces using pmfx for dynamic cubemaps.
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/dynamic-cubemap.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/dynamic_cubemap/dynamic_cubemap.cpp)
 
@@ -35,6 +40,9 @@ Scriptable renderer using json config files, 100 lights, switch between deferred
 
 ### Instancing
 [![Instancing](assets/demos/instancing.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/instancing/instancing.cpp)
+
+### Complex Ridig Bodies
+[![Complex Ridig Bodies](assets/gifs/comples-rb.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/rigid_body_primitives/rigid_body_primitives.cpp)
 
 ### Constraints
 [![Constraints](assets/demos/constraints.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/physics_constraints/physics_constraints.cpp)
