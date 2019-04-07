@@ -1,5 +1,7 @@
 The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech), for small demos and code snippits check out [doodles](https://www.polymonster.co.uk/doodles) and for older work take a look in [archive](https://www.polymonster.co.uk/archive).
 
+For more details information about these examples please vist the pmtech wiki page [here](https://github.com/polymonster/pmtech/wiki/Examples)
+
 ### Subsurface Scattering
 Sepearable sss configured with pmfx and ecs.
 
