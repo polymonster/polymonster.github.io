@@ -1,15 +1,17 @@
 The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech), for small demos and code snippits check out [doodles](https://www.polymonster.co.uk/doodles) and for older work take a look in [archive](https://www.polymonster.co.uk/archive).
 
 ### Subsurface Scattering
+Sepearable sss configured with pmfx and ecs.
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sss.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
 
 ### Signed Distance Field Shadows 
+Precalculated 3D signed distance field generated in pmtech editor, ray marched in real time.
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/sdf-shadow.gif" width="1280" />](https://www.youtube.com/watch?v=369cPinAhdo)
 
 ### Data Driven Renderer
-
+Scriptable renderer using json config files, 100 lights, switch between deferred, fwd and zprepass.
 [![Renderer](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/pmfx-renderer.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/pmfx_renderer/pmfx_renderer_demo.cpp)
 
 ### Data Driven Post Processing
