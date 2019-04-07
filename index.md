@@ -23,8 +23,7 @@ Scriptable post processing using json configs, ray marched menger sponges, bloom
 ### Entities
 64k entities into 4 shadow maps at 60hz, data-oriented ecs for cache friendly code execution.
 
-[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/tourus.gif" width="1280" />]
-(https://github.com/polymonster/pmtech/wiki/Examples#entities)
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/tourus.gif" width="1280" />](https://github.com/polymonster/pmtech/wiki/Examples#entities)
 
 ### Vertex Stream Out / PBR
 Vertex stream out, transform feedback meshes rendered many times, cook-torrence + oren-nayar BRDF.
