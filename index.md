@@ -42,7 +42,7 @@ Multiple scene views into cubemap faces using pmfx for dynamic cubemaps.
 [![Instancing](assets/demos/instancing.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/instancing/instancing.cpp)
 
 ### Complex Ridig Bodies
-[![Complex Ridig Bodies](assets/gifs/comples-rb.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/rigid_body_primitives/rigid_body_primitives.cpp)
+[![Complex Ridig Bodies](assets/gifs/complex-rb.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/rigid_body_primitives/rigid_body_primitives.cpp)
 
 ### Constraints
 [![Constraints](assets/demos/constraints.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/physics_constraints/physics_constraints.cpp)
