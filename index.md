@@ -64,12 +64,12 @@ Multiple scene views into cubemap faces using pmfx for dynamic cubemaps.
 [![Cubemap](assets/demos/cubemap.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/cubemap/cubemap.cpp)
 
 ### Shadows
-[![Shadows](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadows/shadows.cpp)
+[![Shadows](assets/demos/shadows.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/shadow_maps/shadow_maps.cpp)
 
 ### Volume Texture
 [![Volume Texture](https://raw.githubusercontent.com/polymonster/pmtech/master/examples/test_reference/volume_texture.png)](https://github.com/polymonster/pmtech/blob/master/examples/code/volume_texture/volume_texture.cpp)
 
-### Maths Functions
+### Maths Library
 [![Maths Functions](assets/demos/maths_functions.gif)](https://youtu.be/uR9lfvPL7eE)
 
 ### Audio Player
