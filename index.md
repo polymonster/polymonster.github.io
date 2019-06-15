@@ -1,7 +1,7 @@
 The following demos build ontop of my framework [pmtech](https://github.com/polymonster/pmtech), for small demos and code snippits check out [doodles](https://www.polymonster.co.uk/doodles) and for older work take a look in [archive](https://www.polymonster.co.uk/archive). You can find out more information about these examples on the pmtech [wiki page](https://github.com/polymonster/pmtech/wiki/Examples).
 
 ### Area Lights
-Animated, ray marched primitives, roughness.
+Animated, ray marched primitives, mip-mapped roughness.
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/area-lights.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/area_lights/area_lights.cpp)
 
