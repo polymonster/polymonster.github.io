@@ -25,8 +25,13 @@ Scriptable post processing using json configs, ray marched menger sponges, bloom
 
 [![Post Processing](https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/post-pro.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/post_processing/post_processing.cpp)
 
+### Stencil Shadow Volumes
+Multi-pass lighting with depth pass stencil shadow volumes, easily configured with [ecs](https://github.com/polymonster/pmtech/wiki/Ecs) and [pmfx](https://github.com/polymonster/pmtech/wiki/Pmfx).
+
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/stencil-shadows.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/stencil_shadows/stencil_shadows.cpp)
+
 ### Entities
-64k entities into 4 shadow maps at 60hz, data-oriented [ecs](https://github.com/polymonster/pmtech/wiki/Ecs) for cache friendly code execution.
+64k entities into 4 shadow maps at 60hz, showing the strengths of data-oriented [ecs](https://github.com/polymonster/pmtech/wiki/Ecs).
 
 [<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/tourus.gif" width="1280" />](https://github.com/polymonster/pmtech/blob/master/examples/code/entities/entities.cpp)
 
