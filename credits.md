@@ -1,7 +1,7 @@
 
 A list of titles I have worked on, for more details on work undretaken for various projects please visit my [LinkedIn](https://www.linkedin.com/in/alexdixon1611/).
 
-- Erica (PS4) + Erica Companion App (iOS, Android)
+- Erica (2019) (PS4) + Erica Companion App (iOS, Android)
 - Football Manager 2018 (2017) (PC, MacOS, Linux, iOS, Android).   
 - Football Manager 2017 (2016) (PC, MacOS, Linux, iOS, Android).   
 - Football Manager 2016 (2015) (PC, MacOS, Linux, iOS, Android).  
