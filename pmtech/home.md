@@ -1,0 +1,1 @@
+[<img src="https://github.com/polymonster/polymonster.github.io/raw/master/assets/gifs/area-lights.gif" width="640" />](https://github.com/polymonster/pmtech/blob/master/examples/code/area_lights/area_lights.cpp)
