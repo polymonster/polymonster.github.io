@@ -1,13 +1,13 @@
 ---
 title: 'pmtech'
 subtitle: 'Lightweight, multi-platform, data-oriented game engine.'
-date: 2020-09-13 00:00:00
+date: 2020-09-14 00:01:00
 featured_image: '/images/pmtech/gifs/post-pro.gif'
 ---
 
 pmtech is a data-oriented game engine written in c++, it is open source and available on [github](https://github.com/polymonster/pmtech). The engine is cross platform and supports windows, macOS, iOS, linux and wasm/webgl with android under development. It also has multiple rendering backends with Direct3D11, OpenGL, Metal and Vulkan.
 
-I have been using it as a framework to experiment and try different rendering techniques, it has a data-oriented component entity system and features such as live reloading of c++ code, shaders and render pipeline configs to enable rapid prototyping and real time development. There is a live video demo of the hot reloading capabilities on [youtube](https://youtu.be/dSLwP4D8Fd4).
+I have been using it as a framework to experiment and try different rendering techniques. It has a data-oriented entity component system and features such as live reloading of c++ code, shaders and render pipeline configs to enable rapid prototyping and development in realtime. There is a live video demo of the hot reloading capabilities on [youtube](https://youtu.be/dSLwP4D8Fd4).
 
 Below are some of the more advanced and interesting graphics techniques I have implemented, there are over [40 examples](https://github.com/polymonster/pmtech/wiki/Examples) and unit tests in the repository to aid testing and cross platform compatibility.
 
