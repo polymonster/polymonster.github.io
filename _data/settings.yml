@@ -14,6 +14,8 @@ menu_settings:
       url: '/'
     - title: 'Projects'
       url: '/projects/'
+    - title: 'WebGL Demos'
+      url: 'webgl-demos'
     - title: 'Releases'
       url: 'releases'
 
