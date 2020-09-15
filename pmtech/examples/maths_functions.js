@@ -218,7 +218,7 @@ Module['FS_createPath']('/data/textures', 'ltc', true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/data/configs/shadows.dep", "start": 0, "end": 947, "audio": 0}, {"filename": "/data/configs/common.dep", "start": 947, "end": 1666, "audio": 0}, {"filename": "/data/configs/pmfx_demo.jsn", "start": 1666, "end": 63658, "audio": 0}, {"filename": "/data/configs/msaa_resolve.jsn", "start": 63658, "end": 81404, "audio": 0}, {"filename": "/data/configs/stencil_buffer.dep", "start": 81404, "end": 83317, "audio": 0}, {"filename": "/data/configs/pp_demo.jsn", "start": 83317, "end": 126491, "audio": 0}, {"filename": "/data/configs/deferred_renderer.dep", "start": 126491, "end": 127275, "audio": 0}, {"filename": "/data/configs/stencil_shadows.dep", "start": 127275, "end": 129429, "audio": 0}, {"filename": "/data/configs/mrt_example.dep", "start": 129429, "end": 130633, "audio": 0}, {"filename": "/data/configs/editor_renderer.jsn", "start": 130633, "end": 188004, "audio": 0}, {"filename": "/data/configs/post_process.dep", "start": 188004, "end": 188759, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.jsn", "start": 188759, "end": 251101, "audio": 0}, {"filename": "/data/configs/rasterizer_state.jsn", "start": 251101, "end": 310121, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.jsn", "start": 310121, "end": 326028, "audio": 0}, {"filename": "/data/configs/sss_demo.dep", "start": 326028, "end": 328098, "audio": 0}, {"filename": "/data/configs/compute_demo.dep", "start": 328098, "end": 330215, "audio": 0}, {"filename": "/data/configs/blend_modes.jsn", "start": 330215, "end": 353328, "audio": 0}, {"filename": "/data/configs/basic_renderer.jsn", "start": 353328, "end": 410784, "audio": 0}, {"filename": "/data/configs/mrt_example.jsn", "start": 410784, "end": 433027, "audio": 0}, {"filename": "/data/configs/post_process.jsn", "start": 433027, "end": 460219, "audio": 0}, {"filename": "/data/configs/editor_renderer.dep", "start": 460219, "end": 461680, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.dep", "start": 461680, "end": 463832, "audio": 0}, {"filename": "/data/configs/rasterizer_state.dep", "start": 463832, "end": 465767, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.dep", "start": 465767, "end": 466819, "audio": 0}, {"filename": "/data/configs/sss_demo.jsn", "start": 466819, "end": 526924, "audio": 0}, {"filename": "/data/configs/compute_demo.jsn", "start": 526924, "end": 585765, "audio": 0}, {"filename": "/data/configs/blend_modes.dep", "start": 585765, "end": 586740, "audio": 0}, {"filename": "/data/configs/basic_renderer.dep", "start": 586740, "end": 588647, "audio": 0}, {"filename": "/data/configs/shadows.jsn", "start": 588647, "end": 605481, "audio": 0}, {"filename": "/data/configs/common.jsn", "start": 605481, "end": 619668, "audio": 0}, {"filename": "/data/configs/pmfx_demo.dep", "start": 619668, "end": 621750, "audio": 0}, {"filename": "/data/configs/stencil_buffer.jsn", "start": 621750, "end": 681466, "audio": 0}, {"filename": "/data/configs/msaa_resolve.dep", "start": 681466, "end": 682448, "audio": 0}, {"filename": "/data/configs/deferred_renderer.jsn", "start": 682448, "end": 690522, "audio": 0}, {"filename": "/data/configs/pp_demo.dep", "start": 690522, "end": 691690, "audio": 0}, {"filename": "/data/configs/stencil_shadows.jsn", "start": 691690, "end": 756457, "audio": 0}, {"filename": "/data/fonts/fontawesome-webfont.ttf", "start": 756457, "end": 922005, "audio": 0}, {"filename": "/data/fonts/cousine-regular.ttf", "start": 922005, "end": 965917, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/taa_resolve.psc", "start": 965917, "end": 975589, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth_unjittered.psc", "start": 975589, "end": 982958, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/high_pass.psc", "start": 982958, "end": 990404, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/debug.psc", "start": 990404, "end": 997523, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.vsc", "start": 997523, "end": 1004843, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_rgb.psc", "start": 1004843, "end": 1012050, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/menger_sponge.psc", "start": 1012050, "end": 1022645, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/sss_reflectance.psc", "start": 1022645, "end": 1032779, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_average.psc", "start": 1032779, "end": 1040678, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/depth_of_field.psc", "start": 1040678, "end": 1048881, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/filter.psc", "start": 1048881, "end": 1056573, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_colour_depth.psc", "start": 1056573, "end": 1063948, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_2x2.psc", "start": 1063948, "end": 1071771, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth.psc", "start": 1071771, "end": 1078932, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/info.json", "start": 1078932, "end": 1169177, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/colour_lut.psc", "start": 1169177, "end": 1177287, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/bloom_upsample.psc", "start": 1177287, "end": 1185012, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.psc", "start": 1185012, "end": 1192187, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/crt.psc", "start": 1192187, "end": 1199961, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.vsc", "start": 1199961, "end": 1207390, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/info.json", "start": 1207390, "end": 1211022, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.psc", "start": 1211022, "end": 1218074, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.vsc", "start": 1218074, "end": 1225386, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/torus.psc", "start": 1225386, "end": 1235570, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/info.json", "start": 1235570, "end": 1244995, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.psc", "start": 1244995, "end": 1255155, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/octahedron.psc", "start": 1255155, "end": 1265379, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.vsc", "start": 1265379, "end": 1272416, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/info.json", "start": 1272416, "end": 1274823, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.psc", "start": 1274823, "end": 1281657, "audio": 0}, {"filename": "/data/pmfx/glsl/compute_demo/info.json", "start": 1281657, "end": 1282533, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__22__.psc", "start": 1282533, "end": 1303710, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.psc", "start": 1303710, "end": 1333552, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225486__.vsc", "start": 1333552, "end": 1346320, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741842__.psc", "start": 1346320, "end": 1375480, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741840__.psc", "start": 1375480, "end": 1404639, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.psc", "start": 1404639, "end": 1411937, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.psc", "start": 1411937, "end": 1433938, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.vsc", "start": 1433938, "end": 1443540, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__3221225472__.vsc", "start": 1443540, "end": 1453646, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__20__.psc", "start": 1453646, "end": 1474799, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__3221225472__.vsc", "start": 1474799, "end": 1485294, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.vsc", "start": 1485294, "end": 1494873, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483648__.vsc", "start": 1494873, "end": 1505892, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__24__.psc", "start": 1505892, "end": 1538386, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741844__.psc", "start": 1538386, "end": 1559608, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225482__.vsc", "start": 1559608, "end": 1572353, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741846__.psc", "start": 1572353, "end": 1593599, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__26__.psc", "start": 1593599, "end": 1626117, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.vsc", "start": 1626117, "end": 1635350, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225478__.vsc", "start": 1635350, "end": 1648090, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483654__.vsc", "start": 1648090, "end": 1659479, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer__2__.psc", "start": 1659479, "end": 1668508, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.vsc", "start": 1668508, "end": 1679447, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.psc", "start": 1679447, "end": 1686312, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.vsc", "start": 1686312, "end": 1695839, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer.psc", "start": 1695839, "end": 1704862, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483656__.vsc", "start": 1704862, "end": 1715908, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__1073741824__.vsc", "start": 1715908, "end": 1724608, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__1073741824__.vsc", "start": 1724608, "end": 1733721, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.psc", "start": 1733721, "end": 1741304, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483652__.vsc", "start": 1741304, "end": 1752345, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.vsc", "start": 1752345, "end": 1761569, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.psc", "start": 1761569, "end": 1788079, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.psc", "start": 1788079, "end": 1814512, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.psc", "start": 1814512, "end": 1841021, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__18__.psc", "start": 1841021, "end": 1870112, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.vsc", "start": 1870112, "end": 1879684, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.vsc", "start": 1879684, "end": 1890628, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483650__.vsc", "start": 1890628, "end": 1901972, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.vsc", "start": 1901972, "end": 1909731, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.vsc", "start": 1909731, "end": 1920698, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__30__.psc", "start": 1920698, "end": 1945280, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gi.psc", "start": 1945280, "end": 1953279, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.psc", "start": 1953279, "end": 1975211, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741850__.psc", "start": 1975211, "end": 2007798, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741828__.psc", "start": 2007798, "end": 2026370, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.vsc", "start": 2026370, "end": 2035599, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__16__.psc", "start": 2035599, "end": 2064689, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741852__.psc", "start": 2064689, "end": 2089295, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225472__.vsc", "start": 2089295, "end": 2101530, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__2147483648__.vsc", "start": 2101530, "end": 2110691, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__2147483648__.vsc", "start": 2110691, "end": 2119690, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.psc", "start": 2119690, "end": 2141577, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/single_light_directional.psc", "start": 2141577, "end": 2153127, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.psc", "start": 2153127, "end": 2182995, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741854__.psc", "start": 2182995, "end": 2207646, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/info.json", "start": 2207646, "end": 3275610, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483658__.vsc", "start": 3275610, "end": 3287004, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225474__.vsc", "start": 3287004, "end": 3299699, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/pre_skin.vsc", "start": 3299699, "end": 3308767, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483662__.vsc", "start": 3308767, "end": 3320184, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741832__.psc", "start": 3320184, "end": 3350097, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.psc", "start": 3350097, "end": 3368693, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.vsc", "start": 3368693, "end": 3376266, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741848__.psc", "start": 3376266, "end": 3408829, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483660__.vsc", "start": 3408829, "end": 3419877, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__28__.psc", "start": 3419877, "end": 3444414, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.psc", "start": 3444414, "end": 3470853, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.vsc", "start": 3470853, "end": 3481287, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.psc", "start": 3481287, "end": 3499812, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.psc", "start": 3499812, "end": 3529749, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.vsc", "start": 3529749, "end": 3538635, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741836__.psc", "start": 3538635, "end": 3560591, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.psc", "start": 3560591, "end": 3579092, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.vsc", "start": 3579092, "end": 3588289, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.vsc", "start": 3588289, "end": 3599183, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.vsc", "start": 3599183, "end": 3606611, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/info.json", "start": 3606611, "end": 3609970, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.psc", "start": 3609970, "end": 3616960, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.psc", "start": 3616960, "end": 3628670, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.psc", "start": 3628670, "end": 3640568, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.psc", "start": 3640568, "end": 3651787, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light__2__.psc", "start": 3651787, "end": 3663858, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.vsc", "start": 3663858, "end": 3672722, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/info.json", "start": 3672722, "end": 3700377, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.vsc", "start": 3700377, "end": 3709242, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.vsc", "start": 3709242, "end": 3717617, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/diffuse.psc", "start": 3717617, "end": 3725167, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.vsc", "start": 3725167, "end": 3734030, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_normals.psc", "start": 3734030, "end": 3741557, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_texture.psc", "start": 3741557, "end": 3749318, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/shadow_sdf.psc", "start": 3749318, "end": 3761219, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__1073741824__.vsc", "start": 3761219, "end": 3770613, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.vsc", "start": 3770613, "end": 3778905, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_colour.psc", "start": 3778905, "end": 3786685, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.psc", "start": 3786685, "end": 3795586, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.vsc", "start": 3795586, "end": 3803691, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_tangents.psc", "start": 3803691, "end": 3811220, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_0.psc", "start": 3811220, "end": 3818763, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__3221225472__.vsc", "start": 3818763, "end": 3829230, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_1.psc", "start": 3829230, "end": 3836773, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.psc", "start": 3836773, "end": 3844348, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_sdf.psc", "start": 3844348, "end": 3853594, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.psc", "start": 3853594, "end": 3860910, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/constant_colour.psc", "start": 3860910, "end": 3868566, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_bitangents.psc", "start": 3868566, "end": 3876099, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/cubemap.psc", "start": 3876099, "end": 3883978, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/info.json", "start": 3883978, "end": 4039196, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.psc", "start": 4039196, "end": 4046341, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug__2__.psc", "start": 4046341, "end": 4053556, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__2147483648__.vsc", "start": 4053556, "end": 4062596, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.vsc", "start": 4062596, "end": 4071254, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/glass.psc", "start": 4071254, "end": 4079153, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.vsc", "start": 4079153, "end": 4086215, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/info.json", "start": 4086215, "end": 4088857, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.psc", "start": 4088857, "end": 4095749, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.vsc", "start": 4095749, "end": 4102556, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/info.json", "start": 4102556, "end": 4104367, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.psc", "start": 4104367, "end": 4110945, "audio": 0}, {"filename": "/data/pmfx/glsl/compute/info.json", "start": 4110945, "end": 4111636, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.vsc", "start": 4111636, "end": 4118677, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/info.json", "start": 4118677, "end": 4120918, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.psc", "start": 4120918, "end": 4127832, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.vsc", "start": 4127832, "end": 4134637, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/info.json", "start": 4134637, "end": 4136446, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.psc", "start": 4136446, "end": 4143221, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.vsc", "start": 4143221, "end": 4150288, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/info.json", "start": 4150288, "end": 4153066, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.psc", "start": 4153066, "end": 4160046, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume_sdf.psc", "start": 4160046, "end": 4169048, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume.psc", "start": 4169048, "end": 4178045, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube_array.psc", "start": 4178045, "end": 4186244, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.psc", "start": 4186244, "end": 4194542, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d_array.psc", "start": 4194542, "end": 4202323, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d.psc", "start": 4202323, "end": 4210210, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/info.json", "start": 4210210, "end": 4237945, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.vsc", "start": 4237945, "end": 4245827, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/depth_4x.psc", "start": 4245827, "end": 4253225, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.vsc", "start": 4253225, "end": 4260388, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_16x.psc", "start": 4260388, "end": 4267641, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_8x.psc", "start": 4267641, "end": 4274888, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/max_4x.psc", "start": 4274888, "end": 4282289, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_4x.psc", "start": 4282289, "end": 4289536, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/info.json", "start": 4289536, "end": 4310028, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.psc", "start": 4310028, "end": 4317275, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/custom_4x.psc", "start": 4317275, "end": 4324612, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.psc", "start": 4324612, "end": 4331543, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.psc", "start": 4331543, "end": 4338370, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad_msaa.psc", "start": 4338370, "end": 4345737, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.vsc", "start": 4345737, "end": 4352893, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.vsc", "start": 4352893, "end": 4360139, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_3d.vsc", "start": 4360139, "end": 4367315, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/info.json", "start": 4367315, "end": 4377845, "audio": 0}, {"filename": "/data/scene/sdf.pms", "start": 4377845, "end": 4421953, "audio": 0}, {"filename": "/data/scene/lucy.obj.pms", "start": 4421953, "end": 4424768, "audio": 0}, {"filename": "/data/textures/defaults/albedo.dds", "start": 4424768, "end": 4424980, "audio": 0}, {"filename": "/data/textures/defaults/normal.dds", "start": 4424980, "end": 4425192, "audio": 0}, {"filename": "/data/textures/defaults/spec.dds", "start": 4425192, "end": 4425404, "audio": 0}, {"filename": "/data/textures/defaults/black.dds", "start": 4425404, "end": 4425616, "audio": 0}, {"filename": "/data/textures/ltc/ltc_mat.dds", "start": 4425616, "end": 4491300, "audio": 0}, {"filename": "/data/textures/ltc/ltc_amp.dds", "start": 4491300, "end": 4499640, "audio": 0}], "remote_package_size": 4499640, "package_uuid": "b2dff568-bfaf-4517-a01f-d012d3fcf34b"});
+   loadPackage({"files": [{"filename": "/data/configs/shadows.dep", "start": 0, "end": 947, "audio": 0}, {"filename": "/data/configs/common.dep", "start": 947, "end": 1666, "audio": 0}, {"filename": "/data/configs/pmfx_demo.jsn", "start": 1666, "end": 63798, "audio": 0}, {"filename": "/data/configs/msaa_resolve.jsn", "start": 63798, "end": 81676, "audio": 0}, {"filename": "/data/configs/stencil_buffer.dep", "start": 81676, "end": 83589, "audio": 0}, {"filename": "/data/configs/pp_demo.jsn", "start": 83589, "end": 126887, "audio": 0}, {"filename": "/data/configs/deferred_renderer.dep", "start": 126887, "end": 127671, "audio": 0}, {"filename": "/data/configs/stencil_shadows.dep", "start": 127671, "end": 129825, "audio": 0}, {"filename": "/data/configs/mrt_example.dep", "start": 129825, "end": 131029, "audio": 0}, {"filename": "/data/configs/editor_renderer.jsn", "start": 131029, "end": 188528, "audio": 0}, {"filename": "/data/configs/post_process.dep", "start": 188528, "end": 189283, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.jsn", "start": 189283, "end": 251765, "audio": 0}, {"filename": "/data/configs/rasterizer_state.jsn", "start": 251765, "end": 310913, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.jsn", "start": 310913, "end": 326948, "audio": 0}, {"filename": "/data/configs/sss_demo.dep", "start": 326948, "end": 329018, "audio": 0}, {"filename": "/data/configs/compute_demo.dep", "start": 329018, "end": 331135, "audio": 0}, {"filename": "/data/configs/blend_modes.jsn", "start": 331135, "end": 354372, "audio": 0}, {"filename": "/data/configs/basic_renderer.jsn", "start": 354372, "end": 411956, "audio": 0}, {"filename": "/data/configs/mrt_example.jsn", "start": 411956, "end": 434323, "audio": 0}, {"filename": "/data/configs/post_process.jsn", "start": 434323, "end": 461515, "audio": 0}, {"filename": "/data/configs/editor_renderer.dep", "start": 461515, "end": 462976, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.dep", "start": 462976, "end": 465128, "audio": 0}, {"filename": "/data/configs/rasterizer_state.dep", "start": 465128, "end": 467063, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.dep", "start": 467063, "end": 468115, "audio": 0}, {"filename": "/data/configs/sss_demo.jsn", "start": 468115, "end": 528348, "audio": 0}, {"filename": "/data/configs/compute_demo.jsn", "start": 528348, "end": 587317, "audio": 0}, {"filename": "/data/configs/blend_modes.dep", "start": 587317, "end": 588292, "audio": 0}, {"filename": "/data/configs/basic_renderer.dep", "start": 588292, "end": 590199, "audio": 0}, {"filename": "/data/configs/shadows.jsn", "start": 590199, "end": 607157, "audio": 0}, {"filename": "/data/configs/common.jsn", "start": 607157, "end": 621468, "audio": 0}, {"filename": "/data/configs/pmfx_demo.dep", "start": 621468, "end": 623550, "audio": 0}, {"filename": "/data/configs/stencil_buffer.jsn", "start": 623550, "end": 683394, "audio": 0}, {"filename": "/data/configs/msaa_resolve.dep", "start": 683394, "end": 684376, "audio": 0}, {"filename": "/data/configs/deferred_renderer.jsn", "start": 684376, "end": 692450, "audio": 0}, {"filename": "/data/configs/pp_demo.dep", "start": 692450, "end": 693618, "audio": 0}, {"filename": "/data/configs/stencil_shadows.jsn", "start": 693618, "end": 758513, "audio": 0}, {"filename": "/data/fonts/fontawesome-webfont.ttf", "start": 758513, "end": 924061, "audio": 0}, {"filename": "/data/fonts/cousine-regular.ttf", "start": 924061, "end": 967973, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/taa_resolve.psc", "start": 967973, "end": 977645, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth_unjittered.psc", "start": 977645, "end": 985014, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/high_pass.psc", "start": 985014, "end": 992460, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/debug.psc", "start": 992460, "end": 999579, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.vsc", "start": 999579, "end": 1006899, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_rgb.psc", "start": 1006899, "end": 1014106, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/menger_sponge.psc", "start": 1014106, "end": 1024701, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/sss_reflectance.psc", "start": 1024701, "end": 1034835, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_average.psc", "start": 1034835, "end": 1042734, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/depth_of_field.psc", "start": 1042734, "end": 1050937, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/filter.psc", "start": 1050937, "end": 1058629, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_colour_depth.psc", "start": 1058629, "end": 1066004, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_2x2.psc", "start": 1066004, "end": 1073827, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth.psc", "start": 1073827, "end": 1080988, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/info.json", "start": 1080988, "end": 1171233, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/colour_lut.psc", "start": 1171233, "end": 1179343, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/bloom_upsample.psc", "start": 1179343, "end": 1187068, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.psc", "start": 1187068, "end": 1194243, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/crt.psc", "start": 1194243, "end": 1202017, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.vsc", "start": 1202017, "end": 1209446, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/info.json", "start": 1209446, "end": 1213078, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.psc", "start": 1213078, "end": 1220130, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.vsc", "start": 1220130, "end": 1227442, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/torus.psc", "start": 1227442, "end": 1237626, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/info.json", "start": 1237626, "end": 1247051, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.psc", "start": 1247051, "end": 1257211, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/octahedron.psc", "start": 1257211, "end": 1267435, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.vsc", "start": 1267435, "end": 1274472, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/info.json", "start": 1274472, "end": 1276879, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.psc", "start": 1276879, "end": 1283713, "audio": 0}, {"filename": "/data/pmfx/glsl/compute_demo/info.json", "start": 1283713, "end": 1284589, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__22__.psc", "start": 1284589, "end": 1305766, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.psc", "start": 1305766, "end": 1335608, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225486__.vsc", "start": 1335608, "end": 1348376, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741842__.psc", "start": 1348376, "end": 1377536, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741840__.psc", "start": 1377536, "end": 1406695, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.psc", "start": 1406695, "end": 1413993, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.psc", "start": 1413993, "end": 1435994, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.vsc", "start": 1435994, "end": 1445596, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__3221225472__.vsc", "start": 1445596, "end": 1455702, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__20__.psc", "start": 1455702, "end": 1476855, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__3221225472__.vsc", "start": 1476855, "end": 1487350, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.vsc", "start": 1487350, "end": 1496929, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483648__.vsc", "start": 1496929, "end": 1507948, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__24__.psc", "start": 1507948, "end": 1540442, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741844__.psc", "start": 1540442, "end": 1561664, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225482__.vsc", "start": 1561664, "end": 1574409, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741846__.psc", "start": 1574409, "end": 1595655, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__26__.psc", "start": 1595655, "end": 1628173, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.vsc", "start": 1628173, "end": 1637406, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225478__.vsc", "start": 1637406, "end": 1650146, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483654__.vsc", "start": 1650146, "end": 1661535, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer__2__.psc", "start": 1661535, "end": 1670564, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.vsc", "start": 1670564, "end": 1681503, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.psc", "start": 1681503, "end": 1688368, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.vsc", "start": 1688368, "end": 1697895, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer.psc", "start": 1697895, "end": 1706918, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483656__.vsc", "start": 1706918, "end": 1717964, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__1073741824__.vsc", "start": 1717964, "end": 1726664, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__1073741824__.vsc", "start": 1726664, "end": 1735777, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.psc", "start": 1735777, "end": 1743360, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483652__.vsc", "start": 1743360, "end": 1754401, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.vsc", "start": 1754401, "end": 1763625, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.psc", "start": 1763625, "end": 1790135, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.psc", "start": 1790135, "end": 1816568, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.psc", "start": 1816568, "end": 1843077, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__18__.psc", "start": 1843077, "end": 1872168, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.vsc", "start": 1872168, "end": 1881740, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.vsc", "start": 1881740, "end": 1892684, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483650__.vsc", "start": 1892684, "end": 1904028, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.vsc", "start": 1904028, "end": 1911787, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.vsc", "start": 1911787, "end": 1922754, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__30__.psc", "start": 1922754, "end": 1947336, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gi.psc", "start": 1947336, "end": 1955335, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.psc", "start": 1955335, "end": 1977267, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741850__.psc", "start": 1977267, "end": 2009854, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741828__.psc", "start": 2009854, "end": 2028426, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.vsc", "start": 2028426, "end": 2037655, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__16__.psc", "start": 2037655, "end": 2066745, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741852__.psc", "start": 2066745, "end": 2091351, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225472__.vsc", "start": 2091351, "end": 2103586, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__2147483648__.vsc", "start": 2103586, "end": 2112747, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__2147483648__.vsc", "start": 2112747, "end": 2121746, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.psc", "start": 2121746, "end": 2143633, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/single_light_directional.psc", "start": 2143633, "end": 2155183, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.psc", "start": 2155183, "end": 2185051, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741854__.psc", "start": 2185051, "end": 2209702, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/info.json", "start": 2209702, "end": 3277666, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483658__.vsc", "start": 3277666, "end": 3289060, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225474__.vsc", "start": 3289060, "end": 3301755, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/pre_skin.vsc", "start": 3301755, "end": 3310823, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483662__.vsc", "start": 3310823, "end": 3322240, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741832__.psc", "start": 3322240, "end": 3352153, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.psc", "start": 3352153, "end": 3370749, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.vsc", "start": 3370749, "end": 3378322, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741848__.psc", "start": 3378322, "end": 3410885, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483660__.vsc", "start": 3410885, "end": 3421933, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__28__.psc", "start": 3421933, "end": 3446470, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.psc", "start": 3446470, "end": 3472909, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.vsc", "start": 3472909, "end": 3483343, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.psc", "start": 3483343, "end": 3501868, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.psc", "start": 3501868, "end": 3531805, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.vsc", "start": 3531805, "end": 3540691, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741836__.psc", "start": 3540691, "end": 3562647, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.psc", "start": 3562647, "end": 3581148, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.vsc", "start": 3581148, "end": 3590345, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.vsc", "start": 3590345, "end": 3601239, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.vsc", "start": 3601239, "end": 3608667, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/info.json", "start": 3608667, "end": 3612026, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.psc", "start": 3612026, "end": 3619016, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.psc", "start": 3619016, "end": 3630726, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.psc", "start": 3630726, "end": 3642624, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.psc", "start": 3642624, "end": 3653843, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light__2__.psc", "start": 3653843, "end": 3665914, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.vsc", "start": 3665914, "end": 3674778, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/info.json", "start": 3674778, "end": 3702433, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.vsc", "start": 3702433, "end": 3711298, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.vsc", "start": 3711298, "end": 3719673, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/diffuse.psc", "start": 3719673, "end": 3727223, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.vsc", "start": 3727223, "end": 3736086, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_normals.psc", "start": 3736086, "end": 3743613, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_texture.psc", "start": 3743613, "end": 3751374, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/shadow_sdf.psc", "start": 3751374, "end": 3763275, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__1073741824__.vsc", "start": 3763275, "end": 3772669, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.vsc", "start": 3772669, "end": 3780961, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_colour.psc", "start": 3780961, "end": 3788741, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.psc", "start": 3788741, "end": 3797642, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.vsc", "start": 3797642, "end": 3805747, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_tangents.psc", "start": 3805747, "end": 3813276, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_0.psc", "start": 3813276, "end": 3820819, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__3221225472__.vsc", "start": 3820819, "end": 3831286, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_1.psc", "start": 3831286, "end": 3838829, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.psc", "start": 3838829, "end": 3846404, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_sdf.psc", "start": 3846404, "end": 3855650, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.psc", "start": 3855650, "end": 3862966, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/constant_colour.psc", "start": 3862966, "end": 3870622, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_bitangents.psc", "start": 3870622, "end": 3878155, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/cubemap.psc", "start": 3878155, "end": 3886034, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/info.json", "start": 3886034, "end": 4041252, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.psc", "start": 4041252, "end": 4048397, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug__2__.psc", "start": 4048397, "end": 4055612, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__2147483648__.vsc", "start": 4055612, "end": 4064652, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.vsc", "start": 4064652, "end": 4073310, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/glass.psc", "start": 4073310, "end": 4081209, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.vsc", "start": 4081209, "end": 4088271, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/info.json", "start": 4088271, "end": 4090913, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.psc", "start": 4090913, "end": 4097805, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.vsc", "start": 4097805, "end": 4104612, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/info.json", "start": 4104612, "end": 4106423, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.psc", "start": 4106423, "end": 4113001, "audio": 0}, {"filename": "/data/pmfx/glsl/compute/info.json", "start": 4113001, "end": 4113692, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.vsc", "start": 4113692, "end": 4120733, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/info.json", "start": 4120733, "end": 4122974, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.psc", "start": 4122974, "end": 4129888, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.vsc", "start": 4129888, "end": 4136693, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/info.json", "start": 4136693, "end": 4138502, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.psc", "start": 4138502, "end": 4145277, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.vsc", "start": 4145277, "end": 4152344, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/info.json", "start": 4152344, "end": 4155122, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.psc", "start": 4155122, "end": 4162102, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume_sdf.psc", "start": 4162102, "end": 4171104, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume.psc", "start": 4171104, "end": 4180101, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube_array.psc", "start": 4180101, "end": 4188300, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.psc", "start": 4188300, "end": 4196598, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d_array.psc", "start": 4196598, "end": 4204379, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d.psc", "start": 4204379, "end": 4212266, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/info.json", "start": 4212266, "end": 4240001, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.vsc", "start": 4240001, "end": 4247883, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/depth_4x.psc", "start": 4247883, "end": 4255281, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.vsc", "start": 4255281, "end": 4262444, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_16x.psc", "start": 4262444, "end": 4269697, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_8x.psc", "start": 4269697, "end": 4276944, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/max_4x.psc", "start": 4276944, "end": 4284345, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_4x.psc", "start": 4284345, "end": 4291592, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/info.json", "start": 4291592, "end": 4312084, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.psc", "start": 4312084, "end": 4319331, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/custom_4x.psc", "start": 4319331, "end": 4326668, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.psc", "start": 4326668, "end": 4333599, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.psc", "start": 4333599, "end": 4340426, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad_msaa.psc", "start": 4340426, "end": 4347793, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.vsc", "start": 4347793, "end": 4354949, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.vsc", "start": 4354949, "end": 4362195, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_3d.vsc", "start": 4362195, "end": 4369371, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/info.json", "start": 4369371, "end": 4379901, "audio": 0}, {"filename": "/data/scene/sdf.pms", "start": 4379901, "end": 4424009, "audio": 0}, {"filename": "/data/scene/lucy.obj.pms", "start": 4424009, "end": 4426824, "audio": 0}, {"filename": "/data/textures/defaults/albedo.dds", "start": 4426824, "end": 4427036, "audio": 0}, {"filename": "/data/textures/defaults/normal.dds", "start": 4427036, "end": 4427248, "audio": 0}, {"filename": "/data/textures/defaults/spec.dds", "start": 4427248, "end": 4427460, "audio": 0}, {"filename": "/data/textures/defaults/black.dds", "start": 4427460, "end": 4427672, "audio": 0}, {"filename": "/data/textures/ltc/ltc_mat.dds", "start": 4427672, "end": 4493356, "audio": 0}, {"filename": "/data/textures/ltc/ltc_amp.dds", "start": 4493356, "end": 4501696, "audio": 0}], "remote_package_size": 4501696, "package_uuid": "11df111a-ef78-47a0-a9f4-a1d74264e30f"});
   
   })();
   
@@ -271,37 +271,6 @@ if (Module['ENVIRONMENT']) {
 }
 
 
-
-
-// Three configurations we can be running in:
-// 1) We could be the application main() thread running in the main JS UI thread. (ENVIRONMENT_IS_WORKER == false and ENVIRONMENT_IS_PTHREAD == false)
-// 2) We could be the application main() thread proxied to worker. (with Emscripten -s PROXY_TO_WORKER=1) (ENVIRONMENT_IS_WORKER == true, ENVIRONMENT_IS_PTHREAD == false)
-// 3) We could be an application pthread running in a worker. (ENVIRONMENT_IS_WORKER == true and ENVIRONMENT_IS_PTHREAD == true)
-
-// ENVIRONMENT_IS_PTHREAD=true will have been preset in worker.js. Make it false in the main runtime thread.
-var ENVIRONMENT_IS_PTHREAD = Module['ENVIRONMENT_IS_PTHREAD'] || false;
-if (ENVIRONMENT_IS_PTHREAD) {
-  // Grab imports from the pthread to local scope.
-  buffer = Module['buffer'];
-  DYNAMIC_BASE = Module['DYNAMIC_BASE'];
-  DYNAMICTOP_PTR = Module['DYNAMICTOP_PTR'];
-  // Note that not all runtime fields are imported above. Values for STACK_BASE, STACKTOP and STACK_MAX are not yet known at worker.js load time.
-  // These will be filled in at pthread startup time (the 'run' message for a pthread - pthread start establishes the stack frame)
-}
-
-
-
-
-// In MODULARIZE mode _scriptDir needs to be captured already at the very top of the page immediately when the page is parsed, so it is generated there
-// before the page load. In non-MODULARIZE modes generate it here.
-var _scriptDir = (typeof document !== 'undefined' && document.currentScript) ? document.currentScript.src : undefined;
-
-if (ENVIRONMENT_IS_WORKER) {
-  _scriptDir = self.location.href;
-}
-else if (ENVIRONMENT_IS_NODE) {
-  _scriptDir = __filename;
-}
 
 // `/` should be present at the end if `scriptDirectory` is not empty
 var scriptDirectory = '';
@@ -375,14 +344,6 @@ if (ENVIRONMENT_IS_NODE) {
 
   Module['inspect'] = function () { return '[Emscripten Module object]'; };
 
-  var nodeWorkerThreads;
-  try {
-    nodeWorkerThreads = require('worker_threads');
-  } catch (e) {
-    console.error('The "worker_threads" module is not supported in this node.js build - perhaps a newer version is needed?');
-    throw e;
-  }
-  global.Worker = nodeWorkerThreads.Worker;
 
 
 } else
@@ -449,31 +410,6 @@ if (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) {
 
   // Differentiate the Web Worker from the Node Worker case, as reading must
   // be done differently.
-  if (ENVIRONMENT_IS_NODE) {
-
-
-
-
-  read_ = function shell_read(filename, binary) {
-    if (!nodeFS) nodeFS = require('fs');
-    if (!nodePath) nodePath = require('path');
-    filename = nodePath['normalize'](filename);
-    return nodeFS['readFileSync'](filename, binary ? null : 'utf8');
-  };
-
-  readBinary = function readBinary(filename) {
-    var ret = read_(filename, true);
-    if (!ret.buffer) {
-      ret = new Uint8Array(ret);
-    }
-    assert(ret.buffer);
-    return ret;
-  };
-
-
-
-
-  } else
   {
 
 
@@ -522,13 +458,6 @@ if (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) {
   throw new Error('environment detection error');
 }
 
-if (ENVIRONMENT_IS_NODE) {
-  // Polyfill the performance object, which emscripten pthreads support
-  // depends on for good timing.
-  if (typeof performance === 'undefined') {
-    global.performance = require('perf_hooks').performance;
-  }
-}
 
 // Set up the out() and err() hooks, which are how we can print to stdout or
 // stderr, respectively.
@@ -573,7 +502,6 @@ var PROXYFS = 'PROXYFS is no longer included by default; build with -lproxyfs.js
 var WORKERFS = 'WORKERFS is no longer included by default; build with -lworkerfs.js';
 var NODEFS = 'NODEFS is no longer included by default; build with -lnodefs.js';
 
-assert(ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER || ENVIRONMENT_IS_NODE, 'Pthreads do not work in this environment yet (need Web Workers, or an alternative to them)');
 
 
 
@@ -585,7 +513,6 @@ var STACK_ALIGN = 16;
 
 function dynamicAlloc(size) {
   assert(DYNAMICTOP_PTR);
-  assert(!ENVIRONMENT_IS_PTHREAD); // this function is not thread-safe
   var ret = HEAP32[DYNAMICTOP_PTR>>2];
   var end = (ret + size + 15) & -16;
   assert(end <= HEAP8.length, 'failure to dynamicAlloc - memory growth etc. is not supported there, call malloc/sbrk directly');
@@ -875,11 +802,6 @@ function getCompilerSetting(name) {
 var GLOBAL_BASE = 1024;
 
 
-// JS library code refers to Atomics in the manner used from asm.js, provide
-// the same API here.
-var Atomics_load = Atomics.load;
-var Atomics_store = Atomics.store;
-var Atomics_compareExchange = Atomics.compareExchange;
 
 
 
@@ -1044,20 +966,13 @@ var wasmMemory;
 // so this creates a (non-native-wasm) table for us.
 
 var wasmTable = new WebAssembly.Table({
-  'initial': 1160,
-  'maximum': 1160 + 0,
+  'initial': 1161,
+  'maximum': 1161 + 0,
   'element': 'anyfunc'
 });
 
 
 
-// For sending to workers.
-var wasmModule;
-// Only workers actually use these field, but we refer to them from
-// library_pthread (which exists on all threads) so this definition is useful
-// to avoid accessing the global scope.
-var threadInfoStruct = 0;
-var selfThreadId = 0;
 
 //========================================
 // Runtime essentials
@@ -1252,6 +1167,7 @@ function getMemory(size) {
 // Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the given array that contains uint8 values, returns
 // a copy of that string as a Javascript String object.
 
+var UTF8Decoder = typeof TextDecoder !== 'undefined' ? new TextDecoder('utf8') : undefined;
 
 /**
  * @param {number} idx
@@ -1260,17 +1176,23 @@ function getMemory(size) {
  */
 function UTF8ArrayToString(heap, idx, maxBytesToRead) {
   var endIdx = idx + maxBytesToRead;
+  var endPtr = idx;
+  // TextDecoder needs to know the byte length in advance, it doesn't stop on null terminator by itself.
+  // Also, use the length info to avoid running tiny strings through TextDecoder, since .subarray() allocates garbage.
+  // (As a tiny code save trick, compare endPtr against endIdx using a negation, so that undefined means Infinity)
+  while (heap[endPtr] && !(endPtr >= endIdx)) ++endPtr;
 
+  if (endPtr - idx > 16 && heap.subarray && UTF8Decoder) {
+    return UTF8Decoder.decode(heap.subarray(idx, endPtr));
+  } else {
     var str = '';
-    while (!(idx >= endIdx)) {
+    // If building with TextDecoder, we have already computed the string length above, so test loop end condition against that
+    while (idx < endPtr) {
       // For UTF8 byte structure, see:
       // http://en.wikipedia.org/wiki/UTF-8#Description
       // https://www.ietf.org/rfc/rfc2279.txt
       // https://tools.ietf.org/html/rfc3629
       var u0 = heap[idx++];
-      // If not building with TextDecoder enabled, we don't know the string length, so scan for \0 byte.
-      // If building with TextDecoder, we know exactly at what byte index the string ends, so checking for nulls here would be redundant.
-      if (!u0) return str;
       if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
       var u1 = heap[idx++] & 63;
       if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
@@ -1289,6 +1211,7 @@ function UTF8ArrayToString(heap, idx, maxBytesToRead) {
         str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
       }
     }
+  }
   return str;
 }
 
@@ -1419,9 +1342,23 @@ function stringToAscii(str, outPtr) {
 // Given a pointer 'ptr' to a null-terminated UTF16LE-encoded string in the emscripten HEAP, returns
 // a copy of that string as a Javascript String object.
 
+var UTF16Decoder = typeof TextDecoder !== 'undefined' ? new TextDecoder('utf-16le') : undefined;
 
 function UTF16ToString(ptr, maxBytesToRead) {
   assert(ptr % 2 == 0, 'Pointer passed to UTF16ToString must be aligned to two bytes!');
+  var endPtr = ptr;
+  // TextDecoder needs to know the byte length in advance, it doesn't stop on null terminator by itself.
+  // Also, use the length info to avoid running tiny strings through TextDecoder, since .subarray() allocates garbage.
+  var idx = endPtr >> 1;
+  var maxIdx = idx + maxBytesToRead / 2;
+  // If maxBytesToRead is not passed explicitly, it will be undefined, and this
+  // will always evaluate to true. This saves on code size.
+  while (!(idx >= maxIdx) && HEAPU16[idx]) ++idx;
+  endPtr = idx << 1;
+
+  if (endPtr - ptr > 32 && UTF16Decoder) {
+    return UTF16Decoder.decode(HEAPU8.subarray(ptr, endPtr));
+  } else {
     var i = 0;
 
     var str = '';
@@ -1432,6 +1369,7 @@ function UTF16ToString(ptr, maxBytesToRead) {
       // fromCharCode constructs a character from a UTF-16 code unit, so we can pass the UTF16 string right through.
       str += String.fromCharCode(codeUnit);
     }
+  }
 }
 
 // Copies the given Javascript String object 'str' to the emscripten HEAP at address 'outPtr',
@@ -1650,25 +1588,15 @@ function updateGlobalBufferAndViews(buf) {
 }
 
 var STATIC_BASE = 1024,
-    STACK_BASE = 5409536,
+    STACK_BASE = 5407840,
     STACKTOP = STACK_BASE,
-    STACK_MAX = 166656,
-    DYNAMIC_BASE = 5409536,
-    DYNAMICTOP_PTR = 165728;
+    STACK_MAX = 164960,
+    DYNAMIC_BASE = 5407840,
+    DYNAMICTOP_PTR = 164800;
 
 assert(STACK_BASE % 16 === 0, 'stack must start aligned');
 assert(DYNAMIC_BASE % 16 === 0, 'heap must start aligned');
 
-if (ENVIRONMENT_IS_PTHREAD) {
-
-  // At the 'load' stage of Worker startup, we are just loading this script
-  // but not ready to run yet. At 'run' we receive proper values for the stack
-  // etc. and can launch a pthread. Set some fake values there meanwhile to
-  // catch bugs, then set the real values in establishStackSpace later.
-  STACK_MAX = STACKTOP = STACK_MAX = 0x7FFFFFFF;
-  // TODO DYNAMIC_BASE = Module['DYNAMIC_BASE'];
-  // TODO DYNAMICTOP_PTR = Module['DYNAMICTOP_PTR'];
-}
 
 var TOTAL_STACK = 5242880;
 if (Module['TOTAL_STACK']) assert(TOTAL_STACK === Module['TOTAL_STACK'], 'the stack size can no longer be determined at runtime')
@@ -1694,10 +1622,6 @@ assert(typeof Int32Array !== 'undefined' && typeof Float64Array !== 'undefined' 
 
 // Create the main memory. (Note: this isn't used in STANDALONE_WASM mode since the wasm
 // memory is created in the wasm, not in JS.)
-if (ENVIRONMENT_IS_PTHREAD) {
-  wasmMemory = Module['wasmMemory'];
-  buffer = Module['buffer'];
-} else {
 
   if (Module['wasmMemory']) {
     wasmMemory = Module['wasmMemory'];
@@ -1707,19 +1631,9 @@ if (ENVIRONMENT_IS_PTHREAD) {
       'initial': INITIAL_INITIAL_MEMORY / WASM_PAGE_SIZE
       ,
       'maximum': INITIAL_INITIAL_MEMORY / WASM_PAGE_SIZE
-      ,
-      'shared': true
     });
-    if (!(wasmMemory.buffer instanceof SharedArrayBuffer)) {
-      err('requested a shared WebAssembly.Memory but the returned buffer is not a SharedArrayBuffer, indicating that while the browser has SharedArrayBuffer it does not have WebAssembly threads support - you may need to set a flag');
-      if (ENVIRONMENT_IS_NODE) {
-        console.log('(on node you may need: --experimental-wasm-threads --experimental-wasm-bulk-memory and also use a recent version)');
-      }
-      throw Error('bad memory');
-    }
   }
 
-}
 
 if (wasmMemory) {
   buffer = wasmMemory.buffer;
@@ -1731,9 +1645,7 @@ INITIAL_INITIAL_MEMORY = buffer.byteLength;
 assert(INITIAL_INITIAL_MEMORY % WASM_PAGE_SIZE === 0);
 updateGlobalBufferAndViews(buffer);
 
-if (!ENVIRONMENT_IS_PTHREAD) { // Pthreads have already initialized these variables in src/worker.js, where they were passed to the thread worker at startup time
 HEAP32[DYNAMICTOP_PTR>>2] = DYNAMIC_BASE;
-}
 
 
 
@@ -1809,10 +1721,8 @@ var __ATPOSTRUN__ = []; // functions called after the main() is called
 var runtimeInitialized = false;
 var runtimeExited = false;
 
-if (ENVIRONMENT_IS_PTHREAD) runtimeInitialized = true; // The runtime is hosted in the main thread, and bits shared to pthreads via SharedArrayBuffer. No need to init again in pthread.
 
 function preRun() {
-  if (ENVIRONMENT_IS_PTHREAD) return; // PThreads reuse the runtime from the main thread.
 
   if (Module['preRun']) {
     if (typeof Module['preRun'] == 'function') Module['preRun'] = [Module['preRun']];
@@ -1835,20 +1745,17 @@ TTY.init();
 
 function preMain() {
   checkStackCookie();
-  if (ENVIRONMENT_IS_PTHREAD) return; // PThreads reuse the runtime from the main thread.
   FS.ignorePermissions = false;
   callRuntimeCallbacks(__ATMAIN__);
 }
 
 function exitRuntime() {
   checkStackCookie();
-  if (ENVIRONMENT_IS_PTHREAD) return; // PThreads reuse the runtime from the main thread.
   runtimeExited = true;
 }
 
 function postRun() {
   checkStackCookie();
-  if (ENVIRONMENT_IS_PTHREAD) return; // PThreads reuse the runtime from the main thread.
 
   if (Module['postRun']) {
     if (typeof Module['postRun'] == 'function') Module['postRun'] = [Module['postRun']];
@@ -1963,9 +1870,6 @@ function getUniqueRunDependency(id) {
 }
 
 function addRunDependency(id) {
-  // We should never get here in pthreads (could no-op this out if called in pthreads, but that might indicate a bug in caller side,
-  // so good to be very explicit)
-  assert(!ENVIRONMENT_IS_PTHREAD, "addRunDependency cannot be used in a pthread worker");
   runDependencies++;
 
   if (Module['monitorRunDependencies']) {
@@ -2036,7 +1940,6 @@ function abort(what) {
     Module['onAbort'](what);
   }
 
-  if (ENVIRONMENT_IS_PTHREAD) console.error('Pthread aborting at ' + new Error().stack);
   what += '';
   err(what);
 
@@ -2171,20 +2074,10 @@ function createWasm() {
   function receiveInstance(instance, module) {
     var exports = instance.exports;
     Module['asm'] = exports;
-    // We now have the Wasm module loaded up, keep a reference to the compiled module so we can post it to the workers.
-    wasmModule = module;
-    // Instantiation is synchronous in pthreads and we assert on run dependencies.
-    if (!ENVIRONMENT_IS_PTHREAD) {
-      var numWorkersToLoad = PThread.unusedWorkers.length;
-      PThread.unusedWorkers.forEach(function(w) { PThread.loadWasmModuleToWorker(w, function() {
-        // PTHREAD_POOL_DELAY_LOAD==0: we wanted to synchronously wait until the Worker pool
-        // has loaded up. If all Workers have finished loading up the Wasm Module, proceed with main()
-        if (!--numWorkersToLoad) removeRunDependency('wasm-instantiate');
-      })});
-    }
+    removeRunDependency('wasm-instantiate');
   }
   // we can't run yet (except in a pthread, where we have a custom sync instantiator)
-  if (!ENVIRONMENT_IS_PTHREAD) { addRunDependency('wasm-instantiate'); }
+  addRunDependency('wasm-instantiate');
 
 
   // Async compilation can be confusing when an error on the page overwrites Module
@@ -2196,7 +2089,9 @@ function createWasm() {
     // receiveInstance() will swap in the exports (to Module.asm) so they can be called
     assert(Module === trueModule, 'the Module object should not be replaced during async compilation - perhaps the order of HTML elements is wrong?');
     trueModule = null;
-    receiveInstance(output['instance'], output['module']);
+    // TODO: Due to Closure regression https://github.com/google/closure-compiler/issues/3193, the above line no longer optimizes out down to the following line.
+    // When the regression is fixed, can restore the above USE_PTHREADS-enabled path.
+    receiveInstance(output['instance']);
   }
 
 
@@ -2258,22 +2153,16 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  90576: function() {throw 'Canceled!'},  
- 90796: function($0, $1) {setTimeout(function() { _do_emscripten_dispatch_to_thread($0, $1); }, 0);}
+  
 };
-
-function _emscripten_asm_const_iii(code, sigPtr, argbuf) {
-  var args = readAsmConstArgs(sigPtr, argbuf);
-
-  return ASM_CONSTS[code].apply(null, args);
-}function get_canvas_height(){ return canvas.clientHeight; }
+function get_canvas_height(){ return canvas.clientHeight; }
 function get_canvas_width(){ return canvas.clientWidth; }
-function initPthreadsJS(){ PThread.initRuntime(); }
+function set_title(title){ document.title = UTF8ToString(title); }
 
 
 
-// STATICTOP = STATIC_BASE + 165632;
-/* global initializers */ if (!ENVIRONMENT_IS_PTHREAD) __ATINIT__.push({ func: function() { ___wasm_call_ctors() } });
+// STATICTOP = STATIC_BASE + 163936;
+/* global initializers */  __ATINIT__.push({ func: function() { ___wasm_call_ctors() } });
 
 
 
@@ -2300,337 +2189,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
           return x === y ? x : (y + ' [' + x + ']');
         });
     }
-
-  
-  
-  
-  var __pthread_ptr=0;
-  
-  var __pthread_is_main_runtime_thread=0;
-  
-  var __pthread_is_main_browser_thread=0;function registerPthreadPtr(pthreadPtr, isMainBrowserThread, isMainRuntimeThread) {
-      pthreadPtr = pthreadPtr|0;
-      isMainBrowserThread = isMainBrowserThread|0;
-      isMainRuntimeThread = isMainRuntimeThread|0;
-      __pthread_ptr = pthreadPtr;
-      __pthread_is_main_browser_thread = isMainBrowserThread;
-      __pthread_is_main_runtime_thread = isMainRuntimeThread;
-    }
-  Module["registerPthreadPtr"] = registerPthreadPtr;
-  
-  var ERRNO_CODES={EPERM:63,ENOENT:44,ESRCH:71,EINTR:27,EIO:29,ENXIO:60,E2BIG:1,ENOEXEC:45,EBADF:8,ECHILD:12,EAGAIN:6,EWOULDBLOCK:6,ENOMEM:48,EACCES:2,EFAULT:21,ENOTBLK:105,EBUSY:10,EEXIST:20,EXDEV:75,ENODEV:43,ENOTDIR:54,EISDIR:31,EINVAL:28,ENFILE:41,EMFILE:33,ENOTTY:59,ETXTBSY:74,EFBIG:22,ENOSPC:51,ESPIPE:70,EROFS:69,EMLINK:34,EPIPE:64,EDOM:18,ERANGE:68,ENOMSG:49,EIDRM:24,ECHRNG:106,EL2NSYNC:156,EL3HLT:107,EL3RST:108,ELNRNG:109,EUNATCH:110,ENOCSI:111,EL2HLT:112,EDEADLK:16,ENOLCK:46,EBADE:113,EBADR:114,EXFULL:115,ENOANO:104,EBADRQC:103,EBADSLT:102,EDEADLOCK:16,EBFONT:101,ENOSTR:100,ENODATA:116,ETIME:117,ENOSR:118,ENONET:119,ENOPKG:120,EREMOTE:121,ENOLINK:47,EADV:122,ESRMNT:123,ECOMM:124,EPROTO:65,EMULTIHOP:36,EDOTDOT:125,EBADMSG:9,ENOTUNIQ:126,EBADFD:127,EREMCHG:128,ELIBACC:129,ELIBBAD:130,ELIBSCN:131,ELIBMAX:132,ELIBEXEC:133,ENOSYS:52,ENOTEMPTY:55,ENAMETOOLONG:37,ELOOP:32,EOPNOTSUPP:138,EPFNOSUPPORT:139,ECONNRESET:15,ENOBUFS:42,EAFNOSUPPORT:5,EPROTOTYPE:67,ENOTSOCK:57,ENOPROTOOPT:50,ESHUTDOWN:140,ECONNREFUSED:14,EADDRINUSE:3,ECONNABORTED:13,ENETUNREACH:40,ENETDOWN:38,ETIMEDOUT:73,EHOSTDOWN:142,EHOSTUNREACH:23,EINPROGRESS:26,EALREADY:7,EDESTADDRREQ:17,EMSGSIZE:35,EPROTONOSUPPORT:66,ESOCKTNOSUPPORT:137,EADDRNOTAVAIL:4,ENETRESET:39,EISCONN:30,ENOTCONN:53,ETOOMANYREFS:141,EUSERS:136,EDQUOT:19,ESTALE:72,ENOTSUP:138,ENOMEDIUM:148,EILSEQ:25,EOVERFLOW:61,ECANCELED:11,ENOTRECOVERABLE:56,EOWNERDEAD:62,ESTRPIPE:135};
-  
-  
-  var __main_thread_futex_wait_address=166640;function _emscripten_futex_wake(addr, count) {
-      if (addr <= 0 || addr > HEAP8.length || addr&3 != 0 || count < 0) return -28;
-      if (count == 0) return 0;
-      // Waking (at least) INT_MAX waiters is defined to mean wake all callers.
-      // For Atomics.notify() API Infinity is to be passed in that case.
-      if (count >= 2147483647) count = Infinity;
-  
-      // See if main thread is waiting on this address? If so, wake it up by resetting its wake location to zero.
-      // Note that this is not a fair procedure, since we always wake main thread first before any workers, so
-      // this scheme does not adhere to real queue-based waiting.
-      var mainThreadWaitAddress = Atomics.load(HEAP32, __main_thread_futex_wait_address >> 2);
-      var mainThreadWoken = 0;
-      if (mainThreadWaitAddress == addr) {
-        var loadedAddr = Atomics.compareExchange(HEAP32, __main_thread_futex_wait_address >> 2, mainThreadWaitAddress, 0);
-        if (loadedAddr == mainThreadWaitAddress) {
-          --count;
-          mainThreadWoken = 1;
-          if (count <= 0) return 1;
-        }
-      }
-  
-      // Wake any workers waiting on this address.
-      var ret = Atomics.notify(HEAP32, addr >> 2, count);
-      if (ret >= 0) return ret + mainThreadWoken;
-      throw 'Atomics.notify returned an unexpected value ' + ret;
-    }
-  Module["_emscripten_futex_wake"] = _emscripten_futex_wake;
-  
-  function killThread(pthread_ptr) {
-      if (ENVIRONMENT_IS_PTHREAD) throw 'Internal Error! killThread() can only ever be called from main application thread!';
-      if (!pthread_ptr) throw 'Internal Error! Null pthread_ptr in killThread!';
-      SAFE_HEAP_STORE((((pthread_ptr)+(12))|0), ((0)|0), 4);
-      var pthread = PThread.pthreads[pthread_ptr];
-      pthread.worker.terminate();
-      PThread.freeThreadData(pthread);
-      // The worker was completely nuked (not just the pthread execution it was hosting), so remove it from running workers
-      // but don't put it back to the pool.
-      PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(pthread.worker), 1); // Not a running Worker anymore.
-      pthread.worker.pthread = undefined;
-    }
-  
-  function cancelThread(pthread_ptr) {
-      if (ENVIRONMENT_IS_PTHREAD) throw 'Internal Error! cancelThread() can only ever be called from main application thread!';
-      if (!pthread_ptr) throw 'Internal Error! Null pthread_ptr in cancelThread!';
-      var pthread = PThread.pthreads[pthread_ptr];
-      pthread.worker.postMessage({ 'cmd': 'cancel' });
-    }
-  
-  function cleanupThread(pthread_ptr) {
-      if (ENVIRONMENT_IS_PTHREAD) throw 'Internal Error! cleanupThread() can only ever be called from main application thread!';
-      if (!pthread_ptr) throw 'Internal Error! Null pthread_ptr in cleanupThread!';
-      SAFE_HEAP_STORE((((pthread_ptr)+(12))|0), ((0)|0), 4);
-      var pthread = PThread.pthreads[pthread_ptr];
-      if (pthread) {
-        var worker = pthread.worker;
-        PThread.returnWorkerToPool(worker);
-      }
-    }var PThread={MAIN_THREAD_ID:1,mainThreadInfo:{schedPolicy:0,schedPrio:0},unusedWorkers:[],runningWorkers:[],initRuntime:function() {
-        // Pass the thread address inside the asm.js scope to store it for fast access that avoids the need for a FFI out.
-        // Global constructors trying to access this value will read the wrong value, but that is UB anyway.
-        registerPthreadPtr(PThread.mainThreadBlock, /*isMainBrowserThread=*/!ENVIRONMENT_IS_WORKER, /*isMainRuntimeThread=*/1);
-        _emscripten_register_main_browser_thread_id(PThread.mainThreadBlock);
-      },initMainThreadBlock:function() {
-        assert(!ENVIRONMENT_IS_PTHREAD);
-  
-        var pthreadPoolSize = 8;
-        // Start loading up the Worker pool, if requested.
-        for(var i = 0; i < pthreadPoolSize; ++i) {
-          PThread.allocateUnusedWorker();
-        }
-  
-        // In asm.js we do not need to wait for Wasm Module to compile on the main thread, so can load
-        // up each Worker immediately. (in asm.js mode ignore PTHREAD_POOL_DELAY_LOAD altogether for
-        // simplicity, as multithreading performance optimizations are not interesting there)
-  
-        PThread.mainThreadBlock = 165888;
-  
-        for (var i = 0; i < 232/4; ++i) HEAPU32[PThread.mainThreadBlock/4+i] = 0;
-  
-        // The pthread struct has a field that points to itself - this is used as a magic ID to detect whether the pthread_t
-        // structure is 'alive'.
-        SAFE_HEAP_STORE((((PThread.mainThreadBlock)+(12))|0), ((PThread.mainThreadBlock)|0), 4);
-  
-        // pthread struct robust_list head should point to itself.
-        var headPtr = PThread.mainThreadBlock + 156;
-        SAFE_HEAP_STORE(((headPtr)|0), ((headPtr)|0), 4);
-  
-        // Allocate memory for thread-local storage.
-        var tlsMemory = 166128;
-        for (var i = 0; i < 128; ++i) HEAPU32[tlsMemory/4+i] = 0;
-        Atomics.store(HEAPU32, (PThread.mainThreadBlock + 104 ) >> 2, tlsMemory); // Init thread-local-storage memory array.
-        Atomics.store(HEAPU32, (PThread.mainThreadBlock + 40 ) >> 2, PThread.mainThreadBlock); // Main thread ID.
-        Atomics.store(HEAPU32, (PThread.mainThreadBlock + 44 ) >> 2, 42); // Process ID.
-  
-      },initWorker:function() {
-      },pthreads:{},threadExitHandlers:[],setThreadStatus:function() {},runExitHandlers:function() {
-        while (PThread.threadExitHandlers.length > 0) {
-          PThread.threadExitHandlers.pop()();
-        }
-  
-        // Call into the musl function that runs destructors of all thread-specific data.
-        if (ENVIRONMENT_IS_PTHREAD && threadInfoStruct) ___pthread_tsd_run_dtors();
-      },threadExit:function(exitCode) {
-        var tb = _pthread_self();
-        if (tb) { // If we haven't yet exited?
-          err('Pthread 0x' + tb.toString(16) + ' exited.');
-          Atomics.store(HEAPU32, (tb + 4 ) >> 2, exitCode);
-          // When we publish this, the main thread is free to deallocate the thread object and we are done.
-          // Therefore set threadInfoStruct = 0; above to 'release' the object in this worker thread.
-          Atomics.store(HEAPU32, (tb + 0 ) >> 2, 1);
-  
-          // Disable all cancellation so that executing the cleanup handlers won't trigger another JS
-          // canceled exception to be thrown.
-          Atomics.store(HEAPU32, (tb + 60 ) >> 2, 1/*PTHREAD_CANCEL_DISABLE*/);
-          Atomics.store(HEAPU32, (tb + 64 ) >> 2, 0/*PTHREAD_CANCEL_DEFERRED*/);
-          PThread.runExitHandlers();
-  
-          _emscripten_futex_wake(tb + 0, 2147483647);
-          registerPthreadPtr(0, 0, 0); // Unregister the thread block also inside the asm.js scope.
-          threadInfoStruct = 0;
-          if (ENVIRONMENT_IS_PTHREAD) {
-            // Note: in theory we would like to return any offscreen canvases back to the main thread,
-            // but if we ever fetched a rendering context for them that would not be valid, so we don't try.
-            postMessage({ 'cmd': 'exit' });
-          }
-        }
-      },threadCancel:function() {
-        PThread.runExitHandlers();
-        Atomics.store(HEAPU32, (threadInfoStruct + 4 ) >> 2, -1/*PTHREAD_CANCELED*/);
-        Atomics.store(HEAPU32, (threadInfoStruct + 0 ) >> 2, 1); // Mark the thread as no longer running.
-        _emscripten_futex_wake(threadInfoStruct + 0, 2147483647); // wake all threads
-        threadInfoStruct = selfThreadId = 0; // Not hosting a pthread anymore in this worker, reset the info structures to null.
-        registerPthreadPtr(0, 0, 0); // Unregister the thread block also inside the asm.js scope.
-        postMessage({ 'cmd': 'cancelDone' });
-      },terminateAllThreads:function() {
-        for (var t in PThread.pthreads) {
-          var pthread = PThread.pthreads[t];
-          if (pthread && pthread.worker) {
-            PThread.returnWorkerToPool(pthread.worker);
-          }
-        }
-        PThread.pthreads = {};
-  
-        for (var i = 0; i < PThread.unusedWorkers.length; ++i) {
-          var worker = PThread.unusedWorkers[i];
-          assert(!worker.pthread); // This Worker should not be hosting a pthread at this time.
-          worker.terminate();
-        }
-        PThread.unusedWorkers = [];
-  
-        for (var i = 0; i < PThread.runningWorkers.length; ++i) {
-          var worker = PThread.runningWorkers[i];
-          var pthread = worker.pthread;
-          assert(pthread, 'This Worker should have a pthread it is executing');
-          PThread.freeThreadData(pthread);
-          worker.terminate();
-        }
-        PThread.runningWorkers = [];
-      },freeThreadData:function(pthread) {
-        if (!pthread) return;
-        if (pthread.threadInfoStruct) {
-          var tlsMemory = ((SAFE_HEAP_LOAD((((pthread.threadInfoStruct)+(104))|0), 4, 0))|0);
-          SAFE_HEAP_STORE((((pthread.threadInfoStruct)+(104))|0), ((0)|0), 4);
-          _free(tlsMemory);
-          _free(pthread.threadInfoStruct);
-        }
-        pthread.threadInfoStruct = 0;
-        if (pthread.allocatedOwnStack && pthread.stackBase) _free(pthread.stackBase);
-        pthread.stackBase = 0;
-        if (pthread.worker) pthread.worker.pthread = null;
-      },returnWorkerToPool:function(worker) {
-        delete PThread.pthreads[worker.pthread.thread];
-        //Note: worker is intentionally not terminated so the pool can dynamically grow.
-        PThread.unusedWorkers.push(worker);
-        PThread.runningWorkers.splice(PThread.runningWorkers.indexOf(worker), 1); // Not a running Worker anymore
-        PThread.freeThreadData(worker.pthread);
-        worker.pthread = undefined; // Detach the worker from the pthread object, and return it to the worker pool as an unused worker.
-      },receiveObjectTransfer:function(data) {
-      },loadWasmModuleToWorker:function(worker, onFinishedLoading) {
-        worker.onmessage = function(e) {
-          var d = e['data'];
-          var cmd = d['cmd'];
-          // Sometimes we need to backproxy events to the calling thread (e.g. HTML5 DOM events handlers such as emscripten_set_mousemove_callback()), so keep track in a globally accessible variable about the thread that initiated the proxying.
-          if (worker.pthread) PThread.currentProxiedOperationCallerThread = worker.pthread.threadInfoStruct;
-  
-          // If this message is intended to a recipient that is not the main thread, forward it to the target thread.
-          if (d['targetThread'] && d['targetThread'] != _pthread_self()) {
-            var thread = PThread.pthreads[d.targetThread];
-            if (thread) {
-              thread.worker.postMessage(e.data, d['transferList']);
-            } else {
-              console.error('Internal error! Worker sent a message "' + cmd + '" to target pthread ' + d['targetThread'] + ', but that thread no longer exists!');
-            }
-            PThread.currentProxiedOperationCallerThread = undefined;
-            return;
-          }
-  
-          if (cmd === 'processQueuedMainThreadWork') {
-            // TODO: Must post message to main Emscripten thread in PROXY_TO_WORKER mode.
-            _emscripten_main_thread_process_queued_calls();
-          } else if (cmd === 'spawnThread') {
-            spawnThread(e.data);
-          } else if (cmd === 'cleanupThread') {
-            cleanupThread(d['thread']);
-          } else if (cmd === 'killThread') {
-            killThread(d['thread']);
-          } else if (cmd === 'cancelThread') {
-            cancelThread(d['thread']);
-          } else if (cmd === 'loaded') {
-            worker.loaded = true;
-            if (onFinishedLoading) onFinishedLoading(worker);
-            // If this Worker is already pending to start running a thread, launch the thread now
-            if (worker.runPthread) {
-              worker.runPthread();
-              delete worker.runPthread;
-            }
-          } else if (cmd === 'print') {
-            out('Thread ' + d['threadId'] + ': ' + d['text']);
-          } else if (cmd === 'printErr') {
-            err('Thread ' + d['threadId'] + ': ' + d['text']);
-          } else if (cmd === 'alert') {
-            alert('Thread ' + d['threadId'] + ': ' + d['text']);
-          } else if (cmd === 'exit') {
-            var detached = worker.pthread && Atomics.load(HEAPU32, (worker.pthread.thread + 68) >> 2);
-            if (detached) {
-              PThread.returnWorkerToPool(worker);
-            }
-          } else if (cmd === 'cancelDone') {
-            PThread.returnWorkerToPool(worker);
-          } else if (cmd === 'objectTransfer') {
-            PThread.receiveObjectTransfer(e.data);
-          } else if (e.data.target === 'setimmediate') {
-            worker.postMessage(e.data); // Worker wants to postMessage() to itself to implement setImmediate() emulation.
-          } else {
-            err("worker sent an unknown command " + cmd);
-          }
-          PThread.currentProxiedOperationCallerThread = undefined;
-        };
-  
-        worker.onerror = function(e) {
-          err('pthread sent an error! ' + e.filename + ':' + e.lineno + ': ' + e.message);
-        };
-  
-        if (ENVIRONMENT_IS_NODE) {
-          worker.on('message', function(data) {
-            worker.onmessage({ data: data });
-          });
-          worker.on('error', function(data) {
-            worker.onerror(data);
-          });
-          worker.on('exit', function(data) {
-            console.log('worker exited - TODO: update the worker queue?');
-          });
-        }
-  
-        assert(wasmMemory instanceof WebAssembly.Memory, 'WebAssembly memory should have been loaded by now!');
-        assert(wasmModule instanceof WebAssembly.Module, 'WebAssembly Module should have been loaded by now!');
-  
-        // Ask the new worker to load up the Emscripten-compiled page. This is a heavy operation.
-        worker.postMessage({
-          'cmd': 'load',
-          // If the application main .js file was loaded from a Blob, then it is not possible
-          // to access the URL of the current script that could be passed to a Web Worker so that
-          // it could load up the same file. In that case, developer must either deliver the Blob
-          // object in Module['mainScriptUrlOrBlob'], or a URL to it, so that pthread Workers can
-          // independently load up the same main application file.
-          'urlOrBlob': Module['mainScriptUrlOrBlob'] || _scriptDir,
-          'wasmMemory': wasmMemory,
-          'wasmModule': wasmModule,
-          'DYNAMIC_BASE': DYNAMIC_BASE,
-          'DYNAMICTOP_PTR': DYNAMICTOP_PTR
-        });
-      },allocateUnusedWorker:function() {
-        // Allow HTML module to configure the location where the 'worker.js' file will be loaded from,
-        // via Module.locateFile() function. If not specified, then the default URL 'worker.js' relative
-        // to the main html file is loaded.
-        var pthreadMainJs = locateFile('maths_functions.worker.js');
-        PThread.unusedWorkers.push(new Worker(pthreadMainJs));
-      },getNewWorker:function() {
-        if (PThread.unusedWorkers.length == 0) {
-          PThread.allocateUnusedWorker();
-          PThread.loadWasmModuleToWorker(PThread.unusedWorkers[0]);
-        }
-        if (PThread.unusedWorkers.length > 0) return PThread.unusedWorkers.pop();
-        else return null;
-      },busySpinWait:function(msecs) {
-        var t = performance.now() + msecs;
-        while(performance.now() < t) {
-          ;
-        }
-      }};function establishStackSpace(stackTop, stackMax) {
-      STACK_BASE = STACKTOP = stackTop;
-      STACK_MAX = stackMax;
-  
-  
-      ___set_stack_limit(STACK_MAX);
-  
-      // Call inside wasm module to set up the stack frame for this pthread in asm.js/wasm module scope
-      stackRestore(stackTop);
-  
-      // Write the stack cookie last, after we have set up the proper bounds and
-      // current position of the stack.
-      writeStackCookie();
-    }
-  Module["establishStackSpace"] = establishStackSpace;
-
-  function getNoExitRuntime() {
-      return noExitRuntime;
-    }
-  Module["getNoExitRuntime"] = getNoExitRuntime;
 
   function jsStackTrace() {
       var err = new Error();
@@ -3248,7 +2806,9 @@ function initPthreadsJS(){ PThread.initRuntime(); }
           return 0;
         }}};
   
-  var ERRNO_MESSAGES={0:"Success",1:"Arg list too long",2:"Permission denied",3:"Address already in use",4:"Address not available",5:"Address family not supported by protocol family",6:"No more processes",7:"Socket already connected",8:"Bad file number",9:"Trying to read unreadable message",10:"Mount device busy",11:"Operation canceled",12:"No children",13:"Connection aborted",14:"Connection refused",15:"Connection reset by peer",16:"File locking deadlock error",17:"Destination address required",18:"Math arg out of domain of func",19:"Quota exceeded",20:"File exists",21:"Bad address",22:"File too large",23:"Host is unreachable",24:"Identifier removed",25:"Illegal byte sequence",26:"Connection already in progress",27:"Interrupted system call",28:"Invalid argument",29:"I/O error",30:"Socket is already connected",31:"Is a directory",32:"Too many symbolic links",33:"Too many open files",34:"Too many links",35:"Message too long",36:"Multihop attempted",37:"File or path name too long",38:"Network interface is not configured",39:"Connection reset by network",40:"Network is unreachable",41:"Too many open files in system",42:"No buffer space available",43:"No such device",44:"No such file or directory",45:"Exec format error",46:"No record locks available",47:"The link has been severed",48:"Not enough core",49:"No message of desired type",50:"Protocol not available",51:"No space left on device",52:"Function not implemented",53:"Socket is not connected",54:"Not a directory",55:"Directory not empty",56:"State not recoverable",57:"Socket operation on non-socket",59:"Not a typewriter",60:"No such device or address",61:"Value too large for defined data type",62:"Previous owner died",63:"Not super-user",64:"Broken pipe",65:"Protocol error",66:"Unknown protocol",67:"Protocol wrong type for socket",68:"Math result not representable",69:"Read only file system",70:"Illegal seek",71:"No such process",72:"Stale file handle",73:"Connection timed out",74:"Text file busy",75:"Cross-device link",100:"Device not a stream",101:"Bad font file fmt",102:"Invalid slot",103:"Invalid request code",104:"No anode",105:"Block device required",106:"Channel number out of range",107:"Level 3 halted",108:"Level 3 reset",109:"Link number out of range",110:"Protocol driver not attached",111:"No CSI structure available",112:"Level 2 halted",113:"Invalid exchange",114:"Invalid request descriptor",115:"Exchange full",116:"No data (for no delay io)",117:"Timer expired",118:"Out of streams resources",119:"Machine is not on the network",120:"Package not installed",121:"The object is remote",122:"Advertise error",123:"Srmount error",124:"Communication error on send",125:"Cross mount point (not really error)",126:"Given log. name not unique",127:"f.d. invalid for this operation",128:"Remote address changed",129:"Can   access a needed shared lib",130:"Accessing a corrupted shared lib",131:".lib section in a.out corrupted",132:"Attempting to link in too many libs",133:"Attempting to exec a shared library",135:"Streams pipe error",136:"Too many users",137:"Socket type not supported",138:"Not supported",139:"Protocol family not supported",140:"Can't send after socket shutdown",141:"Too many references",142:"Host is down",148:"No medium (in tape drive)",156:"Level 2 not synchronized"};var FS={root:null,mounts:[],devices:{},streams:[],nextInode:1,nameTable:null,currentPath:"/",initialized:false,ignorePermissions:true,trackingDelegate:{},tracking:{openFlags:{READ:1,WRITE:2}},ErrnoError:null,genericErrors:{},filesystems:null,syncFSRequests:0,handleFSError:function(e) {
+  var ERRNO_MESSAGES={0:"Success",1:"Arg list too long",2:"Permission denied",3:"Address already in use",4:"Address not available",5:"Address family not supported by protocol family",6:"No more processes",7:"Socket already connected",8:"Bad file number",9:"Trying to read unreadable message",10:"Mount device busy",11:"Operation canceled",12:"No children",13:"Connection aborted",14:"Connection refused",15:"Connection reset by peer",16:"File locking deadlock error",17:"Destination address required",18:"Math arg out of domain of func",19:"Quota exceeded",20:"File exists",21:"Bad address",22:"File too large",23:"Host is unreachable",24:"Identifier removed",25:"Illegal byte sequence",26:"Connection already in progress",27:"Interrupted system call",28:"Invalid argument",29:"I/O error",30:"Socket is already connected",31:"Is a directory",32:"Too many symbolic links",33:"Too many open files",34:"Too many links",35:"Message too long",36:"Multihop attempted",37:"File or path name too long",38:"Network interface is not configured",39:"Connection reset by network",40:"Network is unreachable",41:"Too many open files in system",42:"No buffer space available",43:"No such device",44:"No such file or directory",45:"Exec format error",46:"No record locks available",47:"The link has been severed",48:"Not enough core",49:"No message of desired type",50:"Protocol not available",51:"No space left on device",52:"Function not implemented",53:"Socket is not connected",54:"Not a directory",55:"Directory not empty",56:"State not recoverable",57:"Socket operation on non-socket",59:"Not a typewriter",60:"No such device or address",61:"Value too large for defined data type",62:"Previous owner died",63:"Not super-user",64:"Broken pipe",65:"Protocol error",66:"Unknown protocol",67:"Protocol wrong type for socket",68:"Math result not representable",69:"Read only file system",70:"Illegal seek",71:"No such process",72:"Stale file handle",73:"Connection timed out",74:"Text file busy",75:"Cross-device link",100:"Device not a stream",101:"Bad font file fmt",102:"Invalid slot",103:"Invalid request code",104:"No anode",105:"Block device required",106:"Channel number out of range",107:"Level 3 halted",108:"Level 3 reset",109:"Link number out of range",110:"Protocol driver not attached",111:"No CSI structure available",112:"Level 2 halted",113:"Invalid exchange",114:"Invalid request descriptor",115:"Exchange full",116:"No data (for no delay io)",117:"Timer expired",118:"Out of streams resources",119:"Machine is not on the network",120:"Package not installed",121:"The object is remote",122:"Advertise error",123:"Srmount error",124:"Communication error on send",125:"Cross mount point (not really error)",126:"Given log. name not unique",127:"f.d. invalid for this operation",128:"Remote address changed",129:"Can   access a needed shared lib",130:"Accessing a corrupted shared lib",131:".lib section in a.out corrupted",132:"Attempting to link in too many libs",133:"Attempting to exec a shared library",135:"Streams pipe error",136:"Too many users",137:"Socket type not supported",138:"Not supported",139:"Protocol family not supported",140:"Can't send after socket shutdown",141:"Too many references",142:"Host is down",148:"No medium (in tape drive)",156:"Level 2 not synchronized"};
+  
+  var ERRNO_CODES={EPERM:63,ENOENT:44,ESRCH:71,EINTR:27,EIO:29,ENXIO:60,E2BIG:1,ENOEXEC:45,EBADF:8,ECHILD:12,EAGAIN:6,EWOULDBLOCK:6,ENOMEM:48,EACCES:2,EFAULT:21,ENOTBLK:105,EBUSY:10,EEXIST:20,EXDEV:75,ENODEV:43,ENOTDIR:54,EISDIR:31,EINVAL:28,ENFILE:41,EMFILE:33,ENOTTY:59,ETXTBSY:74,EFBIG:22,ENOSPC:51,ESPIPE:70,EROFS:69,EMLINK:34,EPIPE:64,EDOM:18,ERANGE:68,ENOMSG:49,EIDRM:24,ECHRNG:106,EL2NSYNC:156,EL3HLT:107,EL3RST:108,ELNRNG:109,EUNATCH:110,ENOCSI:111,EL2HLT:112,EDEADLK:16,ENOLCK:46,EBADE:113,EBADR:114,EXFULL:115,ENOANO:104,EBADRQC:103,EBADSLT:102,EDEADLOCK:16,EBFONT:101,ENOSTR:100,ENODATA:116,ETIME:117,ENOSR:118,ENONET:119,ENOPKG:120,EREMOTE:121,ENOLINK:47,EADV:122,ESRMNT:123,ECOMM:124,EPROTO:65,EMULTIHOP:36,EDOTDOT:125,EBADMSG:9,ENOTUNIQ:126,EBADFD:127,EREMCHG:128,ELIBACC:129,ELIBBAD:130,ELIBSCN:131,ELIBMAX:132,ELIBEXEC:133,ENOSYS:52,ENOTEMPTY:55,ENAMETOOLONG:37,ELOOP:32,EOPNOTSUPP:138,EPFNOSUPPORT:139,ECONNRESET:15,ENOBUFS:42,EAFNOSUPPORT:5,EPROTOTYPE:67,ENOTSOCK:57,ENOPROTOOPT:50,ESHUTDOWN:140,ECONNREFUSED:14,EADDRINUSE:3,ECONNABORTED:13,ENETUNREACH:40,ENETDOWN:38,ETIMEDOUT:73,EHOSTDOWN:142,EHOSTUNREACH:23,EINPROGRESS:26,EALREADY:7,EDESTADDRREQ:17,EMSGSIZE:35,EPROTONOSUPPORT:66,ESOCKTNOSUPPORT:137,EADDRNOTAVAIL:4,ENETRESET:39,EISCONN:30,ENOTCONN:53,ETOOMANYREFS:141,EUSERS:136,EDQUOT:19,ESTALE:72,ENOTSUP:138,ENOMEDIUM:148,EILSEQ:25,EOVERFLOW:61,ECANCELED:11,ENOTRECOVERABLE:56,EOWNERDEAD:62,ESTRPIPE:135};var FS={root:null,mounts:[],devices:{},streams:[],nextInode:1,nameTable:null,currentPath:"/",initialized:false,ignorePermissions:true,trackingDelegate:{},tracking:{openFlags:{READ:1,WRITE:2}},ErrnoError:null,genericErrors:{},filesystems:null,syncFSRequests:0,handleFSError:function(e) {
         if (!(e instanceof FS.ErrnoError)) throw e + ' : ' + stackTrace();
         return setErrNo(e.errno);
       },lookupPath:function(path, opts) {
@@ -4967,8 +4527,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       var t = process['hrtime']();
       return t[0] * 1e3 + t[1] / 1e6;
     };
-  } else if (ENVIRONMENT_IS_PTHREAD) {
-    _emscripten_get_now = function() { return performance.now() - Module['__performance_now_clock_drift']; };
   } else if (typeof dateNow !== 'undefined') {
     _emscripten_get_now = dateNow;
   } else _emscripten_get_now = function() { return performance.now(); }
@@ -5711,15 +5269,10 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       }};
   
   function _SDL_GetTicks() {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(1, 1);
-  
       return (Date.now() - SDL.startTime)|0;
     }
   
-  
   function _SDL_LockSurface(surf) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(2, 1, surf);
-  
       var surfData = SDL.surfaces[surf];
   
       surfData.locked++;
@@ -5785,7 +5338,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
   
       return 0;
     }
-  
   
   /** @suppress{missingProperties} */
   function SDL_unicode() { return SDL.unicode}
@@ -6734,52 +6286,35 @@ function initPthreadsJS(){ PThread.initRuntime(); }
         }
         return null;
       }};function _SDL_EnableUNICODE(on) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(3, 1, on);
-  
       var ret = SDL.unicode || 0;
       SDL.unicode = on;
       return ret;
     }
-  
 
   function _SDL_FreeSurface(surf) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(4, 1, surf);
-  
       if (surf) SDL.freeSurface(surf);
     }
-  
 
   function _SDL_GL_SetAttribute(attr, value) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(5, 1, attr, value);
-  
       if (!(attr in SDL.glAttributes)) {
         abort('Unknown SDL GL attribute (' + attr + '). Please check if your SDL version is supported.');
       }
   
       SDL.glAttributes[attr] = value;
     }
-  
 
   function _SDL_GL_SwapBuffers() {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(6, 1);
-  
       if (Browser.doSwapBuffers) Browser.doSwapBuffers(); // in workers, this is used to send out a buffered frame
     }
-  
 
   function _SDL_GetMouseState(x, y) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(7, 1, x, y);
-  
       if (x) SAFE_HEAP_STORE(((x)|0), ((Browser.mouseX)|0), 4);
       if (y) SAFE_HEAP_STORE(((y)|0), ((Browser.mouseY)|0), 4);
       return SDL.buttonState;
     }
-  
 
   /** @param{number=} initFlags */
   function _SDL_Init(initFlags) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(8, 1, initFlags);
-  
       SDL.startTime = Date.now();
       SDL.initFlags = initFlags;
   
@@ -6822,23 +6357,16 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       SDL.DOMEventToSDLEvent['joystick_button_up'] = 0x604 /* SDL_JOYBUTTONUP */;
       return 0; // success
     }
-  
 
   function _SDL_PollEvent(ptr) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(9, 1, ptr);
-  
       return SDL.pollEvent(ptr);
     }
-  
 
-  function _SDL_PumpEvents() {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(10, 1);
-  
+  function _SDL_PumpEvents(){
       SDL.events.forEach(function(event) {
         SDL.handleEvent(event);
       });
     }
-  
 
   
   
@@ -6850,7 +6378,7 @@ function initPthreadsJS(){ PThread.initRuntime(); }
   function __webgl_enable_WEBGL_multi_draw(ctx) {
       // Closure is expected to be allowed to minify the '.multiDrawWebgl' property, so not accessing it quoted.
       return !!(ctx.multiDrawWebgl = ctx.getExtension('WEBGL_multi_draw'));
-    }var GL={counter:1,buffers:[],mappedBuffers:{},programs:[],framebuffers:[],renderbuffers:[],textures:[],uniforms:[],shaders:[],vaos:[],contexts:{},offscreenCanvases:{},timerQueriesEXT:[],queries:[],samplers:[],transformFeedbacks:[],syncs:[],byteSizeByTypeRoot:5120,byteSizeByType:[1,1,2,2,4,4,4,2,3,4,8],programInfos:{},stringCache:{},stringiCache:{},unpackAlignment:4,recordError:function recordError(errorCode) {
+    }var GL={counter:1,buffers:[],mappedBuffers:{},programs:[],framebuffers:[],renderbuffers:[],textures:[],uniforms:[],shaders:[],vaos:[],contexts:[],offscreenCanvases:{},timerQueriesEXT:[],queries:[],samplers:[],transformFeedbacks:[],syncs:[],byteSizeByTypeRoot:5120,byteSizeByType:[1,1,2,2,4,4,4,2,3,4,8],programInfos:{},stringCache:{},stringiCache:{},unpackAlignment:4,recordError:function recordError(errorCode) {
         if (!GL.lastError) {
           GL.lastError = errorCode;
         }
@@ -7011,9 +6539,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
   
         return handle;
       },registerContext:function(ctx, webGLContextAttributes) {
-        // with pthreads a context is a location in memory with some synchronized data between threads
-        var handle = _malloc(8);
-        SAFE_HEAP_STORE((((handle)+(4))|0), ((_pthread_self())|0), 4); // the thread pointer of the thread that owns the control of the context
+        // without pthreads a context is just an integer ID
+        var handle = GL.getNewId(GL.contexts);
   
         var context = {
           handle: handle,
@@ -7052,7 +6579,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
         if (GL.currentContext === GL.contexts[contextHandle]) GL.currentContext = null;
         if (typeof JSEvents === 'object') JSEvents.removeAllHandlersOnTarget(GL.contexts[contextHandle].GLctx.canvas); // Release all JS event handlers on the DOM element that the GL context is associated with since the context is now deleted.
         if (GL.contexts[contextHandle] && GL.contexts[contextHandle].GLctx.canvas) GL.contexts[contextHandle].GLctx.canvas.GLctxObject = undefined; // Make sure the canvas object no longer refers to the context object so there are no GC surprises.
-        _free(GL.contexts[contextHandle].handle);
         GL.contexts[contextHandle] = null;
       },initExtensions:function(context) {
         // If this function is called without a specific context object, init the extensions of the currently active context.
@@ -7152,8 +6678,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
           }
         }
       }};function _SDL_SetVideoMode(width, height, depth, flags) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(11, 1, width, height, depth, flags);
-  
       ['touchstart', 'touchend', 'touchmove', 'mousedown', 'mouseup', 'mousemove', 'DOMMouseScroll', 'mousewheel', 'wheel', 'mouseout'].forEach(function(event) {
         Module['canvas'].addEventListener(event, SDL.receiveEvent, true);
       });
@@ -7195,32 +6719,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
   
       return SDL.screen;
     }
-  
-
-  function ___assert_fail(condition, filename, line, func) {
-      abort('Assertion failed: ' + UTF8ToString(condition) + ', at: ' + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
-    }
-
-  
-  
-  var _emscripten_get_now_is_monotonic=true;;function _clock_gettime(clk_id, tp) {
-      // int clock_gettime(clockid_t clk_id, struct timespec *tp);
-      var now;
-      if (clk_id === 0) {
-        now = Date.now();
-      } else if ((clk_id === 1 || clk_id === 4) && _emscripten_get_now_is_monotonic) {
-        now = _emscripten_get_now();
-      } else {
-        setErrNo(28);
-        return -1;
-      }
-      SAFE_HEAP_STORE(((tp)|0), (((now/1000)|0)|0), 4); // seconds
-      SAFE_HEAP_STORE((((tp)+(4))|0), ((((now % 1000)*1000*1000)|0)|0), 4); // nanoseconds
-      return 0;
-    }function ___clock_gettime(a0,a1
-  ) {
-  return _clock_gettime(a0,a1);
-  }
 
   
   var ExceptionInfoAttrs={DESTRUCTOR_OFFSET:0,REFCOUNT_OFFSET:4,TYPE_OFFSET:8,CAUGHT_OFFSET:12,RETHROWN_OFFSET:13,SIZE:16};function ___cxa_allocate_exception(size) {
@@ -7230,12 +6728,9 @@ function initPthreadsJS(){ PThread.initRuntime(); }
 
   
   function _atexit(func, arg) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(12, 1, func, arg);
-  
       warnOnce('atexit() called, but EXIT_RUNTIME is not set, so atexits() will not be called. set EXIT_RUNTIME to 1 (see the FAQ)');
   
-    }
-  function ___cxa_atexit(a0,a1
+    }function ___cxa_atexit(a0,a1
   ) {
   return _atexit(a0,a1);
   }
@@ -7293,12 +6788,14 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       }
   
       this.add_ref = function() {
-        Atomics.add(HEAP32, (this.ptr + ExceptionInfoAttrs.REFCOUNT_OFFSET) >> 2, 1);
+        var value = ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), 4, 0))|0);
+        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), ((value + 1)|0), 4);
       };
   
       // Returns true if last reference released.
       this.release_ref = function() {
-        var prev = Atomics.sub(HEAP32, (this.ptr + ExceptionInfoAttrs.REFCOUNT_OFFSET) >> 2, 1);
+        var prev = ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), 4, 0))|0);
+        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), ((prev - 1)|0), 4);
         assert(prev > 0);
         return prev === 1;
       };
@@ -7470,9 +6967,7 @@ function initPthreadsJS(){ PThread.initRuntime(); }
         if (low >= 0) assert(high === 0);
         else assert(high === -1);
         return low;
-      }};function ___sys_fcntl64(fd, cmd, varargs) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(13, 1, fd, cmd, varargs);
-  SYSCALLS.varargs = varargs;
+      }};function ___sys_fcntl64(fd, cmd, varargs) {SYSCALLS.varargs = varargs;
   try {
   
       var stream = SYSCALLS.getStreamFromFD(fd);
@@ -7528,11 +7023,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return -e.errno;
   }
   }
-  
 
-  function ___sys_getdents64(fd, dirp, count) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(14, 1, fd, dirp, count);
-  try {
+  function ___sys_getdents64(fd, dirp, count) {try {
   
       var stream = SYSCALLS.getStreamFromFD(fd)
       if (!stream.getdents) {
@@ -7575,11 +7067,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return -e.errno;
   }
   }
-  
 
-  function ___sys_ioctl(fd, op, varargs) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(15, 1, fd, op, varargs);
-  SYSCALLS.varargs = varargs;
+  function ___sys_ioctl(fd, op, varargs) {SYSCALLS.varargs = varargs;
   try {
   
       var stream = SYSCALLS.getStreamFromFD(fd);
@@ -7632,7 +7121,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return -e.errno;
   }
   }
-  
 
   
   function syscallMunmap(addr, len) {
@@ -7654,9 +7142,7 @@ function initPthreadsJS(){ PThread.initRuntime(); }
         }
       }
       return 0;
-    }function ___sys_munmap(addr, len) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(16, 1, addr, len);
-  try {
+    }function ___sys_munmap(addr, len) {try {
   
       return syscallMunmap(addr, len);
     } catch (e) {
@@ -7664,11 +7150,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return -e.errno;
   }
   }
-  
 
-  function ___sys_open(path, flags, varargs) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(17, 1, path, flags, varargs);
-  SYSCALLS.varargs = varargs;
+  function ___sys_open(path, flags, varargs) {SYSCALLS.varargs = varargs;
   try {
   
       var pathname = SYSCALLS.getStr(path);
@@ -7680,11 +7163,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return -e.errno;
   }
   }
-  
 
-  function ___sys_stat64(path, buf) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(18, 1, path, buf);
-  try {
+  function ___sys_stat64(path, buf) {try {
   
       path = SYSCALLS.getStr(path);
       return SYSCALLS.doStat(FS.stat, path, buf);
@@ -7693,159 +7173,26 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return -e.errno;
   }
   }
-  
-
-  function __emscripten_notify_thread_queue(targetThreadId, mainThreadId) {
-      if (targetThreadId == mainThreadId) {
-        postMessage({'cmd' : 'processQueuedMainThreadWork'});
-      } else if (ENVIRONMENT_IS_PTHREAD) {
-        postMessage({'targetThread': targetThreadId, 'cmd': 'processThreadQueue'});
-      } else {
-        var pthread = PThread.pthreads[targetThreadId];
-        var worker = pthread && pthread.worker;
-        if (!worker) {
-          err('Cannot send message to thread with ID ' + targetThreadId + ', unknown thread ID!');
-          return /*0*/;
-        }
-        worker.postMessage({'cmd' : 'processThreadQueue'});
-      }
-      return 1;
-    }
 
   function _abort() {
       abort();
     }
 
-  function _emscripten_cancel_main_loop() {
-      Browser.mainLoop.pause();
-      Browser.mainLoop.func = null;
-    }
-
-  function _emscripten_check_blocking_allowed() {
-      if (ENVIRONMENT_IS_NODE) return;
-  
-      if (ENVIRONMENT_IS_WORKER) return; // Blocking in a worker/pthread is fine.
-  
-      warnOnce('Blocking on the main thread is very dangerous, see https://emscripten.org/docs/porting/pthreads.html#blocking-on-the-main-browser-thread');
-  
-    }
-
-  
-  function _emscripten_conditional_set_current_thread_status_js(expectedStatus, newStatus) {
-    }function _emscripten_conditional_set_current_thread_status(expectedStatus, newStatus) {
-      expectedStatus = expectedStatus|0;
-      newStatus = newStatus|0;
-    }
-
-  function _emscripten_futex_wait(addr, val, timeout) {
-      if (addr <= 0 || addr > HEAP8.length || addr&3 != 0) return -28;
-      if (ENVIRONMENT_IS_WORKER) {
-        var ret = Atomics.wait(HEAP32, addr >> 2, val, timeout);
-        if (ret === 'timed-out') return -73;
-        if (ret === 'not-equal') return -6;
-        if (ret === 'ok') return 0;
-        throw 'Atomics.wait returned an unexpected value ' + ret;
-      } else {
-        // Atomics.wait is not available in the main browser thread, so simulate it via busy spinning.
-        var loadedVal = Atomics.load(HEAP32, addr >> 2);
-        if (val != loadedVal) return -6;
-  
-        var tNow = performance.now();
-        var tEnd = tNow + timeout;
-  
-  
-        // Register globally which address the main thread is simulating to be waiting on. When zero, main thread is not waiting on anything,
-        // and on nonzero, the contents of address pointed by __main_thread_futex_wait_address tell which address the main thread is simulating its wait on.
-        Atomics.store(HEAP32, __main_thread_futex_wait_address >> 2, addr);
-        var ourWaitAddress = addr; // We may recursively re-enter this function while processing queued calls, in which case we'll do a spurious wakeup of the older wait operation.
-        while (addr == ourWaitAddress) {
-          tNow = performance.now();
-          if (tNow > tEnd) {
-            return -73;
-          }
-          _emscripten_main_thread_process_queued_calls(); // We are performing a blocking loop here, so must pump any pthreads if they want to perform operations that are proxied.
-          addr = Atomics.load(HEAP32, __main_thread_futex_wait_address >> 2); // Look for a worker thread waking us up.
-        }
-        return 0;
-      }
-    }
-
-
-
   function _emscripten_get_sbrk_ptr() {
-      return 165728;
-    }
-
-  function _emscripten_is_main_browser_thread() {
-      return __pthread_is_main_browser_thread|0; // Semantically the same as testing "!ENVIRONMENT_IS_WORKER" outside the asm.js scope
-    }
-
-  function _emscripten_is_main_runtime_thread() {
-      return __pthread_is_main_runtime_thread|0; // Semantically the same as testing "!ENVIRONMENT_IS_PTHREAD" outside the asm.js scope
+      return 164800;
     }
 
   function _emscripten_memcpy_big(dest, src, num) {
       HEAPU8.copyWithin(dest, src, src + num);
     }
 
-  
-  /** @type{function(number, (number|boolean), ...(number|boolean))} */
-  function _emscripten_proxy_to_main_thread_js(index, sync) {
-      // Additional arguments are passed after those two, which are the actual
-      // function arguments.
-      // The serialization buffer contains the number of call params, and then
-      // all the args here.
-      // We also pass 'sync' to C separately, since C needs to look at it.
-      var numCallArgs = arguments.length - 2;
-      if (numCallArgs > 20-1) throw 'emscripten_proxy_to_main_thread_js: Too many arguments ' + numCallArgs + ' to proxied function idx=' + index + ', maximum supported is ' + (20-1) + '!';
-      // Allocate a buffer, which will be copied by the C code.
-      var stack = stackSave();
-      // First passed parameter specifies the number of arguments to the function.
-      var args = stackAlloc(numCallArgs * 8);
-      var b = args >> 3;
-      for (var i = 0; i < numCallArgs; i++) {
-        HEAPF64[b + i] = arguments[2 + i];
+  function _emscripten_request_animation_frame_loop(cb, userData) {
+      function tick(timeStamp) {
+        if (dynCall_idi(cb, timeStamp, userData)) {
+          requestAnimationFrame(tick);
+        }
       }
-      var ret = _emscripten_run_in_main_runtime_thread_js(index, numCallArgs, args, sync);
-      stackRestore(stack);
-      return ret;
-    }
-  
-  var _emscripten_receive_on_main_thread_js_callArgs=[];
-  
-  
-  var readAsmConstArgsArray=[];function readAsmConstArgs(sigPtr, buf) {
-      // Nobody should have mutated _readAsmConstArgsArray underneath us to be something else than an array.
-      assert(Array.isArray(readAsmConstArgsArray));
-      // The input buffer is allocated on the stack, so it must be stack-aligned.
-      assert(buf % 16 == 0);
-      readAsmConstArgsArray.length = 0;
-      var ch;
-      // Most arguments are i32s, so shift the buffer pointer so it is a plain
-      // index into HEAP32.
-      buf >>= 2;
-      while (ch = HEAPU8[sigPtr++]) {
-        assert(ch === 100/*'d'*/ || ch === 102/*'f'*/ || ch === 105 /*'i'*/);
-        // A double takes two 32-bit slots, and must also be aligned - the backend
-        // will emit padding to avoid that.
-        var double = ch < 105;
-        if (double && (buf & 1)) buf++;
-        readAsmConstArgsArray.push(double ? HEAPF64[buf++ >> 1] : HEAP32[buf]);
-        ++buf;
-      }
-      return readAsmConstArgsArray;
-    }function _emscripten_receive_on_main_thread_js(index, numCallArgs, args) {
-      _emscripten_receive_on_main_thread_js_callArgs.length = numCallArgs;
-      var b = args >> 3;
-      for (var i = 0; i < numCallArgs; i++) {
-        _emscripten_receive_on_main_thread_js_callArgs[i] = HEAPF64[b + i];
-      }
-      // Proxied JS library funcs are encoded as positive values, and
-      // EM_ASMs as negative values (see include_asm_consts)
-      var isEmAsmConst = index < 0;
-      var func = !isEmAsmConst ? proxiedFunctionTable[index] : ASM_CONSTS[-index - 1];
-      assert(func.length == numCallArgs, 'Call args mismatch in emscripten_receive_on_main_thread_js');
-      return func.apply(null, _emscripten_receive_on_main_thread_js_callArgs);
+      return requestAnimationFrame(tick);
     }
 
   
@@ -7859,269 +7206,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       requestedSize = requestedSize >>> 0;
       abortOnCannotGrowMemory(requestedSize);
     }
-
-  
-  var JSEvents={inEventHandler:0,removeAllEventListeners:function() {
-        for(var i = JSEvents.eventHandlers.length-1; i >= 0; --i) {
-          JSEvents._removeHandler(i);
-        }
-        JSEvents.eventHandlers = [];
-        JSEvents.deferredCalls = [];
-      },registerRemoveEventListeners:function() {
-        if (!JSEvents.removeEventListenersRegistered) {
-          __ATEXIT__.push(JSEvents.removeAllEventListeners);
-          JSEvents.removeEventListenersRegistered = true;
-        }
-      },deferredCalls:[],deferCall:function(targetFunction, precedence, argsList) {
-        function arraysHaveEqualContent(arrA, arrB) {
-          if (arrA.length != arrB.length) return false;
-  
-          for(var i in arrA) {
-            if (arrA[i] != arrB[i]) return false;
-          }
-          return true;
-        }
-        // Test if the given call was already queued, and if so, don't add it again.
-        for(var i in JSEvents.deferredCalls) {
-          var call = JSEvents.deferredCalls[i];
-          if (call.targetFunction == targetFunction && arraysHaveEqualContent(call.argsList, argsList)) {
-            return;
-          }
-        }
-        JSEvents.deferredCalls.push({
-          targetFunction: targetFunction,
-          precedence: precedence,
-          argsList: argsList
-        });
-  
-        JSEvents.deferredCalls.sort(function(x,y) { return x.precedence < y.precedence; });
-      },removeDeferredCalls:function(targetFunction) {
-        for(var i = 0; i < JSEvents.deferredCalls.length; ++i) {
-          if (JSEvents.deferredCalls[i].targetFunction == targetFunction) {
-            JSEvents.deferredCalls.splice(i, 1);
-            --i;
-          }
-        }
-      },canPerformEventHandlerRequests:function() {
-        return JSEvents.inEventHandler && JSEvents.currentEventHandler.allowsDeferredCalls;
-      },runDeferredCalls:function() {
-        if (!JSEvents.canPerformEventHandlerRequests()) {
-          return;
-        }
-        for(var i = 0; i < JSEvents.deferredCalls.length; ++i) {
-          var call = JSEvents.deferredCalls[i];
-          JSEvents.deferredCalls.splice(i, 1);
-          --i;
-          call.targetFunction.apply(null, call.argsList);
-        }
-      },eventHandlers:[],removeAllHandlersOnTarget:function(target, eventTypeString) {
-        for(var i = 0; i < JSEvents.eventHandlers.length; ++i) {
-          if (JSEvents.eventHandlers[i].target == target && 
-            (!eventTypeString || eventTypeString == JSEvents.eventHandlers[i].eventTypeString)) {
-             JSEvents._removeHandler(i--);
-           }
-        }
-      },_removeHandler:function(i) {
-        var h = JSEvents.eventHandlers[i];
-        h.target.removeEventListener(h.eventTypeString, h.eventListenerFunc, h.useCapture);
-        JSEvents.eventHandlers.splice(i, 1);
-      },registerOrRemoveHandler:function(eventHandler) {
-        var jsEventHandler = function jsEventHandler(event) {
-          // Increment nesting count for the event handler.
-          ++JSEvents.inEventHandler;
-          JSEvents.currentEventHandler = eventHandler;
-          // Process any old deferred calls the user has placed.
-          JSEvents.runDeferredCalls();
-          // Process the actual event, calls back to user C code handler.
-          eventHandler.handlerFunc(event);
-          // Process any new deferred calls that were placed right now from this event handler.
-          JSEvents.runDeferredCalls();
-          // Out of event handler - restore nesting count.
-          --JSEvents.inEventHandler;
-        };
-        
-        if (eventHandler.callbackfunc) {
-          eventHandler.eventListenerFunc = jsEventHandler;
-          eventHandler.target.addEventListener(eventHandler.eventTypeString, jsEventHandler, eventHandler.useCapture);
-          JSEvents.eventHandlers.push(eventHandler);
-          JSEvents.registerRemoveEventListeners();
-        } else {
-          for(var i = 0; i < JSEvents.eventHandlers.length; ++i) {
-            if (JSEvents.eventHandlers[i].target == eventHandler.target
-             && JSEvents.eventHandlers[i].eventTypeString == eventHandler.eventTypeString) {
-               JSEvents._removeHandler(i--);
-             }
-          }
-        }
-      },queueEventHandlerOnThread_iiii:function(targetThread, eventHandlerFunc, eventTypeId, eventData, userData) {
-        var stackTop = stackSave();
-        var varargs = stackAlloc(12);
-        SAFE_HEAP_STORE(((varargs)|0), ((eventTypeId)|0), 4);
-        SAFE_HEAP_STORE((((varargs)+(4))|0), ((eventData)|0), 4);
-        SAFE_HEAP_STORE((((varargs)+(8))|0), ((userData)|0), 4);
-        __emscripten_call_on_thread(0, targetThread, 637534208, eventHandlerFunc, eventData, varargs);
-        stackRestore(stackTop);
-      },getTargetThreadForEventCallback:function(targetThread) {
-        switch(targetThread) {
-          case 1: return 0; // The event callback for the current event should be called on the main browser thread. (0 == don't proxy)
-          case 2: return PThread.currentProxiedOperationCallerThread; // The event callback for the current event should be backproxied to the thread that is registering the event.
-          default: return targetThread; // The event callback for the current event should be proxied to the given specific thread.
-        }
-      },getNodeNameForTarget:function(target) {
-        if (!target) return '';
-        if (target == window) return '#window';
-        if (target == screen) return '#screen';
-        return (target && target.nodeName) ? target.nodeName : '';
-      },fullscreenEnabled:function() {
-        return document.fullscreenEnabled
-        // Safari 13.0.3 on macOS Catalina 10.15.1 still ships with prefixed webkitFullscreenEnabled.
-        // TODO: If Safari at some point ships with unprefixed version, update the version check above.
-        || document.webkitFullscreenEnabled
-         ;
-      }};
-  
-  
-  
-  
-  function stringToNewUTF8(jsString) {
-      var length = lengthBytesUTF8(jsString)+1;
-      var cString = _malloc(length);
-      stringToUTF8(jsString, cString, length);
-      return cString;
-    }function _emscripten_set_offscreencanvas_size_on_target_thread_js(targetThread, targetCanvas, width, height) {
-      var stackTop = stackSave();
-      var varargs = stackAlloc(12);
-      var targetCanvasPtr = 0;
-      if (targetCanvas) {
-        targetCanvasPtr = stringToNewUTF8(targetCanvas);
-      }
-      SAFE_HEAP_STORE(((varargs)|0), ((targetCanvasPtr)|0), 4);
-      SAFE_HEAP_STORE((((varargs)+(4))|0), ((width)|0), 4);
-      SAFE_HEAP_STORE((((varargs)+(8))|0), ((height)|0), 4);
-      // Note: If we are also a pthread, the call below could theoretically be done synchronously. However if the target pthread is waiting for a mutex from us, then
-      // these two threads will deadlock. At the moment, we'd like to consider that this kind of deadlock would be an Emscripten runtime bug, although if
-      // emscripten_set_canvas_element_size() was documented to require running an event in the queue of thread that owns the OffscreenCanvas, then that might be ok.
-      // (safer this way however)
-      __emscripten_call_on_thread(0, targetThread, 657457152, 0, targetCanvasPtr /* satellite data */, varargs);
-      stackRestore(stackTop);
-    }function _emscripten_set_offscreencanvas_size_on_target_thread(targetThread, targetCanvas, width, height) {
-      targetCanvas = targetCanvas ? UTF8ToString(targetCanvas) : '';
-      _emscripten_set_offscreencanvas_size_on_target_thread_js(targetThread, targetCanvas, width, height);
-    }
-  
-  
-  
-  function maybeCStringToJsString(cString) {
-      // "cString > 2" checks if the input is a number, and isn't of the special
-      // values we accept here, EMSCRIPTEN_EVENT_TARGET_* (which map to 0, 1, 2).
-      // In other words, if cString > 2 then it's a pointer to a valid place in
-      // memory, and points to a C string.
-      return cString > 2 ? UTF8ToString(cString) : cString;
-    }
-  
-  var specialHTMLTargets=[0, typeof document !== 'undefined' ? document : 0, typeof window !== 'undefined' ? window : 0];function findEventTarget(target) {
-      target = maybeCStringToJsString(target);
-      var domElement = specialHTMLTargets[target] || (typeof document !== 'undefined' ? document.querySelector(target) : undefined);
-      return domElement;
-    }function findCanvasEventTarget(target) { return findEventTarget(target); }function _emscripten_set_canvas_element_size_calling_thread(target, width, height) {
-      var canvas = findCanvasEventTarget(target);
-      if (!canvas) return -4;
-  
-      if (canvas.canvasSharedPtr) {
-        // N.B. We hold the canvasSharedPtr info structure as the authoritative source for specifying the size of a canvas
-        // since the actual canvas size changes are asynchronous if the canvas is owned by an OffscreenCanvas on another thread.
-        // Therefore when setting the size, eagerly set the size of the canvas on the calling thread here, though this thread
-        // might not be the one that actually ends up specifying the size, but the actual size change may be dispatched
-        // as an asynchronous event below.
-        SAFE_HEAP_STORE(((canvas.canvasSharedPtr)|0), ((width)|0), 4);
-        SAFE_HEAP_STORE((((canvas.canvasSharedPtr)+(4))|0), ((height)|0), 4);
-      }
-  
-      if (canvas.offscreenCanvas || !canvas.controlTransferredOffscreen) {
-        if (canvas.offscreenCanvas) canvas = canvas.offscreenCanvas;
-        var autoResizeViewport = false;
-        if (canvas.GLctxObject && canvas.GLctxObject.GLctx) {
-          var prevViewport = canvas.GLctxObject.GLctx.getParameter(0xBA2 /* GL_VIEWPORT */);
-          // TODO: Perhaps autoResizeViewport should only be true if FBO 0 is currently active?
-          autoResizeViewport = (prevViewport[0] === 0 && prevViewport[1] === 0 && prevViewport[2] === canvas.width && prevViewport[3] === canvas.height);
-        }
-        canvas.width = width;
-        canvas.height = height;
-        if (autoResizeViewport) {
-          // TODO: Add -s CANVAS_RESIZE_SETS_GL_VIEWPORT=0/1 option (default=1). This is commonly done and several graphics engines depend on this,
-          // but this can be quite disruptive.
-          canvas.GLctxObject.GLctx.viewport(0, 0, width, height);
-        }
-      } else if (canvas.canvasSharedPtr) {
-        var targetThread = ((SAFE_HEAP_LOAD((((canvas.canvasSharedPtr)+(8))|0), 4, 0))|0);
-        _emscripten_set_offscreencanvas_size_on_target_thread(targetThread, target, width, height);
-        return 1; // This will have to be done asynchronously
-      } else {
-        return -4;
-      }
-      return 0;
-    }
-  
-  function _emscripten_set_canvas_element_size_main_thread(target, width, height) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(19, 1, target, width, height);
-   return _emscripten_set_canvas_element_size_calling_thread(target, width, height); }
-  function _emscripten_set_canvas_element_size(target, width, height) {
-      var canvas = findCanvasEventTarget(target);
-      if (canvas) {
-        return _emscripten_set_canvas_element_size_calling_thread(target, width, height);
-      } else {
-        return _emscripten_set_canvas_element_size_main_thread(target, width, height);
-      }
-    }
-
-  
-  function _emscripten_set_current_thread_status_js(newStatus) {
-    }function _emscripten_set_current_thread_status(newStatus) {
-      newStatus = newStatus|0;
-    }
-
-
-  
-  
-  var __emscripten_webgl_power_preferences=['default', 'low-power', 'high-performance'];function _emscripten_webgl_do_create_context(target, attributes) {
-      assert(attributes);
-      var contextAttributes = {};
-      var a = attributes >> 2;
-      contextAttributes['alpha'] = !!HEAP32[a + (0>>2)];
-      contextAttributes['depth'] = !!HEAP32[a + (4>>2)];
-      contextAttributes['stencil'] = !!HEAP32[a + (8>>2)];
-      contextAttributes['antialias'] = !!HEAP32[a + (12>>2)];
-      contextAttributes['premultipliedAlpha'] = !!HEAP32[a + (16>>2)];
-      contextAttributes['preserveDrawingBuffer'] = !!HEAP32[a + (20>>2)];
-      var powerPreference = HEAP32[a + (24>>2)];
-      contextAttributes['powerPreference'] = __emscripten_webgl_power_preferences[powerPreference];
-      contextAttributes['failIfMajorPerformanceCaveat'] = !!HEAP32[a + (28>>2)];
-      contextAttributes.majorVersion = HEAP32[a + (32>>2)];
-      contextAttributes.minorVersion = HEAP32[a + (36>>2)];
-      contextAttributes.enableExtensionsByDefault = HEAP32[a + (40>>2)];
-      contextAttributes.explicitSwapControl = HEAP32[a + (44>>2)];
-      contextAttributes.proxyContextToMainThread = HEAP32[a + (48>>2)];
-      contextAttributes.renderViaOffscreenBackBuffer = HEAP32[a + (52>>2)];
-  
-      var canvas = findCanvasEventTarget(target);
-  
-  
-  
-      if (!canvas) {
-        return -4;
-      }
-  
-      if (contextAttributes.explicitSwapControl) {
-        return -1;
-      }
-  
-  
-      var contextHandle = GL.createContext(canvas, contextAttributes);
-      return contextHandle;
-    }function _emscripten_webgl_create_context(a0,a1
-  ) {
-  return _emscripten_webgl_do_create_context(a0,a1);
-  }
 
   
   
@@ -8176,9 +7260,7 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       return 0;
     }
 
-  function _fd_close(fd) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(20, 1, fd);
-  try {
+  function _fd_close(fd) {try {
   
       var stream = SYSCALLS.getStreamFromFD(fd);
       FS.close(stream);
@@ -8188,11 +7270,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return e.errno;
   }
   }
-  
 
-  function _fd_read(fd, iov, iovcnt, pnum) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(21, 1, fd, iov, iovcnt, pnum);
-  try {
+  function _fd_read(fd, iov, iovcnt, pnum) {try {
   
       var stream = SYSCALLS.getStreamFromFD(fd);
       var num = SYSCALLS.doReadv(stream, iov, iovcnt);
@@ -8203,11 +7282,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return e.errno;
   }
   }
-  
 
-  function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(22, 1, fd, offset_low, offset_high, whence, newOffset);
-  try {
+  function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {try {
   
       
       var stream = SYSCALLS.getStreamFromFD(fd);
@@ -8230,11 +7306,8 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return e.errno;
   }
   }
-  
 
-  function _fd_write(fd, iov, iovcnt, pnum) {
-  if (ENVIRONMENT_IS_PTHREAD) return _emscripten_proxy_to_main_thread_js(23, 1, fd, iov, iovcnt, pnum);
-  try {
+  function _fd_write(fd, iov, iovcnt, pnum) {try {
   
       var stream = SYSCALLS.getStreamFromFD(fd);
       var num = SYSCALLS.doWritev(stream, iov, iovcnt);
@@ -8245,7 +7318,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     return e.errno;
   }
   }
-  
 
   function _gettimeofday(ptr) {
       var now = Date.now();
@@ -8807,7 +7879,13 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       }
     }
 
-  function _glGetString(name_) {
+  
+  function stringToNewUTF8(jsString) {
+      var length = lengthBytesUTF8(jsString)+1;
+      var cString = _malloc(length);
+      stringToUTF8(jsString, cString, length);
+      return cString;
+    }function _glGetString(name_) {
       if (GL.stringCache[name_]) return GL.stringCache[name_];
       var ret;
       switch(name_) {
@@ -9055,225 +8133,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
     }
 
   function _glViewport(x0, x1, x2, x3) { GLctx['viewport'](x0, x1, x2, x3) }
-
-  function _pthread_cleanup_push(routine, arg) {
-      PThread.threadExitHandlers.push(function() { dynCall_vi(routine, arg) });
-    }
-
-  
-  function spawnThread(threadParams) {
-      if (ENVIRONMENT_IS_PTHREAD) throw 'Internal Error! spawnThread() can only ever be called from main application thread!';
-  
-      var worker = PThread.getNewWorker();
-  
-      if (worker.pthread !== undefined) throw 'Internal error!';
-      if (!threadParams.pthread_ptr) throw 'Internal error, no pthread ptr!';
-      PThread.runningWorkers.push(worker);
-  
-      // Allocate memory for thread-local storage and initialize it to zero.
-      var tlsMemory = _malloc(128 * 4);
-      for (var i = 0; i < 128; ++i) {
-        SAFE_HEAP_STORE((((tlsMemory)+(i*4))|0), ((0)|0), 4);
-      }
-  
-      var stackHigh = threadParams.stackBase + threadParams.stackSize;
-  
-      var pthread = PThread.pthreads[threadParams.pthread_ptr] = { // Create a pthread info object to represent this thread.
-        worker: worker,
-        stackBase: threadParams.stackBase,
-        stackSize: threadParams.stackSize,
-        allocatedOwnStack: threadParams.allocatedOwnStack,
-        thread: threadParams.pthread_ptr,
-        threadInfoStruct: threadParams.pthread_ptr // Info area for this thread in Emscripten HEAP (shared)
-      };
-      var tis = pthread.threadInfoStruct >> 2;
-      Atomics.store(HEAPU32, tis + (0 >> 2), 0); // threadStatus <- 0, meaning not yet exited.
-      Atomics.store(HEAPU32, tis + (4 >> 2), 0); // threadExitCode <- 0.
-      Atomics.store(HEAPU32, tis + (8 >> 2), 0); // profilerBlock <- 0.
-      Atomics.store(HEAPU32, tis + (68 >> 2), threadParams.detached);
-      Atomics.store(HEAPU32, tis + (104 >> 2), tlsMemory); // Init thread-local-storage memory array.
-      Atomics.store(HEAPU32, tis + (48 >> 2), 0); // Mark initial status to unused.
-      Atomics.store(HEAPU32, tis + (40 >> 2), pthread.threadInfoStruct); // Main thread ID.
-      Atomics.store(HEAPU32, tis + (44 >> 2), 42); // Process ID.
-  
-      Atomics.store(HEAPU32, tis + (108 >> 2), threadParams.stackSize);
-      Atomics.store(HEAPU32, tis + (84 >> 2), threadParams.stackSize);
-      Atomics.store(HEAPU32, tis + (80 >> 2), stackHigh);
-      Atomics.store(HEAPU32, tis + (108 + 8 >> 2), stackHigh);
-      Atomics.store(HEAPU32, tis + (108 + 12 >> 2), threadParams.detached);
-      Atomics.store(HEAPU32, tis + (108 + 20 >> 2), threadParams.schedPolicy);
-      Atomics.store(HEAPU32, tis + (108 + 24 >> 2), threadParams.schedPrio);
-  
-      var global_libc = _emscripten_get_global_libc();
-      var global_locale = global_libc + 40;
-      Atomics.store(HEAPU32, tis + (176 >> 2), global_locale);
-  
-  
-      worker.pthread = pthread;
-      var msg = {
-          'cmd': 'run',
-          'start_routine': threadParams.startRoutine,
-          'arg': threadParams.arg,
-          'threadInfoStruct': threadParams.pthread_ptr,
-          'selfThreadId': threadParams.pthread_ptr, // TODO: Remove this since thread ID is now the same as the thread address.
-          'parentThreadId': threadParams.parent_pthread_ptr,
-          'stackBase': threadParams.stackBase,
-          'stackSize': threadParams.stackSize
-      };
-      worker.runPthread = function() {
-        // Ask the worker to start executing its pthread entry point function.
-        msg.time = performance.now();
-        worker.postMessage(msg, threadParams.transferList);
-      };
-      if (worker.loaded) {
-        worker.runPthread();
-        delete worker.runPthread;
-      }
-    }
-  
-  function _pthread_getschedparam(thread, policy, schedparam) {
-      if (!policy && !schedparam) return ERRNO_CODES.EINVAL;
-  
-      if (!thread) {
-        err('pthread_getschedparam called with a null thread pointer!');
-        return ERRNO_CODES.ESRCH;
-      }
-      var self = ((SAFE_HEAP_LOAD((((thread)+(12))|0), 4, 0))|0);
-      if (self !== thread) {
-        err('pthread_getschedparam attempted on thread ' + thread + ', which does not point to a valid thread, or does not exist anymore!');
-        return ERRNO_CODES.ESRCH;
-      }
-  
-      var schedPolicy = Atomics.load(HEAPU32, (thread + 108 + 20 ) >> 2);
-      var schedPrio = Atomics.load(HEAPU32, (thread + 108 + 24 ) >> 2);
-  
-      if (policy) SAFE_HEAP_STORE(((policy)|0), ((schedPolicy)|0), 4);
-      if (schedparam) SAFE_HEAP_STORE(((schedparam)|0), ((schedPrio)|0), 4);
-      return 0;
-    }
-  
-  function _pthread_self() {
-      return __pthread_ptr|0;
-    }
-  Module["_pthread_self"] = _pthread_self;
-  
-  function resetPrototype(constructor, attrs) {
-      var object = Object.create(constructor.prototype);
-      for (var key in attrs) {
-        if (attrs.hasOwnProperty(key)) {
-          object[key] = attrs[key];
-        }
-      }
-      return object;
-    }function _pthread_create(pthread_ptr, attr, start_routine, arg) {
-      if (typeof SharedArrayBuffer === 'undefined') {
-        err('Current environment does not support SharedArrayBuffer, pthreads are not available!');
-        return 6;
-      }
-      if (!pthread_ptr) {
-        err('pthread_create called with a null thread pointer!');
-        return 28;
-      }
-  
-      var transferList = []; // List of JS objects that will transfer ownership to the Worker hosting the thread
-      var error = 0;
-  
-  
-      // Synchronously proxy the thread creation to main thread if possible. If we need to transfer ownership of objects, then
-      // proxy asynchronously via postMessage.
-      if (ENVIRONMENT_IS_PTHREAD && (transferList.length === 0 || error)) {
-        return _emscripten_sync_run_in_main_thread_4(687865856, pthread_ptr, attr, start_routine, arg);
-      }
-  
-      // If on the main thread, and accessing Canvas/OffscreenCanvas failed, abort with the detected error.
-      if (error) return error;
-  
-      var stackSize = 0;
-      var stackBase = 0;
-      var detached = 0; // Default thread attr is PTHREAD_CREATE_JOINABLE, i.e. start as not detached.
-      var schedPolicy = 0; /*SCHED_OTHER*/
-      var schedPrio = 0;
-      if (attr) {
-        stackSize = ((SAFE_HEAP_LOAD(((attr)|0), 4, 0))|0);
-        // Musl has a convention that the stack size that is stored to the pthread attribute structure is always musl's #define DEFAULT_STACK_SIZE
-        // smaller than the actual created stack size. That is, stored stack size of 0 would mean a stack of DEFAULT_STACK_SIZE in size. All musl
-        // functions hide this impl detail, and offset the size transparently, so pthread_*() API user does not see this offset when operating with
-        // the pthread API. When reading the structure directly on JS side however, we need to offset the size manually here.
-        stackSize += 81920 /*DEFAULT_STACK_SIZE*/;
-        stackBase = ((SAFE_HEAP_LOAD((((attr)+(8))|0), 4, 0))|0);
-        detached = ((SAFE_HEAP_LOAD((((attr)+(12))|0), 4, 0))|0) !== 0/*PTHREAD_CREATE_JOINABLE*/;
-        var inheritSched = ((SAFE_HEAP_LOAD((((attr)+(16))|0), 4, 0))|0) === 0/*PTHREAD_INHERIT_SCHED*/;
-        if (inheritSched) {
-          var prevSchedPolicy = ((SAFE_HEAP_LOAD((((attr)+(20))|0), 4, 0))|0);
-          var prevSchedPrio = ((SAFE_HEAP_LOAD((((attr)+(24))|0), 4, 0))|0);
-          // If we are inheriting the scheduling properties from the parent thread, we need to identify the parent thread properly - this function call may
-          // be getting proxied, in which case _pthread_self() will point to the thread performing the proxying, not the thread that initiated the call.
-          var parentThreadPtr = PThread.currentProxiedOperationCallerThread ? PThread.currentProxiedOperationCallerThread : _pthread_self();
-          _pthread_getschedparam(parentThreadPtr, attr + 20, attr + 24);
-          schedPolicy = ((SAFE_HEAP_LOAD((((attr)+(20))|0), 4, 0))|0);
-          schedPrio = ((SAFE_HEAP_LOAD((((attr)+(24))|0), 4, 0))|0);
-          SAFE_HEAP_STORE((((attr)+(20))|0), ((prevSchedPolicy)|0), 4);
-          SAFE_HEAP_STORE((((attr)+(24))|0), ((prevSchedPrio)|0), 4);
-        } else {
-          schedPolicy = ((SAFE_HEAP_LOAD((((attr)+(20))|0), 4, 0))|0);
-          schedPrio = ((SAFE_HEAP_LOAD((((attr)+(24))|0), 4, 0))|0);
-        }
-      } else {
-        // According to http://man7.org/linux/man-pages/man3/pthread_create.3.html, default stack size if not specified is 2 MB, so follow that convention.
-        stackSize = 10485760;
-      }
-      var allocatedOwnStack = stackBase == 0; // If allocatedOwnStack == true, then the pthread impl maintains the stack allocation.
-      if (allocatedOwnStack) {
-        stackBase = _memalign(16, stackSize); // Allocate a stack if the user doesn't want to place the stack in a custom memory area.
-      } else {
-        // Musl stores the stack base address assuming stack grows downwards, so adjust it to Emscripten convention that the
-        // stack grows upwards instead.
-        stackBase -= stackSize;
-        assert(stackBase > 0);
-      }
-  
-      // Allocate thread block (pthread_t structure).
-      var threadInfoStruct = _malloc(232);
-      for (var i = 0; i < 232 >> 2; ++i) HEAPU32[(threadInfoStruct>>2) + i] = 0; // zero-initialize thread structure.
-      SAFE_HEAP_STORE(((pthread_ptr)|0), ((threadInfoStruct)|0), 4);
-  
-      // The pthread struct has a field that points to itself - this is used as a magic ID to detect whether the pthread_t
-      // structure is 'alive'.
-      SAFE_HEAP_STORE((((threadInfoStruct)+(12))|0), ((threadInfoStruct)|0), 4);
-  
-      // pthread struct robust_list head should point to itself.
-      var headPtr = threadInfoStruct + 156;
-      SAFE_HEAP_STORE(((headPtr)|0), ((headPtr)|0), 4);
-  
-  
-      var threadParams = {
-        stackBase: stackBase,
-        stackSize: stackSize,
-        allocatedOwnStack: allocatedOwnStack,
-        schedPolicy: schedPolicy,
-        schedPrio: schedPrio,
-        detached: detached,
-        startRoutine: start_routine,
-        pthread_ptr: threadInfoStruct,
-        parent_pthread_ptr: _pthread_self(),
-        arg: arg,
-        transferList: transferList
-      };
-  
-      if (ENVIRONMENT_IS_PTHREAD) {
-        // The prepopulated pool of web workers that can host pthreads is stored in the main JS thread. Therefore if a
-        // pthread is attempting to spawn a new thread, the thread creation must be deferred to the main JS thread.
-        threadParams.cmd = 'spawnThread';
-        postMessage(threadParams, transferList);
-      } else {
-        // We are the main thread, so we have the pthread warmup pool in this thread and can fire off JS thread creation
-        // directly ourselves.
-        spawnThread(threadParams);
-      }
-  
-      return 0;
-    }
-
 
   function _setTempRet0($i) {
       setTempRet0(($i) | 0);
@@ -9684,8 +8543,6 @@ function initPthreadsJS(){ PThread.initRuntime(); }
       return -1;
     }
 
-
-if (!ENVIRONMENT_IS_PTHREAD) PThread.initMainThreadBlock(); else PThread.initWorker();;
 var FSNode = /** @constructor */ function(parent, name, mode, rdev) {
     if (!parent) {
       parent = this;  // root node sets parent to itself
@@ -9742,11 +8599,6 @@ Module["requestFullscreen"] = function Module_requestFullscreen(lockPointer, res
   Module["createContext"] = function Module_createContext(canvas, useWebGL, setInModule, webGLContextAttributes) { return Browser.createContext(canvas, useWebGL, setInModule, webGLContextAttributes) };
 var GLctx;;
 for (var i = 0; i < 32; ++i) tempFixedLengthArray.push(new Array(i));;
-
- // proxiedFunctionTable specifies the list of functions that can be called either synchronously or asynchronously from other threads in postMessage()d or internally queued events. This way a pthread in a Worker can synchronously access e.g. the DOM on the main thread.
-
-var proxiedFunctionTable = [null,_SDL_GetTicks,_SDL_LockSurface,_SDL_EnableUNICODE,_SDL_FreeSurface,_SDL_GL_SetAttribute,_SDL_GL_SwapBuffers,_SDL_GetMouseState,_SDL_Init,_SDL_PollEvent,_SDL_PumpEvents,_SDL_SetVideoMode,_atexit,___sys_fcntl64,___sys_getdents64,___sys_ioctl,___sys_munmap,___sys_open,___sys_stat64,_emscripten_set_canvas_element_size_main_thread,_fd_close,_fd_read,_fd_seek,_fd_write];
-
 var ASSERTIONS = true;
 
 
@@ -9777,7 +8629,7 @@ function intArrayToString(array) {
 
 
 var asmGlobalArg = {};
-var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__assert_fail": ___assert_fail, "__clock_gettime": ___clock_gettime, "__cxa_allocate_exception": ___cxa_allocate_exception, "__cxa_atexit": ___cxa_atexit, "__cxa_throw": ___cxa_throw, "__handle_stack_overflow": ___handle_stack_overflow, "__map_file": ___map_file, "__sys_fcntl64": ___sys_fcntl64, "__sys_getdents64": ___sys_getdents64, "__sys_ioctl": ___sys_ioctl, "__sys_munmap": ___sys_munmap, "__sys_open": ___sys_open, "__sys_stat64": ___sys_stat64, "_emscripten_notify_thread_queue": __emscripten_notify_thread_queue, "abort": _abort, "alignfault": alignfault, "emscripten_asm_const_iii": _emscripten_asm_const_iii, "emscripten_cancel_main_loop": _emscripten_cancel_main_loop, "emscripten_check_blocking_allowed": _emscripten_check_blocking_allowed, "emscripten_conditional_set_current_thread_status": _emscripten_conditional_set_current_thread_status, "emscripten_futex_wait": _emscripten_futex_wait, "emscripten_futex_wake": _emscripten_futex_wake, "emscripten_get_now": _emscripten_get_now, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_is_main_browser_thread": _emscripten_is_main_browser_thread, "emscripten_is_main_runtime_thread": _emscripten_is_main_runtime_thread, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_receive_on_main_thread_js": _emscripten_receive_on_main_thread_js, "emscripten_resize_heap": _emscripten_resize_heap, "emscripten_set_canvas_element_size": _emscripten_set_canvas_element_size, "emscripten_set_current_thread_status": _emscripten_set_current_thread_status, "emscripten_set_main_loop": _emscripten_set_main_loop, "emscripten_webgl_create_context": _emscripten_webgl_create_context, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "fd_close": _fd_close, "fd_read": _fd_read, "fd_seek": _fd_seek, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "initPthreadsJS": initPthreadsJS, "memory": wasmMemory, "pthread_cleanup_push": _pthread_cleanup_push, "pthread_create": _pthread_create, "pthread_self": _pthread_self, "segfault": segfault, "setTempRet0": _setTempRet0, "strftime_l": _strftime_l, "system": _system, "table": wasmTable };
+var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_allocate_exception": ___cxa_allocate_exception, "__cxa_atexit": ___cxa_atexit, "__cxa_throw": ___cxa_throw, "__handle_stack_overflow": ___handle_stack_overflow, "__map_file": ___map_file, "__sys_fcntl64": ___sys_fcntl64, "__sys_getdents64": ___sys_getdents64, "__sys_ioctl": ___sys_ioctl, "__sys_munmap": ___sys_munmap, "__sys_open": ___sys_open, "__sys_stat64": ___sys_stat64, "abort": _abort, "alignfault": alignfault, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "fd_close": _fd_close, "fd_read": _fd_read, "fd_seek": _fd_seek, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "segfault": segfault, "setTempRet0": _setTempRet0, "set_title": set_title, "strftime_l": _strftime_l, "system": _system, "table": wasmTable };
 var asm = createWasm();
 /** @type {function(...*):?} */
 var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__wasm_call_ctors");
@@ -9786,7 +8638,13 @@ var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__w
 var _free = Module["_free"] = createExportWrapper("free");
 
 /** @type {function(...*):?} */
+var _memset = Module["_memset"] = createExportWrapper("memset");
+
+/** @type {function(...*):?} */
 var _malloc = Module["_malloc"] = createExportWrapper("malloc");
+
+/** @type {function(...*):?} */
+var _memcpy = Module["_memcpy"] = createExportWrapper("memcpy");
 
 /** @type {function(...*):?} */
 var _fflush = Module["_fflush"] = createExportWrapper("fflush");
@@ -9798,25 +8656,13 @@ var ___em_js__get_canvas_width = Module["___em_js__get_canvas_width"] = createEx
 var ___em_js__get_canvas_height = Module["___em_js__get_canvas_height"] = createExportWrapper("__em_js__get_canvas_height");
 
 /** @type {function(...*):?} */
+var ___em_js__set_title = Module["___em_js__set_title"] = createExportWrapper("__em_js__set_title");
+
+/** @type {function(...*):?} */
 var _main = Module["_main"] = createExportWrapper("main");
 
 /** @type {function(...*):?} */
 var ___errno_location = Module["___errno_location"] = createExportWrapper("__errno_location");
-
-/** @type {function(...*):?} */
-var _emscripten_get_global_libc = Module["_emscripten_get_global_libc"] = createExportWrapper("emscripten_get_global_libc");
-
-/** @type {function(...*):?} */
-var ___em_js__initPthreadsJS = Module["___em_js__initPthreadsJS"] = createExportWrapper("__em_js__initPthreadsJS");
-
-/** @type {function(...*):?} */
-var ___emscripten_pthread_data_constructor = Module["___emscripten_pthread_data_constructor"] = createExportWrapper("__emscripten_pthread_data_constructor");
-
-/** @type {function(...*):?} */
-var _memcpy = Module["_memcpy"] = createExportWrapper("memcpy");
-
-/** @type {function(...*):?} */
-var _memset = Module["_memset"] = createExportWrapper("memset");
 
 /** @type {function(...*):?} */
 var _setThrew = Module["_setThrew"] = createExportWrapper("setThrew");
@@ -9831,76 +8677,13 @@ var stackRestore = Module["stackRestore"] = createExportWrapper("stackRestore");
 var stackAlloc = Module["stackAlloc"] = createExportWrapper("stackAlloc");
 
 /** @type {function(...*):?} */
-var _memalign = Module["_memalign"] = createExportWrapper("memalign");
-
-/** @type {function(...*):?} */
-var _emscripten_main_browser_thread_id = Module["_emscripten_main_browser_thread_id"] = createExportWrapper("emscripten_main_browser_thread_id");
-
-/** @type {function(...*):?} */
-var ___pthread_tsd_run_dtors = Module["___pthread_tsd_run_dtors"] = createExportWrapper("__pthread_tsd_run_dtors");
-
-/** @type {function(...*):?} */
-var _emscripten_main_thread_process_queued_calls = Module["_emscripten_main_thread_process_queued_calls"] = createExportWrapper("emscripten_main_thread_process_queued_calls");
-
-/** @type {function(...*):?} */
-var _emscripten_current_thread_process_queued_calls = Module["_emscripten_current_thread_process_queued_calls"] = createExportWrapper("emscripten_current_thread_process_queued_calls");
-
-/** @type {function(...*):?} */
-var _emscripten_register_main_browser_thread_id = Module["_emscripten_register_main_browser_thread_id"] = createExportWrapper("emscripten_register_main_browser_thread_id");
-
-/** @type {function(...*):?} */
-var _do_emscripten_dispatch_to_thread = Module["_do_emscripten_dispatch_to_thread"] = createExportWrapper("do_emscripten_dispatch_to_thread");
-
-/** @type {function(...*):?} */
-var _emscripten_async_run_in_main_thread = Module["_emscripten_async_run_in_main_thread"] = createExportWrapper("emscripten_async_run_in_main_thread");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread = Module["_emscripten_sync_run_in_main_thread"] = createExportWrapper("emscripten_sync_run_in_main_thread");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_0 = Module["_emscripten_sync_run_in_main_thread_0"] = createExportWrapper("emscripten_sync_run_in_main_thread_0");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_1 = Module["_emscripten_sync_run_in_main_thread_1"] = createExportWrapper("emscripten_sync_run_in_main_thread_1");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_2 = Module["_emscripten_sync_run_in_main_thread_2"] = createExportWrapper("emscripten_sync_run_in_main_thread_2");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_xprintf_varargs = Module["_emscripten_sync_run_in_main_thread_xprintf_varargs"] = createExportWrapper("emscripten_sync_run_in_main_thread_xprintf_varargs");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_3 = Module["_emscripten_sync_run_in_main_thread_3"] = createExportWrapper("emscripten_sync_run_in_main_thread_3");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_4 = Module["_emscripten_sync_run_in_main_thread_4"] = createExportWrapper("emscripten_sync_run_in_main_thread_4");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_5 = Module["_emscripten_sync_run_in_main_thread_5"] = createExportWrapper("emscripten_sync_run_in_main_thread_5");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_6 = Module["_emscripten_sync_run_in_main_thread_6"] = createExportWrapper("emscripten_sync_run_in_main_thread_6");
-
-/** @type {function(...*):?} */
-var _emscripten_sync_run_in_main_thread_7 = Module["_emscripten_sync_run_in_main_thread_7"] = createExportWrapper("emscripten_sync_run_in_main_thread_7");
-
-/** @type {function(...*):?} */
-var _emscripten_run_in_main_runtime_thread_js = Module["_emscripten_run_in_main_runtime_thread_js"] = createExportWrapper("emscripten_run_in_main_runtime_thread_js");
-
-/** @type {function(...*):?} */
-var __emscripten_call_on_thread = Module["__emscripten_call_on_thread"] = createExportWrapper("_emscripten_call_on_thread");
-
-/** @type {function(...*):?} */
-var _emscripten_tls_init = Module["_emscripten_tls_init"] = createExportWrapper("emscripten_tls_init");
-
-/** @type {function(...*):?} */
 var ___set_stack_limit = Module["___set_stack_limit"] = createExportWrapper("__set_stack_limit");
 
 /** @type {function(...*):?} */
 var dynCall_ii = Module["dynCall_ii"] = createExportWrapper("dynCall_ii");
 
 /** @type {function(...*):?} */
-var dynCall_v = Module["dynCall_v"] = createExportWrapper("dynCall_v");
+var dynCall_i = Module["dynCall_i"] = createExportWrapper("dynCall_i");
 
 /** @type {function(...*):?} */
 var dynCall_vi = Module["dynCall_vi"] = createExportWrapper("dynCall_vi");
@@ -9924,7 +8707,13 @@ var dynCall_viijii = Module["dynCall_viijii"] = createExportWrapper("dynCall_vii
 var dynCall_iii = Module["dynCall_iii"] = createExportWrapper("dynCall_iii");
 
 /** @type {function(...*):?} */
+var dynCall_idi = Module["dynCall_idi"] = createExportWrapper("dynCall_idi");
+
+/** @type {function(...*):?} */
 var dynCall_viif = Module["dynCall_viif"] = createExportWrapper("dynCall_viif");
+
+/** @type {function(...*):?} */
+var dynCall_v = Module["dynCall_v"] = createExportWrapper("dynCall_v");
 
 /** @type {function(...*):?} */
 var dynCall_fiii = Module["dynCall_fiii"] = createExportWrapper("dynCall_fiii");
@@ -10186,6 +8975,11 @@ if (!Object.getOwnPropertyDescriptor(Module, "CatchInfo")) Module["CatchInfo"] =
 if (!Object.getOwnPropertyDescriptor(Module, "exception_addRef")) Module["exception_addRef"] = function() { abort("'exception_addRef' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "exception_decRef")) Module["exception_decRef"] = function() { abort("'exception_decRef' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "Browser")) Module["Browser"] = function() { abort("'Browser' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "FS")) Module["FS"] = function() { abort("'FS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "MEMFS")) Module["MEMFS"] = function() { abort("'MEMFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "TTY")) Module["TTY"] = function() { abort("'TTY' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "PIPEFS")) Module["PIPEFS"] = function() { abort("'PIPEFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
+if (!Object.getOwnPropertyDescriptor(Module, "SOCKFS")) Module["SOCKFS"] = function() { abort("'SOCKFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "tempFixedLengthArray")) Module["tempFixedLengthArray"] = function() { abort("'tempFixedLengthArray' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "miniTempWebGLFloatBuffers")) Module["miniTempWebGLFloatBuffers"] = function() { abort("'miniTempWebGLFloatBuffers' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "heapObjectForWebGLType")) Module["heapObjectForWebGLType"] = function() { abort("'heapObjectForWebGLType' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
@@ -10199,11 +8993,6 @@ if (!Object.getOwnPropertyDescriptor(Module, "emscriptenWebGLGetVertexAttrib")) 
 if (!Object.getOwnPropertyDescriptor(Module, "emscriptenWebGLGetBufferBinding")) Module["emscriptenWebGLGetBufferBinding"] = function() { abort("'emscriptenWebGLGetBufferBinding' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "emscriptenWebGLValidateMapBufferTarget")) Module["emscriptenWebGLValidateMapBufferTarget"] = function() { abort("'emscriptenWebGLValidateMapBufferTarget' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "writeGLArray")) Module["writeGLArray"] = function() { abort("'writeGLArray' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "FS")) Module["FS"] = function() { abort("'FS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "MEMFS")) Module["MEMFS"] = function() { abort("'MEMFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "TTY")) Module["TTY"] = function() { abort("'TTY' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "PIPEFS")) Module["PIPEFS"] = function() { abort("'PIPEFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "SOCKFS")) Module["SOCKFS"] = function() { abort("'SOCKFS' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "AL")) Module["AL"] = function() { abort("'AL' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "SDL_unicode")) Module["SDL_unicode"] = function() { abort("'SDL_unicode' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "SDL_ttfContext")) Module["SDL_ttfContext"] = function() { abort("'SDL_ttfContext' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
@@ -10217,15 +9006,6 @@ if (!Object.getOwnPropertyDescriptor(Module, "GLFW")) Module["GLFW"] = function(
 if (!Object.getOwnPropertyDescriptor(Module, "GLEW")) Module["GLEW"] = function() { abort("'GLEW' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "IDBStore")) Module["IDBStore"] = function() { abort("'IDBStore' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "runAndAbortIfError")) Module["runAndAbortIfError"] = function() { abort("'runAndAbortIfError' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-Module["PThread"] = PThread;
-if (!Object.getOwnPropertyDescriptor(Module, "killThread")) Module["killThread"] = function() { abort("'killThread' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "cleanupThread")) Module["cleanupThread"] = function() { abort("'cleanupThread' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "cancelThread")) Module["cancelThread"] = function() { abort("'cancelThread' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "spawnThread")) Module["spawnThread"] = function() { abort("'spawnThread' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "registerPthreadPtr")) Module["registerPthreadPtr"] = function() { abort("'registerPthreadPtr' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "establishStackSpace")) Module["establishStackSpace"] = function() { abort("'establishStackSpace' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "getNoExitRuntime")) Module["getNoExitRuntime"] = function() { abort("'getNoExitRuntime' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
-if (!Object.getOwnPropertyDescriptor(Module, "resetPrototype")) Module["resetPrototype"] = function() { abort("'resetPrototype' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "emscriptenWebGLGetIndexed")) Module["emscriptenWebGLGetIndexed"] = function() { abort("'emscriptenWebGLGetIndexed' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "warnOnce")) Module["warnOnce"] = function() { abort("'warnOnce' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "stackSave")) Module["stackSave"] = function() { abort("'stackSave' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
@@ -10242,11 +9022,7 @@ if (!Object.getOwnPropertyDescriptor(Module, "lengthBytesUTF32")) Module["length
 if (!Object.getOwnPropertyDescriptor(Module, "allocateUTF8")) Module["allocateUTF8"] = function() { abort("'allocateUTF8' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 if (!Object.getOwnPropertyDescriptor(Module, "allocateUTF8OnStack")) Module["allocateUTF8OnStack"] = function() { abort("'allocateUTF8OnStack' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") };
 Module["writeStackCookie"] = writeStackCookie;
-Module["checkStackCookie"] = checkStackCookie;
-Module["PThread"] = PThread;
-Module["_pthread_self"] = _pthread_self;
-Module["wasmMemory"] = wasmMemory;
-Module["ExitStatus"] = ExitStatus;if (!Object.getOwnPropertyDescriptor(Module, "ALLOC_NORMAL")) Object.defineProperty(Module, "ALLOC_NORMAL", { configurable: true, get: function() { abort("'ALLOC_NORMAL' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") } });
+Module["checkStackCookie"] = checkStackCookie;if (!Object.getOwnPropertyDescriptor(Module, "ALLOC_NORMAL")) Object.defineProperty(Module, "ALLOC_NORMAL", { configurable: true, get: function() { abort("'ALLOC_NORMAL' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") } });
 if (!Object.getOwnPropertyDescriptor(Module, "ALLOC_STACK")) Object.defineProperty(Module, "ALLOC_STACK", { configurable: true, get: function() { abort("'ALLOC_STACK' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") } });
 if (!Object.getOwnPropertyDescriptor(Module, "ALLOC_DYNAMIC")) Object.defineProperty(Module, "ALLOC_DYNAMIC", { configurable: true, get: function() { abort("'ALLOC_DYNAMIC' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") } });
 if (!Object.getOwnPropertyDescriptor(Module, "ALLOC_NONE")) Object.defineProperty(Module, "ALLOC_NONE", { configurable: true, get: function() { abort("'ALLOC_NONE' was not exported. add it to EXTRA_EXPORTED_RUNTIME_METHODS (see the FAQ)") } });
@@ -10430,7 +9206,6 @@ function exit(status, implicit) {
       err(msg);
     }
   } else {
-    PThread.terminateAllThreads();
 
     ABORT = true;
     EXITSTATUS = status;
@@ -10456,13 +9231,9 @@ var shouldRunNow = true;
 if (Module['noInitialRun']) shouldRunNow = false;
 
 
-if (!ENVIRONMENT_IS_PTHREAD) // EXIT_RUNTIME=0 only applies to default behavior of the main browser thread
   noExitRuntime = true;
 
-if (!ENVIRONMENT_IS_PTHREAD) {
-  run();
-} else {
-}
+run();
 
 
 
