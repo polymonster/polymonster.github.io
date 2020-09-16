@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-    <title>${example_title}</title>
+    <title>Loading</title>
     <style>
         body { margin: 0; background-color: black }
         .backbuffer {
@@ -65,11 +65,24 @@
         })(),
         setStatus: function(text) {
             console.log("status: " + text);
-            document.getElementById("title-text").innerHTML = text
+            display = ""
+            if (text.includes("Running...")) {
+            	display = "Loading..."
+            }
+            else if (text.includes("Downloading data...")) {
+            	var matches = text.match(/\((.*?)\)/);
+            	display = "Downloading:" 
+            	if (matches) {
+            		var progress = matches[1].split("/")
+            		var pct = progress[1]/progress[0]
+            		display += pct + "%"
+            	}
+            }
+            document.getElementById("title-text").innerHTML = display
         },
         monitorRunDependencies: function(left) {
             console.log("monitor run deps: " + left);
-            document.getElementById("title-text").innerHTML = "run deps: " + left
+            document.getElementById("title-text").innerHTML = "Deps:" + left
         }
       };
       window.onerror = function() {

@@ -218,7 +218,7 @@ Module['FS_createPath']('/data/textures', 'ltc', true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/data/configs/shadows.dep", "start": 0, "end": 947, "audio": 0}, {"filename": "/data/configs/common.dep", "start": 947, "end": 1666, "audio": 0}, {"filename": "/data/configs/pmfx_demo.jsn", "start": 1666, "end": 63798, "audio": 0}, {"filename": "/data/configs/msaa_resolve.jsn", "start": 63798, "end": 81676, "audio": 0}, {"filename": "/data/configs/stencil_buffer.dep", "start": 81676, "end": 83589, "audio": 0}, {"filename": "/data/configs/pp_demo.jsn", "start": 83589, "end": 126887, "audio": 0}, {"filename": "/data/configs/deferred_renderer.dep", "start": 126887, "end": 127671, "audio": 0}, {"filename": "/data/configs/stencil_shadows.dep", "start": 127671, "end": 129825, "audio": 0}, {"filename": "/data/configs/mrt_example.dep", "start": 129825, "end": 131029, "audio": 0}, {"filename": "/data/configs/editor_renderer.jsn", "start": 131029, "end": 188528, "audio": 0}, {"filename": "/data/configs/post_process.dep", "start": 188528, "end": 189283, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.jsn", "start": 189283, "end": 251765, "audio": 0}, {"filename": "/data/configs/rasterizer_state.jsn", "start": 251765, "end": 310913, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.jsn", "start": 310913, "end": 326948, "audio": 0}, {"filename": "/data/configs/sss_demo.dep", "start": 326948, "end": 329018, "audio": 0}, {"filename": "/data/configs/compute_demo.dep", "start": 329018, "end": 331135, "audio": 0}, {"filename": "/data/configs/blend_modes.jsn", "start": 331135, "end": 354372, "audio": 0}, {"filename": "/data/configs/basic_renderer.jsn", "start": 354372, "end": 411956, "audio": 0}, {"filename": "/data/configs/mrt_example.jsn", "start": 411956, "end": 434323, "audio": 0}, {"filename": "/data/configs/post_process.jsn", "start": 434323, "end": 461515, "audio": 0}, {"filename": "/data/configs/editor_renderer.dep", "start": 461515, "end": 462976, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.dep", "start": 462976, "end": 465128, "audio": 0}, {"filename": "/data/configs/rasterizer_state.dep", "start": 465128, "end": 467063, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.dep", "start": 467063, "end": 468115, "audio": 0}, {"filename": "/data/configs/sss_demo.jsn", "start": 468115, "end": 528348, "audio": 0}, {"filename": "/data/configs/compute_demo.jsn", "start": 528348, "end": 587317, "audio": 0}, {"filename": "/data/configs/blend_modes.dep", "start": 587317, "end": 588292, "audio": 0}, {"filename": "/data/configs/basic_renderer.dep", "start": 588292, "end": 590199, "audio": 0}, {"filename": "/data/configs/shadows.jsn", "start": 590199, "end": 607157, "audio": 0}, {"filename": "/data/configs/common.jsn", "start": 607157, "end": 621468, "audio": 0}, {"filename": "/data/configs/pmfx_demo.dep", "start": 621468, "end": 623550, "audio": 0}, {"filename": "/data/configs/stencil_buffer.jsn", "start": 623550, "end": 683394, "audio": 0}, {"filename": "/data/configs/msaa_resolve.dep", "start": 683394, "end": 684376, "audio": 0}, {"filename": "/data/configs/deferred_renderer.jsn", "start": 684376, "end": 692450, "audio": 0}, {"filename": "/data/configs/pp_demo.dep", "start": 692450, "end": 693618, "audio": 0}, {"filename": "/data/configs/stencil_shadows.jsn", "start": 693618, "end": 758513, "audio": 0}, {"filename": "/data/fonts/fontawesome-webfont.ttf", "start": 758513, "end": 924061, "audio": 0}, {"filename": "/data/fonts/cousine-regular.ttf", "start": 924061, "end": 967973, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/taa_resolve.psc", "start": 967973, "end": 977645, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth_unjittered.psc", "start": 977645, "end": 985014, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/high_pass.psc", "start": 985014, "end": 992460, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/debug.psc", "start": 992460, "end": 999579, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.vsc", "start": 999579, "end": 1006899, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_rgb.psc", "start": 1006899, "end": 1014106, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/menger_sponge.psc", "start": 1014106, "end": 1024701, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/sss_reflectance.psc", "start": 1024701, "end": 1034835, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_average.psc", "start": 1034835, "end": 1042734, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/depth_of_field.psc", "start": 1042734, "end": 1050937, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/filter.psc", "start": 1050937, "end": 1058629, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_colour_depth.psc", "start": 1058629, "end": 1066004, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_2x2.psc", "start": 1066004, "end": 1073827, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth.psc", "start": 1073827, "end": 1080988, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/info.json", "start": 1080988, "end": 1171233, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/colour_lut.psc", "start": 1171233, "end": 1179343, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/bloom_upsample.psc", "start": 1179343, "end": 1187068, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.psc", "start": 1187068, "end": 1194243, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/crt.psc", "start": 1194243, "end": 1202017, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.vsc", "start": 1202017, "end": 1209446, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/info.json", "start": 1209446, "end": 1213078, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.psc", "start": 1213078, "end": 1220130, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.vsc", "start": 1220130, "end": 1227442, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/torus.psc", "start": 1227442, "end": 1237626, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/info.json", "start": 1237626, "end": 1247051, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.psc", "start": 1247051, "end": 1257211, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/octahedron.psc", "start": 1257211, "end": 1267435, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.vsc", "start": 1267435, "end": 1274472, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/info.json", "start": 1274472, "end": 1276879, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.psc", "start": 1276879, "end": 1283713, "audio": 0}, {"filename": "/data/pmfx/glsl/compute_demo/info.json", "start": 1283713, "end": 1284589, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__22__.psc", "start": 1284589, "end": 1305766, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.psc", "start": 1305766, "end": 1335608, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225486__.vsc", "start": 1335608, "end": 1348376, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741842__.psc", "start": 1348376, "end": 1377536, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741840__.psc", "start": 1377536, "end": 1406695, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.psc", "start": 1406695, "end": 1413993, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.psc", "start": 1413993, "end": 1435994, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.vsc", "start": 1435994, "end": 1445596, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__3221225472__.vsc", "start": 1445596, "end": 1455702, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__20__.psc", "start": 1455702, "end": 1476855, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__3221225472__.vsc", "start": 1476855, "end": 1487350, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.vsc", "start": 1487350, "end": 1496929, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483648__.vsc", "start": 1496929, "end": 1507948, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__24__.psc", "start": 1507948, "end": 1540442, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741844__.psc", "start": 1540442, "end": 1561664, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225482__.vsc", "start": 1561664, "end": 1574409, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741846__.psc", "start": 1574409, "end": 1595655, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__26__.psc", "start": 1595655, "end": 1628173, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.vsc", "start": 1628173, "end": 1637406, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225478__.vsc", "start": 1637406, "end": 1650146, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483654__.vsc", "start": 1650146, "end": 1661535, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer__2__.psc", "start": 1661535, "end": 1670564, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.vsc", "start": 1670564, "end": 1681503, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.psc", "start": 1681503, "end": 1688368, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.vsc", "start": 1688368, "end": 1697895, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer.psc", "start": 1697895, "end": 1706918, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483656__.vsc", "start": 1706918, "end": 1717964, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__1073741824__.vsc", "start": 1717964, "end": 1726664, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__1073741824__.vsc", "start": 1726664, "end": 1735777, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.psc", "start": 1735777, "end": 1743360, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483652__.vsc", "start": 1743360, "end": 1754401, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.vsc", "start": 1754401, "end": 1763625, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.psc", "start": 1763625, "end": 1790135, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.psc", "start": 1790135, "end": 1816568, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.psc", "start": 1816568, "end": 1843077, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__18__.psc", "start": 1843077, "end": 1872168, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.vsc", "start": 1872168, "end": 1881740, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.vsc", "start": 1881740, "end": 1892684, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483650__.vsc", "start": 1892684, "end": 1904028, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.vsc", "start": 1904028, "end": 1911787, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.vsc", "start": 1911787, "end": 1922754, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__30__.psc", "start": 1922754, "end": 1947336, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gi.psc", "start": 1947336, "end": 1955335, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.psc", "start": 1955335, "end": 1977267, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741850__.psc", "start": 1977267, "end": 2009854, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741828__.psc", "start": 2009854, "end": 2028426, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.vsc", "start": 2028426, "end": 2037655, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__16__.psc", "start": 2037655, "end": 2066745, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741852__.psc", "start": 2066745, "end": 2091351, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225472__.vsc", "start": 2091351, "end": 2103586, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__2147483648__.vsc", "start": 2103586, "end": 2112747, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__2147483648__.vsc", "start": 2112747, "end": 2121746, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.psc", "start": 2121746, "end": 2143633, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/single_light_directional.psc", "start": 2143633, "end": 2155183, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.psc", "start": 2155183, "end": 2185051, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741854__.psc", "start": 2185051, "end": 2209702, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/info.json", "start": 2209702, "end": 3277666, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483658__.vsc", "start": 3277666, "end": 3289060, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225474__.vsc", "start": 3289060, "end": 3301755, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/pre_skin.vsc", "start": 3301755, "end": 3310823, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483662__.vsc", "start": 3310823, "end": 3322240, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741832__.psc", "start": 3322240, "end": 3352153, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.psc", "start": 3352153, "end": 3370749, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.vsc", "start": 3370749, "end": 3378322, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741848__.psc", "start": 3378322, "end": 3410885, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483660__.vsc", "start": 3410885, "end": 3421933, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__28__.psc", "start": 3421933, "end": 3446470, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.psc", "start": 3446470, "end": 3472909, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.vsc", "start": 3472909, "end": 3483343, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.psc", "start": 3483343, "end": 3501868, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.psc", "start": 3501868, "end": 3531805, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.vsc", "start": 3531805, "end": 3540691, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741836__.psc", "start": 3540691, "end": 3562647, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.psc", "start": 3562647, "end": 3581148, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.vsc", "start": 3581148, "end": 3590345, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.vsc", "start": 3590345, "end": 3601239, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.vsc", "start": 3601239, "end": 3608667, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/info.json", "start": 3608667, "end": 3612026, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.psc", "start": 3612026, "end": 3619016, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.psc", "start": 3619016, "end": 3630726, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.psc", "start": 3630726, "end": 3642624, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.psc", "start": 3642624, "end": 3653843, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light__2__.psc", "start": 3653843, "end": 3665914, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.vsc", "start": 3665914, "end": 3674778, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/info.json", "start": 3674778, "end": 3702433, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.vsc", "start": 3702433, "end": 3711298, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.vsc", "start": 3711298, "end": 3719673, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/diffuse.psc", "start": 3719673, "end": 3727223, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.vsc", "start": 3727223, "end": 3736086, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_normals.psc", "start": 3736086, "end": 3743613, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_texture.psc", "start": 3743613, "end": 3751374, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/shadow_sdf.psc", "start": 3751374, "end": 3763275, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__1073741824__.vsc", "start": 3763275, "end": 3772669, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.vsc", "start": 3772669, "end": 3780961, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_colour.psc", "start": 3780961, "end": 3788741, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.psc", "start": 3788741, "end": 3797642, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.vsc", "start": 3797642, "end": 3805747, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_tangents.psc", "start": 3805747, "end": 3813276, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_0.psc", "start": 3813276, "end": 3820819, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__3221225472__.vsc", "start": 3820819, "end": 3831286, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_1.psc", "start": 3831286, "end": 3838829, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.psc", "start": 3838829, "end": 3846404, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_sdf.psc", "start": 3846404, "end": 3855650, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.psc", "start": 3855650, "end": 3862966, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/constant_colour.psc", "start": 3862966, "end": 3870622, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_bitangents.psc", "start": 3870622, "end": 3878155, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/cubemap.psc", "start": 3878155, "end": 3886034, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/info.json", "start": 3886034, "end": 4041252, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.psc", "start": 4041252, "end": 4048397, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug__2__.psc", "start": 4048397, "end": 4055612, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__2147483648__.vsc", "start": 4055612, "end": 4064652, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.vsc", "start": 4064652, "end": 4073310, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/glass.psc", "start": 4073310, "end": 4081209, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.vsc", "start": 4081209, "end": 4088271, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/info.json", "start": 4088271, "end": 4090913, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.psc", "start": 4090913, "end": 4097805, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.vsc", "start": 4097805, "end": 4104612, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/info.json", "start": 4104612, "end": 4106423, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.psc", "start": 4106423, "end": 4113001, "audio": 0}, {"filename": "/data/pmfx/glsl/compute/info.json", "start": 4113001, "end": 4113692, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.vsc", "start": 4113692, "end": 4120733, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/info.json", "start": 4120733, "end": 4122974, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.psc", "start": 4122974, "end": 4129888, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.vsc", "start": 4129888, "end": 4136693, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/info.json", "start": 4136693, "end": 4138502, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.psc", "start": 4138502, "end": 4145277, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.vsc", "start": 4145277, "end": 4152344, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/info.json", "start": 4152344, "end": 4155122, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.psc", "start": 4155122, "end": 4162102, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume_sdf.psc", "start": 4162102, "end": 4171104, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume.psc", "start": 4171104, "end": 4180101, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube_array.psc", "start": 4180101, "end": 4188300, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.psc", "start": 4188300, "end": 4196598, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d_array.psc", "start": 4196598, "end": 4204379, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d.psc", "start": 4204379, "end": 4212266, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/info.json", "start": 4212266, "end": 4240001, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.vsc", "start": 4240001, "end": 4247883, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/depth_4x.psc", "start": 4247883, "end": 4255281, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.vsc", "start": 4255281, "end": 4262444, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_16x.psc", "start": 4262444, "end": 4269697, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_8x.psc", "start": 4269697, "end": 4276944, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/max_4x.psc", "start": 4276944, "end": 4284345, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_4x.psc", "start": 4284345, "end": 4291592, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/info.json", "start": 4291592, "end": 4312084, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.psc", "start": 4312084, "end": 4319331, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/custom_4x.psc", "start": 4319331, "end": 4326668, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.psc", "start": 4326668, "end": 4333599, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.psc", "start": 4333599, "end": 4340426, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad_msaa.psc", "start": 4340426, "end": 4347793, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.vsc", "start": 4347793, "end": 4354949, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.vsc", "start": 4354949, "end": 4362195, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_3d.vsc", "start": 4362195, "end": 4369371, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/info.json", "start": 4369371, "end": 4379901, "audio": 0}, {"filename": "/data/scene/sdf.pms", "start": 4379901, "end": 4424009, "audio": 0}, {"filename": "/data/scene/lucy.obj.pms", "start": 4424009, "end": 4426824, "audio": 0}, {"filename": "/data/textures/defaults/albedo.dds", "start": 4426824, "end": 4427036, "audio": 0}, {"filename": "/data/textures/defaults/normal.dds", "start": 4427036, "end": 4427248, "audio": 0}, {"filename": "/data/textures/defaults/spec.dds", "start": 4427248, "end": 4427460, "audio": 0}, {"filename": "/data/textures/defaults/black.dds", "start": 4427460, "end": 4427672, "audio": 0}, {"filename": "/data/textures/cubemap.dds", "start": 4427672, "end": 12816420, "audio": 0}, {"filename": "/data/textures/ltc/ltc_mat.dds", "start": 12816420, "end": 12882104, "audio": 0}, {"filename": "/data/textures/ltc/ltc_amp.dds", "start": 12882104, "end": 12890444, "audio": 0}], "remote_package_size": 12890444, "package_uuid": "02eb552c-7c53-4670-a776-69702f027bbf"});
+   loadPackage({"files": [{"filename": "/data/configs/shadows.dep", "start": 0, "end": 947, "audio": 0}, {"filename": "/data/configs/common.dep", "start": 947, "end": 1666, "audio": 0}, {"filename": "/data/configs/pmfx_demo.jsn", "start": 1666, "end": 63798, "audio": 0}, {"filename": "/data/configs/msaa_resolve.jsn", "start": 63798, "end": 81676, "audio": 0}, {"filename": "/data/configs/stencil_buffer.dep", "start": 81676, "end": 83589, "audio": 0}, {"filename": "/data/configs/pp_demo.jsn", "start": 83589, "end": 126887, "audio": 0}, {"filename": "/data/configs/deferred_renderer.dep", "start": 126887, "end": 127671, "audio": 0}, {"filename": "/data/configs/stencil_shadows.dep", "start": 127671, "end": 129825, "audio": 0}, {"filename": "/data/configs/mrt_example.dep", "start": 129825, "end": 131029, "audio": 0}, {"filename": "/data/configs/editor_renderer.jsn", "start": 131029, "end": 188528, "audio": 0}, {"filename": "/data/configs/post_process.dep", "start": 188528, "end": 189283, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.jsn", "start": 189283, "end": 251765, "audio": 0}, {"filename": "/data/configs/rasterizer_state.jsn", "start": 251765, "end": 310913, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.jsn", "start": 310913, "end": 326948, "audio": 0}, {"filename": "/data/configs/sss_demo.dep", "start": 326948, "end": 329018, "audio": 0}, {"filename": "/data/configs/compute_demo.dep", "start": 329018, "end": 331135, "audio": 0}, {"filename": "/data/configs/blend_modes.jsn", "start": 331135, "end": 354372, "audio": 0}, {"filename": "/data/configs/basic_renderer.jsn", "start": 354372, "end": 411956, "audio": 0}, {"filename": "/data/configs/mrt_example.jsn", "start": 411956, "end": 434323, "audio": 0}, {"filename": "/data/configs/post_process.jsn", "start": 434323, "end": 461515, "audio": 0}, {"filename": "/data/configs/editor_renderer.dep", "start": 461515, "end": 462976, "audio": 0}, {"filename": "/data/configs/dynamic_cubemap.dep", "start": 462976, "end": 465128, "audio": 0}, {"filename": "/data/configs/rasterizer_state.dep", "start": 465128, "end": 467063, "audio": 0}, {"filename": "/data/configs/render_target_mip_maps.dep", "start": 467063, "end": 468115, "audio": 0}, {"filename": "/data/configs/sss_demo.jsn", "start": 468115, "end": 528348, "audio": 0}, {"filename": "/data/configs/compute_demo.jsn", "start": 528348, "end": 587317, "audio": 0}, {"filename": "/data/configs/blend_modes.dep", "start": 587317, "end": 588292, "audio": 0}, {"filename": "/data/configs/basic_renderer.dep", "start": 588292, "end": 590199, "audio": 0}, {"filename": "/data/configs/shadows.jsn", "start": 590199, "end": 607157, "audio": 0}, {"filename": "/data/configs/common.jsn", "start": 607157, "end": 621468, "audio": 0}, {"filename": "/data/configs/pmfx_demo.dep", "start": 621468, "end": 623550, "audio": 0}, {"filename": "/data/configs/stencil_buffer.jsn", "start": 623550, "end": 683394, "audio": 0}, {"filename": "/data/configs/msaa_resolve.dep", "start": 683394, "end": 684376, "audio": 0}, {"filename": "/data/configs/deferred_renderer.jsn", "start": 684376, "end": 692450, "audio": 0}, {"filename": "/data/configs/pp_demo.dep", "start": 692450, "end": 693618, "audio": 0}, {"filename": "/data/configs/stencil_shadows.jsn", "start": 693618, "end": 758513, "audio": 0}, {"filename": "/data/fonts/fontawesome-webfont.ttf", "start": 758513, "end": 924061, "audio": 0}, {"filename": "/data/fonts/cousine-regular.ttf", "start": 924061, "end": 967973, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/taa_resolve.psc", "start": 967973, "end": 977645, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth_unjittered.psc", "start": 977645, "end": 985014, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/high_pass.psc", "start": 985014, "end": 992460, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/debug.psc", "start": 992460, "end": 999579, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.vsc", "start": 999579, "end": 1006899, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_rgb.psc", "start": 1006899, "end": 1014106, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/menger_sponge.psc", "start": 1014106, "end": 1024701, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/sss_reflectance.psc", "start": 1024701, "end": 1034835, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_average.psc", "start": 1034835, "end": 1042734, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/depth_of_field.psc", "start": 1042734, "end": 1050937, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/filter.psc", "start": 1050937, "end": 1058629, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_colour_depth.psc", "start": 1058629, "end": 1066004, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/downsample_2x2.psc", "start": 1066004, "end": 1073827, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit_depth.psc", "start": 1073827, "end": 1080988, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/info.json", "start": 1080988, "end": 1171233, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/colour_lut.psc", "start": 1171233, "end": 1179343, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/bloom_upsample.psc", "start": 1179343, "end": 1187068, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/blit.psc", "start": 1187068, "end": 1194243, "audio": 0}, {"filename": "/data/pmfx/glsl/post_process/crt.psc", "start": 1194243, "end": 1202017, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.vsc", "start": 1202017, "end": 1209446, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/info.json", "start": 1209446, "end": 1213078, "audio": 0}, {"filename": "/data/pmfx/glsl/shader_toy/default.psc", "start": 1213078, "end": 1220130, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.vsc", "start": 1220130, "end": 1227442, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/torus.psc", "start": 1227442, "end": 1237626, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/info.json", "start": 1237626, "end": 1247051, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/box.psc", "start": 1247051, "end": 1257211, "audio": 0}, {"filename": "/data/pmfx/glsl/trace/octahedron.psc", "start": 1257211, "end": 1267435, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.vsc", "start": 1267435, "end": 1274472, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/info.json", "start": 1274472, "end": 1276879, "audio": 0}, {"filename": "/data/pmfx/glsl/vertex_colour/default.psc", "start": 1276879, "end": 1283713, "audio": 0}, {"filename": "/data/pmfx/glsl/compute_demo/info.json", "start": 1283713, "end": 1284589, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__22__.psc", "start": 1284589, "end": 1305766, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.psc", "start": 1305766, "end": 1335608, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225486__.vsc", "start": 1335608, "end": 1348376, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741842__.psc", "start": 1348376, "end": 1377536, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741840__.psc", "start": 1377536, "end": 1406695, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.psc", "start": 1406695, "end": 1413993, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.psc", "start": 1413993, "end": 1435994, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.vsc", "start": 1435994, "end": 1445596, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__3221225472__.vsc", "start": 1445596, "end": 1455702, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__20__.psc", "start": 1455702, "end": 1476855, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__3221225472__.vsc", "start": 1476855, "end": 1487350, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.vsc", "start": 1487350, "end": 1496929, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483648__.vsc", "start": 1496929, "end": 1507948, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__24__.psc", "start": 1507948, "end": 1540442, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741844__.psc", "start": 1540442, "end": 1561664, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225482__.vsc", "start": 1561664, "end": 1574409, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741846__.psc", "start": 1574409, "end": 1595655, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__26__.psc", "start": 1595655, "end": 1628173, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.vsc", "start": 1628173, "end": 1637406, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225478__.vsc", "start": 1637406, "end": 1650146, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483654__.vsc", "start": 1650146, "end": 1661535, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer__2__.psc", "start": 1661535, "end": 1670564, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.vsc", "start": 1670564, "end": 1681503, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.psc", "start": 1681503, "end": 1688368, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.vsc", "start": 1688368, "end": 1697895, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gbuffer.psc", "start": 1697895, "end": 1706918, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483656__.vsc", "start": 1706918, "end": 1717964, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__1073741824__.vsc", "start": 1717964, "end": 1726664, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__1073741824__.vsc", "start": 1726664, "end": 1735777, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.psc", "start": 1735777, "end": 1743360, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483652__.vsc", "start": 1743360, "end": 1754401, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.vsc", "start": 1754401, "end": 1763625, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.psc", "start": 1763625, "end": 1790135, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.psc", "start": 1790135, "end": 1816568, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.psc", "start": 1816568, "end": 1843077, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__18__.psc", "start": 1843077, "end": 1872168, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.vsc", "start": 1872168, "end": 1881740, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.vsc", "start": 1881740, "end": 1892684, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483650__.vsc", "start": 1892684, "end": 1904028, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow.vsc", "start": 1904028, "end": 1911787, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741838__.vsc", "start": 1911787, "end": 1922754, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__30__.psc", "start": 1922754, "end": 1947336, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/gi.psc", "start": 1947336, "end": 1955335, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__14__.psc", "start": 1955335, "end": 1977267, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741850__.psc", "start": 1977267, "end": 2009854, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741828__.psc", "start": 2009854, "end": 2028426, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__8__.vsc", "start": 2028426, "end": 2037655, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__16__.psc", "start": 2037655, "end": 2066745, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741852__.psc", "start": 2066745, "end": 2091351, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225472__.vsc", "start": 2091351, "end": 2103586, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/omni_shadow__2147483648__.vsc", "start": 2103586, "end": 2112747, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly__2147483648__.vsc", "start": 2112747, "end": 2121746, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__12__.psc", "start": 2121746, "end": 2143633, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/single_light_directional.psc", "start": 2143633, "end": 2155183, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__10__.psc", "start": 2155183, "end": 2185051, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741854__.psc", "start": 2185051, "end": 2209702, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/info.json", "start": 2209702, "end": 3277666, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483658__.vsc", "start": 3277666, "end": 3289060, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__3221225474__.vsc", "start": 3289060, "end": 3301755, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/pre_skin.vsc", "start": 3301755, "end": 3310823, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483662__.vsc", "start": 3310823, "end": 3322240, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741832__.psc", "start": 3322240, "end": 3352153, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741830__.psc", "start": 3352153, "end": 3370749, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/zonly.vsc", "start": 3370749, "end": 3378322, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741848__.psc", "start": 3378322, "end": 3410885, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2147483660__.vsc", "start": 3410885, "end": 3421933, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__28__.psc", "start": 3421933, "end": 3446470, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__2__.psc", "start": 3446470, "end": 3472909, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741824__.vsc", "start": 3472909, "end": 3483343, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__6__.psc", "start": 3483343, "end": 3501868, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741834__.psc", "start": 3501868, "end": 3531805, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/shadow_extrude.vsc", "start": 3531805, "end": 3540691, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741836__.psc", "start": 3540691, "end": 3562647, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__4__.psc", "start": 3562647, "end": 3581148, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit.vsc", "start": 3581148, "end": 3590345, "audio": 0}, {"filename": "/data/pmfx/glsl/forward_render/forward_lit__1073741826__.vsc", "start": 3590345, "end": 3601239, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.vsc", "start": 3601239, "end": 3608667, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/info.json", "start": 3608667, "end": 3612026, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui/default.psc", "start": 3612026, "end": 3619016, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.psc", "start": 3619016, "end": 3630726, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.psc", "start": 3630726, "end": 3642624, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.psc", "start": 3642624, "end": 3653843, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light__2__.psc", "start": 3653843, "end": 3665914, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/spot_light.vsc", "start": 3665914, "end": 3674778, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/info.json", "start": 3674778, "end": 3702433, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/point_light.vsc", "start": 3702433, "end": 3711298, "audio": 0}, {"filename": "/data/pmfx/glsl/deferred_render/directional_light.vsc", "start": 3711298, "end": 3719673, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/diffuse.psc", "start": 3719673, "end": 3727223, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.vsc", "start": 3727223, "end": 3736086, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_normals.psc", "start": 3736086, "end": 3743613, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_texture.psc", "start": 3743613, "end": 3751374, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/shadow_sdf.psc", "start": 3751374, "end": 3763275, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__1073741824__.vsc", "start": 3763275, "end": 3772669, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.vsc", "start": 3772669, "end": 3780961, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/area_light_colour.psc", "start": 3780961, "end": 3788741, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.psc", "start": 3788741, "end": 3797642, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.vsc", "start": 3797642, "end": 3805747, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_tangents.psc", "start": 3805747, "end": 3813276, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_0.psc", "start": 3813276, "end": 3820819, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__3221225472__.vsc", "start": 3820819, "end": 3831286, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/texcoord_1.psc", "start": 3831286, "end": 3838829, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/fixed_light.psc", "start": 3838829, "end": 3846404, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_sdf.psc", "start": 3846404, "end": 3855650, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug.psc", "start": 3855650, "end": 3862966, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/constant_colour.psc", "start": 3862966, "end": 3870622, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/vertex_bitangents.psc", "start": 3870622, "end": 3878155, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/cubemap.psc", "start": 3878155, "end": 3886034, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/info.json", "start": 3886034, "end": 4041252, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking.psc", "start": 4041252, "end": 4048397, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/skinning_debug__2__.psc", "start": 4048397, "end": 4055612, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/picking__2147483648__.vsc", "start": 4055612, "end": 4064652, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/volume_texture.vsc", "start": 4064652, "end": 4073310, "audio": 0}, {"filename": "/data/pmfx/glsl/pmfx_utility/glass.psc", "start": 4073310, "end": 4081209, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.vsc", "start": 4081209, "end": 4088271, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/info.json", "start": 4088271, "end": 4090913, "audio": 0}, {"filename": "/data/pmfx/glsl/textured/default.psc", "start": 4090913, "end": 4097805, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.vsc", "start": 4097805, "end": 4104612, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/info.json", "start": 4104612, "end": 4106423, "audio": 0}, {"filename": "/data/pmfx/glsl/depth_only/default.psc", "start": 4106423, "end": 4113001, "audio": 0}, {"filename": "/data/pmfx/glsl/compute/info.json", "start": 4113001, "end": 4113692, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.vsc", "start": 4113692, "end": 4120733, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/info.json", "start": 4120733, "end": 4122974, "audio": 0}, {"filename": "/data/pmfx/glsl/buffer_multi_update/default.psc", "start": 4122974, "end": 4129888, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.vsc", "start": 4129888, "end": 4136693, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/info.json", "start": 4136693, "end": 4138502, "audio": 0}, {"filename": "/data/pmfx/glsl/basictri/default.psc", "start": 4138502, "end": 4145277, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.vsc", "start": 4145277, "end": 4152344, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/info.json", "start": 4152344, "end": 4155122, "audio": 0}, {"filename": "/data/pmfx/glsl/texture_array/default.psc", "start": 4155122, "end": 4162102, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume_sdf.psc", "start": 4162102, "end": 4171104, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_volume.psc", "start": 4171104, "end": 4180101, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube_array.psc", "start": 4180101, "end": 4188300, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.psc", "start": 4188300, "end": 4196598, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d_array.psc", "start": 4196598, "end": 4204379, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_2d.psc", "start": 4204379, "end": 4212266, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/info.json", "start": 4212266, "end": 4240001, "audio": 0}, {"filename": "/data/pmfx/glsl/imgui_ex/tex_cube.vsc", "start": 4240001, "end": 4247883, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/depth_4x.psc", "start": 4247883, "end": 4255281, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.vsc", "start": 4255281, "end": 4262444, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_16x.psc", "start": 4262444, "end": 4269697, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_8x.psc", "start": 4269697, "end": 4276944, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/max_4x.psc", "start": 4276944, "end": 4284345, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_4x.psc", "start": 4284345, "end": 4291592, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/info.json", "start": 4291592, "end": 4312084, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/average_2x.psc", "start": 4312084, "end": 4319331, "audio": 0}, {"filename": "/data/pmfx/glsl/msaa_resolve/custom_4x.psc", "start": 4319331, "end": 4326668, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.psc", "start": 4326668, "end": 4333599, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.psc", "start": 4333599, "end": 4340426, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad_msaa.psc", "start": 4340426, "end": 4347793, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/sceen_quad.vsc", "start": 4347793, "end": 4354949, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_2d.vsc", "start": 4354949, "end": 4362195, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/debug_3d.vsc", "start": 4362195, "end": 4369371, "audio": 0}, {"filename": "/data/pmfx/glsl/debug/info.json", "start": 4369371, "end": 4379901, "audio": 0}, {"filename": "/data/scene/sdf.pms", "start": 4379901, "end": 4424009, "audio": 0}, {"filename": "/data/scene/lucy.obj.pms", "start": 4424009, "end": 4426824, "audio": 0}, {"filename": "/data/textures/defaults/albedo.dds", "start": 4426824, "end": 4427036, "audio": 0}, {"filename": "/data/textures/defaults/normal.dds", "start": 4427036, "end": 4427248, "audio": 0}, {"filename": "/data/textures/defaults/spec.dds", "start": 4427248, "end": 4427460, "audio": 0}, {"filename": "/data/textures/defaults/black.dds", "start": 4427460, "end": 4427672, "audio": 0}, {"filename": "/data/textures/cubemap.dds", "start": 4427672, "end": 12816420, "audio": 0}, {"filename": "/data/textures/ltc/ltc_mat.dds", "start": 12816420, "end": 12882104, "audio": 0}, {"filename": "/data/textures/ltc/ltc_amp.dds", "start": 12882104, "end": 12890444, "audio": 0}], "remote_package_size": 12890444, "package_uuid": "65ff906f-7831-4358-88c6-e453ee534db1"});
   
   })();
   
@@ -837,7 +837,6 @@ if (typeof WebAssembly !== 'object') {
 function setValue(ptr, value, type, noSafe) {
   type = type || 'i8';
   if (type.charAt(type.length-1) === '*') type = 'i32'; // pointers are 32-bit
-  if (noSafe) {
     switch(type) {
       case 'i1': HEAP8[((ptr)>>0)]=value; break;
       case 'i8': HEAP8[((ptr)>>0)]=value; break;
@@ -848,18 +847,6 @@ function setValue(ptr, value, type, noSafe) {
       case 'double': HEAPF64[((ptr)>>3)]=value; break;
       default: abort('invalid type for setValue: ' + type);
     }
-  } else {
-    switch(type) {
-      case 'i1': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 1); break;
-      case 'i8': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 1); break;
-      case 'i16': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 2); break;
-      case 'i32': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 4); break;
-      case 'i64': (tempI64 = [value>>>0,(tempDouble=value,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE(((ptr)|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((ptr)+(4))|0), ((tempI64[1])|0), 4)); break;
-      case 'float': SAFE_HEAP_STORE_D(((ptr)|0), Math_fround(value), 4); break;
-      case 'double': SAFE_HEAP_STORE_D(((ptr)|0), (+(value)), 8); break;
-      default: abort('invalid type for setValue: ' + type);
-    }
-  }
 }
 
 /** @param {number} ptr
@@ -868,7 +855,6 @@ function setValue(ptr, value, type, noSafe) {
 function getValue(ptr, type, noSafe) {
   type = type || 'i8';
   if (type.charAt(type.length-1) === '*') type = 'i32'; // pointers are 32-bit
-  if (noSafe) {
     switch(type) {
       case 'i1': return HEAP8[((ptr)>>0)];
       case 'i8': return HEAP8[((ptr)>>0)];
@@ -879,80 +865,10 @@ function getValue(ptr, type, noSafe) {
       case 'double': return HEAPF64[((ptr)>>3)];
       default: abort('invalid type for getValue: ' + type);
     }
-  } else {
-    switch(type) {
-      case 'i1': return ((SAFE_HEAP_LOAD(((ptr)|0), 1, 0))|0);
-      case 'i8': return ((SAFE_HEAP_LOAD(((ptr)|0), 1, 0))|0);
-      case 'i16': return ((SAFE_HEAP_LOAD(((ptr)|0), 2, 0))|0);
-      case 'i32': return ((SAFE_HEAP_LOAD(((ptr)|0), 4, 0))|0);
-      case 'i64': return ((SAFE_HEAP_LOAD(((ptr)|0), 8, 0))|0);
-      case 'float': return Math_fround(SAFE_HEAP_LOAD_D(((ptr)|0), 4, 0));
-      case 'double': return (+(SAFE_HEAP_LOAD_D(((ptr)|0), 8, 0)));
-      default: abort('invalid type for getValue: ' + type);
-    }
-  }
   return null;
 }
 
 
-/** @param {number|boolean=} isFloat */
-function getSafeHeapType(bytes, isFloat) {
-  switch (bytes) {
-    case 1: return 'i8';
-    case 2: return 'i16';
-    case 4: return isFloat ? 'float' : 'i32';
-    case 8: return 'double';
-    default: assert(0);
-  }
-}
-
-
-/** @param {number|boolean=} isFloat */
-function SAFE_HEAP_STORE(dest, value, bytes, isFloat) {
-  if (dest <= 0) abort('segmentation fault storing ' + bytes + ' bytes to address ' + dest);
-  if (dest % bytes !== 0) abort('alignment error storing to address ' + dest + ', which was expected to be aligned to a multiple of ' + bytes);
-  if (dest + bytes > HEAPU32[DYNAMICTOP_PTR>>2]) abort('segmentation fault, exceeded the top of the available dynamic heap when storing ' + bytes + ' bytes to address ' + dest + '. DYNAMICTOP=' + HEAP32[DYNAMICTOP_PTR>>2]);
-  assert(DYNAMICTOP_PTR);
-  assert(HEAP32[DYNAMICTOP_PTR>>2] <= HEAP8.length);
-  setValue(dest, value, getSafeHeapType(bytes, isFloat), 1);
-}
-function SAFE_HEAP_STORE_D(dest, value, bytes) {
-  SAFE_HEAP_STORE(dest, value, bytes, true);
-}
-
-/** @param {number|boolean=} isFloat */
-function SAFE_HEAP_LOAD(dest, bytes, unsigned, isFloat) {
-  if (dest <= 0) abort('segmentation fault loading ' + bytes + ' bytes from address ' + dest);
-  if (dest % bytes !== 0) abort('alignment error loading from address ' + dest + ', which was expected to be aligned to a multiple of ' + bytes);
-  if (dest + bytes > HEAPU32[DYNAMICTOP_PTR>>2]) abort('segmentation fault, exceeded the top of the available dynamic heap when loading ' + bytes + ' bytes from address ' + dest + '. DYNAMICTOP=' + HEAP32[DYNAMICTOP_PTR>>2]);
-  assert(DYNAMICTOP_PTR);
-  assert(HEAP32[DYNAMICTOP_PTR>>2] <= HEAP8.length);
-  var type = getSafeHeapType(bytes, isFloat);
-  var ret = getValue(dest, type, 1);
-  if (unsigned) ret = unSign(ret, parseInt(type.substr(1), 10), 1);
-  return ret;
-}
-function SAFE_HEAP_LOAD_D(dest, bytes, unsigned) {
-  return SAFE_HEAP_LOAD(dest, bytes, unsigned, true);
-}
-
-function SAFE_FT_MASK(value, mask) {
-  var ret = value & mask;
-  if (ret !== value) {
-    abort('Function table mask error: function pointer is ' + value + ' which is masked by ' + mask + ', the likely cause of this is that the function pointer is being called by the wrong type.');
-  }
-  return ret;
-}
-
-function segfault() {
-  abort('segmentation fault');
-}
-function alignfault() {
-  abort('alignment fault');
-}
-function ftfault() {
-  abort('Function table mask error');
-}
 
 
 
@@ -1326,7 +1242,7 @@ function lengthBytesUTF8(str) {
 function AsciiToString(ptr) {
   var str = '';
   while (1) {
-    var ch = ((SAFE_HEAP_LOAD(((ptr++)|0), 1, 1))>>>0);
+    var ch = HEAPU8[((ptr++)>>0)];
     if (!ch) return str;
     str += String.fromCharCode(ch);
   }
@@ -1363,7 +1279,7 @@ function UTF16ToString(ptr, maxBytesToRead) {
 
     var str = '';
     while (1) {
-      var codeUnit = ((SAFE_HEAP_LOAD((((ptr)+(i*2))|0), 2, 0))|0);
+      var codeUnit = HEAP16[(((ptr)+(i*2))>>1)];
       if (codeUnit == 0 || i == maxBytesToRead / 2) return str;
       ++i;
       // fromCharCode constructs a character from a UTF-16 code unit, so we can pass the UTF16 string right through.
@@ -1397,11 +1313,11 @@ function stringToUTF16(str, outPtr, maxBytesToWrite) {
   for (var i = 0; i < numCharsToWrite; ++i) {
     // charCodeAt returns a UTF-16 encoded code unit, so it can be directly written to the HEAP.
     var codeUnit = str.charCodeAt(i); // possibly a lead surrogate
-    SAFE_HEAP_STORE(((outPtr)|0), ((codeUnit)|0), 2);
+    HEAP16[((outPtr)>>1)]=codeUnit;
     outPtr += 2;
   }
   // Null-terminate the pointer to the HEAP.
-  SAFE_HEAP_STORE(((outPtr)|0), ((0)|0), 2);
+  HEAP16[((outPtr)>>1)]=0;
   return outPtr - startPtr;
 }
 
@@ -1419,7 +1335,7 @@ function UTF32ToString(ptr, maxBytesToRead) {
   // If maxBytesToRead is not passed explicitly, it will be undefined, and this
   // will always evaluate to true. This saves on code size.
   while (!(i >= maxBytesToRead / 4)) {
-    var utf32 = ((SAFE_HEAP_LOAD((((ptr)+(i*4))|0), 4, 0))|0);
+    var utf32 = HEAP32[(((ptr)+(i*4))>>2)];
     if (utf32 == 0) break;
     ++i;
     // Gotcha: fromCharCode constructs a character from a UTF-16 encoded code (pair), not from a Unicode code point! So encode the code point to UTF-16 for constructing.
@@ -1463,12 +1379,12 @@ function stringToUTF32(str, outPtr, maxBytesToWrite) {
       var trailSurrogate = str.charCodeAt(++i);
       codeUnit = 0x10000 + ((codeUnit & 0x3FF) << 10) | (trailSurrogate & 0x3FF);
     }
-    SAFE_HEAP_STORE(((outPtr)|0), ((codeUnit)|0), 4);
+    HEAP32[((outPtr)>>2)]=codeUnit;
     outPtr += 4;
     if (outPtr + 4 > endPtr) break;
   }
   // Null-terminate the pointer to the HEAP.
-  SAFE_HEAP_STORE(((outPtr)|0), ((0)|0), 4);
+  HEAP32[((outPtr)>>2)]=0;
   return outPtr - startPtr;
 }
 
@@ -1534,10 +1450,10 @@ function writeArrayToMemory(array, buffer) {
 function writeAsciiToMemory(str, buffer, dontAddNull) {
   for (var i = 0; i < str.length; ++i) {
     assert(str.charCodeAt(i) === str.charCodeAt(i)&0xff);
-    SAFE_HEAP_STORE(((buffer++)|0), ((str.charCodeAt(i))|0), 1);
+    HEAP8[((buffer++)>>0)]=str.charCodeAt(i);
   }
   // Null-terminate the pointer to the HEAP.
-  if (!dontAddNull) SAFE_HEAP_STORE(((buffer)|0), ((0)|0), 1);
+  if (!dontAddNull) HEAP8[((buffer)>>0)]=0;
 }
 
 
@@ -2217,7 +2133,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
   
   function setErrNo(value) {
-      SAFE_HEAP_STORE(((___errno_location())|0), ((value)|0), 4);
+      HEAP32[((___errno_location())>>2)]=value;
       return value;
     }
   
@@ -5203,18 +5119,18 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },windowedWidth:0,windowedHeight:0,setFullscreenCanvasSize:function() {
         // check if SDL is available
         if (typeof SDL != "undefined") {
-          var flags = ((SAFE_HEAP_LOAD(((SDL.screen)|0), 4, 1))>>>0);
+          var flags = HEAPU32[((SDL.screen)>>2)];
           flags = flags | 0x00800000; // set SDL_FULLSCREEN flag
-          SAFE_HEAP_STORE(((SDL.screen)|0), ((flags)|0), 4)
+          HEAP32[((SDL.screen)>>2)]=flags
         }
         Browser.updateCanvasDimensions(Module['canvas']);
         Browser.updateResizeListeners();
       },setWindowedCanvasSize:function() {
         // check if SDL is available
         if (typeof SDL != "undefined") {
-          var flags = ((SAFE_HEAP_LOAD(((SDL.screen)|0), 4, 1))>>>0);
+          var flags = HEAPU32[((SDL.screen)>>2)];
           flags = flags & ~0x00800000; // clear SDL_FULLSCREEN flag
-          SAFE_HEAP_STORE(((SDL.screen)|0), ((flags)|0), 4)
+          HEAP32[((SDL.screen)>>2)]=flags
         }
         Browser.updateCanvasDimensions(Module['canvas']);
         Browser.updateResizeListeners();
@@ -5280,14 +5196,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       if (!surfData.buffer) {
         surfData.buffer = _malloc(surfData.width * surfData.height * 4);
-        SAFE_HEAP_STORE((((surf)+(20))|0), ((surfData.buffer)|0), 4);
+        HEAP32[(((surf)+(20))>>2)]=surfData.buffer;
       }
   
       // Mark in C/C++-accessible SDL structure
       // SDL_Surface has the following fields: Uint32 flags, SDL_PixelFormat *format; int w, h; Uint16 pitch; void *pixels; ...
       // So we have fields all of the same size, and 5 of them before us.
       // TODO: Use macros like in library.js
-      SAFE_HEAP_STORE((((surf)+(20))|0), ((surfData.buffer)|0), 4);
+      HEAP32[(((surf)+(20))>>2)]=surfData.buffer;
   
       if (surf == SDL.screen && Module.screenIsReadOnly && surfData.image) return 0;
   
@@ -5328,7 +5244,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
           //     surfData.image.data[i*4 +2],
           //     255);
           //   var index = surfData.colorMap[color];
-          //   SAFE_HEAP_STORE((((surfData.buffer)+(i))|0), ((index)|0), 1);
+          //   HEAP8[(((surfData.buffer)+(i))>>0)]=index;
           // }
           throw 'CopyOnLock is not supported for SDL_LockSurface with SDL_HWPALETTE flag set' + new Error().stack;
         } else {
@@ -5348,16 +5264,16 @@ function set_title(title){ document.title = UTF8ToString(title); }
   /** @suppress{missingProperties} */
   function SDL_audio() { return SDL.audio}var SDL={defaults:{width:320,height:200,copyOnLock:true,discardOnLock:false,opaqueFrontBuffer:true},version:null,surfaces:{},canvasPool:[],events:[],fonts:[null],audios:[null],rwops:[null],music:{audio:null,volume:1},mixerFrequency:22050,mixerFormat:32784,mixerNumChannels:2,mixerChunkSize:1024,channelMinimumNumber:0,GL:false,glAttributes:{0:3,1:3,2:2,3:0,4:0,5:1,6:16,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:1,16:0,17:0,18:0},keyboardState:null,keyboardMap:{},canRequestFullscreen:false,isRequestingFullscreen:false,textInput:false,startTime:null,initFlags:0,buttonState:0,modState:0,DOMButtons:[0,0,0],DOMEventToSDLEvent:{},TOUCH_DEFAULT_ID:0,eventHandler:null,eventHandlerContext:null,eventHandlerTemp:0,keyCodes:{16:1249,17:1248,18:1250,20:1081,33:1099,34:1102,35:1101,36:1098,37:1104,38:1106,39:1103,40:1105,44:316,45:1097,46:127,91:1251,93:1125,96:1122,97:1113,98:1114,99:1115,100:1116,101:1117,102:1118,103:1119,104:1120,105:1121,106:1109,107:1111,109:1110,110:1123,111:1108,112:1082,113:1083,114:1084,115:1085,116:1086,117:1087,118:1088,119:1089,120:1090,121:1091,122:1092,123:1093,124:1128,125:1129,126:1130,127:1131,128:1132,129:1133,130:1134,131:1135,132:1136,133:1137,134:1138,135:1139,144:1107,160:94,161:33,162:34,163:35,164:36,165:37,166:38,167:95,168:40,169:41,170:42,171:43,172:124,173:45,174:123,175:125,176:126,181:127,182:129,183:128,188:44,190:46,191:47,192:96,219:91,220:92,221:93,222:39,224:1251},scanCodes:{8:42,9:43,13:40,27:41,32:44,35:204,39:53,44:54,46:55,47:56,48:39,49:30,50:31,51:32,52:33,53:34,54:35,55:36,56:37,57:38,58:203,59:51,61:46,91:47,92:49,93:48,96:52,97:4,98:5,99:6,100:7,101:8,102:9,103:10,104:11,105:12,106:13,107:14,108:15,109:16,110:17,111:18,112:19,113:20,114:21,115:22,116:23,117:24,118:25,119:26,120:27,121:28,122:29,127:76,305:224,308:226,316:70},loadRect:function(rect) {
         return {
-          x: ((SAFE_HEAP_LOAD(((rect + 0)|0), 4, 0))|0),
-          y: ((SAFE_HEAP_LOAD(((rect + 4)|0), 4, 0))|0),
-          w: ((SAFE_HEAP_LOAD(((rect + 8)|0), 4, 0))|0),
-          h: ((SAFE_HEAP_LOAD(((rect + 12)|0), 4, 0))|0)
+          x: HEAP32[((rect + 0)>>2)],
+          y: HEAP32[((rect + 4)>>2)],
+          w: HEAP32[((rect + 8)>>2)],
+          h: HEAP32[((rect + 12)>>2)]
         };
       },updateRect:function(rect, r) {
-        SAFE_HEAP_STORE(((rect)|0), ((r.x)|0), 4);
-        SAFE_HEAP_STORE((((rect)+(4))|0), ((r.y)|0), 4);
-        SAFE_HEAP_STORE((((rect)+(8))|0), ((r.w)|0), 4);
-        SAFE_HEAP_STORE((((rect)+(12))|0), ((r.h)|0), 4);
+        HEAP32[((rect)>>2)]=r.x;
+        HEAP32[(((rect)+(4))>>2)]=r.y;
+        HEAP32[(((rect)+(8))>>2)]=r.w;
+        HEAP32[(((rect)+(12))>>2)]=r.h;
       },intersectionOfRects:function(first, second) {
         var leftX = Math.max(first.x, second.x);
         var leftY = Math.max(first.y, second.y);
@@ -5372,15 +5288,15 @@ function set_title(title){ document.title = UTF8ToString(title); }
         }
       },checkPixelFormat:function(fmt) {
         // Canvas screens are always RGBA.
-        var format = ((SAFE_HEAP_LOAD(((fmt)|0), 4, 0))|0);
+        var format = HEAP32[((fmt)>>2)];
         if (format != -2042224636) {
           warnOnce('Unsupported pixel format!');
         }
       },loadColorToCSSRGB:function(color) {
-        var rgba = ((SAFE_HEAP_LOAD(((color)|0), 4, 0))|0);
+        var rgba = HEAP32[((color)>>2)];
         return 'rgb(' + (rgba&255) + ',' + ((rgba >> 8)&255) + ',' + ((rgba >> 16)&255) + ')';
       },loadColorToCSSRGBA:function(color) {
-        var rgba = ((SAFE_HEAP_LOAD(((color)|0), 4, 0))|0);
+        var rgba = HEAP32[((color)>>2)];
         return 'rgba(' + (rgba&255) + ',' + ((rgba >> 8)&255) + ',' + ((rgba >> 16)&255) + ',' + (((rgba >> 24)&255)/255) + ')';
       },translateColorToCSSRGBA:function(rgba) {
         return 'rgba(' + (rgba&0xff) + ',' + (rgba>>8 & 0xff) + ',' + (rgba>>16 & 0xff) + ',' + (rgba>>>24)/0xff + ')';
@@ -5406,30 +5322,30 @@ function set_title(title){ document.title = UTF8ToString(title); }
           buffer = _malloc(width * height * 4);
         }
   
-        SAFE_HEAP_STORE(((surf)|0), ((flags)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(4))|0), ((pixelFormat)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(8))|0), ((width)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(12))|0), ((height)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(16))|0), ((width * bpp)|0), 4);  // assuming RGBA or indexed for now,
+        HEAP32[((surf)>>2)]=flags;
+        HEAP32[(((surf)+(4))>>2)]=pixelFormat;
+        HEAP32[(((surf)+(8))>>2)]=width;
+        HEAP32[(((surf)+(12))>>2)]=height;
+        HEAP32[(((surf)+(16))>>2)]=width * bpp;  // assuming RGBA or indexed for now,
                                                                                           // since that is what ImageData gives us in browsers
-        SAFE_HEAP_STORE((((surf)+(20))|0), ((buffer)|0), 4);
+        HEAP32[(((surf)+(20))>>2)]=buffer;
   
-        SAFE_HEAP_STORE((((surf)+(36))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(40))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(44))|0), ((Module["canvas"].width)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(48))|0), ((Module["canvas"].height)|0), 4);
+        HEAP32[(((surf)+(36))>>2)]=0;
+        HEAP32[(((surf)+(40))>>2)]=0;
+        HEAP32[(((surf)+(44))>>2)]=Module["canvas"].width;
+        HEAP32[(((surf)+(48))>>2)]=Module["canvas"].height;
   
-        SAFE_HEAP_STORE((((surf)+(56))|0), ((1)|0), 4);
+        HEAP32[(((surf)+(56))>>2)]=1;
   
-        SAFE_HEAP_STORE(((pixelFormat)|0), ((-2042224636)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(4))|0), ((0)|0), 4);// TODO
-        SAFE_HEAP_STORE((((pixelFormat)+(8))|0), ((bpp * 8)|0), 1);
-        SAFE_HEAP_STORE((((pixelFormat)+(9))|0), ((bpp)|0), 1);
+        HEAP32[((pixelFormat)>>2)]=-2042224636;
+        HEAP32[(((pixelFormat)+(4))>>2)]=0;// TODO
+        HEAP8[(((pixelFormat)+(8))>>0)]=bpp * 8;
+        HEAP8[(((pixelFormat)+(9))>>0)]=bpp;
   
-        SAFE_HEAP_STORE((((pixelFormat)+(12))|0), ((rmask || 0x000000ff)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(16))|0), ((gmask || 0x0000ff00)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(20))|0), ((bmask || 0x00ff0000)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(24))|0), ((amask || 0xff000000)|0), 4);
+        HEAP32[(((pixelFormat)+(12))>>2)]=rmask || 0x000000ff;
+        HEAP32[(((pixelFormat)+(16))>>2)]=gmask || 0x0000ff00;
+        HEAP32[(((pixelFormat)+(20))>>2)]=bmask || 0x00ff0000;
+        HEAP32[(((pixelFormat)+(24))>>2)]=amask || 0xff000000;
   
         // Decide if we want to use WebGL or not
         SDL.GL = SDL.GL || is_SDL_OPENGL;
@@ -5502,14 +5418,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
         for (var y = startY; y < endY; ++y) {
           var base = y * fullWidth;
           for (var x = startX; x < endX; ++x) {
-            data32[base + x] = colors32[((SAFE_HEAP_LOAD(((buffer + base + x)|0), 1, 1))>>>0)];
+            data32[base + x] = colors32[HEAPU8[((buffer + base + x)>>0)]];
           }
         }
       },freeSurface:function(surf) {
         var refcountPointer = surf + 56;
-        var refcount = ((SAFE_HEAP_LOAD(((refcountPointer)|0), 4, 0))|0);
+        var refcount = HEAP32[((refcountPointer)>>2)];
         if (refcount > 1) {
-          SAFE_HEAP_STORE(((refcountPointer)|0), ((refcount - 1)|0), 4);
+          HEAP32[((refcountPointer)>>2)]=refcount - 1;
           return;
         }
   
@@ -5852,14 +5768,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
             var code = SDL.lookupKeyCodeForEvent(event);
             // Assigning a boolean to HEAP8, that's alright but Closure would like to warn about it:
             /** @suppress{checkTypes} */
-            SAFE_HEAP_STORE((((SDL.keyboardState)+(code))|0), ((down)|0), 1);
+            HEAP8[(((SDL.keyboardState)+(code))>>0)]=down;
             // TODO: lmeta, rmeta, numlock, capslock, KMOD_MODE, KMOD_RESERVED
-            SDL.modState = (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1248))|0), 1, 0))|0) ? 0x0040 : 0) | // KMOD_LCTRL
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1249))|0), 1, 0))|0) ? 0x0001 : 0) | // KMOD_LSHIFT
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1250))|0), 1, 0))|0) ? 0x0100 : 0) | // KMOD_LALT
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1252))|0), 1, 0))|0) ? 0x0080 : 0) | // KMOD_RCTRL
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1253))|0), 1, 0))|0) ? 0x0002 : 0) | // KMOD_RSHIFT
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1254))|0), 1, 0))|0) ? 0x0200 : 0); //  KMOD_RALT
+            SDL.modState = (HEAP8[(((SDL.keyboardState)+(1248))>>0)] ? 0x0040 : 0) | // KMOD_LCTRL
+              (HEAP8[(((SDL.keyboardState)+(1249))>>0)] ? 0x0001 : 0) | // KMOD_LSHIFT
+              (HEAP8[(((SDL.keyboardState)+(1250))>>0)] ? 0x0100 : 0) | // KMOD_LALT
+              (HEAP8[(((SDL.keyboardState)+(1252))>>0)] ? 0x0080 : 0) | // KMOD_RCTRL
+              (HEAP8[(((SDL.keyboardState)+(1253))>>0)] ? 0x0002 : 0) | // KMOD_RSHIFT
+              (HEAP8[(((SDL.keyboardState)+(1254))>>0)] ? 0x0200 : 0); //  KMOD_RALT
             if (down) {
               SDL.keyboardMap[code] = event.keyCode; // save the DOM input, which we can use to unpress it during blur
             } else {
@@ -5926,54 +5842,54 @@ function set_title(title){ document.title = UTF8ToString(title); }
               scan = SDL.scanCodes[key] || key;
             }
   
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((down ? 1 : 0)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(9))|0), ((0)|0), 1); // TODO
-            SAFE_HEAP_STORE((((ptr)+(12))|0), ((scan)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(16))|0), ((key)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(20))|0), ((SDL.modState)|0), 2);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP8[(((ptr)+(8))>>0)]=down ? 1 : 0;
+            HEAP8[(((ptr)+(9))>>0)]=0; // TODO
+            HEAP32[(((ptr)+(12))>>2)]=scan;
+            HEAP32[(((ptr)+(16))>>2)]=key;
+            HEAP16[(((ptr)+(20))>>1)]=SDL.modState;
             // some non-character keys (e.g. backspace and tab) won't have keypressCharCode set, fill in with the keyCode.
-            SAFE_HEAP_STORE((((ptr)+(24))|0), ((event.keypressCharCode || key)|0), 4);
+            HEAP32[(((ptr)+(24))>>2)]=event.keypressCharCode || key;
   
             break;
           }
           case 'keypress': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
             // Not filling in windowID for now
             var cStr = intArrayFromString(String.fromCharCode(event.charCode));
             for (var i = 0; i < cStr.length; ++i) {
-              SAFE_HEAP_STORE((((ptr)+(8 + i))|0), ((cStr[i])|0), 1);
+              HEAP8[(((ptr)+(8 + i))>>0)]=cStr[i];
             }
             break;
           }
           case 'mousedown': case 'mouseup': case 'mousemove': {
             if (event.type != 'mousemove') {
               var down = event.type === 'mousedown';
-              SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(8))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(12))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(16))|0), ((event.button+1)|0), 1); // DOM buttons are 0-2, SDL 1-3
-              SAFE_HEAP_STORE((((ptr)+(17))|0), ((down ? 1 : 0)|0), 1);
-              SAFE_HEAP_STORE((((ptr)+(20))|0), ((Browser.mouseX)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(24))|0), ((Browser.mouseY)|0), 4);
+              HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+              HEAP32[(((ptr)+(4))>>2)]=0;
+              HEAP32[(((ptr)+(8))>>2)]=0;
+              HEAP32[(((ptr)+(12))>>2)]=0;
+              HEAP8[(((ptr)+(16))>>0)]=event.button+1; // DOM buttons are 0-2, SDL 1-3
+              HEAP8[(((ptr)+(17))>>0)]=down ? 1 : 0;
+              HEAP32[(((ptr)+(20))>>2)]=Browser.mouseX;
+              HEAP32[(((ptr)+(24))>>2)]=Browser.mouseY;
             } else {
-              SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(8))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(12))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(16))|0), ((SDL.buttonState)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(20))|0), ((Browser.mouseX)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(24))|0), ((Browser.mouseY)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(28))|0), ((Browser.mouseMovementX)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(32))|0), ((Browser.mouseMovementY)|0), 4);
+              HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+              HEAP32[(((ptr)+(4))>>2)]=0;
+              HEAP32[(((ptr)+(8))>>2)]=0;
+              HEAP32[(((ptr)+(12))>>2)]=0;
+              HEAP32[(((ptr)+(16))>>2)]=SDL.buttonState;
+              HEAP32[(((ptr)+(20))>>2)]=Browser.mouseX;
+              HEAP32[(((ptr)+(24))>>2)]=Browser.mouseY;
+              HEAP32[(((ptr)+(28))>>2)]=Browser.mouseMovementX;
+              HEAP32[(((ptr)+(32))>>2)]=Browser.mouseMovementY;
             }
             break;
           }
           case 'wheel': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(16))|0), ((event.deltaX)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(20))|0), ((event.deltaY)|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(16))>>2)]=event.deltaX;
+            HEAP32[(((ptr)+(20))>>2)]=event.deltaY;
             break;
           }
           case 'touchstart': case 'touchend': case 'touchmove': {
@@ -5989,67 +5905,67 @@ function set_title(title){ document.title = UTF8ToString(title); }
             var dy = y - ly;
             if (touch['deviceID'] === undefined) touch.deviceID = SDL.TOUCH_DEFAULT_ID;
             if (dx === 0 && dy === 0 && event.type === 'touchmove') return false; // don't send these if nothing happened
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((_SDL_GetTicks())|0), 4);
-            (tempI64 = [touch.deviceID>>>0,(tempDouble=touch.deviceID,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((ptr)+(8))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((ptr)+(12))|0), ((tempI64[1])|0), 4));
-            (tempI64 = [touch.identifier>>>0,(tempDouble=touch.identifier,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((ptr)+(16))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((ptr)+(20))|0), ((tempI64[1])|0), 4));
-            SAFE_HEAP_STORE_D((((ptr)+(24))|0), Math_fround(x), 4);
-            SAFE_HEAP_STORE_D((((ptr)+(28))|0), Math_fround(y), 4);
-            SAFE_HEAP_STORE_D((((ptr)+(32))|0), Math_fround(dx), 4);
-            SAFE_HEAP_STORE_D((((ptr)+(36))|0), Math_fround(dy), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=_SDL_GetTicks();
+            (tempI64 = [touch.deviceID>>>0,(tempDouble=touch.deviceID,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((ptr)+(8))>>2)]=tempI64[0],HEAP32[(((ptr)+(12))>>2)]=tempI64[1]);
+            (tempI64 = [touch.identifier>>>0,(tempDouble=touch.identifier,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((ptr)+(16))>>2)]=tempI64[0],HEAP32[(((ptr)+(20))>>2)]=tempI64[1]);
+            HEAPF32[(((ptr)+(24))>>2)]=x;
+            HEAPF32[(((ptr)+(28))>>2)]=y;
+            HEAPF32[(((ptr)+(32))>>2)]=dx;
+            HEAPF32[(((ptr)+(36))>>2)]=dy;
             if (touch.force !== undefined) {
-              SAFE_HEAP_STORE_D((((ptr)+(40))|0), Math_fround(touch.force), 4);
+              HEAPF32[(((ptr)+(40))>>2)]=touch.force;
             } else { // No pressure data, send a digital 0/1 pressure.
-              SAFE_HEAP_STORE_D((((ptr)+(40))|0), Math_fround(event.type == "touchend" ? 0 : 1), 4);
+              HEAPF32[(((ptr)+(40))>>2)]=event.type == "touchend" ? 0 : 1;
             }
             break;
           }
           case 'unload': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
             break;
           }
           case 'resize': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((event.w)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((event.h)|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=event.w;
+            HEAP32[(((ptr)+(8))>>2)]=event.h;
             break;
           }
           case 'joystick_button_up': case 'joystick_button_down': {
             var state = event.type === 'joystick_button_up' ? 0 : 1;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((event.index)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(5))|0), ((event.button)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(6))|0), ((state)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP8[(((ptr)+(4))>>0)]=event.index;
+            HEAP8[(((ptr)+(5))>>0)]=event.button;
+            HEAP8[(((ptr)+(6))>>0)]=state;
             break;
           }
           case 'joystick_axis_motion': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((event.index)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(5))|0), ((event.axis)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((SDL.joystickAxisValueConversion(event.value))|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP8[(((ptr)+(4))>>0)]=event.index;
+            HEAP8[(((ptr)+(5))>>0)]=event.axis;
+            HEAP32[(((ptr)+(8))>>2)]=SDL.joystickAxisValueConversion(event.value);
             break;
           }
           case 'focus': {
             var SDL_WINDOWEVENT_FOCUS_GAINED = 12 /* SDL_WINDOWEVENT_FOCUS_GAINED */;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((SDL_WINDOWEVENT_FOCUS_GAINED)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=0;
+            HEAP8[(((ptr)+(8))>>0)]=SDL_WINDOWEVENT_FOCUS_GAINED;
             break;
           }
           case 'blur': {
             var SDL_WINDOWEVENT_FOCUS_LOST = 13 /* SDL_WINDOWEVENT_FOCUS_LOST */;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((SDL_WINDOWEVENT_FOCUS_LOST)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=0;
+            HEAP8[(((ptr)+(8))>>0)]=SDL_WINDOWEVENT_FOCUS_LOST;
             break;
           }
           case 'visibilitychange': {
             var SDL_WINDOWEVENT_SHOWN  = 1 /* SDL_WINDOWEVENT_SHOWN */;
             var SDL_WINDOWEVENT_HIDDEN = 2 /* SDL_WINDOWEVENT_HIDDEN */;
             var visibilityEventID = event.visible ? SDL_WINDOWEVENT_SHOWN : SDL_WINDOWEVENT_HIDDEN;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((visibilityEventID)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=0;
+            HEAP8[(((ptr)+(8))>>0)]=visibilityEventID;
             break;
           }
           default: throw 'Unhandled SDL event: ' + event.type;
@@ -6176,16 +6092,16 @@ function set_title(title){ document.title = UTF8ToString(title); }
           }
           if (audio.format == 0x8010 /*AUDIO_S16LSB*/) {
             for(var j = 0; j < sizeSamplesPerChannel; ++j) {
-              channelData[j] = (((SAFE_HEAP_LOAD((((heapPtr)+((j*numChannels + c)*2))|0), 2, 0))|0)) / 0x8000;
+              channelData[j] = (HEAP16[(((heapPtr)+((j*numChannels + c)*2))>>1)]) / 0x8000;
             }
           } else if (audio.format == 0x0008 /*AUDIO_U8*/) {
             for(var j = 0; j < sizeSamplesPerChannel; ++j) {
-              var v = (((SAFE_HEAP_LOAD((((heapPtr)+(j*numChannels + c))|0), 1, 0))|0));
+              var v = (HEAP8[(((heapPtr)+(j*numChannels + c))>>0)]);
               channelData[j] = ((v >= 0) ? v-128 : v+128) /128;
             }
           } else if (audio.format == 0x8120 /*AUDIO_F32*/) {
             for(var j = 0; j < sizeSamplesPerChannel; ++j) {
-              channelData[j] = (Math_fround(SAFE_HEAP_LOAD_D((((heapPtr)+((j*numChannels + c)*4))|0), 4, 0)));
+              channelData[j] = (HEAPF32[(((heapPtr)+((j*numChannels + c)*4))>>2)]);
             }
           } else {
             throw 'Invalid SDL audio format ' + audio.format + '!';
@@ -6308,8 +6224,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
     }
 
   function _SDL_GetMouseState(x, y) {
-      if (x) SAFE_HEAP_STORE(((x)|0), ((Browser.mouseX)|0), 4);
-      if (y) SAFE_HEAP_STORE(((y)|0), ((Browser.mouseY)|0), 4);
+      if (x) HEAP32[((x)>>2)]=Browser.mouseX;
+      if (y) HEAP32[((y)>>2)]=Browser.mouseY;
       return SDL.buttonState;
     }
 
@@ -6483,8 +6399,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },getSource:function(shader, count, string, length) {
         var source = '';
         for (var i = 0; i < count; ++i) {
-          var len = length ? ((SAFE_HEAP_LOAD((((length)+(i*4))|0), 4, 0))|0) : -1;
-          source += UTF8ToString(((SAFE_HEAP_LOAD((((string)+(i*4))|0), 4, 0))|0), len < 0 ? undefined : len);
+          var len = length ? HEAP32[(((length)+(i*4))>>2)] : -1;
+          source += UTF8ToString(HEAP32[(((string)+(i*4))>>2)], len < 0 ? undefined : len);
         }
         return source;
       },calcBufLength:function calcBufLength(size, type, stride, count) {
@@ -6741,41 +6657,41 @@ function set_title(title){ document.title = UTF8ToString(title); }
       this.ptr = excPtr - ExceptionInfoAttrs.SIZE;
   
       this.set_type = function(type) {
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.TYPE_OFFSET))|0), ((type)|0), 4);
+        HEAP32[(((this.ptr)+(ExceptionInfoAttrs.TYPE_OFFSET))>>2)]=type;
       };
   
       this.get_type = function() {
-        return ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.TYPE_OFFSET))|0), 4, 0))|0);
+        return HEAP32[(((this.ptr)+(ExceptionInfoAttrs.TYPE_OFFSET))>>2)];
       };
   
       this.set_destructor = function(destructor) {
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.DESTRUCTOR_OFFSET))|0), ((destructor)|0), 4);
+        HEAP32[(((this.ptr)+(ExceptionInfoAttrs.DESTRUCTOR_OFFSET))>>2)]=destructor;
       };
   
       this.get_destructor = function() {
-        return ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.DESTRUCTOR_OFFSET))|0), 4, 0))|0);
+        return HEAP32[(((this.ptr)+(ExceptionInfoAttrs.DESTRUCTOR_OFFSET))>>2)];
       };
   
       this.set_refcount = function(refcount) {
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), ((refcount)|0), 4);
+        HEAP32[(((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))>>2)]=refcount;
       };
   
       this.set_caught = function (caught) {
         caught = caught ? 1 : 0;
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.CAUGHT_OFFSET))|0), ((caught)|0), 1);
+        HEAP8[(((this.ptr)+(ExceptionInfoAttrs.CAUGHT_OFFSET))>>0)]=caught;
       };
   
       this.get_caught = function () {
-        return ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.CAUGHT_OFFSET))|0), 1, 0))|0) != 0;
+        return HEAP8[(((this.ptr)+(ExceptionInfoAttrs.CAUGHT_OFFSET))>>0)] != 0;
       };
   
       this.set_rethrown = function (rethrown) {
         rethrown = rethrown ? 1 : 0;
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.RETHROWN_OFFSET))|0), ((rethrown)|0), 1);
+        HEAP8[(((this.ptr)+(ExceptionInfoAttrs.RETHROWN_OFFSET))>>0)]=rethrown;
       };
   
       this.get_rethrown = function () {
-        return ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.RETHROWN_OFFSET))|0), 1, 0))|0) != 0;
+        return HEAP8[(((this.ptr)+(ExceptionInfoAttrs.RETHROWN_OFFSET))>>0)] != 0;
       };
   
       // Initialize native structure fields. Should be called once after allocated.
@@ -6788,14 +6704,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
       }
   
       this.add_ref = function() {
-        var value = ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), 4, 0))|0);
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), ((value + 1)|0), 4);
+        var value = HEAP32[(((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))>>2)];
+        HEAP32[(((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))>>2)]=value + 1;
       };
   
       // Returns true if last reference released.
       this.release_ref = function() {
-        var prev = ((SAFE_HEAP_LOAD((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), 4, 0))|0);
-        SAFE_HEAP_STORE((((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))|0), ((prev - 1)|0), 4);
+        var prev = HEAP32[(((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))>>2)];
+        HEAP32[(((this.ptr)+(ExceptionInfoAttrs.REFCOUNT_OFFSET))>>2)]=prev - 1;
         assert(prev > 0);
         return prev === 1;
       };
@@ -6852,25 +6768,25 @@ function set_title(title){ document.title = UTF8ToString(title); }
           }
           throw e;
         }
-        SAFE_HEAP_STORE(((buf)|0), ((stat.dev)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(4))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(8))|0), ((stat.ino)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(12))|0), ((stat.mode)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(16))|0), ((stat.nlink)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(20))|0), ((stat.uid)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(24))|0), ((stat.gid)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(28))|0), ((stat.rdev)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(32))|0), ((0)|0), 4);
-        (tempI64 = [stat.size>>>0,(tempDouble=stat.size,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((buf)+(40))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((buf)+(44))|0), ((tempI64[1])|0), 4));
-        SAFE_HEAP_STORE((((buf)+(48))|0), ((4096)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(52))|0), ((stat.blocks)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(56))|0), (((stat.atime.getTime() / 1000)|0)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(60))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(64))|0), (((stat.mtime.getTime() / 1000)|0)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(68))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(72))|0), (((stat.ctime.getTime() / 1000)|0)|0), 4);
-        SAFE_HEAP_STORE((((buf)+(76))|0), ((0)|0), 4);
-        (tempI64 = [stat.ino>>>0,(tempDouble=stat.ino,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((buf)+(80))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((buf)+(84))|0), ((tempI64[1])|0), 4));
+        HEAP32[((buf)>>2)]=stat.dev;
+        HEAP32[(((buf)+(4))>>2)]=0;
+        HEAP32[(((buf)+(8))>>2)]=stat.ino;
+        HEAP32[(((buf)+(12))>>2)]=stat.mode;
+        HEAP32[(((buf)+(16))>>2)]=stat.nlink;
+        HEAP32[(((buf)+(20))>>2)]=stat.uid;
+        HEAP32[(((buf)+(24))>>2)]=stat.gid;
+        HEAP32[(((buf)+(28))>>2)]=stat.rdev;
+        HEAP32[(((buf)+(32))>>2)]=0;
+        (tempI64 = [stat.size>>>0,(tempDouble=stat.size,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((buf)+(40))>>2)]=tempI64[0],HEAP32[(((buf)+(44))>>2)]=tempI64[1]);
+        HEAP32[(((buf)+(48))>>2)]=4096;
+        HEAP32[(((buf)+(52))>>2)]=stat.blocks;
+        HEAP32[(((buf)+(56))>>2)]=(stat.atime.getTime() / 1000)|0;
+        HEAP32[(((buf)+(60))>>2)]=0;
+        HEAP32[(((buf)+(64))>>2)]=(stat.mtime.getTime() / 1000)|0;
+        HEAP32[(((buf)+(68))>>2)]=0;
+        HEAP32[(((buf)+(72))>>2)]=(stat.ctime.getTime() / 1000)|0;
+        HEAP32[(((buf)+(76))>>2)]=0;
+        (tempI64 = [stat.ino>>>0,(tempDouble=stat.ino,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((buf)+(80))>>2)]=tempI64[0],HEAP32[(((buf)+(84))>>2)]=tempI64[1]);
         return 0;
       },doMsync:function(addr, stream, len, flags, offset) {
         var buffer = HEAPU8.slice(addr, addr + len);
@@ -6933,8 +6849,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },doReadv:function(stream, iov, iovcnt, offset) {
         var ret = 0;
         for (var i = 0; i < iovcnt; i++) {
-          var ptr = ((SAFE_HEAP_LOAD((((iov)+(i*8))|0), 4, 0))|0);
-          var len = ((SAFE_HEAP_LOAD((((iov)+(i*8 + 4))|0), 4, 0))|0);
+          var ptr = HEAP32[(((iov)+(i*8))>>2)];
+          var len = HEAP32[(((iov)+(i*8 + 4))>>2)];
           var curr = FS.read(stream, HEAP8,ptr, len, offset);
           if (curr < 0) return -1;
           ret += curr;
@@ -6944,8 +6860,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },doWritev:function(stream, iov, iovcnt, offset) {
         var ret = 0;
         for (var i = 0; i < iovcnt; i++) {
-          var ptr = ((SAFE_HEAP_LOAD((((iov)+(i*8))|0), 4, 0))|0);
-          var len = ((SAFE_HEAP_LOAD((((iov)+(i*8 + 4))|0), 4, 0))|0);
+          var ptr = HEAP32[(((iov)+(i*8))>>2)];
+          var len = HEAP32[(((iov)+(i*8 + 4))>>2)];
           var curr = FS.write(stream, HEAP8,ptr, len, offset);
           if (curr < 0) return -1;
           ret += curr;
@@ -6954,7 +6870,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },varargs:undefined,get:function() {
         assert(SYSCALLS.varargs != undefined);
         SYSCALLS.varargs += 4;
-        var ret = ((SAFE_HEAP_LOAD((((SYSCALLS.varargs)-(4))|0), 4, 0))|0);
+        var ret = HEAP32[(((SYSCALLS.varargs)-(4))>>2)];
         return ret;
       },getStr:function(ptr) {
         var ret = UTF8ToString(ptr);
@@ -6997,7 +6913,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
           var arg = SYSCALLS.get();
           var offset = 0;
           // We're always unlocked.
-          SAFE_HEAP_STORE((((arg)+(offset))|0), ((2)|0), 2);
+          HEAP16[(((arg)+(offset))>>1)]=2;
           return 0;
         }
         case 13:
@@ -7052,10 +6968,10 @@ function set_title(title){ document.title = UTF8ToString(title); }
                  FS.isLink(child.mode) ? 10 :   // DT_LNK, symbolic link.
                  8;                             // DT_REG, regular file.
         }
-        (tempI64 = [id>>>0,(tempDouble=id,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE(((dirp + pos)|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((dirp + pos)+(4))|0), ((tempI64[1])|0), 4));
-        (tempI64 = [(idx + 1) * struct_size>>>0,(tempDouble=(idx + 1) * struct_size,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((dirp + pos)+(8))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((dirp + pos)+(12))|0), ((tempI64[1])|0), 4));
-        SAFE_HEAP_STORE((((dirp + pos)+(16))|0), ((280)|0), 2);
-        SAFE_HEAP_STORE((((dirp + pos)+(18))|0), ((type)|0), 1);
+        (tempI64 = [id>>>0,(tempDouble=id,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[((dirp + pos)>>2)]=tempI64[0],HEAP32[(((dirp + pos)+(4))>>2)]=tempI64[1]);
+        (tempI64 = [(idx + 1) * struct_size>>>0,(tempDouble=(idx + 1) * struct_size,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((dirp + pos)+(8))>>2)]=tempI64[0],HEAP32[(((dirp + pos)+(12))>>2)]=tempI64[1]);
+        HEAP16[(((dirp + pos)+(16))>>1)]=280;
+        HEAP8[(((dirp + pos)+(18))>>0)]=type;
         stringToUTF8(name, dirp + pos + 19, 256);
         pos += struct_size;
         idx += 1;
@@ -7090,7 +7006,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
         case 21519: {
           if (!stream.tty) return -59;
           var argp = SYSCALLS.get();
-          SAFE_HEAP_STORE(((argp)|0), ((0)|0), 4);
+          HEAP32[((argp)>>2)]=0;
           return 0;
         }
         case 21520: {
@@ -7216,8 +7132,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
     }function getEnvStrings() {
       if (!getEnvStrings.strings) {
         // Default values.
-        // Deterministic language detection, ignore the browser's language.
-        var lang = 'C.UTF-8';
+        // Browser language detection #8751
+        var lang = ((typeof navigator === 'object' && navigator.languages && navigator.languages[0]) || 'C').replace('-', '_') + '.UTF-8';
         var env = {
           'USER': 'web_user',
           'LOGNAME': 'web_user',
@@ -7242,7 +7158,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       var bufSize = 0;
       getEnvStrings().forEach(function(string, i) {
         var ptr = environ_buf + bufSize;
-        SAFE_HEAP_STORE((((__environ)+(i * 4))|0), ((ptr)|0), 4);
+        HEAP32[(((__environ)+(i * 4))>>2)]=ptr;
         writeAsciiToMemory(string, ptr);
         bufSize += string.length + 1;
       });
@@ -7251,12 +7167,12 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _environ_sizes_get(penviron_count, penviron_buf_size) {
       var strings = getEnvStrings();
-      SAFE_HEAP_STORE(((penviron_count)|0), ((strings.length)|0), 4);
+      HEAP32[((penviron_count)>>2)]=strings.length;
       var bufSize = 0;
       strings.forEach(function(string) {
         bufSize += string.length + 1;
       });
-      SAFE_HEAP_STORE(((penviron_buf_size)|0), ((bufSize)|0), 4);
+      HEAP32[((penviron_buf_size)>>2)]=bufSize;
       return 0;
     }
 
@@ -7275,7 +7191,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       var stream = SYSCALLS.getStreamFromFD(fd);
       var num = SYSCALLS.doReadv(stream, iov, iovcnt);
-      SAFE_HEAP_STORE(((pnum)|0), ((num)|0), 4)
+      HEAP32[((pnum)>>2)]=num
       return 0;
     } catch (e) {
     if (typeof FS === 'undefined' || !(e instanceof FS.ErrnoError)) abort(e);
@@ -7298,7 +7214,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       }
   
       FS.llseek(stream, offset, whence);
-      (tempI64 = [stream.position>>>0,(tempDouble=stream.position,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE(((newOffset)|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((newOffset)+(4))|0), ((tempI64[1])|0), 4));
+      (tempI64 = [stream.position>>>0,(tempDouble=stream.position,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[((newOffset)>>2)]=tempI64[0],HEAP32[(((newOffset)+(4))>>2)]=tempI64[1]);
       if (stream.getdents && offset === 0 && whence === 0) stream.getdents = null; // reset readdir state
       return 0;
     } catch (e) {
@@ -7311,7 +7227,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       var stream = SYSCALLS.getStreamFromFD(fd);
       var num = SYSCALLS.doWritev(stream, iov, iovcnt);
-      SAFE_HEAP_STORE(((pnum)|0), ((num)|0), 4)
+      HEAP32[((pnum)>>2)]=num
       return 0;
     } catch (e) {
     if (typeof FS === 'undefined' || !(e instanceof FS.ErrnoError)) abort(e);
@@ -7321,8 +7237,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _gettimeofday(ptr) {
       var now = Date.now();
-      SAFE_HEAP_STORE(((ptr)|0), (((now/1000)|0)|0), 4); // seconds
-      SAFE_HEAP_STORE((((ptr)+(4))|0), ((((now % 1000)*1000)|0)|0), 4); // microseconds
+      HEAP32[((ptr)>>2)]=(now/1000)|0; // seconds
+      HEAP32[(((ptr)+(4))>>2)]=((now % 1000)*1000)|0; // microseconds
       return 0;
     }
 
@@ -7469,7 +7385,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glDeleteBuffers(n, buffers) {
       for (var i = 0; i < n; i++) {
-        var id = ((SAFE_HEAP_LOAD((((buffers)+(i*4))|0), 4, 0))|0);
+        var id = HEAP32[(((buffers)+(i*4))>>2)];
         var buffer = GL.buffers[id];
   
         // From spec: "glDeleteBuffers silently ignores 0's and names that do not
@@ -7489,7 +7405,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glDeleteSamplers(n, samplers) {
       for (var i = 0; i < n; i++) {
-        var id = ((SAFE_HEAP_LOAD((((samplers)+(i*4))|0), 4, 0))|0);
+        var id = HEAP32[(((samplers)+(i*4))>>2)];
         var sampler = GL.samplers[id];
         if (!sampler) continue;
         GLctx['deleteSampler'](sampler);
@@ -7511,7 +7427,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glDeleteTextures(n, textures) {
       for (var i = 0; i < n; i++) {
-        var id = ((SAFE_HEAP_LOAD((((textures)+(i*4))|0), 4, 0))|0);
+        var id = HEAP32[(((textures)+(i*4))>>2)];
         var texture = GL.textures[id];
         if (!texture) continue; // GL spec: "glDeleteTextures silently ignores 0s and names that do not correspond to existing textures".
         GLctx.deleteTexture(texture);
@@ -7544,7 +7460,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       var bufArray = tempFixedLengthArray[n];
       for (var i = 0; i < n; i++) {
-        bufArray[i] = ((SAFE_HEAP_LOAD((((bufs)+(i*4))|0), 4, 0))|0);
+        bufArray[i] = HEAP32[(((bufs)+(i*4))>>2)];
       }
   
       GLctx['drawBuffers'](bufArray);
@@ -7612,7 +7528,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
         } else {
           GL.recordError(0x502 /* GL_INVALID_OPERATION */);
         }
-        SAFE_HEAP_STORE((((buffers)+(i*4))|0), ((id)|0), 4);
+        HEAP32[(((buffers)+(i*4))>>2)]=id;
       }
     }function _glGenBuffers(n, buffers) {
       __glGenObject(n, buffers, 'createBuffer', GL.buffers
@@ -7753,9 +7669,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
                        result instanceof Array) {
               for (var i = 0; i < result.length; ++i) {
                 switch (type) {
-                  case 0: SAFE_HEAP_STORE((((p)+(i*4))|0), ((result[i])|0), 4); break;
-                  case 2: SAFE_HEAP_STORE_D((((p)+(i*4))|0), Math_fround(result[i]), 4); break;
-                  case 4: SAFE_HEAP_STORE((((p)+(i))|0), ((result[i] ? 1 : 0)|0), 1); break;
+                  case 0: HEAP32[(((p)+(i*4))>>2)]=result[i]; break;
+                  case 2: HEAPF32[(((p)+(i*4))>>2)]=result[i]; break;
+                  case 4: HEAP8[(((p)+(i))>>0)]=result[i] ? 1 : 0; break;
                 }
               }
               return;
@@ -7778,9 +7694,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       switch (type) {
         case 1: writeI53ToI64(p, ret); break;
-        case 0: SAFE_HEAP_STORE(((p)|0), ((ret)|0), 4); break;
-        case 2:   SAFE_HEAP_STORE_D(((p)|0), Math_fround(ret), 4); break;
-        case 4: SAFE_HEAP_STORE(((p)|0), ((ret ? 1 : 0)|0), 1); break;
+        case 0: HEAP32[((p)>>2)]=ret; break;
+        case 2:   HEAPF32[((p)>>2)]=ret; break;
+        case 4: HEAP8[((p)>>0)]=ret ? 1 : 0; break;
       }
     }function _glGetIntegerv(name_, p) {
       emscriptenWebGLGet(name_, p, 0);
@@ -7790,7 +7706,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       var log = GLctx.getProgramInfoLog(GL.programs[program]);
       if (log === null) log = '(unknown error)';
       var numBytesWrittenExclNull = (maxLength > 0 && infoLog) ? stringToUTF8(log, infoLog, maxLength) : 0;
-      if (length) SAFE_HEAP_STORE(((length)|0), ((numBytesWrittenExclNull)|0), 4);
+      if (length) HEAP32[((length)>>2)]=numBytesWrittenExclNull;
     }
 
   function _glGetProgramiv(program, pname, p) {
@@ -7815,9 +7731,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
       if (pname == 0x8B84) { // GL_INFO_LOG_LENGTH
         var log = GLctx.getProgramInfoLog(GL.programs[program]);
         if (log === null) log = '(unknown error)';
-        SAFE_HEAP_STORE(((p)|0), ((log.length + 1)|0), 4);
+        HEAP32[((p)>>2)]=log.length + 1;
       } else if (pname == 0x8B87 /* GL_ACTIVE_UNIFORM_MAX_LENGTH */) {
-        SAFE_HEAP_STORE(((p)|0), ((ptable.maxUniformLength)|0), 4);
+        HEAP32[((p)>>2)]=ptable.maxUniformLength;
       } else if (pname == 0x8B8A /* GL_ACTIVE_ATTRIBUTE_MAX_LENGTH */) {
         if (ptable.maxAttributeLength == -1) {
           program = GL.programs[program];
@@ -7828,7 +7744,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
             ptable.maxAttributeLength = Math.max(ptable.maxAttributeLength, activeAttrib.name.length+1);
           }
         }
-        SAFE_HEAP_STORE(((p)|0), ((ptable.maxAttributeLength)|0), 4);
+        HEAP32[((p)>>2)]=ptable.maxAttributeLength;
       } else if (pname == 0x8A35 /* GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH */) {
         if (ptable.maxUniformBlockNameLength == -1) {
           program = GL.programs[program];
@@ -7839,9 +7755,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
             ptable.maxUniformBlockNameLength = Math.max(ptable.maxUniformBlockNameLength, activeBlockName.length+1);
           }
         }
-        SAFE_HEAP_STORE(((p)|0), ((ptable.maxUniformBlockNameLength)|0), 4);
+        HEAP32[((p)>>2)]=ptable.maxUniformBlockNameLength;
       } else {
-        SAFE_HEAP_STORE(((p)|0), ((GLctx.getProgramParameter(GL.programs[program], pname))|0), 4);
+        HEAP32[((p)>>2)]=GLctx.getProgramParameter(GL.programs[program], pname);
       }
     }
 
@@ -7849,7 +7765,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       var log = GLctx.getShaderInfoLog(GL.shaders[shader]);
       if (log === null) log = '(unknown error)';
       var numBytesWrittenExclNull = (maxLength > 0 && infoLog) ? stringToUTF8(log, infoLog, maxLength) : 0;
-      if (length) SAFE_HEAP_STORE(((length)|0), ((numBytesWrittenExclNull)|0), 4);
+      if (length) HEAP32[((length)>>2)]=numBytesWrittenExclNull;
     }
 
   function _glGetShaderiv(shader, pname, p) {
@@ -7867,15 +7783,15 @@ function set_title(title){ document.title = UTF8ToString(title); }
         // (An empty string is falsey, so we can just check that instead of
         // looking at log.length.)
         var logLength = log ? log.length + 1 : 0;
-        SAFE_HEAP_STORE(((p)|0), ((logLength)|0), 4);
+        HEAP32[((p)>>2)]=logLength;
       } else if (pname == 0x8B88) { // GL_SHADER_SOURCE_LENGTH
         var source = GLctx.getShaderSource(GL.shaders[shader]);
         // source may be a null, or the empty string, both of which are falsey
         // values that we report a 0 length for.
         var sourceLength = source ? source.length + 1 : 0;
-        SAFE_HEAP_STORE(((p)|0), ((sourceLength)|0), 4);
+        HEAP32[((p)>>2)]=sourceLength;
       } else {
-        SAFE_HEAP_STORE(((p)|0), ((GLctx.getShaderParameter(GL.shaders[shader], pname))|0), 4);
+        HEAP32[((p)>>2)]=GLctx.getShaderParameter(GL.shaders[shader], pname);
       }
     }
 
@@ -8087,7 +8003,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       program = GL.programs[program];
       var vars = [];
       for (var i = 0; i < count; i++)
-        vars.push(UTF8ToString(((SAFE_HEAP_LOAD((((varyings)+(i*4))|0), 4, 0))|0)));
+        vars.push(UTF8ToString(HEAP32[(((varyings)+(i*4))>>2)]));
   
       GLctx['transformFeedbackVaryings'](program, vars, bufferMode);
     }
@@ -8184,19 +8100,19 @@ function set_title(title){ document.title = UTF8ToString(title); }
       // size_t strftime(char *restrict s, size_t maxsize, const char *restrict format, const struct tm *restrict timeptr);
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/strftime.html
   
-      var tm_zone = ((SAFE_HEAP_LOAD((((tm)+(40))|0), 4, 0))|0);
+      var tm_zone = HEAP32[(((tm)+(40))>>2)];
   
       var date = {
-        tm_sec: ((SAFE_HEAP_LOAD(((tm)|0), 4, 0))|0),
-        tm_min: ((SAFE_HEAP_LOAD((((tm)+(4))|0), 4, 0))|0),
-        tm_hour: ((SAFE_HEAP_LOAD((((tm)+(8))|0), 4, 0))|0),
-        tm_mday: ((SAFE_HEAP_LOAD((((tm)+(12))|0), 4, 0))|0),
-        tm_mon: ((SAFE_HEAP_LOAD((((tm)+(16))|0), 4, 0))|0),
-        tm_year: ((SAFE_HEAP_LOAD((((tm)+(20))|0), 4, 0))|0),
-        tm_wday: ((SAFE_HEAP_LOAD((((tm)+(24))|0), 4, 0))|0),
-        tm_yday: ((SAFE_HEAP_LOAD((((tm)+(28))|0), 4, 0))|0),
-        tm_isdst: ((SAFE_HEAP_LOAD((((tm)+(32))|0), 4, 0))|0),
-        tm_gmtoff: ((SAFE_HEAP_LOAD((((tm)+(36))|0), 4, 0))|0),
+        tm_sec: HEAP32[((tm)>>2)],
+        tm_min: HEAP32[(((tm)+(4))>>2)],
+        tm_hour: HEAP32[(((tm)+(8))>>2)],
+        tm_mday: HEAP32[(((tm)+(12))>>2)],
+        tm_mon: HEAP32[(((tm)+(16))>>2)],
+        tm_year: HEAP32[(((tm)+(20))>>2)],
+        tm_wday: HEAP32[(((tm)+(24))>>2)],
+        tm_yday: HEAP32[(((tm)+(28))>>2)],
+        tm_isdst: HEAP32[(((tm)+(32))>>2)],
+        tm_gmtoff: HEAP32[(((tm)+(36))>>2)],
         tm_zone: tm_zone ? UTF8ToString(tm_zone) : ''
       };
   
@@ -8629,7 +8545,7 @@ function intArrayToString(array) {
 
 
 var asmGlobalArg = {};
-var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_allocate_exception": ___cxa_allocate_exception, "__cxa_atexit": ___cxa_atexit, "__cxa_throw": ___cxa_throw, "__handle_stack_overflow": ___handle_stack_overflow, "__map_file": ___map_file, "__sys_fcntl64": ___sys_fcntl64, "__sys_getdents64": ___sys_getdents64, "__sys_ioctl": ___sys_ioctl, "__sys_munmap": ___sys_munmap, "__sys_open": ___sys_open, "__sys_stat64": ___sys_stat64, "abort": _abort, "alignfault": alignfault, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "fd_close": _fd_close, "fd_read": _fd_read, "fd_seek": _fd_seek, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "segfault": segfault, "setTempRet0": _setTempRet0, "set_title": set_title, "strftime_l": _strftime_l, "system": _system, "table": wasmTable };
+var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_allocate_exception": ___cxa_allocate_exception, "__cxa_atexit": ___cxa_atexit, "__cxa_throw": ___cxa_throw, "__handle_stack_overflow": ___handle_stack_overflow, "__map_file": ___map_file, "__sys_fcntl64": ___sys_fcntl64, "__sys_getdents64": ___sys_getdents64, "__sys_ioctl": ___sys_ioctl, "__sys_munmap": ___sys_munmap, "__sys_open": ___sys_open, "__sys_stat64": ___sys_stat64, "abort": _abort, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "fd_close": _fd_close, "fd_read": _fd_read, "fd_seek": _fd_seek, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "setTempRet0": _setTempRet0, "set_title": set_title, "strftime_l": _strftime_l, "system": _system, "table": wasmTable };
 var asm = createWasm();
 /** @type {function(...*):?} */
 var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__wasm_call_ctors");
@@ -8823,41 +8739,6 @@ var dynCall_iiiiiijj = Module["dynCall_iiiiiijj"] = createExportWrapper("dynCall
 /** @type {function(...*):?} */
 var __growWasmMemory = Module["__growWasmMemory"] = createExportWrapper("__growWasmMemory");
 
-
-
-
-
-var MAGIC = 0;
-Math.random = function() {
-  MAGIC = Math.pow(MAGIC + 1.8912, 3) % 1;
-  return MAGIC;
-};
-var TIME = 10000;
-Date.now = function() {
-  return TIME++;
-};
-if (typeof performance === 'object') performance.now = Date.now;
-if (ENVIRONMENT_IS_NODE) process['hrtime'] = Date.now;
-
-if (!Module) Module = {};
-Module['thisProgram'] = 'thisProgram'; // for consistency between different builds than between runs of the same build
-
-function hashMemory(id) {
-  var ret = 0;
-  var len = HEAP32[DYNAMICTOP_PTR>>2];
-  for (var i = 0; i < len; i++) {
-    ret = (ret*17 + HEAPU8[i])|0;
-  }
-  return id + ':' + ret;
-}
-
-function hashString(s) {
-  var ret = 0;
-  for (var i = 0; i < s.length; i++) {
-    ret = (ret*17 + s.charCodeAt(i))|0;
-  }
-  return ret;
-}
 
 
 

@@ -625,7 +625,6 @@ if (typeof WebAssembly !== 'object') {
 function setValue(ptr, value, type, noSafe) {
   type = type || 'i8';
   if (type.charAt(type.length-1) === '*') type = 'i32'; // pointers are 32-bit
-  if (noSafe) {
     switch(type) {
       case 'i1': HEAP8[((ptr)>>0)]=value; break;
       case 'i8': HEAP8[((ptr)>>0)]=value; break;
@@ -636,18 +635,6 @@ function setValue(ptr, value, type, noSafe) {
       case 'double': HEAPF64[((ptr)>>3)]=value; break;
       default: abort('invalid type for setValue: ' + type);
     }
-  } else {
-    switch(type) {
-      case 'i1': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 1); break;
-      case 'i8': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 1); break;
-      case 'i16': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 2); break;
-      case 'i32': SAFE_HEAP_STORE(((ptr)|0), ((value)|0), 4); break;
-      case 'i64': (tempI64 = [value>>>0,(tempDouble=value,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE(((ptr)|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((ptr)+(4))|0), ((tempI64[1])|0), 4)); break;
-      case 'float': SAFE_HEAP_STORE_D(((ptr)|0), Math_fround(value), 4); break;
-      case 'double': SAFE_HEAP_STORE_D(((ptr)|0), (+(value)), 8); break;
-      default: abort('invalid type for setValue: ' + type);
-    }
-  }
 }
 
 /** @param {number} ptr
@@ -656,7 +643,6 @@ function setValue(ptr, value, type, noSafe) {
 function getValue(ptr, type, noSafe) {
   type = type || 'i8';
   if (type.charAt(type.length-1) === '*') type = 'i32'; // pointers are 32-bit
-  if (noSafe) {
     switch(type) {
       case 'i1': return HEAP8[((ptr)>>0)];
       case 'i8': return HEAP8[((ptr)>>0)];
@@ -667,80 +653,10 @@ function getValue(ptr, type, noSafe) {
       case 'double': return HEAPF64[((ptr)>>3)];
       default: abort('invalid type for getValue: ' + type);
     }
-  } else {
-    switch(type) {
-      case 'i1': return ((SAFE_HEAP_LOAD(((ptr)|0), 1, 0))|0);
-      case 'i8': return ((SAFE_HEAP_LOAD(((ptr)|0), 1, 0))|0);
-      case 'i16': return ((SAFE_HEAP_LOAD(((ptr)|0), 2, 0))|0);
-      case 'i32': return ((SAFE_HEAP_LOAD(((ptr)|0), 4, 0))|0);
-      case 'i64': return ((SAFE_HEAP_LOAD(((ptr)|0), 8, 0))|0);
-      case 'float': return Math_fround(SAFE_HEAP_LOAD_D(((ptr)|0), 4, 0));
-      case 'double': return (+(SAFE_HEAP_LOAD_D(((ptr)|0), 8, 0)));
-      default: abort('invalid type for getValue: ' + type);
-    }
-  }
   return null;
 }
 
 
-/** @param {number|boolean=} isFloat */
-function getSafeHeapType(bytes, isFloat) {
-  switch (bytes) {
-    case 1: return 'i8';
-    case 2: return 'i16';
-    case 4: return isFloat ? 'float' : 'i32';
-    case 8: return 'double';
-    default: assert(0);
-  }
-}
-
-
-/** @param {number|boolean=} isFloat */
-function SAFE_HEAP_STORE(dest, value, bytes, isFloat) {
-  if (dest <= 0) abort('segmentation fault storing ' + bytes + ' bytes to address ' + dest);
-  if (dest % bytes !== 0) abort('alignment error storing to address ' + dest + ', which was expected to be aligned to a multiple of ' + bytes);
-  if (dest + bytes > HEAPU32[DYNAMICTOP_PTR>>2]) abort('segmentation fault, exceeded the top of the available dynamic heap when storing ' + bytes + ' bytes to address ' + dest + '. DYNAMICTOP=' + HEAP32[DYNAMICTOP_PTR>>2]);
-  assert(DYNAMICTOP_PTR);
-  assert(HEAP32[DYNAMICTOP_PTR>>2] <= HEAP8.length);
-  setValue(dest, value, getSafeHeapType(bytes, isFloat), 1);
-}
-function SAFE_HEAP_STORE_D(dest, value, bytes) {
-  SAFE_HEAP_STORE(dest, value, bytes, true);
-}
-
-/** @param {number|boolean=} isFloat */
-function SAFE_HEAP_LOAD(dest, bytes, unsigned, isFloat) {
-  if (dest <= 0) abort('segmentation fault loading ' + bytes + ' bytes from address ' + dest);
-  if (dest % bytes !== 0) abort('alignment error loading from address ' + dest + ', which was expected to be aligned to a multiple of ' + bytes);
-  if (dest + bytes > HEAPU32[DYNAMICTOP_PTR>>2]) abort('segmentation fault, exceeded the top of the available dynamic heap when loading ' + bytes + ' bytes from address ' + dest + '. DYNAMICTOP=' + HEAP32[DYNAMICTOP_PTR>>2]);
-  assert(DYNAMICTOP_PTR);
-  assert(HEAP32[DYNAMICTOP_PTR>>2] <= HEAP8.length);
-  var type = getSafeHeapType(bytes, isFloat);
-  var ret = getValue(dest, type, 1);
-  if (unsigned) ret = unSign(ret, parseInt(type.substr(1), 10), 1);
-  return ret;
-}
-function SAFE_HEAP_LOAD_D(dest, bytes, unsigned) {
-  return SAFE_HEAP_LOAD(dest, bytes, unsigned, true);
-}
-
-function SAFE_FT_MASK(value, mask) {
-  var ret = value & mask;
-  if (ret !== value) {
-    abort('Function table mask error: function pointer is ' + value + ' which is masked by ' + mask + ', the likely cause of this is that the function pointer is being called by the wrong type.');
-  }
-  return ret;
-}
-
-function segfault() {
-  abort('segmentation fault');
-}
-function alignfault() {
-  abort('alignment fault');
-}
-function ftfault() {
-  abort('Function table mask error');
-}
 
 
 
@@ -1114,7 +1030,7 @@ function lengthBytesUTF8(str) {
 function AsciiToString(ptr) {
   var str = '';
   while (1) {
-    var ch = ((SAFE_HEAP_LOAD(((ptr++)|0), 1, 1))>>>0);
+    var ch = HEAPU8[((ptr++)>>0)];
     if (!ch) return str;
     str += String.fromCharCode(ch);
   }
@@ -1151,7 +1067,7 @@ function UTF16ToString(ptr, maxBytesToRead) {
 
     var str = '';
     while (1) {
-      var codeUnit = ((SAFE_HEAP_LOAD((((ptr)+(i*2))|0), 2, 0))|0);
+      var codeUnit = HEAP16[(((ptr)+(i*2))>>1)];
       if (codeUnit == 0 || i == maxBytesToRead / 2) return str;
       ++i;
       // fromCharCode constructs a character from a UTF-16 code unit, so we can pass the UTF16 string right through.
@@ -1185,11 +1101,11 @@ function stringToUTF16(str, outPtr, maxBytesToWrite) {
   for (var i = 0; i < numCharsToWrite; ++i) {
     // charCodeAt returns a UTF-16 encoded code unit, so it can be directly written to the HEAP.
     var codeUnit = str.charCodeAt(i); // possibly a lead surrogate
-    SAFE_HEAP_STORE(((outPtr)|0), ((codeUnit)|0), 2);
+    HEAP16[((outPtr)>>1)]=codeUnit;
     outPtr += 2;
   }
   // Null-terminate the pointer to the HEAP.
-  SAFE_HEAP_STORE(((outPtr)|0), ((0)|0), 2);
+  HEAP16[((outPtr)>>1)]=0;
   return outPtr - startPtr;
 }
 
@@ -1207,7 +1123,7 @@ function UTF32ToString(ptr, maxBytesToRead) {
   // If maxBytesToRead is not passed explicitly, it will be undefined, and this
   // will always evaluate to true. This saves on code size.
   while (!(i >= maxBytesToRead / 4)) {
-    var utf32 = ((SAFE_HEAP_LOAD((((ptr)+(i*4))|0), 4, 0))|0);
+    var utf32 = HEAP32[(((ptr)+(i*4))>>2)];
     if (utf32 == 0) break;
     ++i;
     // Gotcha: fromCharCode constructs a character from a UTF-16 encoded code (pair), not from a Unicode code point! So encode the code point to UTF-16 for constructing.
@@ -1251,12 +1167,12 @@ function stringToUTF32(str, outPtr, maxBytesToWrite) {
       var trailSurrogate = str.charCodeAt(++i);
       codeUnit = 0x10000 + ((codeUnit & 0x3FF) << 10) | (trailSurrogate & 0x3FF);
     }
-    SAFE_HEAP_STORE(((outPtr)|0), ((codeUnit)|0), 4);
+    HEAP32[((outPtr)>>2)]=codeUnit;
     outPtr += 4;
     if (outPtr + 4 > endPtr) break;
   }
   // Null-terminate the pointer to the HEAP.
-  SAFE_HEAP_STORE(((outPtr)|0), ((0)|0), 4);
+  HEAP32[((outPtr)>>2)]=0;
   return outPtr - startPtr;
 }
 
@@ -1322,10 +1238,10 @@ function writeArrayToMemory(array, buffer) {
 function writeAsciiToMemory(str, buffer, dontAddNull) {
   for (var i = 0; i < str.length; ++i) {
     assert(str.charCodeAt(i) === str.charCodeAt(i)&0xff);
-    SAFE_HEAP_STORE(((buffer++)|0), ((str.charCodeAt(i))|0), 1);
+    HEAP8[((buffer++)>>0)]=str.charCodeAt(i);
   }
   // Null-terminate the pointer to the HEAP.
-  if (!dontAddNull) SAFE_HEAP_STORE(((buffer)|0), ((0)|0), 1);
+  if (!dontAddNull) HEAP8[((buffer)>>0)]=0;
 }
 
 
@@ -2005,7 +1921,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
   
   function setErrNo(value) {
-      SAFE_HEAP_STORE(((___errno_location())|0), ((value)|0), 4);
+      HEAP32[((___errno_location())>>2)]=value;
       return value;
     }
   
@@ -4991,18 +4907,18 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },windowedWidth:0,windowedHeight:0,setFullscreenCanvasSize:function() {
         // check if SDL is available
         if (typeof SDL != "undefined") {
-          var flags = ((SAFE_HEAP_LOAD(((SDL.screen)|0), 4, 1))>>>0);
+          var flags = HEAPU32[((SDL.screen)>>2)];
           flags = flags | 0x00800000; // set SDL_FULLSCREEN flag
-          SAFE_HEAP_STORE(((SDL.screen)|0), ((flags)|0), 4)
+          HEAP32[((SDL.screen)>>2)]=flags
         }
         Browser.updateCanvasDimensions(Module['canvas']);
         Browser.updateResizeListeners();
       },setWindowedCanvasSize:function() {
         // check if SDL is available
         if (typeof SDL != "undefined") {
-          var flags = ((SAFE_HEAP_LOAD(((SDL.screen)|0), 4, 1))>>>0);
+          var flags = HEAPU32[((SDL.screen)>>2)];
           flags = flags & ~0x00800000; // clear SDL_FULLSCREEN flag
-          SAFE_HEAP_STORE(((SDL.screen)|0), ((flags)|0), 4)
+          HEAP32[((SDL.screen)>>2)]=flags
         }
         Browser.updateCanvasDimensions(Module['canvas']);
         Browser.updateResizeListeners();
@@ -5068,14 +4984,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       if (!surfData.buffer) {
         surfData.buffer = _malloc(surfData.width * surfData.height * 4);
-        SAFE_HEAP_STORE((((surf)+(20))|0), ((surfData.buffer)|0), 4);
+        HEAP32[(((surf)+(20))>>2)]=surfData.buffer;
       }
   
       // Mark in C/C++-accessible SDL structure
       // SDL_Surface has the following fields: Uint32 flags, SDL_PixelFormat *format; int w, h; Uint16 pitch; void *pixels; ...
       // So we have fields all of the same size, and 5 of them before us.
       // TODO: Use macros like in library.js
-      SAFE_HEAP_STORE((((surf)+(20))|0), ((surfData.buffer)|0), 4);
+      HEAP32[(((surf)+(20))>>2)]=surfData.buffer;
   
       if (surf == SDL.screen && Module.screenIsReadOnly && surfData.image) return 0;
   
@@ -5116,7 +5032,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
           //     surfData.image.data[i*4 +2],
           //     255);
           //   var index = surfData.colorMap[color];
-          //   SAFE_HEAP_STORE((((surfData.buffer)+(i))|0), ((index)|0), 1);
+          //   HEAP8[(((surfData.buffer)+(i))>>0)]=index;
           // }
           throw 'CopyOnLock is not supported for SDL_LockSurface with SDL_HWPALETTE flag set' + new Error().stack;
         } else {
@@ -5136,16 +5052,16 @@ function set_title(title){ document.title = UTF8ToString(title); }
   /** @suppress{missingProperties} */
   function SDL_audio() { return SDL.audio}var SDL={defaults:{width:320,height:200,copyOnLock:true,discardOnLock:false,opaqueFrontBuffer:true},version:null,surfaces:{},canvasPool:[],events:[],fonts:[null],audios:[null],rwops:[null],music:{audio:null,volume:1},mixerFrequency:22050,mixerFormat:32784,mixerNumChannels:2,mixerChunkSize:1024,channelMinimumNumber:0,GL:false,glAttributes:{0:3,1:3,2:2,3:0,4:0,5:1,6:16,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:1,16:0,17:0,18:0},keyboardState:null,keyboardMap:{},canRequestFullscreen:false,isRequestingFullscreen:false,textInput:false,startTime:null,initFlags:0,buttonState:0,modState:0,DOMButtons:[0,0,0],DOMEventToSDLEvent:{},TOUCH_DEFAULT_ID:0,eventHandler:null,eventHandlerContext:null,eventHandlerTemp:0,keyCodes:{16:1249,17:1248,18:1250,20:1081,33:1099,34:1102,35:1101,36:1098,37:1104,38:1106,39:1103,40:1105,44:316,45:1097,46:127,91:1251,93:1125,96:1122,97:1113,98:1114,99:1115,100:1116,101:1117,102:1118,103:1119,104:1120,105:1121,106:1109,107:1111,109:1110,110:1123,111:1108,112:1082,113:1083,114:1084,115:1085,116:1086,117:1087,118:1088,119:1089,120:1090,121:1091,122:1092,123:1093,124:1128,125:1129,126:1130,127:1131,128:1132,129:1133,130:1134,131:1135,132:1136,133:1137,134:1138,135:1139,144:1107,160:94,161:33,162:34,163:35,164:36,165:37,166:38,167:95,168:40,169:41,170:42,171:43,172:124,173:45,174:123,175:125,176:126,181:127,182:129,183:128,188:44,190:46,191:47,192:96,219:91,220:92,221:93,222:39,224:1251},scanCodes:{8:42,9:43,13:40,27:41,32:44,35:204,39:53,44:54,46:55,47:56,48:39,49:30,50:31,51:32,52:33,53:34,54:35,55:36,56:37,57:38,58:203,59:51,61:46,91:47,92:49,93:48,96:52,97:4,98:5,99:6,100:7,101:8,102:9,103:10,104:11,105:12,106:13,107:14,108:15,109:16,110:17,111:18,112:19,113:20,114:21,115:22,116:23,117:24,118:25,119:26,120:27,121:28,122:29,127:76,305:224,308:226,316:70},loadRect:function(rect) {
         return {
-          x: ((SAFE_HEAP_LOAD(((rect + 0)|0), 4, 0))|0),
-          y: ((SAFE_HEAP_LOAD(((rect + 4)|0), 4, 0))|0),
-          w: ((SAFE_HEAP_LOAD(((rect + 8)|0), 4, 0))|0),
-          h: ((SAFE_HEAP_LOAD(((rect + 12)|0), 4, 0))|0)
+          x: HEAP32[((rect + 0)>>2)],
+          y: HEAP32[((rect + 4)>>2)],
+          w: HEAP32[((rect + 8)>>2)],
+          h: HEAP32[((rect + 12)>>2)]
         };
       },updateRect:function(rect, r) {
-        SAFE_HEAP_STORE(((rect)|0), ((r.x)|0), 4);
-        SAFE_HEAP_STORE((((rect)+(4))|0), ((r.y)|0), 4);
-        SAFE_HEAP_STORE((((rect)+(8))|0), ((r.w)|0), 4);
-        SAFE_HEAP_STORE((((rect)+(12))|0), ((r.h)|0), 4);
+        HEAP32[((rect)>>2)]=r.x;
+        HEAP32[(((rect)+(4))>>2)]=r.y;
+        HEAP32[(((rect)+(8))>>2)]=r.w;
+        HEAP32[(((rect)+(12))>>2)]=r.h;
       },intersectionOfRects:function(first, second) {
         var leftX = Math.max(first.x, second.x);
         var leftY = Math.max(first.y, second.y);
@@ -5160,15 +5076,15 @@ function set_title(title){ document.title = UTF8ToString(title); }
         }
       },checkPixelFormat:function(fmt) {
         // Canvas screens are always RGBA.
-        var format = ((SAFE_HEAP_LOAD(((fmt)|0), 4, 0))|0);
+        var format = HEAP32[((fmt)>>2)];
         if (format != -2042224636) {
           warnOnce('Unsupported pixel format!');
         }
       },loadColorToCSSRGB:function(color) {
-        var rgba = ((SAFE_HEAP_LOAD(((color)|0), 4, 0))|0);
+        var rgba = HEAP32[((color)>>2)];
         return 'rgb(' + (rgba&255) + ',' + ((rgba >> 8)&255) + ',' + ((rgba >> 16)&255) + ')';
       },loadColorToCSSRGBA:function(color) {
-        var rgba = ((SAFE_HEAP_LOAD(((color)|0), 4, 0))|0);
+        var rgba = HEAP32[((color)>>2)];
         return 'rgba(' + (rgba&255) + ',' + ((rgba >> 8)&255) + ',' + ((rgba >> 16)&255) + ',' + (((rgba >> 24)&255)/255) + ')';
       },translateColorToCSSRGBA:function(rgba) {
         return 'rgba(' + (rgba&0xff) + ',' + (rgba>>8 & 0xff) + ',' + (rgba>>16 & 0xff) + ',' + (rgba>>>24)/0xff + ')';
@@ -5194,30 +5110,30 @@ function set_title(title){ document.title = UTF8ToString(title); }
           buffer = _malloc(width * height * 4);
         }
   
-        SAFE_HEAP_STORE(((surf)|0), ((flags)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(4))|0), ((pixelFormat)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(8))|0), ((width)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(12))|0), ((height)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(16))|0), ((width * bpp)|0), 4);  // assuming RGBA or indexed for now,
+        HEAP32[((surf)>>2)]=flags;
+        HEAP32[(((surf)+(4))>>2)]=pixelFormat;
+        HEAP32[(((surf)+(8))>>2)]=width;
+        HEAP32[(((surf)+(12))>>2)]=height;
+        HEAP32[(((surf)+(16))>>2)]=width * bpp;  // assuming RGBA or indexed for now,
                                                                                           // since that is what ImageData gives us in browsers
-        SAFE_HEAP_STORE((((surf)+(20))|0), ((buffer)|0), 4);
+        HEAP32[(((surf)+(20))>>2)]=buffer;
   
-        SAFE_HEAP_STORE((((surf)+(36))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(40))|0), ((0)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(44))|0), ((Module["canvas"].width)|0), 4);
-        SAFE_HEAP_STORE((((surf)+(48))|0), ((Module["canvas"].height)|0), 4);
+        HEAP32[(((surf)+(36))>>2)]=0;
+        HEAP32[(((surf)+(40))>>2)]=0;
+        HEAP32[(((surf)+(44))>>2)]=Module["canvas"].width;
+        HEAP32[(((surf)+(48))>>2)]=Module["canvas"].height;
   
-        SAFE_HEAP_STORE((((surf)+(56))|0), ((1)|0), 4);
+        HEAP32[(((surf)+(56))>>2)]=1;
   
-        SAFE_HEAP_STORE(((pixelFormat)|0), ((-2042224636)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(4))|0), ((0)|0), 4);// TODO
-        SAFE_HEAP_STORE((((pixelFormat)+(8))|0), ((bpp * 8)|0), 1);
-        SAFE_HEAP_STORE((((pixelFormat)+(9))|0), ((bpp)|0), 1);
+        HEAP32[((pixelFormat)>>2)]=-2042224636;
+        HEAP32[(((pixelFormat)+(4))>>2)]=0;// TODO
+        HEAP8[(((pixelFormat)+(8))>>0)]=bpp * 8;
+        HEAP8[(((pixelFormat)+(9))>>0)]=bpp;
   
-        SAFE_HEAP_STORE((((pixelFormat)+(12))|0), ((rmask || 0x000000ff)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(16))|0), ((gmask || 0x0000ff00)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(20))|0), ((bmask || 0x00ff0000)|0), 4);
-        SAFE_HEAP_STORE((((pixelFormat)+(24))|0), ((amask || 0xff000000)|0), 4);
+        HEAP32[(((pixelFormat)+(12))>>2)]=rmask || 0x000000ff;
+        HEAP32[(((pixelFormat)+(16))>>2)]=gmask || 0x0000ff00;
+        HEAP32[(((pixelFormat)+(20))>>2)]=bmask || 0x00ff0000;
+        HEAP32[(((pixelFormat)+(24))>>2)]=amask || 0xff000000;
   
         // Decide if we want to use WebGL or not
         SDL.GL = SDL.GL || is_SDL_OPENGL;
@@ -5290,14 +5206,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
         for (var y = startY; y < endY; ++y) {
           var base = y * fullWidth;
           for (var x = startX; x < endX; ++x) {
-            data32[base + x] = colors32[((SAFE_HEAP_LOAD(((buffer + base + x)|0), 1, 1))>>>0)];
+            data32[base + x] = colors32[HEAPU8[((buffer + base + x)>>0)]];
           }
         }
       },freeSurface:function(surf) {
         var refcountPointer = surf + 56;
-        var refcount = ((SAFE_HEAP_LOAD(((refcountPointer)|0), 4, 0))|0);
+        var refcount = HEAP32[((refcountPointer)>>2)];
         if (refcount > 1) {
-          SAFE_HEAP_STORE(((refcountPointer)|0), ((refcount - 1)|0), 4);
+          HEAP32[((refcountPointer)>>2)]=refcount - 1;
           return;
         }
   
@@ -5640,14 +5556,14 @@ function set_title(title){ document.title = UTF8ToString(title); }
             var code = SDL.lookupKeyCodeForEvent(event);
             // Assigning a boolean to HEAP8, that's alright but Closure would like to warn about it:
             /** @suppress{checkTypes} */
-            SAFE_HEAP_STORE((((SDL.keyboardState)+(code))|0), ((down)|0), 1);
+            HEAP8[(((SDL.keyboardState)+(code))>>0)]=down;
             // TODO: lmeta, rmeta, numlock, capslock, KMOD_MODE, KMOD_RESERVED
-            SDL.modState = (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1248))|0), 1, 0))|0) ? 0x0040 : 0) | // KMOD_LCTRL
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1249))|0), 1, 0))|0) ? 0x0001 : 0) | // KMOD_LSHIFT
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1250))|0), 1, 0))|0) ? 0x0100 : 0) | // KMOD_LALT
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1252))|0), 1, 0))|0) ? 0x0080 : 0) | // KMOD_RCTRL
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1253))|0), 1, 0))|0) ? 0x0002 : 0) | // KMOD_RSHIFT
-              (((SAFE_HEAP_LOAD((((SDL.keyboardState)+(1254))|0), 1, 0))|0) ? 0x0200 : 0); //  KMOD_RALT
+            SDL.modState = (HEAP8[(((SDL.keyboardState)+(1248))>>0)] ? 0x0040 : 0) | // KMOD_LCTRL
+              (HEAP8[(((SDL.keyboardState)+(1249))>>0)] ? 0x0001 : 0) | // KMOD_LSHIFT
+              (HEAP8[(((SDL.keyboardState)+(1250))>>0)] ? 0x0100 : 0) | // KMOD_LALT
+              (HEAP8[(((SDL.keyboardState)+(1252))>>0)] ? 0x0080 : 0) | // KMOD_RCTRL
+              (HEAP8[(((SDL.keyboardState)+(1253))>>0)] ? 0x0002 : 0) | // KMOD_RSHIFT
+              (HEAP8[(((SDL.keyboardState)+(1254))>>0)] ? 0x0200 : 0); //  KMOD_RALT
             if (down) {
               SDL.keyboardMap[code] = event.keyCode; // save the DOM input, which we can use to unpress it during blur
             } else {
@@ -5714,54 +5630,54 @@ function set_title(title){ document.title = UTF8ToString(title); }
               scan = SDL.scanCodes[key] || key;
             }
   
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((down ? 1 : 0)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(9))|0), ((0)|0), 1); // TODO
-            SAFE_HEAP_STORE((((ptr)+(12))|0), ((scan)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(16))|0), ((key)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(20))|0), ((SDL.modState)|0), 2);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP8[(((ptr)+(8))>>0)]=down ? 1 : 0;
+            HEAP8[(((ptr)+(9))>>0)]=0; // TODO
+            HEAP32[(((ptr)+(12))>>2)]=scan;
+            HEAP32[(((ptr)+(16))>>2)]=key;
+            HEAP16[(((ptr)+(20))>>1)]=SDL.modState;
             // some non-character keys (e.g. backspace and tab) won't have keypressCharCode set, fill in with the keyCode.
-            SAFE_HEAP_STORE((((ptr)+(24))|0), ((event.keypressCharCode || key)|0), 4);
+            HEAP32[(((ptr)+(24))>>2)]=event.keypressCharCode || key;
   
             break;
           }
           case 'keypress': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
             // Not filling in windowID for now
             var cStr = intArrayFromString(String.fromCharCode(event.charCode));
             for (var i = 0; i < cStr.length; ++i) {
-              SAFE_HEAP_STORE((((ptr)+(8 + i))|0), ((cStr[i])|0), 1);
+              HEAP8[(((ptr)+(8 + i))>>0)]=cStr[i];
             }
             break;
           }
           case 'mousedown': case 'mouseup': case 'mousemove': {
             if (event.type != 'mousemove') {
               var down = event.type === 'mousedown';
-              SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(8))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(12))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(16))|0), ((event.button+1)|0), 1); // DOM buttons are 0-2, SDL 1-3
-              SAFE_HEAP_STORE((((ptr)+(17))|0), ((down ? 1 : 0)|0), 1);
-              SAFE_HEAP_STORE((((ptr)+(20))|0), ((Browser.mouseX)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(24))|0), ((Browser.mouseY)|0), 4);
+              HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+              HEAP32[(((ptr)+(4))>>2)]=0;
+              HEAP32[(((ptr)+(8))>>2)]=0;
+              HEAP32[(((ptr)+(12))>>2)]=0;
+              HEAP8[(((ptr)+(16))>>0)]=event.button+1; // DOM buttons are 0-2, SDL 1-3
+              HEAP8[(((ptr)+(17))>>0)]=down ? 1 : 0;
+              HEAP32[(((ptr)+(20))>>2)]=Browser.mouseX;
+              HEAP32[(((ptr)+(24))>>2)]=Browser.mouseY;
             } else {
-              SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(8))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(12))|0), ((0)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(16))|0), ((SDL.buttonState)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(20))|0), ((Browser.mouseX)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(24))|0), ((Browser.mouseY)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(28))|0), ((Browser.mouseMovementX)|0), 4);
-              SAFE_HEAP_STORE((((ptr)+(32))|0), ((Browser.mouseMovementY)|0), 4);
+              HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+              HEAP32[(((ptr)+(4))>>2)]=0;
+              HEAP32[(((ptr)+(8))>>2)]=0;
+              HEAP32[(((ptr)+(12))>>2)]=0;
+              HEAP32[(((ptr)+(16))>>2)]=SDL.buttonState;
+              HEAP32[(((ptr)+(20))>>2)]=Browser.mouseX;
+              HEAP32[(((ptr)+(24))>>2)]=Browser.mouseY;
+              HEAP32[(((ptr)+(28))>>2)]=Browser.mouseMovementX;
+              HEAP32[(((ptr)+(32))>>2)]=Browser.mouseMovementY;
             }
             break;
           }
           case 'wheel': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(16))|0), ((event.deltaX)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(20))|0), ((event.deltaY)|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(16))>>2)]=event.deltaX;
+            HEAP32[(((ptr)+(20))>>2)]=event.deltaY;
             break;
           }
           case 'touchstart': case 'touchend': case 'touchmove': {
@@ -5777,67 +5693,67 @@ function set_title(title){ document.title = UTF8ToString(title); }
             var dy = y - ly;
             if (touch['deviceID'] === undefined) touch.deviceID = SDL.TOUCH_DEFAULT_ID;
             if (dx === 0 && dy === 0 && event.type === 'touchmove') return false; // don't send these if nothing happened
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((_SDL_GetTicks())|0), 4);
-            (tempI64 = [touch.deviceID>>>0,(tempDouble=touch.deviceID,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((ptr)+(8))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((ptr)+(12))|0), ((tempI64[1])|0), 4));
-            (tempI64 = [touch.identifier>>>0,(tempDouble=touch.identifier,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],SAFE_HEAP_STORE((((ptr)+(16))|0), ((tempI64[0])|0), 4),SAFE_HEAP_STORE((((ptr)+(20))|0), ((tempI64[1])|0), 4));
-            SAFE_HEAP_STORE_D((((ptr)+(24))|0), Math_fround(x), 4);
-            SAFE_HEAP_STORE_D((((ptr)+(28))|0), Math_fround(y), 4);
-            SAFE_HEAP_STORE_D((((ptr)+(32))|0), Math_fround(dx), 4);
-            SAFE_HEAP_STORE_D((((ptr)+(36))|0), Math_fround(dy), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=_SDL_GetTicks();
+            (tempI64 = [touch.deviceID>>>0,(tempDouble=touch.deviceID,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((ptr)+(8))>>2)]=tempI64[0],HEAP32[(((ptr)+(12))>>2)]=tempI64[1]);
+            (tempI64 = [touch.identifier>>>0,(tempDouble=touch.identifier,(+(Math_abs(tempDouble))) >= 1.0 ? (tempDouble > 0.0 ? ((Math_min((+(Math_floor((tempDouble)/4294967296.0))), 4294967295.0))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/4294967296.0)))))>>>0) : 0)],HEAP32[(((ptr)+(16))>>2)]=tempI64[0],HEAP32[(((ptr)+(20))>>2)]=tempI64[1]);
+            HEAPF32[(((ptr)+(24))>>2)]=x;
+            HEAPF32[(((ptr)+(28))>>2)]=y;
+            HEAPF32[(((ptr)+(32))>>2)]=dx;
+            HEAPF32[(((ptr)+(36))>>2)]=dy;
             if (touch.force !== undefined) {
-              SAFE_HEAP_STORE_D((((ptr)+(40))|0), Math_fround(touch.force), 4);
+              HEAPF32[(((ptr)+(40))>>2)]=touch.force;
             } else { // No pressure data, send a digital 0/1 pressure.
-              SAFE_HEAP_STORE_D((((ptr)+(40))|0), Math_fround(event.type == "touchend" ? 0 : 1), 4);
+              HEAPF32[(((ptr)+(40))>>2)]=event.type == "touchend" ? 0 : 1;
             }
             break;
           }
           case 'unload': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
             break;
           }
           case 'resize': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((event.w)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((event.h)|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=event.w;
+            HEAP32[(((ptr)+(8))>>2)]=event.h;
             break;
           }
           case 'joystick_button_up': case 'joystick_button_down': {
             var state = event.type === 'joystick_button_up' ? 0 : 1;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((event.index)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(5))|0), ((event.button)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(6))|0), ((state)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP8[(((ptr)+(4))>>0)]=event.index;
+            HEAP8[(((ptr)+(5))>>0)]=event.button;
+            HEAP8[(((ptr)+(6))>>0)]=state;
             break;
           }
           case 'joystick_axis_motion': {
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((event.index)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(5))|0), ((event.axis)|0), 1);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((SDL.joystickAxisValueConversion(event.value))|0), 4);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP8[(((ptr)+(4))>>0)]=event.index;
+            HEAP8[(((ptr)+(5))>>0)]=event.axis;
+            HEAP32[(((ptr)+(8))>>2)]=SDL.joystickAxisValueConversion(event.value);
             break;
           }
           case 'focus': {
             var SDL_WINDOWEVENT_FOCUS_GAINED = 12 /* SDL_WINDOWEVENT_FOCUS_GAINED */;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((SDL_WINDOWEVENT_FOCUS_GAINED)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=0;
+            HEAP8[(((ptr)+(8))>>0)]=SDL_WINDOWEVENT_FOCUS_GAINED;
             break;
           }
           case 'blur': {
             var SDL_WINDOWEVENT_FOCUS_LOST = 13 /* SDL_WINDOWEVENT_FOCUS_LOST */;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((SDL_WINDOWEVENT_FOCUS_LOST)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=0;
+            HEAP8[(((ptr)+(8))>>0)]=SDL_WINDOWEVENT_FOCUS_LOST;
             break;
           }
           case 'visibilitychange': {
             var SDL_WINDOWEVENT_SHOWN  = 1 /* SDL_WINDOWEVENT_SHOWN */;
             var SDL_WINDOWEVENT_HIDDEN = 2 /* SDL_WINDOWEVENT_HIDDEN */;
             var visibilityEventID = event.visible ? SDL_WINDOWEVENT_SHOWN : SDL_WINDOWEVENT_HIDDEN;
-            SAFE_HEAP_STORE(((ptr)|0), ((SDL.DOMEventToSDLEvent[event.type])|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(4))|0), ((0)|0), 4);
-            SAFE_HEAP_STORE((((ptr)+(8))|0), ((visibilityEventID)|0), 1);
+            HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
+            HEAP32[(((ptr)+(4))>>2)]=0;
+            HEAP8[(((ptr)+(8))>>0)]=visibilityEventID;
             break;
           }
           default: throw 'Unhandled SDL event: ' + event.type;
@@ -5964,16 +5880,16 @@ function set_title(title){ document.title = UTF8ToString(title); }
           }
           if (audio.format == 0x8010 /*AUDIO_S16LSB*/) {
             for(var j = 0; j < sizeSamplesPerChannel; ++j) {
-              channelData[j] = (((SAFE_HEAP_LOAD((((heapPtr)+((j*numChannels + c)*2))|0), 2, 0))|0)) / 0x8000;
+              channelData[j] = (HEAP16[(((heapPtr)+((j*numChannels + c)*2))>>1)]) / 0x8000;
             }
           } else if (audio.format == 0x0008 /*AUDIO_U8*/) {
             for(var j = 0; j < sizeSamplesPerChannel; ++j) {
-              var v = (((SAFE_HEAP_LOAD((((heapPtr)+(j*numChannels + c))|0), 1, 0))|0));
+              var v = (HEAP8[(((heapPtr)+(j*numChannels + c))>>0)]);
               channelData[j] = ((v >= 0) ? v-128 : v+128) /128;
             }
           } else if (audio.format == 0x8120 /*AUDIO_F32*/) {
             for(var j = 0; j < sizeSamplesPerChannel; ++j) {
-              channelData[j] = (Math_fround(SAFE_HEAP_LOAD_D((((heapPtr)+((j*numChannels + c)*4))|0), 4, 0)));
+              channelData[j] = (HEAPF32[(((heapPtr)+((j*numChannels + c)*4))>>2)]);
             }
           } else {
             throw 'Invalid SDL audio format ' + audio.format + '!';
@@ -6096,8 +6012,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
     }
 
   function _SDL_GetMouseState(x, y) {
-      if (x) SAFE_HEAP_STORE(((x)|0), ((Browser.mouseX)|0), 4);
-      if (y) SAFE_HEAP_STORE(((y)|0), ((Browser.mouseY)|0), 4);
+      if (x) HEAP32[((x)>>2)]=Browser.mouseX;
+      if (y) HEAP32[((y)>>2)]=Browser.mouseY;
       return SDL.buttonState;
     }
 
@@ -6271,8 +6187,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },getSource:function(shader, count, string, length) {
         var source = '';
         for (var i = 0; i < count; ++i) {
-          var len = length ? ((SAFE_HEAP_LOAD((((length)+(i*4))|0), 4, 0))|0) : -1;
-          source += UTF8ToString(((SAFE_HEAP_LOAD((((string)+(i*4))|0), 4, 0))|0), len < 0 ? undefined : len);
+          var len = length ? HEAP32[(((length)+(i*4))>>2)] : -1;
+          source += UTF8ToString(HEAP32[(((string)+(i*4))>>2)], len < 0 ? undefined : len);
         }
         return source;
       },calcBufLength:function calcBufLength(size, type, stride, count) {
@@ -6559,8 +6475,8 @@ function set_title(title){ document.title = UTF8ToString(title); }
     }function getEnvStrings() {
       if (!getEnvStrings.strings) {
         // Default values.
-        // Deterministic language detection, ignore the browser's language.
-        var lang = 'C.UTF-8';
+        // Browser language detection #8751
+        var lang = ((typeof navigator === 'object' && navigator.languages && navigator.languages[0]) || 'C').replace('-', '_') + '.UTF-8';
         var env = {
           'USER': 'web_user',
           'LOGNAME': 'web_user',
@@ -6585,7 +6501,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       var bufSize = 0;
       getEnvStrings().forEach(function(string, i) {
         var ptr = environ_buf + bufSize;
-        SAFE_HEAP_STORE((((__environ)+(i * 4))|0), ((ptr)|0), 4);
+        HEAP32[(((__environ)+(i * 4))>>2)]=ptr;
         writeAsciiToMemory(string, ptr);
         bufSize += string.length + 1;
       });
@@ -6594,12 +6510,12 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _environ_sizes_get(penviron_count, penviron_buf_size) {
       var strings = getEnvStrings();
-      SAFE_HEAP_STORE(((penviron_count)|0), ((strings.length)|0), 4);
+      HEAP32[((penviron_count)>>2)]=strings.length;
       var bufSize = 0;
       strings.forEach(function(string) {
         bufSize += string.length + 1;
       });
-      SAFE_HEAP_STORE(((penviron_buf_size)|0), ((bufSize)|0), 4);
+      HEAP32[((penviron_buf_size)>>2)]=bufSize;
       return 0;
     }
 
@@ -6630,7 +6546,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       },varargs:undefined,get:function() {
         assert(SYSCALLS.varargs != undefined);
         SYSCALLS.varargs += 4;
-        var ret = ((SAFE_HEAP_LOAD((((SYSCALLS.varargs)-(4))|0), 4, 0))|0);
+        var ret = HEAP32[(((SYSCALLS.varargs)-(4))>>2)];
         return ret;
       },getStr:function(ptr) {
         var ret = UTF8ToString(ptr);
@@ -6643,21 +6559,21 @@ function set_title(title){ document.title = UTF8ToString(title); }
       // hack to support printf in SYSCALLS_REQUIRE_FILESYSTEM=0
       var num = 0;
       for (var i = 0; i < iovcnt; i++) {
-        var ptr = ((SAFE_HEAP_LOAD((((iov)+(i*8))|0), 4, 0))|0);
-        var len = ((SAFE_HEAP_LOAD((((iov)+(i*8 + 4))|0), 4, 0))|0);
+        var ptr = HEAP32[(((iov)+(i*8))>>2)];
+        var len = HEAP32[(((iov)+(i*8 + 4))>>2)];
         for (var j = 0; j < len; j++) {
           SYSCALLS.printChar(fd, HEAPU8[ptr+j]);
         }
         num += len;
       }
-      SAFE_HEAP_STORE(((pnum)|0), ((num)|0), 4)
+      HEAP32[((pnum)>>2)]=num
       return 0;
     }
 
   function _gettimeofday(ptr) {
       var now = Date.now();
-      SAFE_HEAP_STORE(((ptr)|0), (((now/1000)|0)|0), 4); // seconds
-      SAFE_HEAP_STORE((((ptr)+(4))|0), ((((now % 1000)*1000)|0)|0), 4); // microseconds
+      HEAP32[((ptr)>>2)]=(now/1000)|0; // seconds
+      HEAP32[(((ptr)+(4))>>2)]=((now % 1000)*1000)|0; // microseconds
       return 0;
     }
 
@@ -6804,7 +6720,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glDeleteBuffers(n, buffers) {
       for (var i = 0; i < n; i++) {
-        var id = ((SAFE_HEAP_LOAD((((buffers)+(i*4))|0), 4, 0))|0);
+        var id = HEAP32[(((buffers)+(i*4))>>2)];
         var buffer = GL.buffers[id];
   
         // From spec: "glDeleteBuffers silently ignores 0's and names that do not
@@ -6824,7 +6740,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glDeleteSamplers(n, samplers) {
       for (var i = 0; i < n; i++) {
-        var id = ((SAFE_HEAP_LOAD((((samplers)+(i*4))|0), 4, 0))|0);
+        var id = HEAP32[(((samplers)+(i*4))>>2)];
         var sampler = GL.samplers[id];
         if (!sampler) continue;
         GLctx['deleteSampler'](sampler);
@@ -6846,7 +6762,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glDeleteTextures(n, textures) {
       for (var i = 0; i < n; i++) {
-        var id = ((SAFE_HEAP_LOAD((((textures)+(i*4))|0), 4, 0))|0);
+        var id = HEAP32[(((textures)+(i*4))>>2)];
         var texture = GL.textures[id];
         if (!texture) continue; // GL spec: "glDeleteTextures silently ignores 0s and names that do not correspond to existing textures".
         GLctx.deleteTexture(texture);
@@ -6879,7 +6795,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       var bufArray = tempFixedLengthArray[n];
       for (var i = 0; i < n; i++) {
-        bufArray[i] = ((SAFE_HEAP_LOAD((((bufs)+(i*4))|0), 4, 0))|0);
+        bufArray[i] = HEAP32[(((bufs)+(i*4))>>2)];
       }
   
       GLctx['drawBuffers'](bufArray);
@@ -6947,7 +6863,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
         } else {
           GL.recordError(0x502 /* GL_INVALID_OPERATION */);
         }
-        SAFE_HEAP_STORE((((buffers)+(i*4))|0), ((id)|0), 4);
+        HEAP32[(((buffers)+(i*4))>>2)]=id;
       }
     }function _glGenBuffers(n, buffers) {
       __glGenObject(n, buffers, 'createBuffer', GL.buffers
@@ -7088,9 +7004,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
                        result instanceof Array) {
               for (var i = 0; i < result.length; ++i) {
                 switch (type) {
-                  case 0: SAFE_HEAP_STORE((((p)+(i*4))|0), ((result[i])|0), 4); break;
-                  case 2: SAFE_HEAP_STORE_D((((p)+(i*4))|0), Math_fround(result[i]), 4); break;
-                  case 4: SAFE_HEAP_STORE((((p)+(i))|0), ((result[i] ? 1 : 0)|0), 1); break;
+                  case 0: HEAP32[(((p)+(i*4))>>2)]=result[i]; break;
+                  case 2: HEAPF32[(((p)+(i*4))>>2)]=result[i]; break;
+                  case 4: HEAP8[(((p)+(i))>>0)]=result[i] ? 1 : 0; break;
                 }
               }
               return;
@@ -7113,9 +7029,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
   
       switch (type) {
         case 1: writeI53ToI64(p, ret); break;
-        case 0: SAFE_HEAP_STORE(((p)|0), ((ret)|0), 4); break;
-        case 2:   SAFE_HEAP_STORE_D(((p)|0), Math_fround(ret), 4); break;
-        case 4: SAFE_HEAP_STORE(((p)|0), ((ret ? 1 : 0)|0), 1); break;
+        case 0: HEAP32[((p)>>2)]=ret; break;
+        case 2:   HEAPF32[((p)>>2)]=ret; break;
+        case 4: HEAP8[((p)>>0)]=ret ? 1 : 0; break;
       }
     }function _glGetIntegerv(name_, p) {
       emscriptenWebGLGet(name_, p, 0);
@@ -7125,7 +7041,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       var log = GLctx.getProgramInfoLog(GL.programs[program]);
       if (log === null) log = '(unknown error)';
       var numBytesWrittenExclNull = (maxLength > 0 && infoLog) ? stringToUTF8(log, infoLog, maxLength) : 0;
-      if (length) SAFE_HEAP_STORE(((length)|0), ((numBytesWrittenExclNull)|0), 4);
+      if (length) HEAP32[((length)>>2)]=numBytesWrittenExclNull;
     }
 
   function _glGetProgramiv(program, pname, p) {
@@ -7150,9 +7066,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
       if (pname == 0x8B84) { // GL_INFO_LOG_LENGTH
         var log = GLctx.getProgramInfoLog(GL.programs[program]);
         if (log === null) log = '(unknown error)';
-        SAFE_HEAP_STORE(((p)|0), ((log.length + 1)|0), 4);
+        HEAP32[((p)>>2)]=log.length + 1;
       } else if (pname == 0x8B87 /* GL_ACTIVE_UNIFORM_MAX_LENGTH */) {
-        SAFE_HEAP_STORE(((p)|0), ((ptable.maxUniformLength)|0), 4);
+        HEAP32[((p)>>2)]=ptable.maxUniformLength;
       } else if (pname == 0x8B8A /* GL_ACTIVE_ATTRIBUTE_MAX_LENGTH */) {
         if (ptable.maxAttributeLength == -1) {
           program = GL.programs[program];
@@ -7163,7 +7079,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
             ptable.maxAttributeLength = Math.max(ptable.maxAttributeLength, activeAttrib.name.length+1);
           }
         }
-        SAFE_HEAP_STORE(((p)|0), ((ptable.maxAttributeLength)|0), 4);
+        HEAP32[((p)>>2)]=ptable.maxAttributeLength;
       } else if (pname == 0x8A35 /* GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH */) {
         if (ptable.maxUniformBlockNameLength == -1) {
           program = GL.programs[program];
@@ -7174,9 +7090,9 @@ function set_title(title){ document.title = UTF8ToString(title); }
             ptable.maxUniformBlockNameLength = Math.max(ptable.maxUniformBlockNameLength, activeBlockName.length+1);
           }
         }
-        SAFE_HEAP_STORE(((p)|0), ((ptable.maxUniformBlockNameLength)|0), 4);
+        HEAP32[((p)>>2)]=ptable.maxUniformBlockNameLength;
       } else {
-        SAFE_HEAP_STORE(((p)|0), ((GLctx.getProgramParameter(GL.programs[program], pname))|0), 4);
+        HEAP32[((p)>>2)]=GLctx.getProgramParameter(GL.programs[program], pname);
       }
     }
 
@@ -7184,7 +7100,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       var log = GLctx.getShaderInfoLog(GL.shaders[shader]);
       if (log === null) log = '(unknown error)';
       var numBytesWrittenExclNull = (maxLength > 0 && infoLog) ? stringToUTF8(log, infoLog, maxLength) : 0;
-      if (length) SAFE_HEAP_STORE(((length)|0), ((numBytesWrittenExclNull)|0), 4);
+      if (length) HEAP32[((length)>>2)]=numBytesWrittenExclNull;
     }
 
   function _glGetShaderiv(shader, pname, p) {
@@ -7202,15 +7118,15 @@ function set_title(title){ document.title = UTF8ToString(title); }
         // (An empty string is falsey, so we can just check that instead of
         // looking at log.length.)
         var logLength = log ? log.length + 1 : 0;
-        SAFE_HEAP_STORE(((p)|0), ((logLength)|0), 4);
+        HEAP32[((p)>>2)]=logLength;
       } else if (pname == 0x8B88) { // GL_SHADER_SOURCE_LENGTH
         var source = GLctx.getShaderSource(GL.shaders[shader]);
         // source may be a null, or the empty string, both of which are falsey
         // values that we report a 0 length for.
         var sourceLength = source ? source.length + 1 : 0;
-        SAFE_HEAP_STORE(((p)|0), ((sourceLength)|0), 4);
+        HEAP32[((p)>>2)]=sourceLength;
       } else {
-        SAFE_HEAP_STORE(((p)|0), ((GLctx.getShaderParameter(GL.shaders[shader], pname))|0), 4);
+        HEAP32[((p)>>2)]=GLctx.getShaderParameter(GL.shaders[shader], pname);
       }
     }
 
@@ -7422,7 +7338,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
       program = GL.programs[program];
       var vars = [];
       for (var i = 0; i < count; i++)
-        vars.push(UTF8ToString(((SAFE_HEAP_LOAD((((varyings)+(i*4))|0), 4, 0))|0)));
+        vars.push(UTF8ToString(HEAP32[(((varyings)+(i*4))>>2)]));
   
       GLctx['transformFeedbackVaryings'](program, vars, bufferMode);
     }
@@ -7568,7 +7484,7 @@ function intArrayToString(array) {
 
 
 var asmGlobalArg = {};
-var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_atexit": ___cxa_atexit, "__handle_stack_overflow": ___handle_stack_overflow, "alignfault": alignfault, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "exit": _exit, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "segfault": segfault, "setTempRet0": _setTempRet0, "set_title": set_title, "table": wasmTable, "usleep": _usleep };
+var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_atexit": ___cxa_atexit, "__handle_stack_overflow": ___handle_stack_overflow, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "exit": _exit, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "setTempRet0": _setTempRet0, "set_title": set_title, "table": wasmTable, "usleep": _usleep };
 var asm = createWasm();
 /** @type {function(...*):?} */
 var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__wasm_call_ctors");
@@ -7645,41 +7561,6 @@ var dynCall_idi = Module["dynCall_idi"] = createExportWrapper("dynCall_idi");
 /** @type {function(...*):?} */
 var __growWasmMemory = Module["__growWasmMemory"] = createExportWrapper("__growWasmMemory");
 
-
-
-
-
-var MAGIC = 0;
-Math.random = function() {
-  MAGIC = Math.pow(MAGIC + 1.8912, 3) % 1;
-  return MAGIC;
-};
-var TIME = 10000;
-Date.now = function() {
-  return TIME++;
-};
-if (typeof performance === 'object') performance.now = Date.now;
-if (ENVIRONMENT_IS_NODE) process['hrtime'] = Date.now;
-
-if (!Module) Module = {};
-Module['thisProgram'] = 'thisProgram'; // for consistency between different builds than between runs of the same build
-
-function hashMemory(id) {
-  var ret = 0;
-  var len = HEAP32[DYNAMICTOP_PTR>>2];
-  for (var i = 0; i < len; i++) {
-    ret = (ret*17 + HEAPU8[i])|0;
-  }
-  return id + ':' + ret;
-}
-
-function hashString(s) {
-  var ret = 0;
-  for (var i = 0; i < s.length; i++) {
-    ret = (ret*17 + s.charCodeAt(i))|0;
-  }
-  return ret;
-}
 
 
 
