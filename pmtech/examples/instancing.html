@@ -71,11 +71,11 @@
             }
             else if (text.includes("Downloading data...")) {
             	var matches = text.match(/\((.*?)\)/);
-            	display = "Downloading:" 
+            	display = "Downloading: " 
             	if (matches) {
             		var progress = matches[1].split("/")
-            		var pct = progress[0]/progress[1]
-            		display += Math.floor(100.0 - pct) + "%"
+            		var pct = progress[1]/progress[0]
+            		display += Math.floor(pct) * 100 + "%"
             	}
             }
             document.getElementById("title-text").innerHTML = display
