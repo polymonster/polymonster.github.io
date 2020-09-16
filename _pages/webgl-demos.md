@@ -7,7 +7,7 @@ featured_image: /images/site/spacefilling.png
 
 These demos are from my game engine [pmtech](https://github.com/polymonster/pmtech) they are built using wasm and WebGL with the help of emscripten.
 
-For web browsers Chrome, Firefox and Microsoft Edge all supported. Safari is not supported and mobile browser support is also missing. 
+For web browsers Chrome, Firefox and Microsoft Edge are all supported. Safari is not supported and mobile browser support is also missing. 
 
 These samples are currently work in progress with some missing features compared to the native pmtech implementations, the reference images were generated on macOS/Metal.
 
