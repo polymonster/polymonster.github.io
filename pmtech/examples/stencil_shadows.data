@@ -4642,7 +4642,7 @@
         "/Users/alex.dixon/dev/pmtech/examples/build/web/data/configs/stencil_shadows.jsn": [
             {
                 "name": "/Users/alex.dixon/dev/pmtech/examples/assets/configs/stencil_shadows.jsn",
-                "timestamp": 1586778850.3219757,
+                "timestamp": 1600361810.2863026,
                 "data_file": "data/configs/stencil_shadows.jsn"
             },
             {
@@ -25292,27 +25292,7 @@
                 "forward_lit"
             ],
             "pmfx_shader": "forward_render",
-            "technique": "forward_lit",
-            "sampler_bindings": [
-                {
-                    "texture": "shadow_map",
-                    "unit": 15,
-                    "state": "wrap_linear",
-                    "shader": "ps"
-                },
-                {
-                    "texture": "area_light_textures",
-                    "unit": 11,
-                    "state": "clamp_linear",
-                    "shader": "ps"
-                },
-                {
-                    "texture": "omni_shadow_map",
-                    "unit": 10,
-                    "state": "clamp_linear",
-                    "shader": "ps"
-                }
-            ]
+            "technique": "zonly"
         },
         "view_clear_stencil": {
             "target": [
@@ -25371,27 +25351,7 @@
             "pmfx_shader": "forward_render",
             "technique": "single_light_directional",
             "stencil_ref": 0,
-            "type": "template",
-            "sampler_bindings": [
-                {
-                    "texture": "shadow_map",
-                    "unit": 15,
-                    "state": "wrap_linear",
-                    "shader": "ps"
-                },
-                {
-                    "texture": "area_light_textures",
-                    "unit": 11,
-                    "state": "clamp_linear",
-                    "shader": "ps"
-                },
-                {
-                    "texture": "omni_shadow_map",
-                    "unit": 10,
-                    "state": "clamp_linear",
-                    "shader": "ps"
-                }
-            ]
+            "type": "template"
         },
         "view_multi_pass_lights": {
             "scene": "main_scene",
