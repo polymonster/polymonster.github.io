@@ -1,8 +1,8 @@
 ---
 title: Releases
-subtitle: A list of titles I have worked on. I have worked on projects through all stages of the development cycle as well as assisting with porting and optimisation bringing indie titles to different platforms.
-description: A list of titles I have worked on.
-featured_image: /images/site/spacefilling.png
+subtitle: Titles I have worked on.
+description: Titles I have worked on.
+featured_image: /images/site/waves.png
 ---
 
 For more details on work undretaken for various projects please visit my [LinkedIn](https://www.linkedin.com/in/alexdixon1611/).

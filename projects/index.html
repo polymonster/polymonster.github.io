@@ -3,45 +3,56 @@ layout: default
 title: Projects
 subtitle: A selection of some of my open source and hobby projects, please check out my github for more tools and libraries.
 description: Open Source and Hobby Projects.
-featured_image: /images/site/waves.png
+featured_image: /images/site/thinbox.png
 ---
 
-<section class="intro">
-
-	<div class="wrap">
-
-		<h1>{{ page.title }}</h1>
-		<p>{{ page.subtitle }}</p>
-
-	</div>
-
-</section>
-
-<section class="portfolio">
+<section class="blog single">
 
 	<div class="wrap">
 
 		{% for project in site.projects reversed %}
 
-		<div class="portfolio-item">
+		<article class="blog-post">
 
-			<a class="portfolio-item__link" href="{{ project.url | relative_url }}">
+			<div class="blog-post__header">
+				<h2 class="blog-post__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+				<p class="blog-post__subtitle">{{ project.date | date_to_long_string }}</p>
+			</div>
 
-				<div class="portfolio-item__image" style="background-image: url({{ project.featured_image | relative_url }});"></div>
+			{% if project.featured_image %}
+			<a href="{{ project.url | relative_url }}" class="blog-post__image" style="background-image: url({{ project.featured_image | relative_url }});"></a>
+			{% endif %}
 
-				<div class="portfolio-item__content">
-					<div class="portfolio-item__info">
-						<h2 class="portfolio-item__title">{{ project.title }}</h2>
-						<p class="portfolio-item__subtitle">{{ project.subtitle }}</p>
-					</div>
-				</div>
+			<div class="blog-post__content">
+				<p>{{ project.excerpt }}</p>
+				<p><a href="{{ project.url | relative_url }}" class="button">Read More</a>
+			</div>
 
-			</a>
-
-		</div>
+		</article>
 
 		{% endfor %}
 
 	</div>
 
 </section>
+
+{% if paginator.total_pages > 1 %}
+
+<section class="pagination">
+
+	{% if paginator.previous_page %}
+	<div class="pagination__prev">
+		<a href="{{ paginator.previous_page_path | relative_url }}" class="button button--large"><i class="fa fa-angle-left" aria-hidden="true"></i> <span>Newer Posts</span></a>
+	</div>
+	{% endif %}
+	{% if paginator.next_page %}
+	<div class="pagination__next">
+		<a href="{{ paginator.next_page_path | relative_url }}" class="button button--large"><span>Older Posts</span> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+	</div>
+	{% endif %}
+
+</section>
+
+{% endif %}
+
+
