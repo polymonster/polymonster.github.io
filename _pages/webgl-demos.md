@@ -5,7 +5,7 @@ description: powered by pmtech.
 featured_image: /images/site/spacefilling.png
 ---
 
-These demos are from my game engine [pmtech](https://github.com/polymonster/pmtech) they are built using wasm and WebGL with the help of emscripten. You can find out more information about the example projects on the pmtech [wiki](https://github.com/polymonster/pmtech/wiki/Examples).
+These demos are from my game engine [pmtech](https://github.com/polymonster/pmtech) they are built using WebAssembly and WebGL with the help of emscripten. You can find out more information about the example projects on the pmtech [wiki](https://github.com/polymonster/pmtech/wiki/Examples).
 
 For web browsers Chrome, Firefox and Microsoft Edge are all supported. Safari is not supported and mobile browser support is also missing. 
 
