@@ -11,6 +11,13 @@ For web browsers Chrome, Firefox and Microsoft Edge are all supported. Safari is
 
 These samples are currently work in progress with some missing features compared to the native pmtech implementations, the reference images were generated on macOS/Metal.
 
+Controls:
+[CTRL or CMD + X] - Toggle imgui "dev_ui".
+[Alt or Option + Left Mouse Drag] - Rotate camera.
+[CTRL or CMD + Left Mouse Drag] - Pans camera.
+[Mouse Wheel] -  Zoom camera.
+[F] - Focus camera on selected object.
+[Left Click] - Select items, or grab physics objects.
 
 <style>
 .row {
