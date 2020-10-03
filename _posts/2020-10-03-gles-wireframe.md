@@ -34,7 +34,7 @@ struct rasteriser_state_creation_params
 };
 ```
 
-If we supply `PEN_FILL_WIREFRAME` in the OpenGL implementation we can intercept this value and handle it differently. If we target OpenGLES then the internal raster state sets a flag which says we want to draw with wireframe, at this point the fill mode is still `GL_FILL` and not `GL_LINE` like it would be on regular OpenGL.
+If we supply `PEN_FILL_WIREFRAME` as the `fill_mode` then in the OpenGL implementation we can intercept this value and handle it differently. If we target OpenGLES then the internal raster state sets a flag which says we want to draw with wireframe, at this point the fill mode is still `GL_FILL` and not `GL_LINE` like it would be on regular OpenGL.
 
 ```c++
 void direct::renderer_create_rasterizer_state(const rasteriser_state_creation_params& rscp, u32 resource_slot)
