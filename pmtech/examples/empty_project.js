@@ -1292,11 +1292,11 @@ function updateGlobalBufferAndViews(buf) {
 }
 
 var STATIC_BASE = 1024,
-    STACK_BASE = 5250512,
+    STACK_BASE = 5250496,
     STACKTOP = STACK_BASE,
-    STACK_MAX = 7632,
-    DYNAMIC_BASE = 5250512,
-    DYNAMICTOP_PTR = 7472;
+    STACK_MAX = 7616,
+    DYNAMIC_BASE = 5250496,
+    DYNAMICTOP_PTR = 7456;
 
 assert(STACK_BASE % 16 === 0, 'stack must start aligned');
 assert(DYNAMIC_BASE % 16 === 0, 'heap must start aligned');
@@ -1865,7 +1865,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
 
 
-// STATICTOP = STATIC_BASE + 6608;
+// STATICTOP = STATIC_BASE + 6592;
 /* global initializers */  __ATINIT__.push({ func: function() { ___wasm_call_ctors() } });
 
 
@@ -6438,7 +6438,7 @@ function set_title(title){ document.title = UTF8ToString(title); }
     }
 
   function _emscripten_get_sbrk_ptr() {
-      return 7472;
+      return 7456;
     }
 
   function _emscripten_memcpy_big(dest, src, num) {
@@ -7334,6 +7334,17 @@ function set_title(title){ document.title = UTF8ToString(title); }
 
   function _glTexParameteri(x0, x1, x2) { GLctx['texParameteri'](x0, x1, x2) }
 
+  function _glTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels) {
+      if (GLctx.currentPixelUnpackBufferBinding) {
+        GLctx['texSubImage3D'](target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+      } else if (pixels) {
+        var heap = heapObjectForWebGLType(type);
+        GLctx['texSubImage3D'](target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, heap, pixels >> heapAccessShiftForWebGLHeap(heap));
+      } else {
+        GLctx['texSubImage3D'](target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, null);
+      }
+    }
+
   function _glTransformFeedbackVaryings(program, count, varyings, bufferMode) {
       program = GL.programs[program];
       var vars = [];
@@ -7484,7 +7495,7 @@ function intArrayToString(array) {
 
 
 var asmGlobalArg = {};
-var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_atexit": ___cxa_atexit, "__handle_stack_overflow": ___handle_stack_overflow, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "exit": _exit, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "setTempRet0": _setTempRet0, "set_title": set_title, "table": wasmTable, "usleep": _usleep };
+var asmLibraryArg = { "SDL_EnableUNICODE": _SDL_EnableUNICODE, "SDL_FreeSurface": _SDL_FreeSurface, "SDL_GL_SetAttribute": _SDL_GL_SetAttribute, "SDL_GL_SwapBuffers": _SDL_GL_SwapBuffers, "SDL_GetMouseState": _SDL_GetMouseState, "SDL_Init": _SDL_Init, "SDL_PollEvent": _SDL_PollEvent, "SDL_PumpEvents": _SDL_PumpEvents, "SDL_SetVideoMode": _SDL_SetVideoMode, "__cxa_atexit": ___cxa_atexit, "__handle_stack_overflow": ___handle_stack_overflow, "emscripten_get_sbrk_ptr": _emscripten_get_sbrk_ptr, "emscripten_memcpy_big": _emscripten_memcpy_big, "emscripten_request_animation_frame_loop": _emscripten_request_animation_frame_loop, "emscripten_resize_heap": _emscripten_resize_heap, "environ_get": _environ_get, "environ_sizes_get": _environ_sizes_get, "exit": _exit, "fd_write": _fd_write, "get_canvas_height": get_canvas_height, "get_canvas_width": get_canvas_width, "gettimeofday": _gettimeofday, "glActiveTexture": _glActiveTexture, "glAttachShader": _glAttachShader, "glBeginTransformFeedback": _glBeginTransformFeedback, "glBindBuffer": _glBindBuffer, "glBindBufferBase": _glBindBufferBase, "glBindFramebuffer": _glBindFramebuffer, "glBindSampler": _glBindSampler, "glBindTexture": _glBindTexture, "glBindVertexArray": _glBindVertexArray, "glBlendEquationSeparate": _glBlendEquationSeparate, "glBlendFuncSeparate": _glBlendFuncSeparate, "glBlitFramebuffer": _glBlitFramebuffer, "glBufferData": _glBufferData, "glBufferSubData": _glBufferSubData, "glCheckFramebufferStatus": _glCheckFramebufferStatus, "glClear": _glClear, "glClearBufferfv": _glClearBufferfv, "glClearBufferuiv": _glClearBufferuiv, "glClearColor": _glClearColor, "glClearDepthf": _glClearDepthf, "glClearStencil": _glClearStencil, "glColorMask": _glColorMask, "glCompileShader": _glCompileShader, "glCompressedTexImage2D": _glCompressedTexImage2D, "glCreateProgram": _glCreateProgram, "glCreateShader": _glCreateShader, "glCullFace": _glCullFace, "glDeleteBuffers": _glDeleteBuffers, "glDeleteSamplers": _glDeleteSamplers, "glDeleteShader": _glDeleteShader, "glDeleteTextures": _glDeleteTextures, "glDepthFunc": _glDepthFunc, "glDepthMask": _glDepthMask, "glDepthRangef": _glDepthRangef, "glDisable": _glDisable, "glDrawArrays": _glDrawArrays, "glDrawBuffers": _glDrawBuffers, "glDrawElements": _glDrawElements, "glDrawElementsInstanced": _glDrawElementsInstanced, "glEnable": _glEnable, "glEnableVertexAttribArray": _glEnableVertexAttribArray, "glEndTransformFeedback": _glEndTransformFeedback, "glFramebufferTexture2D": _glFramebufferTexture2D, "glFramebufferTextureLayer": _glFramebufferTextureLayer, "glFrontFace": _glFrontFace, "glGenBuffers": _glGenBuffers, "glGenFramebuffers": _glGenFramebuffers, "glGenSamplers": _glGenSamplers, "glGenTextures": _glGenTextures, "glGenVertexArrays": _glGenVertexArrays, "glGenerateMipmap": _glGenerateMipmap, "glGetIntegerv": _glGetIntegerv, "glGetProgramInfoLog": _glGetProgramInfoLog, "glGetProgramiv": _glGetProgramiv, "glGetShaderInfoLog": _glGetShaderInfoLog, "glGetShaderiv": _glGetShaderiv, "glGetString": _glGetString, "glGetUniformBlockIndex": _glGetUniformBlockIndex, "glGetUniformLocation": _glGetUniformLocation, "glLinkProgram": _glLinkProgram, "glSamplerParameteri": _glSamplerParameteri, "glScissor": _glScissor, "glShaderSource": _glShaderSource, "glStencilFuncSeparate": _glStencilFuncSeparate, "glStencilMask": _glStencilMask, "glStencilOpSeparate": _glStencilOpSeparate, "glTexImage2D": _glTexImage2D, "glTexImage3D": _glTexImage3D, "glTexParameteri": _glTexParameteri, "glTexSubImage3D": _glTexSubImage3D, "glTransformFeedbackVaryings": _glTransformFeedbackVaryings, "glUniform1f": _glUniform1f, "glUniform1i": _glUniform1i, "glUniformBlockBinding": _glUniformBlockBinding, "glUseProgram": _glUseProgram, "glVertexAttribDivisor": _glVertexAttribDivisor, "glVertexAttribPointer": _glVertexAttribPointer, "glViewport": _glViewport, "memory": wasmMemory, "setTempRet0": _setTempRet0, "set_title": set_title, "table": wasmTable, "usleep": _usleep };
 var asm = createWasm();
 /** @type {function(...*):?} */
 var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__wasm_call_ctors");
