@@ -5,7 +5,7 @@ date: 2020-09-24 00:00:00
 
 If you have ever worked with OpenGL you might be familiar with [`glPolygonMode`](https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPolygonMode.xhtml). It allows you to specify `GL_LINE`, `GL_POINT` or `GL_FILL`, where fill is typically what we use to rasterise solid triangles, using lines allows us to achieve a wireframe effect. If you have ever then switched to OpenGLES (mobile or web platforms) you may have encountered `GL_LINE` being undefined and there is no way to get a wireframe fill mode.
 
-This typically isn't too much of a problem because wireframe rendering is quite a debug feature, or it could be used for some kind of stylised rendering...it just isn't that important really. It only started to affect me in one small case when I ported my engine [pmtech](https://github.com/polymonster/pmtech) to WebGL and one of the samples `physics_constraints` started exhibiting some ghastly z-fighting (ewww):
+This typically isn't too much of a problem because wireframe rendering is quite a debug feature, or it could be used for some kind of stylised rendering... it just isn't that important really. It only started to affect me in one small case when I ported my engine [pmtech](https://github.com/polymonster/pmtech) to WebGL and one of the samples `physics_constraints` started exhibiting some ghastly z-fighting (ewww):
 
 ![broken](/images/posts/wireframe/constraints-wireframe-broken.gif)
 
@@ -13,7 +13,7 @@ The sample draws some lines to show constraint hinges and points as well as show
 
 I considered removing the need for wireframe entirely by just creating some debug primitives by using line lists, but this raised some issues with my debug rendering API that stores a monolithic buffer of line lists and has no way to transform the vertices per instance by an object world matrix. I could transform each vertex by a world matrix before pushing it into the buffer, but this would take CPU cycles to perform a per vertex matrix multiply that I would rather do on the GPU... After a little bit of thought I came up with a solution that is not perfect and has some edge cases but is good enough for my use.
 
-Having a custom graphics API [abstraction layer]() offers many benefits. I have been able to make Metal and Vulkan rendering backends behave like a c-style Direct3D11 front end. With this abstraction you can do all kinds of gymnastics to make different API's behave the same as each other and give yourself high level platform agnostic code which can effortlessly target multiple platforms.
+Having a custom graphics API [abstraction layer](https://github.com/polymonster/pmtech/blob/master/core/pen/include/renderer.h) offers many benefits. I have been able to make Metal and Vulkan rendering backends behave like a c-style Direct3D11 front end. With this abstraction you can do all kinds of gymnastics to make different API's behave the same as each other and give yourself high level platform agnostic code which can effortlessly target multiple platforms.
 
 To make OpenGLES allow wireframe style draw calls the trick is to make any draw calls made with `GL_TRIANGLES` to actually draw with `GL_LINE_STRIP`. I can easily intercept this with my concept of rasteriser state:
 
