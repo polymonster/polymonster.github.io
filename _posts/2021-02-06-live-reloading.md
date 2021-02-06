@@ -119,7 +119,7 @@ void on_update(live_context* ctx)
 }
 ```
 
-The symbols for all of pmtech's engine features are inside the pmtech_editor exe, but we also want to call the same functions inside live lib. In order to do this we need to use dynamic symbol lookup to look for the symbols inside the host executable when the dynamic library is loaded at runtime. This requies different linker options depeding on your platform and compile, which I will cover next.
+The symbols for all of pmtech's engine features are inside the pmtech_editor exe, but we also want to call the same functions inside live lib. In order to do this we need to use dynamic symbol lookup to look for the symbols inside the host executable when the dynamic library is loaded at runtime. This requies different linker options depeding on your platform and compiler, which I will cover next.
 
 ## Multi Platform Support
 
@@ -145,7 +145,7 @@ I used this python script [lib2def](https://github.com/tapika/test_lib2def) whic
 "py -3 libdef.py pen.lib put.lib -o pmtech.def
 ```
 
-I added this step as a prebuild step of the live lib so it will always generate an up-to-date definition file, and finally as linker options to pass to MSVC `/DEF:pmtech.def` when building the live lib.
+I added this step as a prebuild step of the live lib so it will always generate an up-to-date definition file, when the host executable is built the def file is passed to the linker arguments `/DEF:pmtech.def`, this will generate a `.lib` file with the exported symbols which is then linked by the live lib. You don't need to create a def file and instead use `__declspec(dllexport)` on functions you want to export, but it requires annotating the code which is not necessary on other compilers.
 
 Depending on how many libs you link in you exe and which functions you want accessible from the live lib you will need to add them to the list of libs which need symbols exporting and run them through the python script.
 
