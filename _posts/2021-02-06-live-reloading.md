@@ -35,7 +35,7 @@ bool live_lib = cr_plugin_open(ctx, live_lib_path);
 cr_plugin_update(ctx);
 ```
 
-It's pretty simple to include and start using cr, but we need to build a dynamic library to open at runtime. I call this the live lib and it consists of a single function to implement for cr. I am using premake as my project generation tool and use the `SharedLibarary` project kind to create a dynamic library for either macOS, Windows or Linux:
+It's pretty simple to include and start using cr, but we need to build a dynamic library to open at runtime. I call this the live lib and it consists of a single function to implement for cr. I am using premake as my project generation tool and use the `SharedLibrary` project kind to create a dynamic library for either macOS, Windows or Linux:
 
 ```c++
 CR_EXPORT int cr_main(struct cr_plugin *ctx, enum cr_op operation)
@@ -149,7 +149,7 @@ I added this step as a prebuild step of the live lib so it will always generate 
 
 Depending on how many libs you link in your exe and which functions you want accessible from the live lib you will need to add them to the list of libs which need symbols exporting and run them through the python script.
 
-## Workflow 
+## Workflow
 
 For each platform my workflow is slightly different because I also want to debug at the same time as hot reloading, so I am using visual studio, xcode and vscode on different platforms. All of my setups these days are single screen so I split the screen to allow a debugger or text editor and the running application to sit side by side and give myself a single key stroke to rebuild the live lib:
 
