@@ -169,9 +169,9 @@ On windows I use visual studio to launch and debug the host and have a powershel
 
 This has been a huge increase in productivity for me and also it's just so easy to jump in and start experimenting with ideas. 
 
-It is not all not all plain sailing... there are sometimes issues where the reloading stops working and requires and app restart. If the host crashes because of bad code in the live lib then recovering from this means building the live lib again so it doesn't cause a crash and relaunching the host, this process can be a little disruptive while in the middle of debugging or working on something and sometimes you can introduce mutiple crashes which might take multiple failures and attempts to reload. I found Windows so far to be the most unreliable platform, it can start failing much sooner than the others, after a few reloads it can sometimes revert back to linking an older dll version.
+It is not all not all plain sailing... there are sometimes issues where the reloading stops working and requires an app restart. If the host crashes because of bad code in the live lib then recovering from this means building the live lib again so it doesn't cause a crash and relaunching the host, this process can be a little disruptive while in the middle of debugging or working on something and sometimes you can introduce mutiple crashes which might take multiple failures and attempts to reload. I found Windows so far to be the most unreliable platform, it can start failing much sooner than the others, after a few reloads it can sometimes revert back to linking an older dll version, but I haven't debugged it in great detail yet.
 
-If you want to try out [cr](https://github.com/fungos/cr) or the integration in [pmtech](https://github.com/polymonster/pmtech), click on the links to visit the repositories on GitHub.
+If you want to try out [fungos/cr](https://github.com/fungos/cr) or the integration in [pmtech](https://github.com/polymonster/pmtech), click on the links to visit the repositories on GitHub.
 
 
 
