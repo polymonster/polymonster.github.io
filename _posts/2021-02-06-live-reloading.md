@@ -9,7 +9,7 @@ It has been almost a year of living with covid-19 lockdown restrictions and duri
 
 I posted a [demo video](https://www.youtube.com/watch?v=dSLwP4D8Fd4) on youtube a while ago of it in action which can best illustrate how it can be used to quickly develop and debug algorithms and effects.
 
-I created this series of geometric animations posted on my [instagram](https://www.instagram.com/__shufb/) and archived the code from these live coding sessions [here](https://github.com/polymonster/live-coding:
+I created this series of geometric animations posted on my [instagram](https://www.instagram.com/__shufb/) and archived the code from these live coding sessions [here](https://github.com/polymonster/live-coding):
 
 I created the platonic solids in wireframe and solid from scratch in code with no reference and with mathematically precise results, just iterating and using the hot reloading to work things out:
 
