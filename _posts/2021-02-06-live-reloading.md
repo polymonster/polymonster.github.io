@@ -142,7 +142,7 @@ Windows requires the most work to get working and requires an extra build step, 
 I used this python script [lib2def](https://github.com/tapika/test_lib2def) which parses the contents of a `.lib` and extracts symbols we are interested in and creates a `.def` file with a single CLI call:
 
 ```shell
-"py -3 libdef.py pen.lib put.lib -o pmtech.def
+py -3 libdef.py pen.lib put.lib -o pmtech.def
 ```
 
 I added this step as a prebuild step of the live lib so it will always generate an up-to-date definition file, when the host executable is built the def file is passed to the linker arguments `/DEF:pmtech.def`, this will generate a `.lib` file with the exported symbols which is then linked by the live lib. You don't need to create a def file and instead use `__declspec(dllexport)` on functions you want to export, but it requires annotating the code which is not necessary on other compilers.
