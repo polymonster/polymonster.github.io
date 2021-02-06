@@ -147,7 +147,7 @@ py -3 libdef.py pen.lib put.lib -o pmtech.def
 
 I added this step as a prebuild step of the live lib so it will always generate an up-to-date definition file, when the host executable is built the def file is passed to the linker arguments `/DEF:pmtech.def`, this will generate a `.lib` file with the exported symbols which is then linked by the live lib. You don't need to create a def file and instead use `__declspec(dllexport)` on functions you want to export, but it requires annotating the code which is not necessary on other compilers.
 
-Depending on how many libs you link in you exe and which functions you want accessible from the live lib you will need to add them to the list of libs which need symbols exporting and run them through the python script.
+Depending on how many libs you link in your exe and which functions you want accessible from the live lib you will need to add them to the list of libs which need symbols exporting and run them through the python script.
 
 ## Workflow 
 
