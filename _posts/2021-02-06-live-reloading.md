@@ -3,13 +3,21 @@ title: 'Hot reloading c++ for rapid development with the help of cr'
 date: 2020-10-04 00:00:00
 ---
 
-It has been almost a year of living with covid-19 lockdown restrictions and during this period I have been productivly coding at home and having a lot of fun with hot reloadable c++ to aid rapid development and iteration. When the first lockdown measures began the first task I undertook was getting this system working, it had been on my todo list for a while but with no where to go and not much else to do I created a workflow which has been enjoyable to use for the past year and has managed to produce some decent output. I'll go through some details of how it works in this blog and show some of the things I've created so far.
+It has been almost a year of living with covid-19 lockdown restrictions and during this period I have been productivly coding at home and having a lot of fun with hot reloadable c++ to aid rapid development. When the first lockdown measures began the first task I undertook was getting this system working, it had been on my todo list for a while but with no where to go and not much else to do I created a workflow which has been enjoyable to use for the past year and has managed to produce some decent output. I'll go through some details of how it works in this blog and show some of the things I've created so far.
 
-I posted a video on youtube a while ago of it in action which can best illustrate how it can be used to develop and debug algorithms quickly, the code is integrated into my game engine pmtech and available on GitHub.
+## Some Examples s
 
-## Integrating cr 
+I posted a [demo video]() on youtube a while ago of it in action which can best illustrate how it can be used to develop and debug algorithms quickly.
 
-I can't take all the credit for this, the main component here is cr, this header only library is easy to integrate and handles the hot reloading for us, all we have to do is build a host executable which is called pmtech_editor, it intialises cr and calls an update each frame:
+I created this series of geometric animations for my instagram and archived the code from these live coding sessions here:
+
+Next I created the platonic solids from scratch in code with no reference:
+
+And currently I am working on some procedural city generation, for which hot relaoding has been really useful in debugging the many edge cases I am encountering:
+
+## Integrating CR
+
+I can't take all the credit for this, the main component here is [cr](), this header only library is easy to integrate and handles the hot reloading for us, all we have to do is build a host executable which is called pmtech_editor in my case, it intialises cr and calls an update each frame:
 
 ```c++
 #define CR_HOST // required in the host only and before including cr.h
@@ -48,7 +56,7 @@ CR_EXPORT int cr_main(struct cr_plugin *ctx, enum cr_op operation)
 ```
 The `on_load` function gets called each time we re-compile and reload live_lib and the update gets called each frame. That is all there is to it for a basic program setup, going beyond this starts to introduce some more engine specific details and the requirement for some additional build settings which are different depending on which platform you want to use.
 
-## Engine specific details
+## Engine Specific Details
 
 In the `cr_main` function I pass a live_context object which contains some pointers to systems of the game engine. The main one to focus on here is `ecs_scene` this is a container for a data-oriented entity component system, in the live_lib I can create entities in the `on_load` function and then manipulate and animate them inside the `on_update` function. The cr docs recommend to make as thin as possible host application but pmtech_editor is a faily large application it intialises all the rendering backend and handles window creation so when we reload live_lib those things remain persistent. There is also a core entity component system update which applies transforms, updates bounding volumes and makes draw calls driven by a config driven render system. This allows the live_lib to simply add things to the ecs:
 
@@ -93,8 +101,7 @@ void on_update(live_context* ctx)
 
 The symbols for all of pmtechs engine features are inside the pmtech_editor exe, but we also want to use them inside live_lib in order to do this we need to use dynamic symbol lookup which has some slight differences on each platform which I will cover next.
 
-
-## Multi platform support
+## Multi Platform Support
 
 I enjoy jumping around on different platforms and machines and also ensuring things work accross multiple platforms in as seamless and consistent way possible. For some it may be tedious but for my job I have had to support many different platforms and it has become second nature to me now. I have successfully got cr working with pmtech on Windows, macOS and Linux and have used it for extended periods on each of these platforms I will detail the steps required for each, as mentioned before I use premake to generate my project files so it is a simple as setting the poroject kind to `SharedLibrary` and supplying some linker flags. The live_lib project is setup to have include paths to be the same as the host executable pmtech but it has no libraries linked to it because we will dynamically link at run time.
 
@@ -118,7 +125,7 @@ I used this python script lib2def which parses the contents of a `.lib` and extr
 
 I added this step as a prebuild command to building the live_lib so it will always generate an up-to-date definition file, and finally as linker options to pass to MSVC `/DEF:pmtech.def`:
 
-### Workflow 
+## Workflow 
 
 For each platform my workflow is slightly different because I also want to debug at the same time as hot reloading, so I am using visual studio, xcode and vscode on different platforms. All of my setups these days are single screen so I split the screen to allow a debugger or text editor and the running application side by side:
 
@@ -128,7 +135,7 @@ On macOS I use xcode to debug and launch the host executable
 
 On windows I use visual studio to launch and debug the host and have a powershell prompt to build the live_lib.
 
-### Final Thoughts
+## Final Thoughts
 
 This has been a huge increase in productivity for me and also it's just so easy to jump and start experimenting ideas, it's not all plain sailing... there are sometimes issues where the reloading stops working and requires and app restart. If the host crashes because of bad code in the live_lib then recovering from this means building the live_lib again which doesnt crash and rebuilding the host so can sometimes get a bit fiddly. I found Windows so far to be the most unreliable, it can start failing much sooner than the others, after a few reloads it seems to revert back to an older dll version, I have also seen what looked like the on_update and on_load had been loaded from different dlls. I havent debugged these issues much yet but I will take a look at improving it.
 
