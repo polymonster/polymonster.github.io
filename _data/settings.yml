@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Alex Dixon
-  site_tagline: Welcome to my programming blog and portfolio, I have worked in gamedev for over 10 years and I am currently lead programmer at Flavourworks. I enjoy shuffling bytes and swizzling vectors...   
+  site_tagline: Welcome to my programming blog and portfolio, I have worked in gamedev for over 10 years and I am currently principal programmer at Flavourworks. I enjoy shuffling bytes and swizzling vectors...   
   favicon_image: /images/favicon.png
 
 header_settings:
