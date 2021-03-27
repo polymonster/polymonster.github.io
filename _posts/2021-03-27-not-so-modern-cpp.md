@@ -67,7 +67,7 @@ void translate_soa(vec3f offset)
 }
 ```
 
-Here we have a structure of arrays, the `pos`, `rot` and `scale` components are separate arrays. Because the translate_soa function only uses the `pos` array we don't need to pollute our caches with `rot` and `scale` as we do in the aos version because of the data layout. But in addition to making sure we use our cache efficiently we also want to have low overhead when applying the offset to pos, with c++ the tendency might be to use `std::vector` instead of dynamic memory for the soa components but the cost of `std::vector::operator[]` is more expensive in debug, and iterating with a raw pointer [is faster](https://www.asawicki.info/news_1691_efficient_way_of_using_stdvector) I'm not saying don't use stl, it just has some performance caveats to be aware of. These details are important if you want to have millions of entities.
+Here we have a structure of arrays, the `pos`, `rot` and `scale` components are separate arrays. Because the `translate_soa` function only uses the `pos` array we don't need to pollute our caches with `rot` and `scale` as we do in the aos version because of the data layout. But in addition to making sure we use our cache efficiently we also want to have low overhead when applying the offset to pos, with c++ the tendency might be to use `std::vector` instead of dynamic memory for the soa components but the cost of `std::vector::operator[]` is more expensive in debug and iterating with a raw pointer [is faster](https://www.asawicki.info/news_1691_efficient_way_of_using_stdvector). I'm not saying don't use stl, it just has some performance caveats to be aware of, these details are important if you want to have millions of entities.
 
 ## Pure(ish) free functions
 
@@ -110,11 +110,11 @@ void update_camera(camera* cam, const mat4& view, const mat4 proj)
 }
 ```
 
-Because the cam argument is a `mutable reference argument` it fails to satisfy the second requirement of a pure function. However this style of function with all arguments passed to the function can still be a useful tool. They are easy to follow and at a glance when paired with const correctness you can quickly see what arguments may be mutated and what arguments are const.
+Because `cam` is a `mutable reference argument` it fails to satisfy the second requirement of a pure function. However this style of function with all arguments passed to the function can still be a useful tool. They are easy to follow and at a glance when paired with const correctness you can quickly see what arguments may be mutated and what arguments are const.
 
 If I receive a pull request with pure or pure-ish functions it's much easier to reason about and I can see exactly what is going on, I feel more confident approving these just because its nice and encapsulated. They also make testing, optimisation and refactoring easier because the everything is self contained in the function.
 
-The problem is that with pure free functions we don't have a way to guarantee we haven't mutated any global or static state when we call a function (static analysis can help). We have these functions we call pure but someone at anytime could just come along and add a static variable and break the contract. But as I previously mentioned I tend to live on the edge and if I and the team say these functions are pure we know that respect it and rely on that and trust each other.
+The problem is that with pure free functions we don't have a way to guarantee we haven't mutated any global or static state when we call a function (static analysis can help). We have these functions we call pure but someone at anytime could just come along and add a static variable and break the contract. But as I previously mentioned I tend to live on the edge and if I and the team say these functions are pure, we maintain that and respect it.
 
 ## Hidden Implementations  
 
