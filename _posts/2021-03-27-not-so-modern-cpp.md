@@ -137,11 +137,11 @@ When working on multi-platform code we may want a unified header for all platfor
 
 ### Ditch 'Single Header Library'
 
-The single header only c++ library is a common pattern these days and it is useful, I use libraries which employ this approach but do not write my own code in this style It is not really what I like to see in a production environment that you have more control over. 
+The single header only c++ library is a common pattern these days and it is useful, I use libraries which employ this approach but do not write my own code in this style. It is not really what I like to see in a production environment that you have more control over. 
 
 Some header may contain a macOS, Windows and Linux implementation in a single file separated by `#ifdef`'s but for some projects you may need to support many more platforms and I think that the complexity and size of the libraries warrant more consideration.
 
-Large files with a lot of preprocessor macros for porting can quickly escalate, if you have multiple compile time branches in the file they sometimes can become hard to spot and your file is polluted with many platforms you may not currently be focusing on.
+Large files with a lot of preprocessor macros for porting can quickly escalate, if you have multiple compile time branches in the file they can sometimes become hard to spot and your file is polluted with many platforms you may not currently be focusing on.
 
 For this reason I find separating interface and implementation with a header file containing an opaque interface and cpp files containing the implementation separated per platform. There are a couple of approaches I like to use for this:
 
@@ -178,7 +178,7 @@ void direct::renderer_set_index_buffer(u32 buffer_index, u32 format, u32 offset)
 
 ```
 
-In the cpp files I use anonymous namespaces or static to keep as much code as possible accessible inside that single compilation unit only. I try minimising the use of `#ifdef`, having per platform implementation cpp files helps a lot here. Sometimes you may have multiple platforms or sub-platforms such as GLES inside an openGL implementation where having another cpp file might seem like overkill. I try here to keep preprocessor macros at the top of the cpp file and minimise the amount of interleaved code and pre-processor macros where possible, sometimes you need a big old `#ifdef` in there but minimising them can help code readability a lot.
+In the cpp files I use anonymous namespaces or static to keep as much code as possible accessible inside a single compilation unit only. I try minimising the use of `#ifdef`, having per platform implementation cpp files helps a lot here. Sometimes you may have multiple platforms or sub-platforms such as GLES inside an openGL implementation where having another cpp file might seem like overkill. I try to keep preprocessor macros at the top of the cpp file and minimise the amount of interleaved code with pre-processor macros where possible. Sometimes you need a big old `#ifdef` in there but minimising them can help code readability a lot.
 
 The previous example uses an opaque `u32` for resource types (`buffer_index`) which are looked up inside `_res_pool` this system isn't very strongly typed and it's not an approach I have stuck with. Instead now I would suggest something a bit more "c++" for a graphics API abstraction layer:
 
@@ -238,9 +238,9 @@ Where `Shader`, `Buffer` and `Textures` opaque types and can be cast to the inte
 
 ## Async API's
 
-When porting or helping to optimise projects sometimes you have a codebase which is struggling on a single CPU core and there are idle CPU cores on your hardware doing nothing. Lets multi-thread something! easy! well, sometimes it can be and there may be low-hanging fruit but sometimes it can be hard to find stuff that can be run async when a code base has been heavily designed around serial execution.
+When porting or helping to optimise projects sometimes you have a codebase which is struggling on a single CPU core and there are idle CPU cores on your hardware doing nothing. Lets multi-thread something! easy! well, sometimes it can be and there may be low-hanging fruit but sometimes it can be hard to find stuff that can be ran async when a code base has been heavily designed around serial execution.
 
-I first used this approach to async openGL CPU driver overhead onto another thread but have since used it in many places. You can write something to code generate you the boiler plate. I'll do a quick example using the procedural API of the renderer in [pmtech](https://github.com/polymonster/pmtech). It uses the ring buffer data structure I previously mentioned in my stripped down data structures.
+I first used this approach to async openGL CPU driver overhead onto another thread but have since used it in many places. You can write something to code generate the boiler plate for you. I'll do a quick example using the procedural API of the renderer in [pmtech](https://github.com/polymonster/pmtech). It uses the ring buffer data structure I previously mentioned in my stripped down data structures which is lockless and implemented using `std::atomic`.
 
 ```c++
 // render commands we want to store and defer to another thread
@@ -306,13 +306,13 @@ void direct::renderer_set_index_buffer(u32 buffer_index, u32 format, u32 offset)
 }
 ```
 
-This approach is more geared towards older CPU's with a few cores but it can be applied to many API's, if you need to read data back from the API you can buffer results into a double or triple buffer and read them at a safe time swapping the buffer each frame as long as you OK with a frames latency or so.
+This approach is more geared towards older CPU's with a few cores but it can be applied to many API's to stick them on a background thread. If you need to read data back from the API you can buffer results into a double or triple buffer and read them at a safe time, swapping the buffer each frame as long as you're OK with a frames latency or so.
 
 ## Code Generation
 
-With template meta-programming you can do some crazy and cool things for sure and once you start it can be seductive like a jedi being drawn to the dark side...  Code generation using external processes has yielded good results and allowed me to do things not possible with templates and resulted in simpler code.
+With template meta-programming you can do some crazy and cool things for sure and once you start it can be seductive like a jedi being drawn to the dark side...  Code generation using external processes has yielded good results, allowed me to do things not possible with templates and resulted in simpler code.
 
-I made this [python library](https://github.com/polymonster/cgu) which can parse and breakdown c-style languages to provide information about structures and functions, listing member variables, functions and arguments. Not quite as in depth as clangs AST but from a c structure declaration I have written tools which automatically generate c++ to json and back again serialisation and an automatic ImGui property browser. This tool called `serj` taking inspiration from the amazing `serde` in rust. `serj` is not open source but I can show a quick example:
+I made this [python library](https://github.com/polymonster/cgu) which can parse and breakdown c-style languages to provide information about structures and functions. Not quite as in depth as clangs AST but from a c structure declaration I have written tools which automatically generate c++ to json and back again serialisation code and an automatic ImGui property browser. This tool is called `serj` taking inspiration from the amazing `serde` in rust. `serj` is not open source but I can show a quick example:
 
 ```c++
 // declarations
@@ -426,4 +426,4 @@ void func()
 
 ## That's it
 
-Just a few examples here, to be honest sometimes I just need loops and ALU ops, pointers and pointer arithmetic... having to add more code and layers of abstraction comes at a cost and I try and keep this as bare-metal as possible certainly for performance critical code. I start to use more generic programming techniques where the benefits of extendability, code re-use and ease of use work for me. In tools and build pipelines I am more inclined to worry less about performance focus on usability but also in the main update I like to keep my ear to the ground.
+Just a few examples here, to be honest sometimes I just need loops and ALU ops, pointers and pointer arithmetic... having to add more code and layers of abstraction comes at a cost and I try and keep this as bare-metal as possible... certainly for performance critical code. I start to use more generic programming techniques where the benefits of extendability, code re-use and ease of use work for me. In tools and build pipelines I am more inclined to worry less about performance focus on usability but also in the main update I like to keep my ear to the ground.
