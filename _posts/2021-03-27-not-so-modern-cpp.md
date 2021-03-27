@@ -30,7 +30,7 @@ If we go by the object oriented book and use c++ we could do something like this
 ```c++
 class entity
 {
-private:
+public:
     vec3f pos;
     vec3f scale;
     quat  rot;
@@ -263,7 +263,7 @@ struct renderer_cmd
 };
 static ring_buffer<renderer_cmd> cmd_buffer;
 
-// allow running in single or multithreaded (useful for debugging)
+// allow running in single or multi-threaded (useful for debugging)
 #if PEN_SINGLE_THREADED
 #define add_cmd(cmd) exec_cmd(cmd)
 #else
