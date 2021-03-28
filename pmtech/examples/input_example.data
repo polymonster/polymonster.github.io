@@ -14380,7 +14380,7 @@
         "build/web/data/configs/sss_demo.jsn": [
             {
                 "name": "/Users/alex.dixon/dev/pmtech/examples/assets/configs/sss_demo.jsn",
-                "timestamp": 1608572066.9968033,
+                "timestamp": 1616954149.1418424,
                 "data_file": "data/configs/sss_demo.jsn"
             }
         ]
@@ -33516,6 +33516,7 @@ void main()
         col += sample_texture(src_texture_0, (tc + offset)).rgb * sss_kernel[i].rgb;
     }
     _output.colour.rgb = col;
+    _output.colour.a = 1.0;
     //assign glsl global outputs from structs
     colour_ps_output = _output.colour;
 }
@@ -34675,7 +34676,7 @@ void main()
         },
         {
             "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/shaders/post_process.pmfx",
-            "timestamp": 1608572067.1992607
+            "timestamp": 1616954427.6585827
         },
         {
             "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/shaders/libs/globals.pmfx",
@@ -40878,6 +40879,7 @@ void main()
         );
     }
     _output.colour.rgb = lit_colour;
+    _output.colour.a = albedo.a;
     //assign glsl global outputs from structs
     colour_ps_output = _output.colour;
 }
@@ -44493,6 +44495,7 @@ void main()
         );
     }
     _output.colour.rgb = lit_colour;
+    _output.colour.a = albedo.a;
     //assign glsl global outputs from structs
     colour_ps_output = _output.colour;
 }
@@ -58685,7 +58688,7 @@ void main()
         },
         {
             "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/shaders/forward_render.pmfx",
-            "timestamp": 1608721556.2862499
+            "timestamp": 1616954107.959074
         },
         {
             "name": "/Users/alex.dixon/dev/pmtech/examples/../assets/shaders/libs/lighting.pmfx",
@@ -88547,6 +88550,7 @@ void main()
         );
     }
     _output.colour.rgb = lit_colour;
+    _output.colour.a = albedo.a;
     //assign glsl global outputs from structs
     colour_ps_output = _output.colour;
 }
@@ -89174,6 +89178,7 @@ void main()
         );
     }
     _output.colour.rgb = lit_colour;
+    _output.colour.a = albedo.a;
     //assign glsl global outputs from structs
     colour_ps_output = _output.colour;
 }
