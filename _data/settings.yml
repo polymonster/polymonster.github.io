@@ -36,7 +36,7 @@ social_settings:
   github_url: 'https://github.com/polymonster'
   linkedin_url: 'https://www.linkedin.com/in/alexdixon1611/'
   envelope_fas: 'mailto:alexandercdixon@gmail.com'
-  rss_fas: 'feed:https://polymonster.github.io'
+  rss_fas: 'https://polymonster.github.io/feed'
 
 color_settings:
   background_color: '#ffffff'
