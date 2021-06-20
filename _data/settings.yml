@@ -35,6 +35,8 @@ social_settings:
   youtube_url: 'https://www.youtube.com/channel/UCQRmui5w4Urz-h4P9CL7rmA'
   github_url: 'https://github.com/polymonster'
   linkedin_url: 'https://www.linkedin.com/in/alexdixon1611/'
+  envelope_fas: 'mailto:alexandercdixon@gmail.com'
+  rss_fas: 'https://polymonster.github.io/feed'
 
 color_settings:
   background_color: '#ffffff'
