@@ -1,7 +1,7 @@
 ---
 title: 'Archive'
 subtitle: 'Older projects from 2004-2013'
-date: 2020-09-13 00:00:59
+date: 2020-09-24 00:00:00
 featured_image: '/images/archive/deferred-rendering.gif'
 ---
 
@@ -9,7 +9,7 @@ A collection of older projects from 2004-2013, some work was completed during my
 
 ### Radiosity (2010)
 
-An implementation of radiosity rendering algorithm, light sources are rendered emissively and other surfaces recieve incoming light by rendering hemi-cube maps per texel on the scenes surfaces from unwrapped UV's. The hemi cubes are downsampled and average to give per texel incoming radiance this process is repeated multiple times to achieve multiple light bounces.
+An implementation of radiosity rendering algorithm, light sources are rendered emissively and other surfaces recieve incoming light by rendering hemi-cube maps per texel on the scenes surfaces from unwrapped UV's. The hemi-cubes are downsampled and average to give per texel incoming radiance this process is repeated multiple times to achieve multiple light bounces.
 
 <img src="/images/archive/radiosity.gif">
 

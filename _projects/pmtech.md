@@ -2,7 +2,7 @@
 title: 'pmtech'
 subtitle: 'Lightweight, multi-platform, data-oriented game engine.'
 description: Lightweight, multi-platform, data-oriented game engine.
-date: 2020-09-14 00:01:00
+date: 2020-09-30 00:00:00
 featured_image: '/images/pmtech/gifs/dr_scientist.gif'
 ---
 

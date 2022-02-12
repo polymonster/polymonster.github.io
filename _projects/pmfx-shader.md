@@ -1,7 +1,7 @@
 ---
 title: 'pmfx-shader'
 subtitle: 'Cross platform shader system.'
-date: 2020-09-14 00:00:58
+date: 2020-09-28 00:00:00
 featured_image: '/images/pmfx/pmfx.png'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'Shadertoy'
 subtitle: 'Shader experiments and prototypes.'
-date: 2020-09-14 00:00:56
+date: 2020-09-23 00:00:51
 featured_image: '/images/site/shadertoy.gif'
 ---
 

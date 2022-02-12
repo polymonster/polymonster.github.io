@@ -1,7 +1,7 @@
 ---
 title: 'maths'
 subtitle: 'Linear algebra library for c++.'
-date: 2020-09-14 00:00:59
+date: 2020-09-29 00:00:00
 featured_image: '/images/pmtech/gifs/maths-functions.gif'
 ---
 
@@ -15,12 +15,12 @@ It's most interesting feature is probably the vector swizzling, it uses c++11's 
 vec4f swizz = v.wzyx;       // construct from swizzle
 swizz = v.xxxx;             // assign from swizzle
 swizz.wyxz = v.xxyy;        // assign swizzle to swizzle
-vec2f v2 = swizz.yz;        // contstruct truncated
+vec2f v2 = swizz.yz;        // construct truncated
 swizz.wx = v.xy;            // assign truncated
 swizz.xyz *= swizz2.www;    // arithmetic on swizzles
-vec2 v2 = swizz.xy * 2.0f;  // swizzle / scalar arithmentic
+vec2 v2 = swizz.xy * 2.0f;  // swizzle / scalar arithmetic
 
-// sometimes you may need to cast from swizzle to vec if c++ cant apply implict casts
+// sometimes you may need to cast from swizzle to vec if c++ cant apply implicit casts
 f32 dp = dot((vec2f)swizz.xz, (vec2f)swizz.yy):
 ```
 
