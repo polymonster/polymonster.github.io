@@ -9,8 +9,7 @@ After finishing work for the Christmas break, on my first day off I wrote a new 
 
 I thought modern C++ would be a good starting point, I was going to go all in with C++20 and so I started to think about engine features I wanted, but almost immediately I got stuck in my tracks and wasn’t sure what to do. My first sticking point was with serialisation, JSON and more specifically reflection. In the engine I have developed at work we have this code generator tool called `serj`, lovingly named after the excellent [Serde](https://serde.rs) for Rust. It can generate automatic C++ to JSON serialisation and deserialisation code, as well as ImGui property browsers and other “Mad Scientist” features like swizzling SoA to AoS for serialising data-oriented component arrays. It’s a really useful tool, but It was developed for work so I felt like it wouldn’t be appropriate to use this code (and make it open source). If I were to implement something similar from scratch, it would end up being the same or similar to `serj` so I felt like this option was off the table. I looked into C++ Reflection which is still not widely available and other approaches to reflection require macros and other boilerplate code which I wasn’t keen on. I evaluated quite a lot of ideas and I spent a good few days thinking about it. The [circle](https://www.circle-lang.org) compiler has some crazily good looking features but is Linux only which is prohibitive for me as I want something cross platform.
 
-I’ve spent the past 20 years building C++ game engines. So why start making another one? Well, to focus on modern graphics and have a clean slate was one reason, but learning another programming language in the process might broaden my horizons even further and give me opportunity to learn a lot more.
-
+I’ve spent the past 20 years building C++ game engines. So why start making another one? Well, to focus on modern graphics and have a clean slate was one reason, but learning another programming language in the process might broaden my horizons even further and give me opportunity to learn a lot more. So I decided since I so desperately wanted the serialisation support that serde provided in Rust, why not just use Rust instead of C++?
 
 ## Why Build Your Own Tech?
 
@@ -22,16 +21,22 @@ There have however, been positive and encouraging articles on the subject of bui
 
 During my first industry job I worked at Juice Games which was owned by THQ, THQ were struggling and making redundancies and Juice was struggling to get projects green-lit. In my day job I was working on core tech and tools, and at home I was working on a deferred renderer (back in the days when this was cutting edge games tech). Some people at work had seen what I was working on and I got asked to investigate indoor lighting for [Warhammer 40k KillTeam](https://www.youtube.com/watch?v=SyHCNdvTTtI) as the engine at the time only supported single directional outdoor lighting. I didn’t implement a deferred renderer in this instance, I was young and not confident enough to stick my neck out and pull it off on PS3 and Xbox 360. At this point there were no games I was aware of that had shipped deferred, but I did implement a forward renderer with per-object light selection, baked lightmaps and SH probes which gave us enough lights to play with. I wasn’t confident switching the deferred renderer but my development of lighting algorithms and understanding I gained in my work at home essentially kept me a job and got me my first credit on a game for still something I am very proud of.
 
-## Design Goals
+### Design Goals
 
-With this new project, albeit for fun and for learning, there are still goals and reasons behind building something new from scratch. There is also an opportunity to learn from past mistakes. In pmtech, as any code base which is a few years old, there are inevitably things that could be improved upon. An example is the multi-threading model, pmtech has a single dedicated render thread which comes from a time of machines with fewer cores.
+With this new project, albeit for fun and for learning, there are still goals and reasons behind building something new from scratch. There is also an opportunity to learn from past mistakes. In pmtech, as any code base which is a few years old, there are inevitably things that could be improved upon. An example is the multi-threading model, pmtech has a single dedicated render thread which comes from a time of machines with fewer cores. So here is a rough outline of what I want to get out of this project:
 
-- I want a graphics engine I can play around in, exploring modern graphics techniques with easy access to cool features that make development rapid and fun.
-- I have a lot of these features already in pmtech, so it’s a case of bringing some of those along with me (hot-reloading for code, shaders and render configs).
-- Focus on modern rendering: Ditch the Direct3D11 style binding model, utilise GPU driven rendering via draw indirect, and utilise new features such as ray tracing (If I can get a GPU which supports it).
-- Multi-threaded / Fibre based: I want to build this new engine with more cores in mind, any thread can build command buffers and command buffers can be executed in order at the end of the frame based on a dependency render graph.
+- An easy to use cross platform graphics/compute/os api for rapid development.
+- Hot reloadable, live coding environment (shaders, render graphs, code).
+- Concise low level graphics api... think somewhere in-between Metal and Direct3D12.
+- High level data driven graphics api for ease of and speed.
+- A focus on modern rendering examples (gpu-driven, multi-threaded, bindless, ray-tracing).
+- Flexibility to easily create and use different rendering strategies (deferred vs forward, gpu-driven vs cpu driven, etc).
+- Hardware accellerated video decoding.
+- Fibre based, multi-threaded, easily scalable to utilise available cpu and gpu.
+- Data-driven and configurable.
+- Plugin based and extendible...
 
-## Back To Basics
+### Back To Basics
 
 I started the engine focusing on Direct3D12 and Win32 through [windows-rs](https://github.com/microsoft/windows-rs). This was really easy to get up and running, being familiar with Direct3D and Win32 it really is one of the things that made me start this project. I know there are many FFI bindings around but knowing Microsoft was actively developing it and supporting it gave me confidence to start.
 
@@ -41,6 +46,6 @@ At first it was a little frustrating because I was trying to do things that come
 
 After a week or so I was fully on board and was surprised at how much of my coding style had changed and how I naturally just started doing things I would not normally do. I began with a more granular TDD style approach because `cargo test` just makes adding tests so easy; it is already there and ready to use, you don’t have to make any decisions about which testing framework to use, the default one is just great. The same goes for `cargo fmt` and `cargo doc`. I will be honest and say that code documentation is not one of my favourite things… I have seen and worked with codebases with stale documentation, attempts to switch documentation generators and abandoned ideas and I'm not saying this is acceptable, but the barrier for entry with `cargo doc` is just amazing. Because your docs look the same as the official docs it just made me actually want to keep things up-to-date and to get good coverage. This is a really good thing in my opinion, Rust is making me want to do things the right way and to uphold good software development practises.
 
-## Up Next
+### Up Next
 
 I’ll post some more articles about my progress on the engine and go into more detail about Rust and the [gfx](https://github.com/polymonster/hotline/blob/master/src/gfx.rs) API I have been working on. The repository is already public on [GitHub](https://github.com/polymonster/hotline) to take a look, or keep an eye on over time… Follow me on Twitter or GitHub if you are interested to see where this goes. I have been having so much fun so far and I have a good feeling about this.
