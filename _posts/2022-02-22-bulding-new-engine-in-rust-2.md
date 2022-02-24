@@ -1,6 +1,6 @@
 ---
-title: 'Building a new graphics engine in Rust - Part 2: Graphics API frontend, Direct3D12 and some initial thoughts about Rust'
-date: 2022-02-22 21:40:00
+title: 'Building a new graphics engine in Rust - Part 2'
+date: 2022-02-24 21:40:00
 ---
 
 In my previous [post](https://www.polymonster.co.uk/blog/bulding-new-engine-in-rust) I gave a high level overview of a new graphics engine project I was undertaking. I have been working quite consistently since then in the evenings and at weekends fleshing out a graphics API frontend called `hotline::gfx::` and the first graphics backend `hotline::gfx::direct3d12` implemented with the assistance of [windows-rs](https://github.com/microsoft/windows-rs). 
