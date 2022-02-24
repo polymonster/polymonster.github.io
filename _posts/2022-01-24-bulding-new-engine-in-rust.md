@@ -11,17 +11,17 @@ I thought modern C++ would be a good starting point, I was going to go all in wi
 
 I’ve spent the past 20 years building C++ game engines. So why start making another one? Well, to focus on modern graphics and have a clean slate was one reason, but learning another programming language in the process might broaden my horizons even further and give me opportunity to learn a lot more. So I decided since I so desperately wanted the serialisation support that serde provided in Rust, why not just use Rust instead of C++?
 
-## Why Build Your Own Tech?
+## Why build your own tech?
 
 This is a polarising topic and I have already been shredded on HN before for making a similar data format to JSON5 called [jsn](https://github.com/polymonster/jsn) with some tweaks and improvements that I find useful. People shoot you down with “Not invented here” syndrome and all that, so it seems pointless making anything new if you listen to them. If you try and compete with the likes of Unity and Unreal it can feel futile, [@longbool](https://twitter.com/longbool) [discussed](https://alextardif.com/Unreal.html) the perceived inevitability of Unreal.
 
 There have however, been positive and encouraging articles on the subject of building your own tech. [@TylerGlaiel](https://twitter.com/TylerGlaiel) wrote a [nice article](https://medium.com/geekculture/how-to-make-your-own-game-engine-and-why-ddf0acbc5f3) on how to build your own tech and why and [@longbool](https://alextardif.com/LearningGraphics.html) again with some advice for people to find a way into graphics in the modern landscape. I would like to encourage people to just build something for the pure love of it…  I am building my own tech and always will be. I choose to work on something for fun, to learn, just for sheer joy! I am ‘throwing’ away 5 years of work on a C++/Direct3D11 engine and starting again in Rust/Direct3D12 from nothing, but it’s the experience gained from previous work that will help make the next project better, so it’s not wasted; it’s part of the journey. Just like a buddhist monk wiping away complex [sand mandala](https://en.wikipedia.org/wiki/Sand_mandala) patterns after completion, not everything has to last, not everything has to be ground breaking or innovative, I am just trying to really absorb as much as I can and enjoy the process.
 
-### A Quick Story
+### A quick story
 
 During my first industry job I worked at Juice Games which was owned by THQ, THQ were struggling and making redundancies and Juice was struggling to get projects green-lit. In my day job I was working on core tech and tools, and at home I was working on a deferred renderer (back in the days when this was cutting edge games tech). Some people at work had seen what I was working on and I got asked to investigate indoor lighting for [Warhammer 40k KillTeam](https://www.youtube.com/watch?v=SyHCNdvTTtI) as the engine at the time only supported single directional outdoor lighting. I didn’t implement a deferred renderer in this instance, I was young and not confident enough to stick my neck out and pull it off on PS3 and Xbox 360. At this point there were no games I was aware of that had shipped deferred, but I did implement a forward renderer with per-object light selection, baked lightmaps and SH probes which gave us enough lights to play with. I wasn’t confident switching the deferred renderer but my development of lighting algorithms and understanding I gained in my work at home essentially kept me a job and got me my first credit on a game for still something I am very proud of.
 
-### Design Goals
+### Design goals
 
 With this new project, albeit for fun and for learning, there are still goals and reasons behind building something new from scratch. There is also an opportunity to learn from past mistakes. In pmtech, as any code base which is a few years old, there are inevitably things that could be improved upon. An example is the multi-threading model, pmtech has a single dedicated render thread which comes from a time of machines with fewer cores. So here is a rough outline of what I want to get out of this project:
 
@@ -36,7 +36,7 @@ With this new project, albeit for fun and for learning, there are still goals an
 - Data-driven and configurable.
 - Plugin based and extendible...
 
-### Back To Basics
+### Back to basics
 
 I started the engine focusing on Direct3D12 and Win32 through [windows-rs](https://github.com/microsoft/windows-rs). This was really easy to get up and running, being familiar with Direct3D and Win32 it really is one of the things that made me start this project. I know there are many FFI bindings around but knowing Microsoft was actively developing it and supporting it gave me confidence to start.
 
@@ -46,6 +46,6 @@ At first it was a little frustrating because I was trying to do things that come
 
 After a week or so I was fully on board and was surprised at how much of my coding style had changed and how I naturally just started doing things I would not normally do. I began with a more granular TDD style approach because `cargo test` just makes adding tests so easy; it is already there and ready to use, you don’t have to make any decisions about which testing framework to use, the default one is just great. The same goes for `cargo fmt` and `cargo doc`. I will be honest and say that code documentation is not one of my favourite things… I have seen and worked with codebases with stale documentation, attempts to switch documentation generators and abandoned ideas and I'm not saying this is acceptable, but the barrier for entry with `cargo doc` is just amazing. Because your docs look the same as the official docs it just made me actually want to keep things up-to-date and to get good coverage. This is a really good thing in my opinion, Rust is making me want to do things the right way and to uphold good software development practises.
 
-### Up Next
+### Up next
 
 I’ll post some more articles about my progress on the engine and go into more detail about Rust and the [gfx](https://github.com/polymonster/hotline/blob/master/src/gfx.rs) API I have been working on. The repository is already public on [GitHub](https://github.com/polymonster/hotline) to take a look, or keep an eye on over time… Follow me on Twitter or GitHub if you are interested to see where this goes. I have been having so much fun so far and I have a good feeling about this.

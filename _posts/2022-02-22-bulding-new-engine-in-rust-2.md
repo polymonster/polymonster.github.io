@@ -13,7 +13,7 @@ This is my first time writing a bindless graphics API so there are a few new con
 
 I suppose an important thing to note at this time is that the `gfx::` interface is supposed to be fairly low level, so I want to be able to expose as much of the underlying graphics APIs as possible but make it a little bit more user friendly and tailor it to my needs. I also intend on making a higher level interface that will abstract away the lower level details and provide a lightweight and simple way to rapidly iterate and develop graphics algorithms. I have something similar in my C++ engine. A data config system is used to build `views` and is quite powerful, where you can write config files like [this](https://github.com/polymonster/pmtech/blob/master/assets/configs/common.jsn), share and reuse setup code, and rely on default values to minimise the amount of code. I want to retain this sort of functionality, but take it even further and I want to ensure the low level interface is as lean and direct as possible.
  
-## API Overview
+## API overview
 
 I have published the [docs](https://polymonster.github.io/hotline/hotline/gfx/index.html) already so you can get an overview of how `gfx::` looks, thanks again `cargo doc` for making me add extra comments to make the documentation read nicely. For graphics coders everything should already make sense, but the extra details you can add in documentation are useful to clarify usage. Here is a rundown of how to use the interface:
 
@@ -204,7 +204,7 @@ pub fn begin_event_on_command_list(&self, command_list: ID3D12GraphicsCommandLis
 }
 ```
 
-## Dangling Pointers
+## Dangling pointers
 
 Most of the Direct3D12 calls required are `unsafe` so I was taking care to think about what unsafe code was doing. I let my guard down when filling out the input layout structure. At first when I ran the code everything compiled and ran totally fine. It was only until running tests I would experience intermittent crashes in the test code. I was unable to reproduce the issue in debug or release builds, but it happened fairly consistently when running tests. Eventually I discovered that I could debug the test executable and the Direct3D12 validation layer made it clear what the issue was. The semantic names supplied to the `D3D12_INPUT_ELEMENT_DESC` seemed to be garbage memory. I swept over the code and noticed a glaring mistake:
 
@@ -317,7 +317,7 @@ match &info.ds_clear {
 }
 ```
 
-## Next Steps
+## Next steps
 
 I have started to investigate implementing an [imgui-sys](https://github.com/imgui-rs/imgui-rs/tree/main/imgui-sys) rendering and platform backend using hotlines `os::` and `gfx::` API. I really want to have support for multiple “viewports”. Once I’m done with that I will be making some more tests and sample applications, isolating graphics API features and making them nice and clean and understandable for anyone who wants to use it, as by that time I think the API will be locked down.
 
