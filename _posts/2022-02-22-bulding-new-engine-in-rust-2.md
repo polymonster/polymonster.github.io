@@ -317,7 +317,7 @@ match &info.ds_clear {
 }
 ```
 
-Next Steps
+## Next Steps
 
 I have started to investigate implementing an [imgui-sys](https://github.com/imgui-rs/imgui-rs/tree/main/imgui-sys) rendering and platform backend using hotlines `os::` and `gfx::` API. I really want to have support for multiple “viewports”. Once I’m done with that I will be making some more tests and sample applications, isolating graphics API features and making them nice and clean and understandable for anyone who wants to use it, as by that time I think the API will be locked down.
 
