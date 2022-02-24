@@ -141,7 +141,7 @@ pub trait Device: Sized + Any {
 }
 ```
 
-We can enforce an implementation to implement concrete types such as `type Buffer<Self>`, and when we call a function we can create a buffer and return a `-> Self::Buffer` where `Self` is the Device and the types belong to the Device.
+We can enforce an implementation to implement concrete types such as `type CmdBuf<Self>`, and when we call a function we can create a buffer and return a `-> Self::CmdBuf` where `Self` is the Device and the types belong to the Device.
 
 Rust does not have namespaces but has the concept of modules, which broadly speaking can be thought of as the file structure containing the code. The `gfx::` API is in a file called `gfx.rs` and `direct3d12.rs` is inside a subfolder called `gfx` so that the qualified name can be used as `gfx::direct3d12::`. The `gfx::` module is in the directory above `direct3d12::`, so all the types defined in gfx.rs need to be qualified with `super`. `direct3d12::` implements the `super::Device` trait and concrete types for all of the types declared inside the device.
 
@@ -178,7 +178,11 @@ use hotline::os::win32 as os_platform;
 use hotline::gfx::d3d12 as gfx_platform;
 
 fn main() {
+    // platform specific device
     let mut device = gfx_platform::Device::create(/* .. */);
+
+    // the platform specific device creates a platform specific vertex buffer
+    let vertex_buffer = device.create_buffer(&buffer_info, Some(gfx::as_u8_slice(&vertices)))?;
 }
 ```
 
