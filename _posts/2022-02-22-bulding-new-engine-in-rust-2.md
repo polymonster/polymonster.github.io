@@ -186,7 +186,7 @@ fn main() {
 }
 ```
 
-I also had a quick look into fully dynamic polymorphism; I thought it would be cool to select which graphics backend to use at compile time or even have 2 different backends to compare performance. This is all done through the `dyn` keyword and requires a `std::boxed::Box` to put the dynamic type in. This confused me at first; I really didn’t understand `Box` just because of its name, but eventually it made sense where the box is the thing you pass around, and then when you know what it is you get the thing out of the box - it’s kind of like a pointer really! There are other things which could be dynamic such as `std::rc::Rc` and  `std::arc::Arc`. I will be digging into these a bit more once I get the multithreaded `gfx::CmdBuf` generation going.  
+I also had a quick look into fully dynamic polymorphism; I thought it would be cool to select which graphics backend to use at run-time or even have 2 different backends to compare performance. This is all done through the `dyn` keyword and requires a `std::boxed::Box` to put the dynamic type in. This confused me at first; I really didn’t understand `Box` just because of its name, but eventually it made sense where the box is the thing you pass around, and then when you know what it is you get the thing out of the box - it’s kind of like a pointer really! There are other things which could be dynamic such as `std::rc::Rc` and  `std::arc::Arc`. I will be digging into these a bit more once I get the multithreaded `gfx::CmdBuf` generation going.  
 
 ## Adventures with windows-rs
 
