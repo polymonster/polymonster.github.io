@@ -117,6 +117,34 @@ let pso = device.create_render_pipeline(&gfx::RenderPipelineInfo {
     patch_index: 0,
     pass: swap_chain.get_backbuffer_pass()
 })?;
+
+while app.run() {
+    // update window and swap chain
+    window.update();
+    swap_chain.update(&mut device, &window, &mut cmd);
+
+    // update viewport from window size
+    let window_rect = window.get_rect();
+    let viewport = gfx::Viewport::from(window_rect);
+    let scissor = gfx::ScissorRect::from(window_rect);
+
+    // build command buffer and make draw calls
+    cmd.reset(&swap_chain);
+    cmd.begin_render_pass(swap_chain.get_backbuffer_pass_mut());
+    cmd.set_viewport(&viewport);
+    cmd.set_scissor_rect(&scissor);
+    cmd.set_render_pipeline(&pso);
+    cmd.set_vertex_buffer(&vertex_buffer, 0);
+    cmd.draw_instanced(3, 1, 0, 0);
+    cmd.end_render_pass();
+    cmd.close(&swap_chain);
+
+    // execute command buffer
+    device.execute(&cmd);
+
+    // swap for the next frame
+    swap_chain.swap(&device);
+}
 ```
 
 I have a more fully featured sample program which implements all of the features of the `gfx::` API; it can be found [here](https://github.com/polymonster/hotline/blob/master/samples/hello_world/main.rs). Currently it’s a bit messy and everything is in one big sample. I initially started breaking down functionality in small samples like in my old [engine](https://github.com/polymonster/pmtech), but due to changes in the API it generated a lot of extra work. I currently only have a couple of [tests](https://github.com/polymonster/hotline/blob/master/tests/tests.rs) I can run and will be filling out more tests and samples once I’ve nailed down the final details. 
