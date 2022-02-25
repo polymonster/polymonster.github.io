@@ -171,7 +171,7 @@ pub trait Device: Sized + Any {
 
 We can enforce an implementation to implement concrete types such as `type CmdBuf<Self>`, and when we call a function we can create a buffer and return a `-> Self::CmdBuf` where `Self` is the Device and the types belong to the Device.
 
-Rust does not have namespaces but has the concept of modules, which broadly speaking can be thought of as the file structure containing the code. The `gfx::` API is in a file called `gfx.rs` and `direct3d12.rs` is inside a subfolder called `gfx` so that the qualified name can be used as `gfx::d3d12::`. The `gfx::` module is in the directory above `direct3d12::`, so all the types defined in gfx.rs need to be qualified with `super`. `direct3d12::` implements the `super::Device` trait and concrete types for all of the types declared inside the device.
+Rust does not have namespaces but has the concept of modules, which broadly speaking can be thought of as the file structure containing the code. The `gfx::` API is in a file called `gfx.rs` and `d3d12.rs` is inside a subfolder called `gfx` so that the qualified name can be used as `gfx::d3d12::`. The `gfx::` module is in the directory above `d3d12::`, so all the types defined in gfx.rs need to be qualified with `super`. `d3d12::` implements the `super::Device` trait and concrete types for all of the types declared inside the device.
 
 ```rust
 pub struct Device {
