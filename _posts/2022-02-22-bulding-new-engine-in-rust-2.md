@@ -37,7 +37,7 @@ let swap_chain_info = gfx::SwapChainInfo {
 };
 
 let mut swap_chain = device.create_swap_chain(&swap_chain_info, &window);
-let mut cmd = device.create_cmd_buf(2);
+let mut cmd = device.create_cmd_buf(num_buffers);
 
 let vertices = [
     Vertex {
