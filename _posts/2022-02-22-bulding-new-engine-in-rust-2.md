@@ -3,7 +3,7 @@ title: 'Building a new graphics engine in Rust - Part 2'
 date: 2022-02-22 21:40:00
 ---
 
-In my previous [post](https://www.polymonster.co.uk/blog/bulding-new-engine-in-rust) I gave a high level overview of a new graphics engine project I was undertaking. I have been working quite consistently since then in the evenings and at weekends fleshing out a graphics API frontend called `hotline::gfx::` and the first graphics backend `hotline::gfx::direct3d12` implemented with the assistance of [windows-rs](https://github.com/microsoft/windows-rs). 
+In my previous [post](https://www.polymonster.co.uk/blog/bulding-new-engine-in-rust) I gave a high level overview of a new graphics engine project I was undertaking. I have been working quite consistently since then in the evenings and at weekends fleshing out a graphics API frontend called `hotline::gfx::` and the first graphics backend `hotline::gfx::d3d12` implemented with the assistance of [windows-rs](https://github.com/microsoft/windows-rs). 
 
 I haven’t quite finished the full API yet, but I am fairly happy with how it has taken shape and I think there is enough there now for me to cover the details about the API, some issues I encountered, and some initial thoughts about Rust. Just a few hours here and there really does make a difference… check out the wall of green for 2022, almost at full occupancy!
 
@@ -143,7 +143,7 @@ pub trait Device: Sized + Any {
 
 We can enforce an implementation to implement concrete types such as `type CmdBuf<Self>`, and when we call a function we can create a buffer and return a `-> Self::CmdBuf` where `Self` is the Device and the types belong to the Device.
 
-Rust does not have namespaces but has the concept of modules, which broadly speaking can be thought of as the file structure containing the code. The `gfx::` API is in a file called `gfx.rs` and `direct3d12.rs` is inside a subfolder called `gfx` so that the qualified name can be used as `gfx::direct3d12::`. The `gfx::` module is in the directory above `direct3d12::`, so all the types defined in gfx.rs need to be qualified with `super`. `direct3d12::` implements the `super::Device` trait and concrete types for all of the types declared inside the device.
+Rust does not have namespaces but has the concept of modules, which broadly speaking can be thought of as the file structure containing the code. The `gfx::` API is in a file called `gfx.rs` and `direct3d12.rs` is inside a subfolder called `gfx` so that the qualified name can be used as `gfx::d3d12::`. The `gfx::` module is in the directory above `direct3d12::`, so all the types defined in gfx.rs need to be qualified with `super`. `direct3d12::` implements the `super::Device` trait and concrete types for all of the types declared inside the device.
 
 ```rust
 pub struct Device {
