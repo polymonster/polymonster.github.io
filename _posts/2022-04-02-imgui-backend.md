@@ -1,6 +1,6 @@
 ---
 title: 'Dear ImGui backend implementation with docking and viewports in Rust'
-date: 2022-02-22 21:40:00
+date: 2022-04-01 14:00:00
 ---
 
 Following on from my previous post about building a new graphics engine in Rust, I have made decent progress in implementing a feature-complete [dear ImGui] rendering and platform backend using my engine [hotline](https://github.com/polymonster/hotline) `gfx::` and `os::` APIs. It has viewports (multiple windows), docking, mouse cursors and input. I haven’t yet looked into improving the front end and making the API more ergonomic to use in Rust, but I thought now would be a good time to cover some of the challenges I faced while they are fresh in my mind.
