@@ -30,11 +30,12 @@ contact_settings:
 
 social_settings:
   facebook_url: ''
-  twitter_url: 'https://twitter.com/polymonster'
-  instagram_url: 'https://instagram.com/__shufb'
-  youtube_url: 'https://www.youtube.com/channel/UCQRmui5w4Urz-h4P9CL7rmA'
   github_url: 'https://github.com/polymonster'
+  twitter_url: 'https://twitter.com/polymonster'
   linkedin_url: 'https://www.linkedin.com/in/alexdixon1611/'
+  instagram_url: 'https://instagram.com/__shufb'
+  reddit_url: 'https://www.reddit.com/user/__shufb'
+  youtube_url: 'https://www.youtube.com/channel/UCQRmui5w4Urz-h4P9CL7rmA'
   envelope_fas: 'mailto:alexandercdixon@gmail.com'
   rss_fas: 'https://polymonster.github.io/feed'
 
