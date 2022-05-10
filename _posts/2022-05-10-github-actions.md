@@ -1,20 +1,20 @@
 ---
-title: 'I have migrated all my CI to Github Actions'
-date: 2022-05-06 14:00:00
+title: 'Migrating all of my CI to GitHub Actions'
+date: 2022-05-10 00:00:00
 ---
- 
-I have just been going through the process of migrating all of my continuous integration (CI) to use GitHub Actions. The reason for migrating is because one of my previous CI providers, Travis, stopped being free for open source repositories, they gave some free “credits” but they have now been consumed. The pricing plan and website is also now confusing for Travis; they have OSS (Open Source) credits and private credits which were consumed from my OSS projects! The pricing starts at $69 a month, which is a bit steep for me, especially considering there are other free alternatives. So I decided to move entirely to GitHub Actions and the process has really been straightforward and has given me a chance to improve my CI setup.
- 
-I have used and tried a fair few CI services: Travis, Circle, AppVeyor, Jenkins and TeamCity. I also used GitHub Actions prior to this migration for a few repositories and had tried it out at work as well. GitHub Actions only came about in 2018 so prior to that there were fewer options, I had been using Travis for macOS, iOS and Linux builds and AppVeyor for windows builds because Travis did not initially support Windows. Having multiple providers is not too much of a problem and all of these services integrate into GitHub very easily, but still it is a little inconsistent having multiple providers so I am now trying to move everything to Actions for simplicity. In addition to moving all of my personal projects to GitHub Actions, I have also been moving all of my work projects to Actions as well so the last month has been a whirlwind of work all revolving around GitHub Actions!
- 
+
+I have just been going through the process of migrating all of my continuous integration (CI) to use GitHub Actions. The reason for migrating is because one of my previous CI providers, Travis, stopped being free for open source repositories, they gave some free “credits” but they have now been consumed. The pricing plan and website is also now confusing for Travis; they have OSS (Open Source) credits and private credits which were consumed from my OSS projects! The pricing starts at $69 a month, which is a bit steep for me, especially considering there are other free alternatives. So I decided to move entirely to GitHub Actions and the process has really been straightforward and has given me a chance to improve my CI setup.  
+
+I have used and tried a fair few CI services: Travis, Circle, AppVeyor, Jenkins and TeamCity. I also used GitHub Actions prior to this migration for a few repositories and had tried it out at work as well. GitHub Actions only came about in 2018 so prior to that there were fewer options, I had been using Travis for macOS, iOS and Linux builds and AppVeyor for windows builds because Travis did not initially support Windows. Having multiple providers is not too much of a problem and all of these services integrate into GitHub very easily, but still it is a little inconsistent having multiple providers so I am now trying to move everything to Actions for simplicity. In addition to moving all of my personal projects to GitHub Actions, I have also been moving all of my work projects to Actions as well so the last month has been a whirlwind of work all revolving around GitHub Actions!  
+
 ## CI is a Necessity
  
 It seems like CI is a fairly new thing - when I started out coding there wasn’t as much focus towards continuous integration or test driven development; it took years for me to hear of these concepts. In some roles earlier in my career we had very little build automation, in some cases building packages manually. Nowadays CI is essential to me for any project, even stuff I am doing in my spare time. Typically I am working with multi-platform code so I want the code to be compiled for all of the platforms and permutations to know it is safe to merge, and then go one better and run tests to ensure the code is good. CI allows you to make changes and if the CI passes you can be confident that the changes you have made were good. Bugs and issues can still creep in of course and some things are harder to test than others, but having some lines of defence against build breakages and regressions is crucial.
  
 ## Relaxing Weekend DevOps
  
-I find DevOps work quite relaxing, often spending my weekend mornings with a coffee just fixing up some small issues and watching the builds roll in. If you have less automation it requires more work to test all of your configurations, so I suppose knowing of a world that exists without CI and having had to live through that, putting in the work to make sure you have good build and test coverage feels satisfying. Once you have good coverage you make small changes and tweaks to your code with the CI as a safety net to catch anything that goes wrong... it helps to make the rest of your programming life easier and more comfortable. One thing that can happen though on a day fixing up builds is a deluge of commits and failed builds. Multiple commits and pushes with messages like “fix ci”, “fix macos” etc and then an inbox full of build failure emails.
- 
+I find DevOps work quite relaxing, often spending my weekend mornings with a coffee just fixing up some small issues and watching the builds roll in. If you have less automation it requires more work to test all of your configurations, so I suppose knowing of a world that exists without CI and having had to live through that, putting in the work to make sure you have good build and test coverage feels satisfying. Once you have good coverage you make small changes and tweaks to your code with the CI as a safety net to catch anything that goes wrong... it helps to make the rest of your programming life easier and more comfortable. One thing that can happen though on a day fixing up builds is a deluge of commits and failed builds. Multiple commits and pushes with messages like “fix ci”, “fix macos” etc and then an inbox full of build failure emails.  
+
 ![failures](/images/posts/github-actions/failures.png)
  
 After going through all that and getting your builds all green everything feels just right. Once you've got your builds all green it's like a drug - you never want to go back to failing builds again.
@@ -47,8 +47,8 @@ There are some downsides to the cloud hosted builds though, firstly for private 
  
 In addition to the cost, cloud builds can be a little more limited. I have this [maths](https://github.com/polymonster/maths) repository which has fairly decent test coverage and compilation coverage. This case is quite easy for a cloud build because it’s just C++ code and it can be run on any server and can run on Linux, which is also convenient because it always seems like there are more Linux runners available and thus you spend less time on builds because you spend less time waiting for a runner. In the case of my game engine [pmtech](https://github.com/polymonster/pmtech) I have graphical tests that can run, but the tests require a GPU and I had struggled with various CI providers to try and get software rendering to work in Direct3D in order to run the tests. I was able to get the tests to run with software rendering on Windows through AppVeyor, but only if you remote desktop connected into the machine; if it ran headless then the tests would just output black. Metal API does not have a software renderer and I was only able to get an ancient OpenGL 2.x context on Linux machines, so for a few years I would just run my tests locally on the machines I have available.
  
-Having cloud builds is handy for projects that suit it because you can run the CI on every push and have some servers in the cloud that will always be available. I am making use of totally cloud based builds in these repositories: [maths](https://github.com/polymonster/maths), [jsn](https://github.com/polymonster/jsn), [premake-android-studio](https://github.com/polymonster/premake-android-studio). But for the more complex tests that I need, GitHub Actions provides self hosted runners which are the answer to all my prayers.
- 
+Having cloud builds is handy for projects that suit it because you can run the CI on every push and have some servers in the cloud that will always be available. I am making use of totally cloud based builds in these repositories: [maths](https://github.com/polymonster/maths), [jsn](https://github.com/polymonster/jsn), [premake-android-studio](https://github.com/polymonster/premake-android-studio). But for the more complex tests that I need, GitHub Actions provides self hosted runners which are the answer to all my prayers.  
+
 ## Every Gunner is a Runner
  
 GitHub Actions lets you set up your own self hosted runners and these cost nothing to set up or use. For private repositories they are a great solution, especially to the 10x cost of macOS build runners. But more importantly these runners can be installed on any machines you have around, which means they will get a GPU or other hardware that you may desire. You can connect dev kits or mobile devices so you can run tests on exotic platforms that may not be available in the cloud. You can create an organisation-wide runner (if you are an organisation) or you can set up runners per repository. Installation is simple; you can access the instructions through the GitHub website by going to your user or organisation Settings > Actions > Runners > New self-hosted runner. This gives command line steps to fetch and install the runner.
@@ -105,8 +105,8 @@ on:
  
 The inputs are provided in a nice UI on the GitHub website when you manually trigger a workflow.
  
-![params](/images/posts/github-actions/params.png)
- 
+![params](/images/posts/github-actions/params.png)  
+
 ## Releases
  
 Prior to GitHub Actions at work we were using Jenkins freestyle jobs. I had long wanted to move to Jenkins pipelines, but it’s always something that gets pushed back as I am not a dedicated DevOps engineer (nor do we have one) and working with a small team we have a lot of other stuff on our plate. With freestyle jobs we had some mildly awkward processes that required multiple steps. With GitHub Actions I have configured a few builds which have multiple steps and dependencies. A release can be made simply by running a few git commands and then the build steps run synchronised to one another culminating with a release on the GitHub repository home page.
@@ -176,8 +176,8 @@ Then all you need to do is sit back, relax and wait for the build to come throug
  
 Once the release has completed building, the source code and any build artifacts are uploaded to the GitHub repositories releases page where you can get easy access to download them.
  
-![release](/images/posts/github-actions/release.png)
- 
+![release](/images/posts/github-actions/release.png)  
+
 ## Some Final Issues
  
 I am very happy with GitHub Actions having migrated pretty much everything I am working on both at work and at home. There aren’t any complaints really, but I will list a few things which I found useful or took me a while to figure out.
@@ -196,8 +196,8 @@ xcodebuild -exportArchive -archivePath project.xcarchive -exportPath export/ -ex
 xcrun altool --upload-app -f export/project.ipa -t ios -u email -p ${{ secrets.APP_PASSWORD }}
 ```
  
-Another thing, and probably my only major issue right now, is when wanting to use multiple runners on the same machine you need to install multiple runners with their own directory and workspace. This differs from Jenkins where each job has its own workspace and the agent instances share the workspace. This isn’t much of an issue until you have jobs which may use a lot of data. We have some build jobs which transcode video footage and the source footage may be in the 10’s-100’s of terabytes, so having all of this data duplicated can consume a lot of disk space. With a Jenkins setup we only have single jobs for each project which the agents (Jenkins equivalent of runner) share the work space of, so we have no redundant data duplication. This is something I will have to think about and consider ways of sharing this heavy data load across multiple actions runners.
- 
+Another thing, and probably my only major issue right now, is when wanting to use multiple runners on the same machine you need to install multiple runners with their own directory and workspace. This differs from Jenkins where each job has its own workspace and the agent instances share the workspace. This isn’t much of an issue until you have jobs which may use a lot of data. We have some build jobs which transcode video footage and the source footage may be in the 10’s-100’s of terabytes, so having all of this data duplicated can consume a lot of disk space. With a Jenkins setup we only have single jobs for each project which the agents (Jenkins equivalent of runner) share the work space of, so we have no redundant data duplication. This is something I will have to think about and consider ways of sharing this heavy data load across multiple actions runners.  
+
 ## Reference and Examples
  
 If you want to check out my current setup I have quite a few public repositories using GitHub actions, there is still a lot I don't know and as I previously mentioned, I am not a dedicated DevOps guy so there are probably better examples out there. These are good enough for my needs though:
@@ -212,5 +212,9 @@ If you want to check out my current setup I have quite a few public repositories
  
 ### Follow / Subscribe
  
-If you liked this article, follow me on the various social media platforms which I have links to on this site and keep an eye out for more posts in future.
+If you liked this article, follow me on the various social media platforms which I have links to on this site and keep an eye out for more posts in future.  
+
+
+
+
 
