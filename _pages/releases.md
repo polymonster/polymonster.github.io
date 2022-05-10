@@ -7,7 +7,7 @@ featured_image: /images/site/waves.png
 
 For more details on work undertaken for various projects please visit my [LinkedIn](https://www.linkedin.com/in/alexdixon1611/).
 
-- Crane (2022) (Android (Galaxy Store)).
+- Crane (2022) (iOS, Android (Galaxy Store + Google Play Store)).
 - Erica (2021) (iOS, PC/Steam).
 - Erica (2019) (PS4) + Companion App (iOS, Android).
 - Football Manager 2018 (2017) (PC, MacOS, Linux, iOS, Android).
