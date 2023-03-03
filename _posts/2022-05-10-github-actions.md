@@ -1,5 +1,5 @@
 ---
-title: 'Migrating all of my CI to GitHub Actions'
+title: 'Migrating CI to GitHub Actions'
 date: 2022-05-10 00:00:00
 ---
 
