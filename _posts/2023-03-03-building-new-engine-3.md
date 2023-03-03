@@ -209,7 +209,7 @@ Another core engine feature I have been working on is `pmfx` which is a high lev
 
 So how does it work? You can write regular `hlsl` shaders and then supply `pmfx` files, which are used to create `pipelines`, `views`, `textures` (and render targets) and more. `views` are like render passes but with a bit more detail, such as a function that can be dispatched into a render pass with a camera for example.
 
-```pmfx
+```text
 textures: {
     main_colour: {
         ratio: {
@@ -248,7 +248,7 @@ views: {
 
 The `pmfx` config files supply useful defaults to minimise the amount of members that need initialising to setup render state, and `pmfx` can parse `hlsl` files with extra context provided through `pipelines` to generate shader reflection info, descriptor layouts, and more, which is yet to come.
 
-```pmfx
+```text
 pipelines: {
     mesh_debug: {
         vs: vs_mesh
@@ -266,7 +266,7 @@ pipelines: {
 
 You can supply render graphs which are built at run-time with automatic resource transitions and barries inserted based on dependencies, this is still in early stages because my use cases are currently quite simple but in time I expect this to grow a lot more:
 
-```pmfx
+```text
 render_graphs: {
     mesh_debug: {
         grid: {
@@ -565,7 +565,7 @@ This solution is much nicer because the `drop` can just happen naturally. It mig
 Build times are currently the biggest problem; a `plugin` takes around 6 seconds to build with a little extra to complete the reload, so live code editing does not feel hugely responsive. Reloading shaders or render configs is very fast though, so that balances it out a bit if you work across code and shaders, and is all the more reason to use more GPU driven techniques / compute. The build times in full debug builds are much slower, but because of an issue with more than 65535 symbols exported from a plugin, which is not supported by the MSVC toolchain, I am forced to switch to `01` optimization for debug and that has similar performance to release.
 
 ```text
-
+= note: LINK : fatal error LNK1189: library limit of 65535 objects exceeded
 ```
 
 #### Profiling Build Times
