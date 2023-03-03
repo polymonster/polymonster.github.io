@@ -576,11 +576,11 @@ This [post](https://fasterthanli.me/articles/why-is-my-rust-build-so-slow) has l
 
 I tried to separate out the plugins over more libs so that the core hotline lib did not have to depend on `bevy_ecs`. This didn’t make much of a positive difference because it created the requirement for an additional plugin with shared code. This attempt ended up with 5 total build artefacts, which ended in 13 second build times.
 
-`hotline_rs.dll`
-`client.exe`
-`ecs_base.dll`
-`ecs.dll`
-`ecs_demos.dll`
+- `hotline_rs.dll`
+- `client.exe`
+- `ecs_base.dll`
+- `ecs.dll`
+- `ecs_demos.dll`
 
 Each library or executable that requires building adds a noticeable constant cost which seems like the link time. So reducing the amount of libs actually helped improve build times and adding more only increased the build time. I moved the `ecs_base` plugin into `hotline`, which reduces the number of build artefacts and brings me to 6 second build times. If I build a single lib and executable the build time is around 10 seconds, so the live building is an improvement, if still not where I would like it to be but maybe this can improve in time.
 
