@@ -264,7 +264,7 @@ pipelines: {
 }
 ```
 
-You can supply render graphs which are built at run-time with automatic resource transitions and barries inserted based on dependencies, this is still in early stages because my use cases are currently quite simple but in time I expect this to grow a lot more:
+You can supply render graphs which are built at run-time with automatic resource transitions and barriers inserted based on dependencies, this is still in early stages because my use cases are currently quite simple but in time I expect this to grow a lot more:
 
 ```text
 render_graphs: {
@@ -408,7 +408,7 @@ let pso = device.create_render_pipeline(&gfx::RenderPipelineInfo {
 })?;
 ```
 
-I have considered moving the objects that need lifetimes out of the structure and just passing them instead to the function so that lifetimes are not needed, but that means you lose the ability for `defaults` so I’m not sure. There is a situation to handle when passing a resource into a command buffer so that resource is to be used by the GPU as the resource can be dropped before it is used but I will cover that laters.
+I have considered moving the objects that need lifetimes out of the structure and just passing them instead to the function so that lifetimes are not needed, but that means you lose the ability for `defaults` so I’m not sure. There is a situation to handle when passing a resource into a command buffer so that resource is to be used by the GPU as the resource can be dropped before it is used but I will cover that later.
 
 #### Overlapping Mutability
 
