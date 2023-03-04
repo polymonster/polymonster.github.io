@@ -366,7 +366,7 @@ This leg of the project has been by far the most challenging. I started to hit m
 
 Refactoring in general I have found more difficult at times in Rust than in any other language. I tend to start things quite quickly and get something working; this typically means creating separate objects on the stack inside `main` and then that means the data is a bit more favourable to avoid overlapping mutability / borrowing issues.
 
-When performing what initially seems like a simple refactor to bring that code more inline with where you want it to be or where your mental model is, you can hit a load of borrow checker errors and it turns out to be a more challenging task than you thought. Breaking things apart to find changes and reload them, instead of doing them in a single loop. The same goes for just moving something to a thread, maybe some types can’t be `Send` and then this means you have to re-think how your data is grouped together or how it is synchronised across threads.
+When performing what initially seems like a simple refactor to bring that code more inline with where you want it to be or where your mental model is, you can hit a load of borrow checker errors and it turns out to be a more challenging task than you thought due to the mutual exclusion property of mutable references or just trying to move something to a thread, maybe some types can’t be `Send` and then this means you have to re-think how your data is grouped together or how it is synchronised across threads.
 
 ### Ownership
 
