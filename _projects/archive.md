@@ -5,7 +5,7 @@ date: 2020-09-24 00:00:00
 featured_image: '/images/archive/deferred-rendering.gif'
 ---
 
-A collection of older projects from 2004-2013, some work was completed during my time at university and others were side projects. They helped with my development as a programmer and I learned a lot in the process. I am keeping them around for posterity, the source code and executables (Windows only) are available on [GitHub](https://github.com/polymonster/demos-archive) but please dont judge me on this work!
+A collection of older projects from 2004-2013, some work was completed during my time at university and others were side projects. They helped with my development as a programmer and I learned a lot in the process. I am keeping them around for posterity, the source code and executables (Windows only) are available on [GitHub](https://github.com/polymonster/demos-archive).
 
 ### Radiosity (2010)
 
@@ -19,24 +19,20 @@ Implemented with OpenGL and C++ this was around the time when deferred rendering
 
 <img src="/images/archive/deferred-rendering.gif">
 
-
 ### Antechamber (2009)
 
-A pixel art 2D platformer made by me and a friend as part of a university project. It was written in c++ using Direct3D9c, we made a tile-map level editor which allowed for slopes and walls, different enemies, obstacles and game mechanics, audio and multi-player support. This was, at the time of completion, the most complete and polished project I had worked on and we received 92% mark for the course work.
+A pixel art 2D platformer made by me and a friend as part of a university project. It was written in C++ using Direct3D9c, we made a tile-map level editor which allowed for slopes and walls, different enemies, obstacles and game mechanics, audio and multi-player support. This was, at the time of completion, the most complete and polished project I had worked on and we received 92% mark for the course work.
 
 <img src="/images/archive/antechamber.gif">
 
 ### Organic Editor (2009)
 
-My final year university project, I created a level editor with terrain painting / deformation, model loading, object manipulation, and various shader techniques. It was written in c++ using OpenGL and GLSL shaders.
+My final year university project, I created a level editor with terrain painting / deformation, model loading, object manipulation, and various shader techniques. It was written in C++ using OpenGL and GLSL shaders.
 
 <img src="/images/archive/editor.png">
 
 ### Sandwick Arena (2008)
 
-A 3D Arena style game with third-person camera. I worked on this over the summer in between my 3rd year (placement year) and final year of university. It was was written in c++ with OpenGL using the fixed function pipeline, I implemented multi-player support via local area networking using sockets over TCP.
+A 3D Arena style game with third-person camera. I worked on this over the summer in between my 3rd year (placement year) and final year of university. It was was written in C++ with OpenGL using the fixed function pipeline, I implemented multi-player support via local area networking using sockets over TCP.
 
 <img src="/images/archive/sandwickarena.png">
-
-
-
