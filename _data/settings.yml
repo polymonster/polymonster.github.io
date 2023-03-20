@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Alex Dixon
-  site_tagline: Graphic, gamedev, open source. Shuffling bytes and swizzling vectors since 2005...   
+  site_tagline: Gamedev, graphics, open source. Shuffling bytes and swizzling vectors since 2005...   
   favicon_image: /images/favicon.png
 
 header_settings:
