@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Alex Dixon
-  site_tagline: Welcome to my programming blog and portfolio, I have worked in gamedev for over 10 years and I am currently principal programmer at Flavourworks. I enjoy shuffling bytes and swizzling vectors...   
+  site_tagline: Graphic, gamedev, open source. Shuffling bytes and swizzling vectors since 2005...   
   favicon_image: /images/favicon.png
 
 header_settings:
@@ -36,6 +36,7 @@ social_settings:
   instagram_url: 'https://instagram.com/__shufb'
   reddit_url: 'https://www.reddit.com/user/__shufb'
   youtube_url: 'https://www.youtube.com/channel/UCQRmui5w4Urz-h4P9CL7rmA'
+  twitch_url: 'https://www.twitch.tv/polymonstr'
   envelope_fas: 'mailto:alexandercdixon@gmail.com'
   rss_fas: 'https://polymonster.github.io/feed'
 
