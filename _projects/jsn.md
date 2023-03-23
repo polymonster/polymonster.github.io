@@ -2,6 +2,7 @@
 title: 'jsn'
 subtitle: 'A relaxed, user-friendly json-like data format.'
 date: 2020-09-26 00:00:00
+featured_image: '/images/jsn.png'
 ---
 
 jsn is a user-friendly data format that can be easily read and reliably edited by humans. It adds powerful features such as inheritance, variables, includes and syntax improvements to make jsn files more compact and re-usable than a json counterpart, it is an ideal solution for multi-platform build configuration, packaging and content building pipelines.
