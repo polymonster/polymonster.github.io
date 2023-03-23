@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Alex Dixon
-  site_tagline: Gamedev, graphics, open source. Shuffling bytes and swizzling vectors since 2005...   
+  site_tagline: Gamedev, graphics, open source. Shuffling bytes and swizzling vectors since 2004...   
   favicon_image: /images/favicon.png
 
 header_settings:
@@ -37,6 +37,8 @@ social_settings:
   reddit_url: 'https://www.reddit.com/user/__shufb'
   youtube_url: 'https://www.youtube.com/channel/UCQRmui5w4Urz-h4P9CL7rmA'
   twitch_url: 'https://www.twitch.tv/polymonstr'
+  discord_url: 'https://discord.gg/3yjXwJ8wJC'
+  mastodon_url: 'https://mastodon.gamedev.place/@polymonster'
   envelope_fas: 'mailto:alexandercdixon@gmail.com'
   rss_fas: 'https://polymonster.github.io/feed'
 
