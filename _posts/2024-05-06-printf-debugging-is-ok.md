@@ -1,6 +1,6 @@
 ---
 title: 'printf debugging is OK'
-date: 2025-05-06 00:00:00
+date: 2024-05-06 00:00:00
 ---
 
 I stopped going on Twitter a while ago because it has the tendency to evoke rage, as it is designed to do. But every now and then I check back in - it can be useful sometimes for keeping up with graphics research, gamedev news and some people do post nice things, like sharing projects they are working on, so there is something to pull me back from time to time.
