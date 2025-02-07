@@ -1,6 +1,6 @@
 basic_settings:
   site_title: Alex Dixon
-  site_tagline: Gamedev, graphics, open source. Shuffling bytes and swizzling vectors since 2004...   
+  site_tagline: Gamedev, graphics, open source. Shuffling bytes and swizzling vectors since 2004...
   favicon_image: /images/favicon.png
 
 header_settings:
@@ -31,7 +31,6 @@ contact_settings:
 social_settings:
   facebook_url: ''
   github_url: 'https://github.com/polymonster'
-  twitter_url: 'https://twitter.com/polymonster'
   linkedin_url: 'https://www.linkedin.com/in/alexdixon1611/'
   instagram_url: 'https://instagram.com/__shufb'
   reddit_url: 'https://www.reddit.com/user/__shufb'
