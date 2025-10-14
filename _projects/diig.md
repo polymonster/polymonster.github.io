@@ -1,8 +1,8 @@
 ---
 title: 'diig'
 subtitle: 'A music discovert app for record diggers'
-date: 2025-10-14 00:00:00
-featured_image: '/images/diig/diig.gif'
+date: 2025-01-01 00:00:00
+featured_image: 'https://github.com/polymonster/polymonster.github.io/blob/master/images/diig/diig.gif?raw=true'
 ---
 
 A music discovery app that I built to improve the UX of browsing on various online record stores. It features an iOS app with super responsive audio playback written in C++. Multiple custom scrapers written in python to extract data from my favourite records stores into a unified schema and a firebase database to store the information with scrapers running nightly on GitHub actions.
