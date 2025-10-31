@@ -3,13 +3,13 @@ title: 'Borrow checker says “No”! An error that scares me every single time!
 date: 2025-10-31 00:00:00
 ---
 
-It’s Halloween and I have just been caught out by a spooky borrow checker error that caught me by surprise. It feels as though it is the single most time consuming issue to fix and always seems to catch me unaware. The issue in particular is “cannot borrow x immutably as it is already borrowed mutably” - it manifests itself in different ways under different circumstances, but I find myself hitting it often when refactoring. It happened again recently so I did some investigating and thought I would discuss it in more detail.  
- 
-The issue last hit me when I was refactoring some code in my graphics engine [hotline], I have been creating some content on YouTube and, after a little bit of a slog to fix the issue, I recorded a video of me going through the scenario of how it occurred and some patterns to use that I have adopted in the past to get around it. You can check out the video if you are that way inclined, the rest of this post will mostly echo what is in the video, but it might be a bit easier to follow code snippets and description in text.  
+It’s Halloween and I have just been caught out by a spooky borrow checker error that caught me by surprise. It feels as though it is the single most time consuming issue to fix and always seems to catch me unaware. The issue in particular is “cannot borrow x immutably as it is already borrowed mutably” - it manifests itself in different ways under different circumstances, but I find myself hitting it often when refactoring. It happened again recently so I did some investigating and thought I would discuss it in more detail.
+
+The issue last hit me when I was refactoring some code in my graphics engine [hotline](https://github.com/polymonster/hotline), I have been creating some content on YouTube and, after a little bit of a slog to fix the issue, I recorded a video of me going through the scenario of how it occurred and some patterns to use that I have adopted in the past to get around it. You can check out the video if you are that way inclined, the rest of this post will mostly echo what is in the video, but it might be a bit easier to follow code snippets and description in text.  
  
 [video]
  
-I have a generic graphics API, which consists of traits called [gfx]. This is there to allow different platform backends to implement the trait; currently I have a fully implemented Direct3D12 backend and I recently began to port macOS using Metal.
+I have a generic graphics API, which consists of traits called [gfx](https://github.com/polymonster/hotline/blob/master/src/gfx.rs). This is there to allow different platform backends to implement the trait; currently I have a fully implemented Direct3D12 backend and I recently began to port macOS using Metal.  
  
 The gfx backend wraps underlying graphics API primitives; in this case we are mostly concerned about `CmdBuf` which is a command buffer. Command buffers are used to submit commands to the GPU. They do things like `draw_indexed_instanced` or `set_render_pipeline`, amongst other things. For the purposes of this blog post, what the command buffer does is not really that important, just that is does `do_something`, which at the starting point when the code was working is a trait method that takes an immutable self and another immutable parameter ie. `fn do_something(&self, param: &Param)`.
  
@@ -239,4 +239,4 @@ I decided to make the mutability explicit to the trait and that was based on how
  
 Here it made sense to me to avoid locking interior mutability for each time we call a method on a `CmdBuf` and it works with the engine's design. We lock a view at the start of a render thread, fill it with commands and then hand it back to the graphics engineer for submission to the GPU. The usage is explicit, we just needed to appease the borrow checker!
  
-I hope you enjoyed this article, please check out my YouTube channel for more videos or more articles on my blog, let me know what you think and if you have any other strategies or approaches I would love to hear about them. I would also like to hear about compiler and borrow checker errors you find particularly time consuming or frustrating to deal with.
+I hope you enjoyed this article, please check out my [YouTube channel](https://www.youtube.com/@polymonster) for more videos or more articles on my blog, let me know what you think and if you have any other strategies or approaches I would love to hear about them. I would also like to hear about compiler and borrow checker errors you find particularly time consuming or frustrating to deal with.
