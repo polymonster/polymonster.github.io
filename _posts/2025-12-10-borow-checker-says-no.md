@@ -93,7 +93,7 @@ error: could not compile due to 1 previous error
 ```
 This is not the first time I have encountered this problem and I doubt it will be the last. There are a number of ways to resolve it and they aren’t too complicated. The frustrating thing is that it seems to occur always when you are doing something else and not just when you decide to refactor, so you end up having a mountain of errors to solve before you can get back to the original task. I suppose you could call it a symptom of bad design or lack of experience, but when writing code things inevitably change and bend with new requirements, and Rust throws these unexpected issues up for me more often than I find with C, and often the required refactor takes more effort as well. But that is the cost you pay, hopefully more upfront effort to get past the borrow checker means fewer nasty debugging stages later. So let’s look at some patterns to fix the issue!
  
-Take
+### Take
  
 The one I actually went for in this case was using `std::mem::take`. We take the `CmdBuf` out of view so we no longer need to borrow a ‘view’ to use `cmd`, and then when finished return the cmd into ‘view’. It is important to note here that `CmdBuf` needs to derive default in order for this to work, as when we take the `cmd` in `view` will become `CmdBuf::default()`
  
@@ -119,8 +119,21 @@ fn main() {
 ```
  
 This approach is the simplest I could think of at the time because any existing code using `view.cmd` doesn't need updating, everything stays the same and we just separate the references. In this case it was easy to derive the default for  `CmdBuf`.You need to remember to set the `cmd` back on `view` here, which could be a pitfall and cause unexpected behaviour if you didn't.
- 
-Clone
+
+### EDIT: Update
+
+I posted this article to reddit and people kindly pointed out to me that the borrow cant split to individual fields because I was borrowing a `MutexGuard` of `view` and that access to the fields was going through the `DerefMut` trait. This simple line resolves my problem with no need for any other changes.
+
+```rust
+// now we have a mutable reference to view and not a MutexGuard
+let mut view = &mut*v.lock().unwrap();
+```
+
+I can make excuses but ultimately I should’ve checked in more detail what `view` actually was a reference to. In my defence this code was inside an attribute macro and the rust analyser here wasn’t giving me any type hints, which in rust I find very useful and necessary. Additionally the `DerefMut` trait also abstracts this behaviour so to me it just looked like a reference to a view. So I do feel foolish about this but hopefully the sentiment of this article still rings true.
+
+A bad decision in code of the past pops up at an inopportune moment and also clouded my judgement on possible solutions. The other ideas in this post about mem take, or clones and interior mutability have still been useful in other scenarios an important step is to always double check what you are working with and what you think you are working with and not rush into any futher bad decisions.
+
+### Clone
  
 If you can’t easily derive default on a struct there are some other options. If the struct is clonable or you can easily derive a clone, you can clone to achieve a similar effect.
  
@@ -171,7 +184,7 @@ fn main() {
  
 ```
  
-Option (Take/Swap)
+### Option (Take/Swap)
  
 We also need to update any code that ever used `view.cmd` and do the same. Not ideal but it allows us to get around the need for a default or clone. I have had to resort to this in other places in the code base.
  
@@ -202,7 +215,7 @@ fn main() {
  
 The `Option` approach also requires more effort as we need to now take a reference and unwrap the option and update any code that ever used `view.cmd` to do the same. Not ideal, but it allows us to get around the need for a default or clone, and if your type is already optional then this will fit easily.
  
-Interior Mutability
+### Interior Mutability
  
 There is one final approach that could save a lot of time, and that would be to not change the `do_something` function at all in the first place. That is to keep it as `do_something(&self, param: &Param)`. So how do we mutate the interior state without requiring the self to be mutable?
  
@@ -232,9 +245,7 @@ fn main() {
     view.cmd.do_something(&view.param);
 }
 ```
- 
-Decisions
- 
+  
 I decided to make the mutability explicit to the trait and that was based on how the command buffers are used in the engine, in other places I have taken other approaches favouring interior mutability. For this case a view can be dispatched in parallel with other views, but the engine is designed such that 1 thread per view and no work happens to a single view on multiple threads at the same time. Command buffers are submitted in a queue in order and dispatched on the GPU.
  
 Here it made sense to me to avoid locking interior mutability for each time we call a method on a `CmdBuf` and it works with the engine's design. We lock a view at the start of a render thread, fill it with commands and then hand it back to the graphics engineer for submission to the GPU. The usage is explicit, we just needed to appease the borrow checker!
