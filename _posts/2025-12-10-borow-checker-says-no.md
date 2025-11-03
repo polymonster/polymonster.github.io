@@ -126,12 +126,10 @@ I posted this article to reddit and people kindly pointed out to me that the bor
 
 ```rust
 // now we have a mutable reference to view and not a MutexGuard
-let mut view = &mut*v.lock().unwrap();
+let mut view = &mut *v.lock().unwrap();
 ```
 
-I can make excuses but ultimately I should’ve checked in more detail what `view` actually was a reference to. In my defence this code was inside an attribute macro and the rust analyser here wasn’t giving me any type hints, which in rust I find very useful and necessary. Additionally the `DerefMut` trait also abstracts this behaviour so to me it just looked like a reference to a view. So I do feel foolish about this but hopefully the sentiment of this article still rings true.
-
-A bad decision in code of the past pops up at an inopportune moment and also clouded my judgement on possible solutions. The other ideas in this post about mem take, or clones and interior mutability have still been useful in other scenarios an important step is to always double check what you are working with and what you think you are working with and not rush into any futher bad decisions.
+I can make excuses but ultimately I should’ve checked in more detail what `view` actually was a reference to. In my defence this code was inside an attribute macro and the rust analyser here wasn’t giving me any type hints, which in rust I find very useful and necessary. Additionally the `DerefMut` trait also abstracts this behaviour so to me it just looked like a reference to a view. I do feel foolish about this but hopefully the sentiment of this article still rings true. A bad decision in code of the past pops up at an inopportune moment and clouded my judgement on possible solutions. The other ideas in this post have still been useful in other scenarios, but an important step is to always double check what you are working with and what you think you are working with and not rush into any further bad decisions.
 
 ### Clone
 
