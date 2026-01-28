@@ -62,7 +62,7 @@ In total I ended up adding 871 lines of C++ code for the `os` module, 151 lines 
 
 ## JNI
 
-To interoperate between Java and C++ code the Java Native Interface is used. I have to use JNI to pass information from the Java side, such as touch and keyboard (OSK) events from Java where they originate, and through to the C++ code the rest of the app code base calls. I also have to interop in both directions. Calling C from Java is quite simple, you just need to use `public static native`. Going the other direction is a little bit more work:
+To interoperate between Java and C++ code the Java Native Interface is used. I have to use JNI to pass information from the Java side, such as touch and keyboard (OSK) events from Java where they originate, and through to the C++ code the rest of the app code base calls. I also have to interop in both directions. Calling C from Java is quite simple, you just need to use `public static native`. Going the other direction is a little bit more work:  
 
 ```c++
 void os_clear_clipboard_string()
