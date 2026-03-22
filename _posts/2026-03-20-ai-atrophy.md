@@ -1,6 +1,7 @@
 ---
-title: 'AI coding tools are powerful but we mustn’t let our own skills atrophy'
+title: ‘AI coding tools are powerful but we mustn’t let our own skills atrophy’
 date: 2026-03-20 00:00:00
+description: ‘A candid first-person account of trying AI coding tools, weighing their genuine productivity gains against concerns about skill atrophy, trust, and the relentless AI hype cycle.’
 ---
 
 It started with the “don’t get left behind” brigade, somehow they managed to convince me that I was now missing out on developing critical new skills. People who hadn’t put in the hours to learn to code in the first place were now at the top of the field and leaving the rest of us behind, who have put in multiple decades and tens of thousands of hours of effort to learn our craft. They want their PR’s merged upstream to get credit on GitHub for code they didn't write or even understand, flooding the pull request system to breaking point. I tried to ignore it but the chatter was incessant and I had to take a look for myself.

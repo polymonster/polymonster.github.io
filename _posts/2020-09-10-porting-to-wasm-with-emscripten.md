@@ -1,6 +1,7 @@
 ---
 title: 'Porting a c++ game engine to the web with emscripten'
 date: 2020-09-20 00:00:00
+description: 'A walkthrough of porting the pmtech C++ game engine to run in the browser using Emscripten and WebAssembly, covering the 5-week process, key challenges, and the resulting live WebGL demos.'
 ---
 
 I embarked on this journey because I wanted to make my c++ game engine [pmtech](https://www.github.com/polymonster/pmtech) runnable in a browser for quick and easily accessible live demos. Overall the process took about 5 weeks of work, totalling 20 days, I spent some weekend days and a few hours in the evenings. Nothing too intense and the process was quite enjoyable, relaxing dare I say!

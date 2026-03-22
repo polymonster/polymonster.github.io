@@ -1,6 +1,7 @@
 ---
 title: 'Building a new graphics engine in Rust - Part 3'
 date: 2023-03-03 00:00:00
+description: 'The most challenging leg of the hotline Rust graphics engine: plugins, multi-threaded command buffer generation, and hot reloading for Rust code, HLSL shaders, and render configs.'
 ---
 
 Following on from the [part 2](https://www.polymonster.co.uk/blog/bulding-new-engine-in-rust-2) post a little while ago, I have been continuing work on my graphics engine [hotline](https://github.com/polymonster/hotline) in Rust. My recent focus has been on plugins, multi-threaded command buffer generation and hot reloading for Rust code, `hlsl` shader code and `pmfx` render configs. I have made decent progress to the point where there is something quite usable and structured in a way I am relatively happy with. This leg of the journey has been by far the most challenging though, so I wanted to write about my current progress and detail some of the issues I have faced.

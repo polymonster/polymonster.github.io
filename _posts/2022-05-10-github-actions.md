@@ -1,6 +1,7 @@
 ---
 title: 'Migrating CI to GitHub Actions'
 date: 2022-05-10 00:00:00
+description: 'A walkthrough of migrating open source project CI from Travis and AppVeyor to GitHub Actions, including lessons learned and improvements made along the way.'
 ---
 
 I have just been going through the process of migrating all of my continuous integration (CI) to use GitHub Actions. The reason for migrating is because one of my previous CI providers, Travis, stopped being free for open source repositories, they gave some free “credits” but they have now been consumed. The pricing plan and website is also now confusing for Travis; they have OSS (Open Source) credits and private credits which were consumed from my OSS projects! The pricing starts at $69 a month, which is a bit steep for me, especially considering there are other free alternatives. So I decided to move entirely to GitHub Actions and the process has really been straightforward and has given me a chance to improve my CI setup.  

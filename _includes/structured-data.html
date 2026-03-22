@@ -1,0 +1,50 @@
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alex Dixon",
+  "url": "https://polymonster.github.io",
+  "description": "Gamedev, graphics, open source. Shuffling bytes and swizzling vectors since 2004.",
+  "sameAs": [
+    "https://github.com/polymonster",
+    "https://www.linkedin.com/in/alexdixon1611/",
+    "https://mastodon.gamedev.place/@polymonster",
+    "https://www.youtube.com/channel/UCQRmui5w4Urz-h4P9CL7rmA"
+  ]
+}
+</script>
+{% elsif page.layout == "post" or layout.name == "post" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {% if page.description %}{{ page.description | strip_html | jsonify }}{% else %}{{ page.excerpt | strip_html | truncatewords: 30 | jsonify }}{% endif %},
+  "author": {
+    "@type": "Person",
+    "name": "Alex Dixon",
+    "url": "https://polymonster.github.io"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "url": "{{ page.url | absolute_url }}"{% if page.featured_image %},
+  "image": "{{ page.featured_image | absolute_url }}"{% endif %}
+}
+</script>
+{% elsif page.layout == "project" or layout.name == "project" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": {{ page.title | jsonify }},
+  "description": {% if page.description %}{{ page.description | strip_html | jsonify }}{% else %}{{ page.excerpt | strip_html | truncatewords: 30 | jsonify }}{% endif %},
+  "author": {
+    "@type": "Person",
+    "name": "Alex Dixon",
+    "url": "https://polymonster.github.io"
+  },
+  "url": "{{ page.url | absolute_url }}"
+}
+</script>
+{% endif %}

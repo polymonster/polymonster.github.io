@@ -1,6 +1,7 @@
 ---
 title: 'A quick solution for OpenGLES lack of wireframe fill mode'
 date: 2020-09-24 00:00:00
+description: 'A practical shader-based solution for rendering wireframes in OpenGL ES and WebGL, where glPolygonMode with GL_LINE is unavailable, without resorting to CPU-side line lists.'
 ---
 
 If you have ever worked with OpenGL you might be familiar with [`glPolygonMode`](https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPolygonMode.xhtml). It allows you to specify `GL_LINE`, `GL_POINT` or `GL_FILL`, where fill is typically what we use to rasterise solid triangles, using lines allows us to achieve a wireframe effect. If you have ever then switched to OpenGLES (mobile or web platforms) you may have encountered `GL_LINE` being undefined and there is no way to get a wireframe fill mode.

@@ -1,6 +1,7 @@
 ---
 title: 'Hot reloading c++ for rapid development with the help of fungos/cr'
 date: 2021-02-06 17:46:00
+description: 'How hot reloading C++ using the fungos/cr library enables rapid game engine development, with results from a year of productive iteration during lockdown.'
 ---
 
 It has been almost a year of living with covid-19 lockdown restrictions and during this period I have been productively coding at home and having a lot of fun with hot reloadable c++ to aid rapid development. When the first lockdown measures began the first task I undertook was getting this system working and integrated into my [game engine](https://github.com/polymonster/pmtech), it had been on my to-do list for a while, but with nowhere to go and not much else to do I created a workflow which has been enjoyable to use for the past year and has managed to produce some decent output. I'll go through some details of how it works in this blog and show some of the things I've created so far.

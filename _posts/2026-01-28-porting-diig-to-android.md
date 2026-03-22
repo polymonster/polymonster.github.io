@@ -1,6 +1,7 @@
 ---
 title: 'Porting diig from iOS to Android in less than 2 weeks'
 date: 2026-01-28 00:00:00
+description: 'How I ported the diig iOS music app to Android in under 2 weeks using the pmtech game engine''s Linux backend, Premake, and OpenGL ES, achieving 99% feature parity.'
 ---
 
 I recently decided to port my music app ‘diig’ to Android since I had some requests from friends and other potential Android users. The app was originally designed and built for iOS using all of my own code and no external frameworks. The whole thing took around 2 weeks to port, not full days work but just a few hours here and there. 2 weeks to port an entire app, 99% feature parity with iOS.

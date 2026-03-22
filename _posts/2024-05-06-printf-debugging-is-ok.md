@@ -1,6 +1,7 @@
 ---
 title: 'printf debugging is OK'
 date: 2024-05-06 00:00:00
+description: 'A balanced take on the printf vs debugger debate: why there is no single right answer, and how to choose the right debugging approach for the situation at hand.'
 ---
 
 I stopped going on Twitter a while ago because it has the tendency to evoke rage, as it is designed to do. But every now and then I check back in - it can be useful sometimes for keeping up with graphics research, gamedev news and some people do post nice things, like sharing projects they are working on, so there is something to pull me back from time to time.

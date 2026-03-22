@@ -1,6 +1,7 @@
 ---
 title: 'Building a new graphics engine in Rust'
 date: 2022-01-24 17:41:00
+description: 'Why I chose Rust to build a new graphics engine from scratch targeting modern rendering techniques like bindless resources, GPU-driven rendering, and ray tracing.'
 ---
 
 It has been a while since I last posted an article. For the past 6 months I haven’t managed to get much coding done in my spare time. Partly due to work consuming most of my effort but also due to the relaxing of lockdown restrictions and making sure to take advantage of the opportunity to see my friends and family in real life. I had remaining holiday days to take from work, giving me 2 weeks off over the Christmas period and I was determined to get stuck into something new. Eventually I settled on building a new graphics engine in Rust. I already have a C++ engine, so this article is about why I am switching to Rust and why you should even build your own tech at all.

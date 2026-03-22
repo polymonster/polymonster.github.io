@@ -1,6 +1,7 @@
 ---
 title: 'Building a new graphics engine in Rust - Part 4'
 date: 2023-04-29 00:00:00
+description: 'Implementing graphics demos and rendering techniques in the hotline Rust engine, tackling automated testing challenges and fleshing out the D3D12 gfx backend API.'
 ---
 
 Work has been continuing smoothly on my Rust graphics engine project [hotline] over the last month or so. I was slowly winding down from my current day job and have a little time off before starting a new role, so that has given me more time to dedicate to this project. I have been focusing on implementing different graphics demos and rendering techniques, which has thrown up a few missing pieces in the `gfx` backend and I am keen to get the API as complete as possible, because I am unsure of how much time I will have to work on it when I start my new role or even the validity of working on code in the public domain.  

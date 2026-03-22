@@ -1,6 +1,7 @@
 ---
 title: 'Not so modern c++'
 date: 2021-03-27 17:41:00
+description: 'Why a veteran game developer still writes C-style C++ rather than embracing modern C++ features, with practical rationale around performance, simplicity, and fast debug builds.'
 ---
 
 There have been a lot of changes and additions to the c++ standard since I started using c++ in the early 2000's, the language itself has started to look quite different. Yet I am still using a very stripped down subset of c++ actually more c-style and only reaching for c++ and modern c++ with careful consideration. Why is this? Because I have never really coveted new language features, I have always been more focused on the 'details' like the maths behind graphics effects or physics mechanics and not so much about the 'glue' of how it all fits together. I worked on and shipped games pre c++11 and saw effective techniques that worked well and stuck with them, these techniques provide good performance even in debug builds.
