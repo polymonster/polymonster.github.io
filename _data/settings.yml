@@ -39,7 +39,7 @@ social_settings:
   discord_url: 'https://discord.gg/3yjXwJ8wJC'
   mastodon_url: 'https://mastodon.gamedev.place/@polymonster'
   envelope_fas: 'mailto:alexandercdixon@gmail.com'
-  rss_fas: 'https://polymonster.github.io/feed'
+  rss_fas: 'https://polymonster.co.uk/feed'
 
 color_settings:
   background_color: '#ffffff'
