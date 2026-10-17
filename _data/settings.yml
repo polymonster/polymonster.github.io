@@ -16,8 +16,6 @@ menu_settings:
       url: '/projects/'
     - title: 'WebGL Demos'
       url: 'webgl-demos'
-    - title: 'Releases'
-      url: 'releases'
 
 grid_settings:
   grid_spacing: 10
