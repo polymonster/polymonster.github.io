@@ -1,5 +1,6 @@
 ---
 title: 'printf debugging is OK'
+description: 'The debugger vs printf debate keeps coming back. Why both are valid tools and there is no shame in printf debugging.'
 date: 2024-05-06 00:00:00
 description: 'A balanced take on the printf vs debugger debate: why there is no single right answer, and how to choose the right debugging approach for the situation at hand.'
 ---

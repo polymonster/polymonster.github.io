@@ -1,5 +1,6 @@
 ---
 title: 'Dear ImGui backend implementation with docking and viewports in Rust'
+description: 'Implementing a Dear ImGui rendering and platform backend in Rust with docking, multiple viewports and input, using my graphics engine hotline.'
 date: 2022-04-01 14:00:00
 description: 'How I implemented a feature-complete Dear ImGui rendering and platform backend in Rust with docking, multi-viewport support, and input handling using the hotline engine APIs.'
 ---

@@ -1,5 +1,6 @@
 ---
 title: 'A quick solution for OpenGLES lack of wireframe fill mode'
+description: 'OpenGL ES and WebGL lack glPolygonMode GL_LINE. A quick solution that renders wireframes as GL_LINES using a generated line list index buffer.'
 date: 2020-09-24 00:00:00
 description: 'A practical shader-based solution for rendering wireframes in OpenGL ES and WebGL, where glPolygonMode with GL_LINE is unavailable, without resorting to CPU-side line lists.'
 ---

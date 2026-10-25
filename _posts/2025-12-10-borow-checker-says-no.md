@@ -1,5 +1,6 @@
 ---
 title: 'Borrow checker says “No”! An error that scares me every single time!'
+description: 'Cannot borrow as immutable because it is also borrowed as mutable. Why this Rust borrow checker error keeps catching me out and patterns to fix it.'
 date: 2025-10-31 00:00:00
 description: 'A deep dive into Rust''s “cannot borrow as immutable because it is also borrowed as mutable” error, with patterns and strategies to resolve it during refactoring.'
 ---

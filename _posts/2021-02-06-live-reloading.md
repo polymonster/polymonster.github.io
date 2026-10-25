@@ -1,5 +1,6 @@
 ---
 title: 'Hot reloading c++ for rapid development with the help of fungos/cr'
+description: 'Hot reloading C++ for rapid development using fungos/cr, integrated into my game engine pmtech to iterate on algorithms and effects live.'
 date: 2021-02-06 17:46:00
 description: 'How hot reloading C++ using the fungos/cr library enables rapid game engine development, with results from a year of productive iteration during lockdown.'
 ---

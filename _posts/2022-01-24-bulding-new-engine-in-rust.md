@@ -1,5 +1,6 @@
 ---
 title: 'Building a new graphics engine in Rust'
+description: 'Why I started building a new graphics engine in Rust instead of C++20, focusing on bindless, GPU-driven rendering and ray tracing.'
 date: 2022-01-24 17:41:00
 description: 'Why I chose Rust to build a new graphics engine from scratch targeting modern rendering techniques like bindless resources, GPU-driven rendering, and ray tracing.'
 ---

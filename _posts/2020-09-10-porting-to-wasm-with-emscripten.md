@@ -1,5 +1,6 @@
 ---
 title: 'Porting a c++ game engine to the web with emscripten'
+description: 'How I ported my C++ game engine pmtech to WebAssembly and WebGL with Emscripten to run live demos in the browser, and what I learned along the way.'
 date: 2020-09-20 00:00:00
 description: 'A walkthrough of porting the pmtech C++ game engine to run in the browser using Emscripten and WebAssembly, covering the 5-week process, key challenges, and the resulting live WebGL demos.'
 ---

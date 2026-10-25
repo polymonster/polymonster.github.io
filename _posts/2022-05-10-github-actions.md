@@ -1,5 +1,6 @@
 ---
 title: 'Migrating CI to GitHub Actions'
+description: 'Migrating my open source CI from Travis and AppVeyor to GitHub Actions, with builds and tests for Windows, macOS, Linux and iOS.'
 date: 2022-05-10 00:00:00
 description: 'A walkthrough of migrating open source project CI from Travis and AppVeyor to GitHub Actions, including lessons learned and improvements made along the way.'
 ---

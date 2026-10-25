@@ -1,5 +1,6 @@
 ---
 title: 'Building a new graphics engine in Rust - Part 3'
+description: 'Part 3 of my Rust graphics engine hotline: plugins, multi-threaded command buffers and hot reloading for Rust code, HLSL shaders and render configs.'
 date: 2023-03-03 00:00:00
 description: 'The most challenging leg of the hotline Rust graphics engine: plugins, multi-threaded command buffer generation, and hot reloading for Rust code, HLSL shaders, and render configs.'
 ---

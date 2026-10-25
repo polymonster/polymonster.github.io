@@ -1,5 +1,6 @@
 ---
 title: 'Building a new graphics engine in Rust - Part 2'
+description: 'Part 2 of building hotline, my Rust graphics engine: designing the gfx API, the Direct3D12 backend with windows-rs and first impressions of Rust.'
 date: 2022-02-22 21:40:00
 description: 'Progress update on the hotline Rust graphics engine, covering the bindless gfx API design, D3D12 backend implementation with windows-rs, and initial impressions of Rust.'
 ---

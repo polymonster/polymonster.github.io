@@ -1,5 +1,6 @@
 ---
 title: 'Building a new graphics engine in Rust - Part 4'
+description: 'Part 4 of my Rust graphics engine hotline: automated graphics tests, new rendering demos and filling in the gaps in the gfx backend.'
 date: 2023-04-29 00:00:00
 description: 'Implementing graphics demos and rendering techniques in the hotline Rust engine, tackling automated testing challenges and fleshing out the D3D12 gfx backend API.'
 ---

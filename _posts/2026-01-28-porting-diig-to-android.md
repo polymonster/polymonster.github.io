@@ -1,5 +1,6 @@
 ---
 title: 'Porting diig from iOS to Android in less than 2 weeks'
+description: 'How I ported my music app diig from iOS to Android in under 2 weeks with 99% feature parity, using my C++ engine pmtech and premake.'
 date: 2026-01-28 00:00:00
 description: 'How I ported the diig iOS music app to Android in under 2 weeks using the pmtech game engine''s Linux backend, Premake, and OpenGL ES, achieving 99% feature parity.'
 ---

@@ -1,5 +1,6 @@
 ---
 title: 'Not so modern c++'
+description: 'Why I still write C-style C++ in my game engine and only reach for modern C++ features with careful consideration.'
 date: 2021-03-27 17:41:00
 description: 'Why a veteran game developer still writes C-style C++ rather than embracing modern C++ features, with practical rationale around performance, simplicity, and fast debug builds.'
 ---

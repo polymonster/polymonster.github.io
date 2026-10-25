@@ -1,5 +1,6 @@
 ---
 title: 'A Haiku About Debugging and the Perception of Productivity'
+description: 'A short haiku about debugging, and how the time spent on a small fix often goes unseen.'
 date: 2025-02-07 00:00:00
 description: 'Reflections on the invisible work of debugging: how a two-day investigation producing just two changed characters is still deeply valuable, and why ephemeral code matters.'
 ---
