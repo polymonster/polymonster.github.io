@@ -6,7 +6,7 @@ date: 2020-09-30 00:00:00
 featured_image: '/images/pmtech/gifs/dr_scientist.gif'
 ---
 
-pmtech is a data-oriented game engine written in C++, it is open source and available on [GitHub](https://github.com/polymonster/pmtech). The engine is cross platform and supports Windows, macOS, iOS, Linux and WebAssembly/WebGL with Android under development. It also has multiple rendering backends with Direct3D11, OpenGL, Metal and Vulkan.
+pmtech is a data-oriented game engine written in C++, it is open source and available on [GitHub](https://github.com/polymonster/pmtech). The engine is cross platform and supports Windows, macOS, iOS, Android, Linux and WebAssembly/WebGL. It also has multiple rendering backends with Direct3D11, OpenGL, Metal and Vulkan.
 
 I have been using it as a framework to experiment and try different rendering techniques. It has a data-oriented entity component system and features such as live reloading of C++ code, shaders and render pipeline configs to enable rapid prototyping and development in realtime. There is a live video demo of the hot reloading capabilities on [YouTube](https://youtu.be/dSLwP4D8Fd4).
 
@@ -16,7 +16,7 @@ Below are some of the more advanced and interesting graphics techniques I have i
 
 Realtime voxel cone traced GI with colour shadow map voxel volumes.
 
-[<img src="/images/pmtech/gifs/gi.gif" width="1280"/>](https://github.com/polymonster/pmtech/blob/master/examples/code/area_lights/area_lights.cpp)
+[<img src="/images/pmtech/gifs/gi.gif" width="1280"/>](https://github.com/polymonster/pmtech/blob/master/examples/code/global_illumination/global_illumination.cpp)
 
 ### Area Lights  
 
@@ -26,7 +26,7 @@ Linearly transformed cosines, animated ray marched primitives, mip-mapped roughn
 
 ### Subsurface Scattering  
 
-Sepearable sss configured with [pmfx](https://github.com/polymonster/pmtech/wiki/Pmfx) and [ecs](https://github.com/polymonster/pmtech/wiki/Ecs).
+Separable sss configured with [pmfx](https://github.com/polymonster/pmtech/wiki/Pmfx) and [ecs](https://github.com/polymonster/pmtech/wiki/Ecs).
 
 [<img src="/images/pmtech/gifs/sss.gif" width="1280"/>](https://github.com/polymonster/pmtech/blob/master/examples/code/sss/sss.cpp)
 
@@ -62,6 +62,6 @@ Multi-pass lighting with depth pass stencil shadow volumes, easily configured wi
 
 ### Vertex Stream Out / PBR  
 
-Vertex stream out, transform feedback meshes rendered many times, cook-torrence + oren-nayar BRDF.
+Vertex stream out, transform feedback meshes rendered many times, Cook-Torrance + Oren-Nayar BRDF.
 
 [![Vertex Stream Out](/images/pmtech/gifs/vertex-stream-pbr.gif)](https://github.com/polymonster/pmtech/blob/master/examples/code/vertex_stream_out/vertex_stream_out.cpp)

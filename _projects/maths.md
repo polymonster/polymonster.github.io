@@ -7,9 +7,9 @@ featured_image: '/images/pmtech/gifs/maths-functions.gif'
 
 Linear algebra libraries written in C++ and Rust with vector swizzling and a comprehensive collection of useful functions for games and graphics development. A good maths library is an essential tool for any games or graphics programmer. I built the C++ library and have maintained it since I began my journey into game development.
 
-There is a live [WebGL demo](https://www.polymonster.co.uk/pmtech/examples/maths_functions.html) of the intersection functions, this visual representation was also used to generate and verify test cases which run continuously via [GitHub Actions](https://github.com/polymonster/maths/actions);
+There is a live [WebGL demo](https://www.polymonster.co.uk/pmtech/examples/maths_functions.html) of the intersection functions, this visual representation was also used to generate and verify test cases which run continuously via [GitHub Actions](https://github.com/polymonster/maths/actions).
 
-The C++ library's most interesting feature is probably the vector swizzling, it uses C++11's template parameter pack to allow shader style swizzles. I wrote a rust program [permute](https://github.com/polymonster/permute) which code generates the C++ template permutations in [swizzle.h](https://github.com/polymonster/maths/blob/master/swizzle.h)
+The C++ library's most interesting feature is probably the vector swizzling, it uses C++11's template parameter pack to allow shader style swizzles. I wrote a Rust program [permute](https://github.com/polymonster/permute) which code generates the C++ template permutations in [swizzle.h](https://github.com/polymonster/maths/blob/master/swizzle.h)
 
 ```c++
 vec4f swizz = v.wzyx;       // construct from swizzle
@@ -21,7 +21,7 @@ swizz.xyz *= swizz2.www;    // arithmetic on swizzles
 vec2 v2 = swizz.xy * 2.0f;  // swizzle / scalar arithmetic
 
 // sometimes you may need to cast from swizzle to vec if c++ cant apply implicit casts
-f32 dp = dot((vec2f)swizz.xz, (vec2f)swizz.yy):
+f32 dp = dot((vec2f)swizz.xz, (vec2f)swizz.yy);
 ```
 
 I later ported the C++ library functionality to Rust and learned a lot about generics and traits in the process. I tried to make the libs stylistically similar so it is easy to port C++ code to Rust and vice-versa. So you can call generic C++ style maths functions like in shader code.

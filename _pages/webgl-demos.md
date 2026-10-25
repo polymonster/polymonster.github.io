@@ -5,7 +5,7 @@ description: powered by pmtech.
 featured_image: /images/site/spacefilling.png
 ---
 
-These demos are from my game engine [pmtech](https://github.com/polymonster/pmtech) they are built using WebAssembly and WebGL with the help of emscripten. You can find out more information about the example projects on the pmtech [wiki](https://github.com/polymonster/pmtech/wiki/Examples).
+These demos are from my game engine [pmtech](https://github.com/polymonster/pmtech); they are built using WebAssembly and WebGL with the help of emscripten. You can find out more information about the example projects on the pmtech [wiki](https://github.com/polymonster/pmtech/wiki/Examples).
 
 For web browsers Chrome, Firefox and Microsoft Edge are all fully supported. Support on Safari is available if you enable the experimental feature "WebGL 2.0" but without "WebGL via Metal". With "WebGL via Metal" the simpler samples work, but the more complex samples do not, it seems there are issues with texture arrays. Mobile browser support may be more limited.
 
